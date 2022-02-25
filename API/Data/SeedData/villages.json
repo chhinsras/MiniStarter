@@ -1,0 +1,7450 @@
+[
+  {
+    "Type": "ភូមិ",
+    "Code": 18010101,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010102,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010103,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010201,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010202,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010203,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010301,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010302,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010303,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010401,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010402,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010403,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010404,
+    "NameKH": "ភូមិ៤",
+    "NameEN": "Phum Buon",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010405,
+    "NameKH": "ភូមិ៥",
+    "NameEN": "Phum Pram",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18010406,
+    "NameKH": "ភូមិ៦",
+    "NameEN": "Phum Prammuoy",
+    "CommuneCode": 180104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020101,
+    "NameKH": "អណ្ដូងថ្ម",
+    "NameEN": "Andoung Thma",
+    "CommuneCode": 180201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020102,
+    "NameKH": "បន្ទាយប្រីយ៍",
+    "NameEN": "Banteay Prei",
+    "CommuneCode": 180201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020103,
+    "NameKH": "អូរត្រាវ",
+    "NameEN": "Ou Trav",
+    "CommuneCode": 180201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020104,
+    "NameKH": "ត្រពាំងស្អុយទី១",
+    "NameEN": "Trapeang S'oy Ti Muoy",
+    "CommuneCode": 180201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020105,
+    "NameKH": "ត្រពាំងស្អុយទី២",
+    "NameEN": "Trapeang S'oy Ti Pir",
+    "CommuneCode": 180201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020201,
+    "NameKH": "បឹងជុំ",
+    "NameEN": "Boeng Chum",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020202,
+    "NameKH": "បឹងតាព្រហ្ម",
+    "NameEN": "Boeng Ta Prum",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020203,
+    "NameKH": "បឹងតាស្រី",
+    "NameEN": "Boeng Ta Srei",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020204,
+    "NameKH": "ដូនលយ",
+    "NameEN": "Doun Loy",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020205,
+    "NameKH": "ភ្នំតូច",
+    "NameEN": "Phnum Touch",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020206,
+    "NameKH": "ទឹកចេញ",
+    "NameEN": "Tuek Chenh",
+    "CommuneCode": 180202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020301,
+    "NameKH": "ចំណោតរាម",
+    "NameEN": "Chamnaot Ream",
+    "CommuneCode": 180203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020302,
+    "NameKH": "គគីរ",
+    "NameEN": "Kokir",
+    "CommuneCode": 180203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020303,
+    "NameKH": "ពូធឿង",
+    "NameEN": "Pu Thoeang",
+    "CommuneCode": 180203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020401,
+    "NameKH": "ចំការកៅស៊ូ",
+    "NameEN": "Chamkar Kausu",
+    "CommuneCode": 180204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020402,
+    "NameKH": "ជើងគោ",
+    "NameEN": "Cheung Kou",
+    "CommuneCode": 180204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020404,
+    "NameKH": "ត្រពាំងគា",
+    "NameEN": "Trapeang Kea",
+    "CommuneCode": 180204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020405,
+    "NameKH": "ត្រពាំងមូល",
+    "NameEN": "Trapeang Mul",
+    "CommuneCode": 180204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020501,
+    "NameKH": "កោះខ្យង",
+    "NameEN": "Kaoh Khyang",
+    "CommuneCode": 180205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020502,
+    "NameKH": "អូរជ្រៅ",
+    "NameEN": "Ou Chrov",
+    "CommuneCode": 180205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020503,
+    "NameKH": "ស្រែចាមក្រោម",
+    "NameEN": "Srae Cham Kraom",
+    "CommuneCode": 180205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020504,
+    "NameKH": "ស្រែចាមលើ",
+    "NameEN": "Srae Cham Leu",
+    "CommuneCode": 180205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020505,
+    "NameKH": "ស្រែក្នុង",
+    "NameEN": "Srae Knong",
+    "CommuneCode": 180205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020601,
+    "NameKH": "បត់គគីរ",
+    "NameEN": "Bat Kokir",
+    "CommuneCode": 180206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020602,
+    "NameKH": "អូរចំណារ",
+    "NameEN": "Ou Chamnar",
+    "CommuneCode": 180206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020603,
+    "NameKH": "អូរតាប៉ាង",
+    "NameEN": "Ou Ta Pang",
+    "CommuneCode": 180206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020604,
+    "NameKH": "អូរតាសេក",
+    "NameEN": "Ou Ta Sek",
+    "CommuneCode": 180206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020605,
+    "NameKH": "អូរឧកញ៉ាហេង",
+    "NameEN": "Ou Oknha Heng",
+    "CommuneCode": 180206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020701,
+    "NameKH": "បត់សិរមាន់",
+    "NameEN": "Bat Ser Moan",
+    "CommuneCode": 180207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020702,
+    "NameKH": "ព្រៃនប់១",
+    "NameEN": "Prey Nob Muoy",
+    "CommuneCode": 180207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020703,
+    "NameKH": "ព្រៃនប់២",
+    "NameEN": "Prey Nob Pir",
+    "CommuneCode": 180207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020704,
+    "NameKH": "ព្រៃនប់៣",
+    "NameEN": "Prey Nob Bei",
+    "CommuneCode": 180207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020705,
+    "NameKH": "បែកក្រង់",
+    "NameEN": "Baek Krang",
+    "CommuneCode": 180207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020801,
+    "NameKH": "អុង",
+    "NameEN": "Ong",
+    "CommuneCode": 180208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020802,
+    "NameKH": "រាម",
+    "NameEN": "Ream",
+    "CommuneCode": 180208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020804,
+    "NameKH": "ស្មាច់ដែង",
+    "NameEN": "Smach Daeng",
+    "CommuneCode": 180208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020805,
+    "NameKH": "ថ្មធំ",
+    "NameEN": "Thma Thum",
+    "CommuneCode": 180208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020901,
+    "NameKH": "តាអោងធំ",
+    "NameEN": "Ta Aong Thum",
+    "CommuneCode": 180209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020902,
+    "NameKH": "បឹងរាំង",
+    "NameEN": "Boeng Reang",
+    "CommuneCode": 180209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18020903,
+    "NameKH": "ព្រែកក្រាញ់",
+    "NameEN": "Preaek Kranh",
+    "CommuneCode": 180209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021001,
+    "NameKH": "ចុងអូរ",
+    "NameEN": "Chong Ou",
+    "CommuneCode": 180210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021002,
+    "NameKH": "សំរុងកណ្ដាល",
+    "NameEN": "Samrong Kandal",
+    "CommuneCode": 180210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021003,
+    "NameKH": "សំរុងក្រោម",
+    "NameEN": "Samrong Kraom",
+    "CommuneCode": 180210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021004,
+    "NameKH": "សំរុងលើ",
+    "NameEN": "Samrong Leu",
+    "CommuneCode": 180210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021005,
+    "NameKH": "អូត្រជាក់ចិត្ដ",
+    "NameEN": "Ou Tracheak Chet",
+    "CommuneCode": 180210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021101,
+    "NameKH": "ទួល",
+    "NameEN": "Tuol",
+    "CommuneCode": 180211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021102,
+    "NameKH": "ព្រែកផ្អាវ",
+    "NameEN": "Preaek Ph'av",
+    "CommuneCode": 180211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021103,
+    "NameKH": "កំពង់ស្មាច់តូច",
+    "NameEN": "Kampong Smach Touch",
+    "CommuneCode": 180211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021104,
+    "NameKH": "ជ្រលង",
+    "NameEN": "Chrolong",
+    "CommuneCode": 180211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021201,
+    "NameKH": "ព្រែកប្រស់",
+    "NameEN": "Preaek Pras",
+    "CommuneCode": 180212
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021202,
+    "NameKH": "ព្រែកទាល់",
+    "NameEN": "Preaek Toal",
+    "CommuneCode": 180212
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021203,
+    "NameKH": "ព្រែកសង្កែ",
+    "NameEN": "Preaek Sangkae",
+    "CommuneCode": 180212
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021204,
+    "NameKH": "កំពង់ចិន",
+    "NameEN": "Kampong Chen",
+    "CommuneCode": 180212
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021301,
+    "NameKH": "ទួលទទឹងទី១",
+    "NameEN": "Tuol Totueng Ti Muoy",
+    "CommuneCode": 180213
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021302,
+    "NameKH": "ទួលទទឹងទី២",
+    "NameEN": "Tuol Totueng Ti Pir",
+    "CommuneCode": 180213
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021303,
+    "NameKH": "ទួលទទឹងទី៣",
+    "NameEN": "Tuol Totueng Ti Bei",
+    "CommuneCode": 180213
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021304,
+    "NameKH": "អំពូខ្មៅ",
+    "NameEN": "Ampu Khmau",
+    "CommuneCode": 180213
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021401,
+    "NameKH": "បឹងវែង",
+    "NameEN": "Boeng Veaeng",
+    "CommuneCode": 180214
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021402,
+    "NameKH": "វាលមាស",
+    "NameEN": "Veal Meas",
+    "CommuneCode": 180214
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021403,
+    "NameKH": "វាលធំ",
+    "NameEN": "Veal Thum",
+    "CommuneCode": 180214
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021501,
+    "NameKH": "តាពៅ",
+    "NameEN": "Ta Pov",
+    "CommuneCode": 180215
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021502,
+    "NameKH": "តានៃ",
+    "NameEN": "Ta Ney",
+    "CommuneCode": 180215
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021503,
+    "NameKH": "មនោរម្យ",
+    "NameEN": "Monorom",
+    "CommuneCode": 180215
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021504,
+    "NameKH": "ស្វាយ",
+    "NameEN": "Svay",
+    "CommuneCode": 180215
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18021505,
+    "NameKH": "អន្លង់ក្រពើ",
+    "NameEN": "Anlong Krapeu",
+    "CommuneCode": 180215
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030101,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030102,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030201,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030202,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030203,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030204,
+    "NameKH": "ភូមិ៤",
+    "NameEN": "Phum Buon",
+    "CommuneCode": 180302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030301,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum Muoy",
+    "CommuneCode": 180303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030302,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum Pir",
+    "CommuneCode": 180303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030303,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum Bei",
+    "CommuneCode": 180303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030304,
+    "NameKH": "ភូមិ៤",
+    "NameEN": "Phum Buon",
+    "CommuneCode": 180303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030401,
+    "NameKH": "កែវផុស",
+    "NameEN": "Kaev Phos",
+    "CommuneCode": 180304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030402,
+    "NameKH": "ឫទ្ធី១",
+    "NameEN": "Rithy 1",
+    "CommuneCode": 180304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18030403,
+    "NameKH": "ឫទ្ធី២",
+    "NameEN": "Rithy 2",
+    "CommuneCode": 180304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040101,
+    "NameKH": "ចំការហ្លូង",
+    "NameEN": "Chamkar Luong",
+    "CommuneCode": 180401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040102,
+    "NameKH": "បឹងត្រាច",
+    "NameEN": "Boeng Trach",
+    "CommuneCode": 180401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040103,
+    "NameKH": "សម្ដេចតា",
+    "NameEN": "Samdech Ta",
+    "CommuneCode": 180401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040201,
+    "NameKH": "ចាំស្រី",
+    "NameEN": "Cham Srei",
+    "CommuneCode": 180402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040202,
+    "NameKH": "ក្រាំងអាត់",
+    "NameEN": "Krang At",
+    "CommuneCode": 180402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040203,
+    "NameKH": "ថ្មី",
+    "NameEN": "Thmei",
+    "CommuneCode": 180402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040204,
+    "NameKH": "វាល",
+    "NameEN": "Veal",
+    "CommuneCode": 180402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040301,
+    "NameKH": "ព្រៃប្រសិទ្ធ",
+    "NameEN": "Prey Praseth",
+    "CommuneCode": 180403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040302,
+    "NameKH": "ស្ទឹងច្រាល",
+    "NameEN": "Stueng Chral",
+    "CommuneCode": 180403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040303,
+    "NameKH": "ស្ទឹងសំរោង",
+    "NameEN": "Stueng Samraong",
+    "CommuneCode": 180403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040401,
+    "NameKH": "គីរីវន្ដ",
+    "NameEN": "Kirivoan",
+    "CommuneCode": 180404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040402,
+    "NameKH": "អូរតាហយ",
+    "NameEN": "Ou Ta Hoay",
+    "CommuneCode": 180404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040403,
+    "NameKH": "ស្ទឹងឆាយជើង",
+    "NameEN": "Stueng Chhay Cheung",
+    "CommuneCode": 180404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18040404,
+    "NameKH": "ស្ទឹងឆាយត្បូង",
+    "NameEN": "Stueng Chhay Tbong",
+    "CommuneCode": 180404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18050101,
+    "NameKH": "ដើមថ្កូវ",
+    "NameEN": "Daem Thkov",
+    "CommuneCode": 180501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18050102,
+    "NameKH": "ព្រែកស្វាយ",
+    "NameEN": "Preaek Svay",
+    "CommuneCode": 180501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18050201,
+    "NameKH": "កោះតូច",
+    "NameEN": "Kaoh Touch",
+    "CommuneCode": 180502
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 18050202,
+    "NameKH": "កោះរ៉ុងសន្លឹម",
+    "NameEN": "Kaoh Rung Sanloem",
+    "CommuneCode": 180502
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010107,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010108,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010109,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010110,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010111,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010112,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010113,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010114,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010115,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010116,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010901,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120109
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010902,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120109
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010903,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120109
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12010904,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120109
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011001,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120110
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011002,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120110
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011003,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120110
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011004,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120110
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011005,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120110
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011107,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011108,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120111
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011201,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011202,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011203,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011204,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011205,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011206,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12011207,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120112
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020101,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020102,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020103,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020104,
+    "NameKH": "ភូមិ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020105,
+    "NameKH": "ភូមិ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020106,
+    "NameKH": "ភូមិ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020107,
+    "NameKH": "ភូមិ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020108,
+    "NameKH": "ភូមិ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020109,
+    "NameKH": "ភូមិ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020110,
+    "NameKH": "ភូមិ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020111,
+    "NameKH": "ភូមិ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020201,
+    "NameKH": "ភូមិ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020202,
+    "NameKH": "ភូមិ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020203,
+    "NameKH": "ភូមិ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020204,
+    "NameKH": "ភូមិ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020205,
+    "NameKH": "ភូមិ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020206,
+    "NameKH": "ភូមិ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020207,
+    "NameKH": "ភូមិ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020208,
+    "NameKH": "ភូមិ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020209,
+    "NameKH": "ភូមិ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020301,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020302,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020303,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020304,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020305,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020306,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020307,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020308,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020309,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020310,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020311,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020312,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020313,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020314,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020401,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020402,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020403,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020404,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020405,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020406,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020407,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020408,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020409,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020410,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020501,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020502,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020503,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020504,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020505,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020506,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020507,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020508,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020509,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020510,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020511,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020512,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020513,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020514,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020515,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020516,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020601,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020602,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020603,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020604,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020605,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020606,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020607,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020608,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020609,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020610,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020611,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020701,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020702,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020703,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020704,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020705,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020706,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020707,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020708,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020801,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020802,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020803,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020804,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020805,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020806,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020807,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020808,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020809,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020810,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020811,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020901,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020902,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020903,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020904,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020905,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020906,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020907,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020908,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020909,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12020910,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120209
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021001,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021002,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021003,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021004,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021005,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021006,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021007,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021008,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021009,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021010,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021011,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021012,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021013,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021014,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021015,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021016,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021017,
+    "NameKH": "ភូមិ ១៧",
+    "NameEN": "Phum 17",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021018,
+    "NameKH": "ភូមិ ១៨",
+    "NameEN": "Phum 18",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021019,
+    "NameKH": "ភូមិ ១៩",
+    "NameEN": "Phum 19",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021020,
+    "NameKH": "ភូមិ ២០",
+    "NameEN": "Phum 20",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021021,
+    "NameKH": "ភូមិ ២១",
+    "NameEN": "Phum 21",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021022,
+    "NameKH": "ភូមិ ២២",
+    "NameEN": "Phum 22",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021023,
+    "NameKH": "ភូមិ ២៣",
+    "NameEN": "Phum 23",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021024,
+    "NameKH": "ភូមិ ២៤",
+    "NameEN": "Phum 24",
+    "CommuneCode": 120210
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021107,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021108,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021109,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12021110,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120211
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030201,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030202,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030203,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030204,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030205,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030206,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030207,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030208,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030209,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030301,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030302,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030303,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030304,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030305,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030306,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030401,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030402,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030403,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030404,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030405,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030406,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030407,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030408,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030501,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030502,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030503,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030504,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030505,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030506,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030507,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030508,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030509,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030601,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030602,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030603,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030604,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030605,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030606,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030607,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030608,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030609,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030610,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030701,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030702,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030703,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030704,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030705,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030706,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030707,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030708,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030709,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030710,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030711,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030712,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030801,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030802,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030803,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030804,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030805,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12030806,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120308
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040107,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040108,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040109,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040110,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040201,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040202,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040203,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040204,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040205,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040206,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040207,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040208,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040209,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040210,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040211,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040301,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040302,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040303,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040304,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040305,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040306,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040307,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040308,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040309,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040310,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040401,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040402,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040403,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040404,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040405,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040406,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040407,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040408,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040409,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040410,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040411,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040412,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040413,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040414,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040415,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040416,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040501,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040502,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040503,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040504,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040505,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040506,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040507,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040508,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040509,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040510,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040511,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040512,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040513,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040601,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040602,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040603,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040604,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040605,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040606,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040607,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040608,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040609,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040610,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040611,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040612,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040613,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040701,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040702,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040703,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040704,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040705,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040706,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040707,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040708,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040709,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040710,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040711,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040712,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040713,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040714,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040801,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040802,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040803,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040804,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040805,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040806,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040807,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040808,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040809,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040810,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040811,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040812,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040813,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040814,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040815,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040816,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040817,
+    "NameKH": "ភូមិ ១៧",
+    "NameEN": "Phum 17",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040818,
+    "NameKH": "ភូមិ ១៨",
+    "NameEN": "Phum 18",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040819,
+    "NameKH": "ភូមិ ១៩",
+    "NameEN": "Phum 19",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040820,
+    "NameKH": "ភូមិ ២០",
+    "NameEN": "Phum 20",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040821,
+    "NameKH": "ភូមិ ២១",
+    "NameEN": "Phum 21",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040822,
+    "NameKH": "ភូមិ ២២",
+    "NameEN": "Phum 22",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040823,
+    "NameKH": "ភូមិ ២៣",
+    "NameEN": "Phum 23",
+    "CommuneCode": 120408
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040901,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040902,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040903,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040904,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040905,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040906,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040907,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040908,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040909,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040910,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040911,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040912,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040913,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040914,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040915,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12040916,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120409
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041001,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041002,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041003,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041004,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041005,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041006,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041007,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041008,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041009,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041010,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041011,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041012,
+    "NameKH": "ភូមិ ១២",
+    "NameEN": "Phum 12",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041013,
+    "NameKH": "ភូមិ ១៣",
+    "NameEN": "Phum 13",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041014,
+    "NameKH": "ភូមិ ១៤",
+    "NameEN": "Phum 14",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041015,
+    "NameKH": "ភូមិ ១៥",
+    "NameEN": "Phum 15",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041016,
+    "NameKH": "ភូមិ ១៦",
+    "NameEN": "Phum 16",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12041017,
+    "NameKH": "ភូមិ ១៧",
+    "NameEN": "Phum 17",
+    "CommuneCode": 120410
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050101,
+    "NameKH": "ថ្មី",
+    "NameEN": "Thmei",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050102,
+    "NameKH": "បាគូ",
+    "NameEN": "Baku",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050103,
+    "NameKH": "សំបួរ",
+    "NameEN": "Sambuor",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050104,
+    "NameKH": "តាឡី",
+    "NameEN": "Ta Lei",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050105,
+    "NameKH": "ម័ល",
+    "NameEN": "Mol",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050106,
+    "NameKH": "ខ្វា",
+    "NameEN": "Khva",
+    "CommuneCode": 120501
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050701,
+    "NameKH": "ត្រពាំងទា",
+    "NameEN": "Trapeang Tea",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050702,
+    "NameKH": "ត្រពាំងគ",
+    "NameEN": "Trapeang Kor",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050703,
+    "NameKH": "ពងទឹក",
+    "NameEN": "Pong Tuek",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050704,
+    "NameKH": "វត្ដស្លែង",
+    "NameEN": "Voat Slaeng",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050705,
+    "NameKH": "ស្រែញ័រ",
+    "NameEN": "Srae Nhoar",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050706,
+    "NameKH": "ឃ្លះសណ្ដាយ",
+    "NameEN": "Khleah Sanday",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050707,
+    "NameKH": "ព្រៃកី ខ",
+    "NameEN": "Prey Kei Kha",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050708,
+    "NameKH": "ព្រៃកី ក",
+    "NameEN": "Prey Kei Ka",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050709,
+    "NameKH": "ត្រាំងដោក",
+    "NameEN": "Trang Daok",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050710,
+    "NameKH": "ត្រពាំងសាលា",
+    "NameEN": "Trapeang Sala",
+    "CommuneCode": 120507
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050801,
+    "NameKH": "ព្រៃវែងខាងលិច",
+    "NameEN": "Prey Veaeng Khang Lech",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050802,
+    "NameKH": "ព្រៃវែងខាងកើត",
+    "NameEN": "Prey Veaeng Khang Kaeut",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050803,
+    "NameKH": "ត្រពាំងចក",
+    "NameEN": "Trapeang Chak",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050804,
+    "NameKH": "ត្រពាំងស្វាយ",
+    "NameEN": "Trapeang Svay",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050805,
+    "NameKH": "ទ័ពបោះ",
+    "NameEN": "Toap Baoh",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050806,
+    "NameKH": "កំរៀង",
+    "NameEN": "Kamrieng",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050807,
+    "NameKH": "រោលជ្រូក",
+    "NameEN": "Roul Chruk",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050808,
+    "NameKH": "សេរីដីដុះ",
+    "NameEN": "Serei Dei Doh",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12050809,
+    "NameKH": "ទួលសំបូរ",
+    "NameEN": "Tuol Sambour",
+    "CommuneCode": 120508
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051001,
+    "NameKH": "ព្រៃធំ",
+    "NameEN": "Prey Thum",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051002,
+    "NameKH": "ព្រៃសខាងកើត",
+    "NameEN": "Prey Sa Khang Kaeut",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051003,
+    "NameKH": "ប្រការ",
+    "NameEN": "Prakar",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051004,
+    "NameKH": "ព្រៃសខាងលិច",
+    "NameEN": "Prey Sa Khang Lech",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051005,
+    "NameKH": "ព្រៃទីទុយ",
+    "NameEN": "Prey Tituy",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051006,
+    "NameKH": "អន្លង់គង",
+    "NameEN": "Anlong Kong",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051007,
+    "NameKH": "គោកបន្ទាយ",
+    "NameEN": "Kouk Banteay",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051008,
+    "NameKH": "ធម្មត្រ័យ",
+    "NameEN": "Thommeak Trai",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051009,
+    "NameKH": "ពាម",
+    "NameEN": "Peam",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051010,
+    "NameKH": "ម្ភៃបួន",
+    "NameEN": "Mphey Buon",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051011,
+    "NameKH": "អន្លង់គងថ្មី",
+    "NameEN": "Anlong Kong Thmei",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051012,
+    "NameKH": "ទួលរកាកុះ",
+    "NameEN": "Tuol Roka Koh",
+    "CommuneCode": 120510
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051201,
+    "NameKH": "ក្រាំងស្វាយ",
+    "NameEN": "Krang Svay",
+    "CommuneCode": 120512
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051202,
+    "NameKH": "ក្រាំងពង្រ",
+    "NameEN": "Krang Pongro",
+    "CommuneCode": 120512
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051203,
+    "NameKH": "ទឹកថ្លា",
+    "NameEN": "Tuek Thla",
+    "CommuneCode": 120512
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051204,
+    "NameKH": "ព្រៃសំព័រ",
+    "NameEN": "Prey Sampoar",
+    "CommuneCode": 120512
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051401,
+    "NameKH": "ពោធី៍រលំ",
+    "NameEN": "Pou Rolum",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051402,
+    "NameKH": "ខ្វិត",
+    "NameEN": "Khvet",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051403,
+    "NameKH": "ក្រាំងតាផូ",
+    "NameEN": "Krang Ta Phou",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051404,
+    "NameKH": "កំរ៉ែង",
+    "NameEN": "Kamraeng",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051405,
+    "NameKH": "សំបួរ",
+    "NameEN": "Sambuor",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051406,
+    "NameKH": "សាក់សំពៅ",
+    "NameEN": "Sak Sampov",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051407,
+    "NameKH": "ពារាម",
+    "NameEN": "Peaream",
+    "CommuneCode": 120514
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051501,
+    "NameKH": "ជើងឯក",
+    "NameEN": "Cheung Aek",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051502,
+    "NameKH": "រលួស",
+    "NameEN": "Roluos",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051503,
+    "NameKH": "ស្រុកចេក",
+    "NameEN": "Srok Chek",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051504,
+    "NameKH": "ព្រែកប្រណាក",
+    "NameEN": "Preaek Pranak",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051505,
+    "NameKH": "ព្រែកថ្លឹង",
+    "NameEN": "Preaek Thloeng",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051506,
+    "NameKH": "បូរីកម្មករ",
+    "NameEN": "Bourei Kameakkar",
+    "CommuneCode": 120515
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051601,
+    "NameKH": "គងនយ",
+    "NameEN": "Kong Noy",
+    "CommuneCode": 120516
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051602,
+    "NameKH": "វាលថ្លាន់",
+    "NameEN": "Veal Thlan",
+    "CommuneCode": 120516
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051603,
+    "NameKH": "សេរីសម្បត្ដិ",
+    "NameEN": "Serei Sambatt",
+    "CommuneCode": 120516
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051604,
+    "NameKH": "ត្រពាំងសំរិត",
+    "NameEN": "Trapeang Samret",
+    "CommuneCode": 120516
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051701,
+    "NameKH": "ព្រែកកំពឹស",
+    "NameEN": "Preaek Kampues",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051702,
+    "NameKH": "ព្រែករទាំង",
+    "NameEN": "Preaek Roteang",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051703,
+    "NameKH": "ព្រែកថ្លឹង",
+    "NameEN": "Preaek Thloeng",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051704,
+    "NameKH": "ដំណាក់សង្កែ",
+    "NameEN": "Damnak Sangkae",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051705,
+    "NameKH": "ស្រីស្នំ",
+    "NameEN": "Srei Snam",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051706,
+    "NameKH": "ក្រាំងស្វាយ",
+    "NameEN": "Krang Svay",
+    "CommuneCode": 120517
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051801,
+    "NameKH": "ក្រពើទ្រោម",
+    "NameEN": "Krapeu Troum",
+    "CommuneCode": 120518
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051802,
+    "NameKH": "ព្រះធាតុ",
+    "NameEN": "Preah Theat",
+    "CommuneCode": 120518
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051803,
+    "NameKH": "កណ្ដាល",
+    "NameEN": "Kandal",
+    "CommuneCode": 120518
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051901,
+    "NameKH": "អញ្ចាញ",
+    "NameEN": "Anhchanh",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051902,
+    "NameKH": "គោកឪឡឹក",
+    "NameEN": "Kouk Ovloek",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051903,
+    "NameKH": "ម៉ឺន្ដ្រា",
+    "NameEN": "Meun Tra",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051904,
+    "NameKH": "ស្ពានថ្ម",
+    "NameEN": "Spean Thma",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051905,
+    "NameKH": "ស្វាយមានល័ក្ខណ៍",
+    "NameEN": "Svay Mean Leak",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051906,
+    "NameKH": "ភូមិហា",
+    "NameEN": "Phum Ha",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051907,
+    "NameKH": "ដូង",
+    "NameEN": "Doung",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12051908,
+    "NameKH": "ព្រែកជ្រៃ",
+    "NameEN": "Preaek Chrey",
+    "CommuneCode": 120519
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052001,
+    "NameKH": "ក្រាំងក្រូច",
+    "NameEN": "Krang Krouch",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052002,
+    "NameKH": "ថ្មី",
+    "NameEN": "Thmei",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052003,
+    "NameKH": "ថ្ម",
+    "NameEN": "Thma",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052004,
+    "NameKH": "កន្ទុយទឹក",
+    "NameEN": "Kantuy Tuek",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052005,
+    "NameKH": "សាលា",
+    "NameEN": "Sala",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12052006,
+    "NameKH": "ក្រាំង",
+    "NameEN": "Krang",
+    "CommuneCode": 120520
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060601,
+    "NameKH": "ព្រែកតាគង់",
+    "NameEN": "Prek Ta Kong",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060602,
+    "NameKH": "ព្រែកតានូ",
+    "NameEN": "Prek Ta Nu",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060603,
+    "NameKH": "ព្រែកតាគង់១",
+    "NameEN": "Prek Ta Kong I",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060604,
+    "NameKH": "ព្រែកតាគង់២",
+    "NameEN": "Prek Ta Kong II",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060605,
+    "NameKH": "ព្រែកតាគង់៣",
+    "NameEN": "Prek Ta Kong III",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060606,
+    "NameKH": "ព្រែកតានូ១",
+    "NameEN": "Preaek Ta Nu I",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060607,
+    "NameKH": "ព្រែកតានូ២",
+    "NameEN": "Preaek Ta Nu II",
+    "CommuneCode": 120606
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060701,
+    "NameKH": "ទួលរកា",
+    "NameEN": "Tuol Roka",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060702,
+    "NameKH": "ព្រែកតាឡុង",
+    "NameEN": "Preaek Ta Long",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060703,
+    "NameKH": "ទួលរកា១",
+    "NameEN": "Tuol Roka Muoy",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060704,
+    "NameKH": "ទួលរកា២",
+    "NameEN": "Tuol Roka Pir",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060705,
+    "NameKH": "ទួលរកា៣",
+    "NameEN": "Tuol Roka Bei",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060706,
+    "NameKH": "ព្រែកតាឡុង១",
+    "NameEN": "Preaek Ta Long Muoy",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060707,
+    "NameKH": "ព្រែកតាឡុង២",
+    "NameEN": "Preaek Ta Long II",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060708,
+    "NameKH": "ព្រែកតាឡុង៣",
+    "NameEN": "Preaek Ta Long III",
+    "CommuneCode": 120607
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060801,
+    "NameKH": "មានជ័យ",
+    "NameEN": "Mean Chey",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060802,
+    "NameKH": "មានជ័យ១",
+    "NameEN": "Mean Chey Muoy",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060803,
+    "NameKH": "មានជ័យ២",
+    "NameEN": "Mean Chey 2",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060804,
+    "NameKH": "ថ្មី",
+    "NameEN": "Thmei",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060805,
+    "NameKH": "ទ្រា",
+    "NameEN": "Trea",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060806,
+    "NameKH": "ទ្រា១",
+    "NameEN": "Trea Muoy",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060807,
+    "NameKH": "ទ្រា២",
+    "NameEN": "Trea Pir",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060808,
+    "NameKH": "ទ្រា៣",
+    "NameEN": "Trea Bei",
+    "CommuneCode": 120608
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060901,
+    "NameKH": "ភ្នាត",
+    "NameEN": "Phneat",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060902,
+    "NameKH": "ដំណាក់ធំ",
+    "NameEN": "Damnak Thum",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060903,
+    "NameKH": "ដំណាក់ធំ១",
+    "NameEN": "Damnak Thum Muoy",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060904,
+    "NameKH": "ដំណាក់ធំ៤",
+    "NameEN": "Damnak Thum 4",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060905,
+    "NameKH": "ឫស្សី",
+    "NameEN": "Ruessei",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060906,
+    "NameKH": "ឫស្សី ៣",
+    "NameEN": "Ruessei 3",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060907,
+    "NameKH": "ព្រែកទាល់",
+    "NameEN": "Prek Toal",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12060908,
+    "NameKH": "ព្រែកទាល់១",
+    "NameEN": "Prek Toal 1",
+    "CommuneCode": 120609
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061001,
+    "NameKH": "ទ្រា៤",
+    "NameEN": "Trea Buon",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061002,
+    "NameKH": "ឫស្សី១",
+    "NameEN": "Russey Muoy",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061003,
+    "NameKH": "ឫស្សី ២",
+    "NameEN": "Ruessei 2",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061004,
+    "NameKH": "ដំណាក់ធំ២",
+    "NameEN": "Damnak Thum Pir",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061005,
+    "NameKH": "ដំណាក់ធំ៣",
+    "NameEN": "Damnak Thum Bei",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061006,
+    "NameKH": "ដំណាក់ធំ៥",
+    "NameEN": "Damnak Thum 5",
+    "CommuneCode": 120610
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061101,
+    "NameKH": "ចំរើនផល",
+    "NameEN": "Chamraeun Phal",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061102,
+    "NameKH": "ចំរើនផល១",
+    "NameEN": "Chamroeunphal Muoy",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061103,
+    "NameKH": "ចំរើនផល២",
+    "NameEN": "Chamroeunphal 2",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061104,
+    "NameKH": "ចំរើនផល៣",
+    "NameEN": "Chamroeunphal 3",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061105,
+    "NameKH": "ចំរើនផល៤",
+    "NameEN": "Chamroeunphal 4",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061106,
+    "NameKH": "សន្សំកុសល ១",
+    "NameEN": "Sansam Kosal Muoy",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061107,
+    "NameKH": "សន្សំកុសល ២",
+    "NameEN": "Sansam Kosal Pir",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061108,
+    "NameKH": "សន្សំកុសល ៣",
+    "NameEN": "Sansam Kosal 3",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061109,
+    "NameKH": "សន្សំកុសល ៤",
+    "NameEN": "Sansam Kosal 4",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061110,
+    "NameKH": "សន្សំកុសល ៥",
+    "NameEN": "Sansam Kosal 5",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061111,
+    "NameKH": "សន្សំកុសល៦",
+    "NameEN": "Sansam Kosal 6",
+    "CommuneCode": 120611
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061201,
+    "NameKH": "ក្បាលទំនប់",
+    "NameEN": "Kbal Tumnob",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061202,
+    "NameKH": "ក្បាលទំនប់១",
+    "NameEN": "Kbal Tumnub Muoy",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061203,
+    "NameKH": "ក្បាលទំនប់២",
+    "NameEN": "Kbal Tumnub Pir",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061204,
+    "NameKH": "ក្បាលទំនប់៣",
+    "NameEN": "Kbal Tumnub 3",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061205,
+    "NameKH": "ត្នោតជ្រុំ",
+    "NameEN": "Tnaot Chrum",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061206,
+    "NameKH": "ត្នោតជ្រុំ១",
+    "NameEN": "Tnaot Chrum Muoy",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061207,
+    "NameKH": "ត្នោតជ្រុំ២",
+    "NameEN": "Tnaot Chrum Pir",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061208,
+    "NameKH": "ត្នោតជ្រុំ៣",
+    "NameEN": "Tnaot Chrum Bei",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061209,
+    "NameKH": "ត្នោតជ្រុំ៤",
+    "NameEN": "Tnaot Chrum Boun",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061210,
+    "NameKH": "ត្នោតជ្រុំ៥",
+    "NameEN": "Tnaot Chrum 5",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12061211,
+    "NameKH": "ត្នោតជ្រុំ៦",
+    "NameEN": "Tnaot Chrum 6",
+    "CommuneCode": 120612
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070301,
+    "NameKH": "ឡកំបោរ",
+    "NameEN": "La Kambaor",
+    "CommuneCode": 120703
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070302,
+    "NameKH": "លូ",
+    "NameEN": "Lu",
+    "CommuneCode": 120703
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070303,
+    "NameKH": "ស្វាយប៉ាក",
+    "NameEN": "Svay Pak",
+    "CommuneCode": 120703
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070401,
+    "NameKH": "ក្រោលគោ",
+    "NameEN": "Kraol Kou",
+    "CommuneCode": 120704
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070402,
+    "NameKH": "ស្ពានខ្ពស់",
+    "NameEN": "Spean Khpos",
+    "CommuneCode": 120704
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070403,
+    "NameKH": "បឹងឈូក",
+    "NameEN": "Boeng Chhuk",
+    "CommuneCode": 120704
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070601,
+    "NameKH": "មិត្ដភាព",
+    "NameEN": "Mittakpheap",
+    "CommuneCode": 120706
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070602,
+    "NameKH": "សាមគ្គី",
+    "NameEN": "Sameakki",
+    "CommuneCode": 120706
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070603,
+    "NameKH": "ឃ្លាំងសាំង",
+    "NameEN": "Khleang Sang",
+    "CommuneCode": 120706
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12070604,
+    "NameKH": "បឹងសាឡាង",
+    "NameEN": "Boeng Salang",
+    "CommuneCode": 120706
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 120711
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 120711
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 120711
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 120711
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071201,
+    "NameKH": "ភូមិ ក",
+    "NameEN": "Phum Ka",
+    "CommuneCode": 120712
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071202,
+    "NameKH": "ភូមិ ខ១",
+    "NameEN": "Phum Kha Muoy",
+    "CommuneCode": 120712
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071203,
+    "NameKH": "ភូមិ ខ២",
+    "NameEN": "Phum Kha Pir",
+    "CommuneCode": 120712
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071204,
+    "NameKH": "ភូមិឃ",
+    "NameEN": "Phum Kho",
+    "CommuneCode": 120712
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071301,
+    "NameKH": "ផ្សារតូច",
+    "NameEN": "Phsar Toch",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071302,
+    "NameKH": "ទួលសង្កែ",
+    "NameEN": "Toul sangke",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071303,
+    "NameKH": "ទួលគោក",
+    "NameEN": "Tuol Kok",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071304,
+    "NameKH": "ចុងខ្សាច់",
+    "NameEN": "Chong Khsach",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071305,
+    "NameKH": "បាក់ទូក",
+    "NameEN": "Bak Touk",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071306,
+    "NameKH": "ទួលសំពៅ",
+    "NameEN": "Tuol Sampov",
+    "CommuneCode": 120713
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071401,
+    "NameKH": "គង្គាផុស",
+    "NameEN": "Kongkea Phos",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071402,
+    "NameKH": "កោះអណ្តែត",
+    "NameEN": "Kos Andaet",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071403,
+    "NameKH": "ពោងពាយ",
+    "NameEN": "Pong Peav",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071404,
+    "NameKH": "បឹងរាំង",
+    "NameEN": "Boeung Rang",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071405,
+    "NameKH": "ទួលពពែ",
+    "NameEN": "Tuol Porpae",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12071406,
+    "NameKH": "ទួលថ្ងាន់",
+    "NameEN": "Tuol Thgan",
+    "CommuneCode": 120714
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080102,
+    "NameKH": "ពោងពាយ",
+    "NameEN": "Poung Peay",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080104,
+    "NameKH": "បាយ៉ាប",
+    "NameEN": "Bayab",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080105,
+    "NameKH": "ភ្នំពេញថ្មី",
+    "NameEN": "Phnom Penh Thmei",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080107,
+    "NameKH": "ទំនប់",
+    "NameEN": "Tumnob",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080111,
+    "NameKH": "ទំនប់១",
+    "NameEN": "Tumnob 1",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080113,
+    "NameKH": "ឧកញ៉ាវាំង",
+    "NameEN": "Ouknha Veang",
+    "CommuneCode": 120801
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080204,
+    "NameKH": "ផ្សារទឹកថ្លា",
+    "NameEN": "Phsar Tuek Thla",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080205,
+    "NameKH": "សេប៉េសេ",
+    "NameEN": "Se Pe Se",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080206,
+    "NameKH": "បូរី១០០ខ្នង",
+    "NameEN": "Bourei Muoy Roy Khnang",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080207,
+    "NameKH": "ចុងថ្នល់ខាងកើត",
+    "NameEN": "Chong Thnal Khang Kaeut",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080208,
+    "NameKH": "ចុងថ្នល់ខាងលិច",
+    "NameEN": "Chong Thnal Khang Lech",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080209,
+    "NameKH": "ទឹកថ្លា",
+    "NameEN": "Tuek Thla",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080211,
+    "NameKH": "បុរីកម្មករ",
+    "NameEN": "Borey Kamakar",
+    "CommuneCode": 120802
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080301,
+    "NameKH": "ឃ្មួញ",
+    "NameEN": "Anlong Kngan",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080302,
+    "NameKH": "បន្លាស្អិត",
+    "NameEN": "Banla S'et",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080303,
+    "NameKH": "សំរោង",
+    "NameEN": "Samraong",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080304,
+    "NameKH": "អន្លង់ក្ងាន",
+    "NameEN": "Anlong Kngan",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080305,
+    "NameKH": "ត្រពាំងរាំង",
+    "NameEN": "Trapeang Reang",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080306,
+    "NameKH": "សែនសុខទី១",
+    "NameEN": "Saen Sokh Ti Muoy",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080307,
+    "NameKH": "សែនសុខទី២",
+    "NameEN": "Saen Sokh Ti Pir",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080308,
+    "NameKH": "សែនសុខទី៣",
+    "NameEN": "Saen Sokh Ti Bei",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080309,
+    "NameKH": "សែនសុខទី៤",
+    "NameEN": "Saen Sokh Ti Buon",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080310,
+    "NameKH": "សែនសុខទី៥",
+    "NameEN": "Seaen Sokh Ti Pram",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080311,
+    "NameKH": "សែនសុខទី៦",
+    "NameEN": "Saen Sokh Ti Prammuoy",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080312,
+    "NameKH": "សែនសុខទី៧",
+    "NameEN": "Saen Sokh Ti Prampir",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080313,
+    "NameKH": "ត្រពាំងរាំងថ្មី",
+    "NameEN": "Trapeang Reang Thmei",
+    "CommuneCode": 120803
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080701,
+    "NameKH": "ក្រាំងអង្ក្រង",
+    "NameEN": "Krang Angkrang",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080702,
+    "NameKH": "ត្រពាំងមាន",
+    "NameEN": "Trapeang Mean",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080703,
+    "NameKH": "ជាងទង",
+    "NameEN": "Cheang Tong",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080704,
+    "NameKH": "ត្រពាំងជើងស្រុក",
+    "NameEN": "Trapeang Cheung Srok",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080705,
+    "NameKH": "ព្រៃខ្លា",
+    "NameEN": "Prey Khla",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080706,
+    "NameKH": "សំរោងទាវ",
+    "NameEN": "Samraong Teav",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080707,
+    "NameKH": "ព្រៃមូល",
+    "NameEN": "Prey Mul",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080708,
+    "NameKH": "វិមានទ្រង់",
+    "NameEN": "Vimean Trong",
+    "CommuneCode": 120807
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080801,
+    "NameKH": "អូរបែកក្អម",
+    "NameEN": "Ou Baek K'am",
+    "CommuneCode": 120808
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080802,
+    "NameKH": "ត្រពាំងឈូក",
+    "NameEN": "Trapeang Chhuk",
+    "CommuneCode": 120808
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080803,
+    "NameKH": "អ័រគីដេ",
+    "NameEN": "Orchide",
+    "CommuneCode": 120808
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080804,
+    "NameKH": "ស្លែងរលើង",
+    "NameEN": "Slaeng Roleung",
+    "CommuneCode": 120808
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080805,
+    "NameKH": "ទ្រុងមាន់",
+    "NameEN": "Trong Moan",
+    "CommuneCode": 120808
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080901,
+    "NameKH": "រោងចក្រ",
+    "NameEN": "Roung Chakr",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080902,
+    "NameKH": "រោងចក្រ១",
+    "NameEN": "Roung Chakr 1",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080903,
+    "NameKH": "ក្រុងថ្មី",
+    "NameEN": "Krong Thmey",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080904,
+    "NameKH": "ត្រពាំងស្វាយ",
+    "NameEN": "Trapeang Svay",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080905,
+    "NameKH": "ដីថ្មី",
+    "NameEN": "Dei Thmei",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080906,
+    "NameKH": "ដំណាក់",
+    "NameEN": "Damnak",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080907,
+    "NameKH": "គោកឃ្លាង",
+    "NameEN": "Kouk Khleang",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12080908,
+    "NameKH": "ច្រេស",
+    "NameEN": "Chres",
+    "CommuneCode": 120809
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090101,
+    "NameKH": "អក្សរ",
+    "NameEN": "Aksar",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090102,
+    "NameKH": "ក្រាំង",
+    "NameEN": "Krang",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090103,
+    "NameKH": "ត្រពាំងអណ្ដូង",
+    "NameEN": "Trapaang Andoung",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090104,
+    "NameKH": "ព្រៃដូនអុក",
+    "NameEN": "Prey Doun Ok",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090105,
+    "NameKH": "ត្រពាំងទា",
+    "NameEN": "Trapeang Tea",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090106,
+    "NameKH": "ត្រពាំងអញ្ចាញ",
+    "NameEN": "Trapeang Anhchanh",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090107,
+    "NameKH": "ជង្រុក",
+    "NameEN": "Chongruk",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090108,
+    "NameKH": "វាល",
+    "NameEN": "Veal",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090109,
+    "NameKH": "ខ្វែ",
+    "NameEN": "Khvae",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090110,
+    "NameKH": "ត្រពាំងក្រសាំង",
+    "NameEN": "Trapeang Krasang",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090111,
+    "NameKH": "សាមគ្គី ១",
+    "NameEN": "Sameakki 1",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090112,
+    "NameKH": "សាមគ្គី ២",
+    "NameEN": "Sameakki 2",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090113,
+    "NameKH": "សាមគ្គី ៣",
+    "NameEN": "Sameakki 3",
+    "CommuneCode": 120901
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090601,
+    "NameKH": "ចំការស្បែង",
+    "NameEN": "Chamkar Sbaeng",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090602,
+    "NameKH": "ត្រពាំងធ្នង់",
+    "NameEN": "Trapeang Thnong",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090603,
+    "NameKH": "គោកព្រេជ",
+    "NameEN": "Kouk Prich",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090604,
+    "NameKH": "តិកូបញ្ញេ",
+    "NameEN": "Tekapanhao",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090605,
+    "NameKH": "សំរោង",
+    "NameEN": "Samraong",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090606,
+    "NameKH": "ចែងម៉ែង",
+    "NameEN": "Chaeng Maeng",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090607,
+    "NameKH": "ចាក់ជ្រូក",
+    "NameEN": "Chak Chruk",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090608,
+    "NameKH": "អករំដួល",
+    "NameEN": "Ak Rumduol",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090609,
+    "NameKH": "ស្រែរាជ្ជៈ",
+    "NameEN": "Srae Reacheak",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090610,
+    "NameKH": "អណ្ដូងតាអន",
+    "NameEN": "Andoung Ta An",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12090611,
+    "NameKH": "ព្រៃពពេល",
+    "NameEN": "Prey Popel",
+    "CommuneCode": 120906
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091401,
+    "NameKH": "គោកចំបក់",
+    "NameEN": "Kouk Chambak",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091402,
+    "NameKH": "ទួលពង្រ",
+    "NameEN": "Tuol Pongro",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091403,
+    "NameKH": "ត្រពាំងរំចេក",
+    "NameEN": "Trapeang Rumchek",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091404,
+    "NameKH": "ចោមចៅ១",
+    "NameEN": "Chaom Chau 1",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091405,
+    "NameKH": "ត្រពាំងថ្លឹង១",
+    "NameEN": "Trapeang Thloeng 1",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091406,
+    "NameKH": "ត្រពាំងថ្លឹង២",
+    "NameEN": "Trapeang Thloeng 2",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091407,
+    "NameKH": "ត្រពាំងថ្លឹង៣",
+    "NameEN": "Trapeang Thloeng 3",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091408,
+    "NameKH": "ត្រពាំងថ្លឹង៤",
+    "NameEN": "Trapeang Thloeng 4",
+    "CommuneCode": 120914
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091501,
+    "NameKH": "ថ្មគោល១",
+    "NameEN": "Thma Koul 1",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091502,
+    "NameKH": "ថ្មគោល២",
+    "NameEN": "Thma Koul 2",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091503,
+    "NameKH": "ថ្មគោល៣",
+    "NameEN": "Thma Koul 3",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091504,
+    "NameKH": "ចោមចៅ២",
+    "NameEN": "Chaom Chau 2",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091505,
+    "NameKH": "ចោមចៅ៣",
+    "NameEN": "Chaom Chau 3",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091506,
+    "NameKH": "ជ្រៃកោង",
+    "NameEN": "Chrey Kaong",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091507,
+    "NameKH": "ល្វា",
+    "NameEN": "Lvea",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091508,
+    "NameKH": "ព្រៃល្ង",
+    "NameEN": "Prey Lngor",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091509,
+    "NameKH": "ព្រៃស្ពឺ",
+    "NameEN": "Prey Spueu",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091510,
+    "NameKH": "ព្រៃកំបុត",
+    "NameEN": "Prey Kambot",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091511,
+    "NameKH": "ដំណាក់ត្រយឹង",
+    "NameEN": "Damnak Trayueng",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091512,
+    "NameKH": "ស្រែជំរៅ",
+    "NameEN": "Srae Chumrov",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091513,
+    "NameKH": "កប់គង",
+    "NameEN": "Kab Kong",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091514,
+    "NameKH": "ក្រាំងដូនទៃ",
+    "NameEN": "Krang Doun Tey",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091515,
+    "NameKH": "ព្រៃសណ្ដែក",
+    "NameEN": "Prey Sandaek",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091516,
+    "NameKH": "ព្រៃព្រីងខាងត្បូង១",
+    "NameEN": "Prey Pring Khang Tboung 1",
+    "CommuneCode": 120915
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091601,
+    "NameKH": "ព្រៃទា១",
+    "NameEN": "Prey Tea 1",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091602,
+    "NameKH": "ព្រៃទា២",
+    "NameEN": "Prey Tea 2",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091603,
+    "NameKH": "ព្រៃជីសាក់",
+    "NameEN": "Prey Chi Sak",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091604,
+    "NameKH": "ត្រពាំងពោធិ៍",
+    "NameEN": "Trapeang Pou",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091605,
+    "NameKH": "ព្រៃព្រីងខាងជើង១",
+    "NameEN": "Prey Pring Khang Cheung 1",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091606,
+    "NameKH": "ព្រៃព្រីងខាងជើង២",
+    "NameEN": "Prey Pring Khang Cheung 2",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091607,
+    "NameKH": "ព្រៃព្រីងខាងត្បូង២",
+    "NameEN": "Prey Pring Khang Tboung 2",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091608,
+    "NameKH": "ថ្នល់បំបែក",
+    "NameEN": "Thnal Bambaek",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091609,
+    "NameKH": "ជម្ពូវ័ន១",
+    "NameEN": "Chumpu Voan 1",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091610,
+    "NameKH": "ជម្ពូវ័ន២",
+    "NameEN": "Chumpu Voan 2",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091611,
+    "NameKH": "ព្រៃស្វាយ",
+    "NameEN": "Prey Svay",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091612,
+    "NameKH": "អង្គកែវ",
+    "NameEN": "Angk Kaev",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091613,
+    "NameKH": "អង្គ",
+    "NameEN": "Angk",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091614,
+    "NameKH": "អូរ ដឹម",
+    "NameEN": "Ou Dem",
+    "CommuneCode": 120916
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091701,
+    "NameKH": "ក្បាលដំរី១",
+    "NameEN": "Kbal Damrei 1",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091702,
+    "NameKH": "ចំការឪឡឹក១",
+    "NameEN": "Chamkar Ovloek 1",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091703,
+    "NameKH": "តាងួន១",
+    "NameEN": "Ta Nguon 1",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091704,
+    "NameKH": "តាងួន២",
+    "NameEN": "Ta Nguon 2",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091705,
+    "NameKH": "ប៉ប្រកខាងត្បូង",
+    "NameEN": "Paprak Khang Tboung",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091706,
+    "NameKH": "ត្រពាំងល្វា១",
+    "NameEN": "Trapeang Lvea 1",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091707,
+    "NameKH": "ត្រពាំងល្វា២",
+    "NameEN": "Trapeang Lvea 2",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091708,
+    "NameKH": "ប៉ប្រកខាងជើង",
+    "NameEN": "Paprak Khang Cheung",
+    "CommuneCode": 120917
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091801,
+    "NameKH": "ក្បាលដំរី២",
+    "NameEN": "Kbal Damrei 2",
+    "CommuneCode": 120918
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091802,
+    "NameKH": "ចំការឪឡឹក២",
+    "NameEN": "Chamkar Ovloek 2",
+    "CommuneCode": 120918
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091803,
+    "NameKH": "ព្រៃសាលា",
+    "NameEN": "Prey Sala",
+    "CommuneCode": 120918
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091804,
+    "NameKH": "កាកាប",
+    "NameEN": "Kakab",
+    "CommuneCode": 120918
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12091805,
+    "NameKH": "ត្រពាំងជ្រៃ",
+    "NameEN": "Trapeang Chrey",
+    "CommuneCode": 120918
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121001
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121001
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121001
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100104,
+    "NameKH": "ដើមគរ",
+    "NameEN": "Daeum Kor",
+    "CommuneCode": 121001
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100105,
+    "NameKH": "គៀនឃ្លាំង",
+    "NameEN": "Kien Khleang",
+    "CommuneCode": 121001
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100201,
+    "NameKH": "គៀនឃ្លាំង",
+    "NameEN": "Kien Khleang",
+    "CommuneCode": 121002
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100202,
+    "NameKH": "ព្រែកលៀប",
+    "NameEN": "Preaek Lieb",
+    "CommuneCode": 121002
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100203,
+    "NameKH": "បាក់ខែង",
+    "NameEN": "Bak Khaeng",
+    "CommuneCode": 121002
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100204,
+    "NameKH": "ខ្ទរ",
+    "NameEN": "Khtor",
+    "CommuneCode": 121002
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100301,
+    "NameKH": "ព្រែកតារ័ត្ន",
+    "NameEN": "Preaek Ta Roatn",
+    "CommuneCode": 121003
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100302,
+    "NameKH": "ព្រែកតាគង់",
+    "NameEN": "Preaek Ta Kong",
+    "CommuneCode": 121003
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100303,
+    "NameKH": "ព្រែករាំង",
+    "NameEN": "Preaek Reang",
+    "CommuneCode": 121003
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100304,
+    "NameKH": "ព្រែកតាសេក",
+    "NameEN": "Preaek Ta Sek",
+    "CommuneCode": 121003
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100305,
+    "NameKH": "ដើមគរ",
+    "NameEN": "Daeum Kor",
+    "CommuneCode": 121003
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100401,
+    "NameKH": "ចុងកោះ",
+    "NameEN": "Chong Kaoh",
+    "CommuneCode": 121004
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100402,
+    "NameKH": "ល្វា",
+    "NameEN": "Lvea",
+    "CommuneCode": 121004
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100403,
+    "NameKH": "ក្បាលកោះ",
+    "NameEN": "Kbal Kaoh",
+    "CommuneCode": 121004
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100404,
+    "NameKH": "កោះដាច់",
+    "NameEN": "Kaoh Dach",
+    "CommuneCode": 121004
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100405,
+    "NameKH": "រនះ",
+    "NameEN": "Roneah",
+    "CommuneCode": 121004
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100501,
+    "NameKH": "បាក់ខែងលើ",
+    "NameEN": "Bak Khaeng Leu",
+    "CommuneCode": 121005
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100502,
+    "NameKH": "ក្ដីចាស់",
+    "NameEN": "Kdei Chas",
+    "CommuneCode": 121005
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12100503,
+    "NameKH": "ចំបក់មាស",
+    "NameEN": "Chambak Meas",
+    "CommuneCode": 121005
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110101,
+    "NameKH": "ដួង",
+    "NameEN": "Duong",
+    "CommuneCode": 121101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110102,
+    "NameKH": "ពោធិ៍មង្គល",
+    "NameEN": "Pou Mongkol",
+    "CommuneCode": 121101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110103,
+    "NameKH": "ព្រែកព្នៅ",
+    "NameEN": "Preaek Pnov",
+    "CommuneCode": 121101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110104,
+    "NameKH": "ផ្សារលិច",
+    "NameEN": "Phsar Lech",
+    "CommuneCode": 121101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110105,
+    "NameKH": "កណ្ដាល",
+    "NameEN": "Kandal",
+    "CommuneCode": 121101
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110201,
+    "NameKH": "ធំត្បូង",
+    "NameEN": "Thum Tboung",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110202,
+    "NameKH": "ធំជើង",
+    "NameEN": "Thum Cheung",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110203,
+    "NameKH": "ត្រពាំងស្នោរ",
+    "NameEN": "Trapeang Snaor",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110204,
+    "NameKH": "បឹង",
+    "NameEN": "Boeng",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110205,
+    "NameKH": "ត្រពាំងព្រីង",
+    "NameEN": "Trapeang Pring",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110206,
+    "NameKH": "ស្រែដូនតូច",
+    "NameEN": "Srae Doun Touch",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110207,
+    "NameKH": "ព្រៃពង្រ",
+    "NameEN": "Prey Pongro",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110208,
+    "NameKH": "វែង",
+    "NameEN": "Veaeng",
+    "CommuneCode": 121102
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110301,
+    "NameKH": "គ្រួស",
+    "NameEN": "Kruos",
+    "CommuneCode": 121103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110302,
+    "NameKH": "សំរោងជើង",
+    "NameEN": "Samraong Cheung",
+    "CommuneCode": 121103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110303,
+    "NameKH": "សំរោងកណ្ដាល",
+    "NameEN": "Samraong Kandal",
+    "CommuneCode": 121103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110304,
+    "NameKH": "សំរោងត្បូង",
+    "NameEN": "Samraong Tboung",
+    "CommuneCode": 121103
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110401,
+    "NameKH": "កប់ស្រូវតូច",
+    "NameEN": "Kab Srov Touch",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110402,
+    "NameKH": "កប់ស្រូវធំ",
+    "NameEN": "Kab Srov Thum",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110403,
+    "NameKH": "ស្វាយចេក",
+    "NameEN": "Svay Chek",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110404,
+    "NameKH": "បែកបក",
+    "NameEN": "Baek Bak",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110405,
+    "NameKH": "ត្រពាំងវែង",
+    "NameEN": "Trapeang Veaeng",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110406,
+    "NameKH": "ត្រពាំងពោធិ៍",
+    "NameEN": "Trapeang Pou",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110407,
+    "NameKH": "ព្រៃធំ",
+    "NameEN": "Prey Thum",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110408,
+    "NameKH": "ពុទ្រា",
+    "NameEN": "Putrea",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110409,
+    "NameKH": "ជ្រេស",
+    "NameEN": "Chres",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110410,
+    "NameKH": "ខ្មែរលើ",
+    "NameEN": "Khmer Leu",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110411,
+    "NameKH": "គោករកា",
+    "NameEN": "Kouk Roka",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110412,
+    "NameKH": "ធ្លក",
+    "NameEN": "Thlok",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110413,
+    "NameKH": "ជំរៅ",
+    "NameEN": "Chumrov",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110414,
+    "NameKH": "អណ្ដូង",
+    "NameEN": "Andoung",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110415,
+    "NameKH": "ត្រពាំងសំព័រ",
+    "NameEN": "Trapeang Sampoar",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110416,
+    "NameKH": "អង្គតាកូវ",
+    "NameEN": "Angk Ta Kov",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110417,
+    "NameKH": "ភ្លូផ្អែម",
+    "NameEN": "Phlu Ph'aem",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110418,
+    "NameKH": "ទួលសំពៅ",
+    "NameEN": "Tuol Sampov",
+    "CommuneCode": 121104
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110501,
+    "NameKH": "បួនមុខ",
+    "NameEN": "Buon Mukh",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110502,
+    "NameKH": "ត្រពាំងអំពិល",
+    "NameEN": "Trapeang Ampil",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110503,
+    "NameKH": "ស្វាយឧត្ដម",
+    "NameEN": "Svay Otdam",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110504,
+    "NameKH": "ថ្នល់បន្ទាយ",
+    "NameEN": "Thnal Banteay",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110505,
+    "NameKH": "ត្រពាំងទទឹង",
+    "NameEN": "Trapeang Totueng",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110506,
+    "NameKH": "កាន់ទ្រង់",
+    "NameEN": "KanTrong",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110507,
+    "NameKH": "ត្រពាំងរនាម",
+    "NameEN": "Trapeang Roneam",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110508,
+    "NameKH": "ដើមចាន់",
+    "NameEN": "Daeum Chan",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110509,
+    "NameKH": "បឹងប៉ិច",
+    "NameEN": "Boeng Pech",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110510,
+    "NameKH": "ឧសភា",
+    "NameEN": "Osphea",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110511,
+    "NameKH": "តាគល់",
+    "NameEN": "Ta Kol",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110512,
+    "NameKH": "ព្រៃស្វាយ",
+    "NameEN": "Prey Svay",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110513,
+    "NameKH": "កោះរងៀង",
+    "NameEN": "Kaoh Rongieng",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110514,
+    "NameKH": "ទួល",
+    "NameEN": "Tuol",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110515,
+    "NameKH": "ត្នោតខ្ពស់",
+    "NameEN": "Tnaot Khpos",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110516,
+    "NameKH": "បឹងខ្នំ",
+    "NameEN": "Boeng Khnam",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110517,
+    "NameKH": "ចុងថ្នល់",
+    "NameEN": "Chong Thnal",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110518,
+    "NameKH": "កន្លែងគល់",
+    "NameEN": "Kanlaeng Kol",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110519,
+    "NameKH": "ចំបក់ធំ",
+    "NameEN": "Chambak Thum",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110520,
+    "NameKH": "ត្រពាំងថ្លាន់",
+    "NameEN": "Trapeang Thlan",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110521,
+    "NameKH": "ត្រពាំងស្គន់",
+    "NameEN": "Trapeang Skon",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110522,
+    "NameKH": "ព្រៃស្នួល",
+    "NameEN": "Prey Snuol",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110523,
+    "NameKH": "តាស្គរ",
+    "NameEN": "Ta Skor",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12110524,
+    "NameKH": "ទួលពន្សាំង",
+    "NameEN": "Tuol Ponsang",
+    "CommuneCode": 121105
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120101,
+    "NameKH": "ព្រែក",
+    "NameEN": "Preaek",
+    "CommuneCode": 121201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120102,
+    "NameKH": "ដើមម៉ាក់ក្លឿ",
+    "NameEN": "Daeum Meakkloea",
+    "CommuneCode": 121201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120103,
+    "NameKH": "ដើមអំពិល",
+    "NameEN": "Daeum Ampil",
+    "CommuneCode": 121201
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120201,
+    "NameKH": "ដើមចាន់",
+    "NameEN": "Deum Chan",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120202,
+    "NameKH": "កណ្ដាល",
+    "NameEN": "Kandal",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120203,
+    "NameKH": "ដើមស្លែង",
+    "NameEN": "Deum Slaeng",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120204,
+    "NameKH": "ដើមចាន់១",
+    "NameEN": "Deum Chan I",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120205,
+    "NameKH": "កណ្ដាល១",
+    "NameEN": "Kandal I",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120206,
+    "NameKH": "ដើមស្លែង១",
+    "NameEN": "Deum Slaeng I",
+    "CommuneCode": 121202
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120301,
+    "NameKH": "តាងៅ",
+    "NameEN": "Ta Ngov",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120302,
+    "NameKH": "បឹងឈូក",
+    "NameEN": "Boeng Chhuk",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120303,
+    "NameKH": "ឫស្សីស្រស់",
+    "NameEN": "Ruessei Sras",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120304,
+    "NameKH": "កោះនរា",
+    "NameEN": "Kaoh Norea",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120305,
+    "NameKH": "តាងៅកណ្ដាល",
+    "NameEN": "Ta Ngov Kandal",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120306,
+    "NameKH": "តាងៅក្រោម",
+    "NameEN": "Ta Ngov Kraom",
+    "CommuneCode": 121203
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120401,
+    "NameKH": "ជ្រោយបាសាក់",
+    "NameEN": "Chrouy Basak",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120402,
+    "NameKH": "ព្រះពន្លា",
+    "NameEN": "Preah Ponlea",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120403,
+    "NameKH": "ព្រែកតាពៅ",
+    "NameEN": "Preaek Ta Pov",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120404,
+    "NameKH": "អូរអណ្ដូង",
+    "NameEN": "Ou Andoung",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120405,
+    "NameKH": "ជ្រោយបាសាក់១",
+    "NameEN": "Chrouy Basak Muoy",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120406,
+    "NameKH": "អូរអណ្ដូង១",
+    "NameEN": "Ou Andoung Muoy",
+    "CommuneCode": 121204
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120501,
+    "NameKH": "ក្ដីតាកុយ",
+    "NameEN": "Kdei Ta Koy",
+    "CommuneCode": 121205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120502,
+    "NameKH": "វាលស្បូវ",
+    "NameEN": "Veal Sbov",
+    "CommuneCode": 121205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120503,
+    "NameKH": "ស្វាយតាអុក",
+    "NameEN": "Svay Ta Ok",
+    "CommuneCode": 121205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120504,
+    "NameKH": "ព្រែកជាងព្រុំ",
+    "NameEN": "Preaek Cheang Prum",
+    "CommuneCode": 121205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120505,
+    "NameKH": "ស្វាយតាអុក ១",
+    "NameEN": "Svay Ta Ok 1",
+    "CommuneCode": 121205
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120601,
+    "NameKH": "ក្បាលជ្រោយ",
+    "NameEN": "Kbal Chrouy",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120602,
+    "NameKH": "តាព្រហ្ម",
+    "NameEN": "Ta Prum",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120603,
+    "NameKH": "មិត្ដភាព",
+    "NameEN": "Mitakpheap",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120604,
+    "NameKH": "ទួលតាចាន់",
+    "NameEN": "Tuol Ta Chan",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120605,
+    "NameKH": "ចុងព្រែក",
+    "NameEN": "Chong Preaek",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120606,
+    "NameKH": "របោះអង្កាញ់",
+    "NameEN": "Roboah Angkanh",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120607,
+    "NameKH": "មិត្ដភាព ១",
+    "NameEN": "Mitakpheap 1",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120608,
+    "NameKH": "ចុងព្រែក ១",
+    "NameEN": "Chong Preaek 1",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120609,
+    "NameKH": "របោះអង្កាញ់ ១",
+    "NameEN": "Roboah Angkanh 1",
+    "CommuneCode": 121206
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120701,
+    "NameKH": "ជ្រោយអំពិល",
+    "NameEN": "Chrouy Ampil",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120702,
+    "NameKH": "យកបាត្រ",
+    "NameEN": "Yok Bat",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120703,
+    "NameKH": "ព្រែកធំ",
+    "NameEN": "Preaek Thum",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120704,
+    "NameKH": "ជ្រោយអំពិល ១",
+    "NameEN": "Chrouy Ampil 1",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120705,
+    "NameKH": "ជ្រោយអំពិល ២",
+    "NameEN": "Chrouy Ampil 2",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120706,
+    "NameKH": "យកបាត្រ ១",
+    "NameEN": "Yok Bat 1",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120707,
+    "NameKH": "ព្រែកធំ ១",
+    "NameEN": "Preaek Thum 1",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120708,
+    "NameKH": "ព្រែកធំ ២",
+    "NameEN": "Preaek Thum 2",
+    "CommuneCode": 121207
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120801,
+    "NameKH": "ចំពុះក្អែក",
+    "NameEN": "Champuh K'aek",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120802,
+    "NameKH": "កោះក្របី",
+    "NameEN": "Kaoh Krabei",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120803,
+    "NameKH": "ព្រែកថ្មី",
+    "NameEN": "Preaek Thmei",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120804,
+    "NameKH": "ចំពុះក្អែក ១",
+    "NameEN": "Champuh K'aek 1",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120805,
+    "NameKH": "កោះក្របី ១",
+    "NameEN": "Kaoh Krabei 1",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12120806,
+    "NameKH": "ព្រែកថ្មី ១",
+    "NameEN": "Preaek Thmei 1",
+    "CommuneCode": 121208
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130101,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130102,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130103,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130104,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130105,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130106,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130107,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130108,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130109,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 121301
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130201,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130202,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130203,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130204,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130205,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130206,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130207,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130208,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130209,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 121302
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130301,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130302,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130303,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130304,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130305,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130306,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130307,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130308,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130309,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 121303
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130401,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130402,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130403,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130404,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130405,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121304
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130501,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130502,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130503,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130504,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130505,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121305
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130601,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130602,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130603,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130604,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130605,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130606,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130607,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 121306
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130701,
+    "NameKH": "ភូមិ ១",
+    "NameEN": "Phum 1",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130702,
+    "NameKH": "ភូមិ ២",
+    "NameEN": "Phum 2",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130703,
+    "NameKH": "ភូមិ ៣",
+    "NameEN": "Phum 3",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130704,
+    "NameKH": "ភូមិ ៤",
+    "NameEN": "Phum 4",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130705,
+    "NameKH": "ភូមិ ៥",
+    "NameEN": "Phum 5",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130706,
+    "NameKH": "ភូមិ ៦",
+    "NameEN": "Phum 6",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130707,
+    "NameKH": "ភូមិ ៧",
+    "NameEN": "Phum 7",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130708,
+    "NameKH": "ភូមិ ៨",
+    "NameEN": "Phum 8",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130709,
+    "NameKH": "ភូមិ ៩",
+    "NameEN": "Phum 9",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130710,
+    "NameKH": "ភូមិ ១០",
+    "NameEN": "Phum 10",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12130711,
+    "NameKH": "ភូមិ ១១",
+    "NameEN": "Phum 11",
+    "CommuneCode": 121307
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140101,
+    "NameKH": "ផ្សារកំបូល",
+    "NameEN": "Phsar Kamboul",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140102,
+    "NameKH": "តាកេរិ៍្ដ",
+    "NameEN": "Ta Ke",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140103,
+    "NameKH": "ត្រពាំងទួល",
+    "NameEN": "Trapeang Tuol",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140104,
+    "NameKH": "កំបូល",
+    "NameEN": "Kamboul",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140105,
+    "NameKH": "ទួលតាឡាត់",
+    "NameEN": "Tuol Ta Lat",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140106,
+    "NameKH": "តាភេម",
+    "NameEN": "Ta Phem",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140107,
+    "NameKH": "ព្រៃកុដិ",
+    "NameEN": "Prey Kod",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140108,
+    "NameKH": "តាសេក",
+    "NameEN": "Ta Sek",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140109,
+    "NameKH": "ទួលសាម៉",
+    "NameEN": "Tuol Sama",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140110,
+    "NameKH": "តានួន",
+    "NameEN": "Ta Nuon",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140111,
+    "NameKH": "កប់អំបិល",
+    "NameEN": "Kab Ambel",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140112,
+    "NameKH": "ស្នួលខ្ពស់",
+    "NameEN": "Snuol Khpos",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140113,
+    "NameKH": "អំពិល",
+    "NameEN": "Ampil",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140114,
+    "NameKH": "ត្រិប",
+    "NameEN": "Treb",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140115,
+    "NameKH": "សាឡូង",
+    "NameEN": "Saloung",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140116,
+    "NameKH": "ជំទាវម៉ៅ",
+    "NameEN": "Chumteav Mau",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140117,
+    "NameKH": "អង្គបឹងចក",
+    "NameEN": "Angk Boeng Chak",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140118,
+    "NameKH": "លិចវត្ដ",
+    "NameEN": "Lech Voat",
+    "CommuneCode": 121401
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140201,
+    "NameKH": "ថ្មដា",
+    "NameEN": "Thma Da",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140202,
+    "NameKH": "ត្រពាំងគល់",
+    "NameEN": "Trapeang Kol",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140203,
+    "NameKH": "ស្ងួនពេជ្រ",
+    "NameEN": "Snguon Pech",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140204,
+    "NameKH": "កន្ទោកត្បូង",
+    "NameEN": "Kantaok Tboung",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140205,
+    "NameKH": "គល់",
+    "NameEN": "Kol",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140206,
+    "NameKH": "អង្គត្រគៀត",
+    "NameEN": "Angk Trakiet",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140207,
+    "NameKH": "កន្ទោកជើង",
+    "NameEN": "Kantaok Cheung",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140208,
+    "NameKH": "ត្រពាំងឈូក",
+    "NameEN": "Trapeang Chhuk",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140209,
+    "NameKH": "ស្រែក្នុង",
+    "NameEN": "Srae Knong",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140210,
+    "NameKH": "ព្រៃបឹង",
+    "NameEN": "Prey Boeng",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140211,
+    "NameKH": "កំរៀង",
+    "NameEN": "Kamrieng",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140212,
+    "NameKH": "ដំបូកខ្ពស់",
+    "NameEN": "Dambouk Khpos",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140213,
+    "NameKH": "ត្រាំស្លឹក",
+    "NameEN": "Tram Sloek",
+    "CommuneCode": 121402
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140301,
+    "NameKH": "ព្រៃតាប៉ុក",
+    "NameEN": "Prey Ta Pok",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140302,
+    "NameKH": "ត្រពាំងកក់",
+    "NameEN": "Trapeang Kak",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140303,
+    "NameKH": "អង្គស្លែង",
+    "NameEN": "Angk Slaeng",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140304,
+    "NameKH": "ដូនរ័ត្ន",
+    "NameEN": "Doun Roatn",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140305,
+    "NameKH": "ត្រពាំងអារ័ក្ស",
+    "NameEN": "Trapeang Areaks",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140306,
+    "NameKH": "ត្រពាំងពោធិ៍",
+    "NameEN": "Trapeang Pou",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140307,
+    "NameKH": "បឹងគ្រើល",
+    "NameEN": "Boeng Kreul",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140308,
+    "NameKH": "ជ័យជំនះ",
+    "NameEN": "Chey Chumneah",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140309,
+    "NameKH": "បឹងកំបោរ",
+    "NameEN": "Boeng Kambaor",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140310,
+    "NameKH": "ត្បែងមានជ័យ",
+    "NameEN": "Tbaeng Mean Chey",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140311,
+    "NameKH": "ត្រង់នំ",
+    "NameEN": "Trang Num",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140312,
+    "NameKH": "ពង្រ",
+    "NameEN": "Pongro",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140313,
+    "NameKH": "ថ្ម",
+    "NameEN": "Thma",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140314,
+    "NameKH": "សាមគ្គីប្រយុទ្ធ",
+    "NameEN": "Sameakki Prayutth",
+    "CommuneCode": 121403
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140401,
+    "NameKH": "សាក់ប្រយុទ្ធ",
+    "NameEN": "Sak Prayutth",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140402,
+    "NameKH": "អង្គរជ័យ",
+    "NameEN": "Angkor Chey",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140403,
+    "NameKH": "ស្រែអំពិល",
+    "NameEN": "Srae Ampil",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140404,
+    "NameKH": "តាអិន",
+    "NameEN": "Ta En",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140405,
+    "NameKH": "កុលក្រស្នារ",
+    "NameEN": "Kol Krasna",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140406,
+    "NameKH": "ប្រាសាទ",
+    "NameEN": "Prasat",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140407,
+    "NameKH": "ស្វាយ",
+    "NameEN": "Svay",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140408,
+    "NameKH": "ស្នោរកើត",
+    "NameEN": "Snaor Kaeut",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140409,
+    "NameKH": "តាពូង",
+    "NameEN": "Ta Pung",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140410,
+    "NameKH": "ផ្លាំង",
+    "NameEN": "Phlang",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140411,
+    "NameKH": "ស្នោរលិច",
+    "NameEN": "Snaor Lech",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140412,
+    "NameKH": "ពង្រ",
+    "NameEN": "Pongro",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140413,
+    "NameKH": "ព្រៃរឹង",
+    "NameEN": "Prey Rueng",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140414,
+    "NameKH": "រំដួលជើង",
+    "NameEN": "Rumduol Cheung",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140415,
+    "NameKH": "រំដួលត្បូង",
+    "NameEN": "Rumduol Tboung",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140416,
+    "NameKH": "ទួលលៀប",
+    "NameEN": "Tuol Lieb",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140417,
+    "NameKH": "ព្រៃក្រាយ",
+    "NameEN": "Prey Kray",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140418,
+    "NameKH": "ព្រៃឈូក",
+    "NameEN": "Prey Chhuk",
+    "CommuneCode": 121404
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140501,
+    "NameKH": "ទួលកី",
+    "NameEN": "Tuol Kei",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140502,
+    "NameKH": "កប់ភ្លុក",
+    "NameEN": "Kab Phluk",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140503,
+    "NameKH": "ព្រៃរងៀង",
+    "NameEN": "Prey Rongieng",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140504,
+    "NameKH": "ត្រាញ់តាបាញ់",
+    "NameEN": "Tranh Tabanh",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140505,
+    "NameKH": "ភ្លើងឆេះរទេះលិច",
+    "NameEN": "Phleung Chheh Roteh Lech",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140506,
+    "NameKH": "ភ្លើងឆេះរទេះកើត",
+    "NameEN": "Phleung Chheh Roteh Keut",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140507,
+    "NameKH": "គោកខ្សាច់",
+    "NameEN": "Kouk Khsach",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140508,
+    "NameKH": "ព្រៃកី",
+    "NameEN": "Prey Kei",
+    "CommuneCode": 121405
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140601,
+    "NameKH": "ត្មាតពង",
+    "NameEN": "Tmat Pong",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140602,
+    "NameKH": "ព្រៃរមាសទី២",
+    "NameEN": "Prey Romeas Ti Pir",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140603,
+    "NameKH": "ព្រៃរមាសទី១",
+    "NameEN": "Prey Romeas Ti Muoy",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140604,
+    "NameKH": "តាជេត",
+    "NameEN": "Ta Chet",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140605,
+    "NameKH": "បឹងធំទី១",
+    "NameEN": "Boeng Thum Ti Muoy",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140606,
+    "NameKH": "បឹងធំទី២",
+    "NameEN": "Boeng Thum Ti Pir",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140607,
+    "NameKH": "បឹងធំទី៣",
+    "NameEN": "Boeng Thum Ti Bei",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140608,
+    "NameKH": "ដូនកុក",
+    "NameEN": "Doun Kok",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140609,
+    "NameKH": "ខ្ចៅ",
+    "NameEN": "Khchau",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140610,
+    "NameKH": "ក្ងោក",
+    "NameEN": "Kngaok",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140611,
+    "NameKH": "ទួលស្វាយ",
+    "NameEN": "Tuol Svay",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140612,
+    "NameKH": "ត្រពាំងក្រសាំង",
+    "NameEN": "Trapeang Krasang",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140613,
+    "NameKH": "ចំបក់ពណ្ណរាយ",
+    "NameEN": "Chambak Ponnoreay",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140614,
+    "NameKH": "ត្រពាំងត្រប់",
+    "NameEN": "Trapeang Trab",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140615,
+    "NameKH": "អន្លុងស្វាយ",
+    "NameEN": "Anlong Svay",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140616,
+    "NameKH": "ព្រៃតាកែ",
+    "NameEN": "Prey Ta Kae",
+    "CommuneCode": 121406
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140701,
+    "NameKH": "ប្រទះឡាង",
+    "NameEN": "Prateah Lang",
+    "CommuneCode": 121407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140702,
+    "NameKH": "ភា",
+    "NameEN": "Phea",
+    "CommuneCode": 121407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140703,
+    "NameKH": "អង្គ",
+    "NameEN": "Angk",
+    "CommuneCode": 121407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140704,
+    "NameKH": "តាំងរនាម",
+    "NameEN": "Tang Roneam",
+    "CommuneCode": 121407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140705,
+    "NameKH": "គោកខ្សាច់",
+    "NameEN": "Kouk Khsach",
+    "CommuneCode": 121407
+  },
+  {
+    "Type": "ភូមិ",
+    "Code": 12140706,
+    "NameKH": "គោកមាស",
+    "NameEN": "Kouk Meas",
+    "CommuneCode": 121407
+  }
+ ]

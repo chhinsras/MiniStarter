@@ -1,0 +1,940 @@
+[
+  {
+    "Type": "សង្កាត់",
+    "Code": 180101,
+    "NameKH": "លេខ១",
+    "NameEN": "lek Muoy",
+    "DistrictCode": 1801
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 180102,
+    "NameKH": "២",
+    "NameEN": "Pir",
+    "DistrictCode": 1801
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 180103,
+    "NameKH": "៣",
+    "NameEN": "Bei",
+    "DistrictCode": 1801
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 180104,
+    "NameKH": "៤",
+    "NameEN": "Buon",
+    "DistrictCode": 1801
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180201,
+    "NameKH": "អណ្ដូងថ្ម",
+    "NameEN": "Andoung Thma",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180202,
+    "NameKH": "បឹងតាព្រហ្ម",
+    "NameEN": "Boeng Ta Prum",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180203,
+    "NameKH": "បិតត្រាង",
+    "NameEN": "Bet Trang",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180204,
+    "NameKH": "ជើងគោ",
+    "NameEN": "Cheung Kou",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180205,
+    "NameKH": "អូរជ្រៅ",
+    "NameEN": "Ou Chrov",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180206,
+    "NameKH": "អូរឧកញ៉ាហេង",
+    "NameEN": "Ou Oknha Heng",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180207,
+    "NameKH": "ព្រៃនប់",
+    "NameEN": "Prey Nob",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180208,
+    "NameKH": "រាម",
+    "NameEN": "Ream",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180209,
+    "NameKH": "សាមគ្គី",
+    "NameEN": "Sameakki",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180210,
+    "NameKH": "សំរុង",
+    "NameEN": "Samrong",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180211,
+    "NameKH": "ទឹកល្អក់",
+    "NameEN": "Tuek L'ak",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180212,
+    "NameKH": "ទឹកថ្លា",
+    "NameEN": "Tuek Thla",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180213,
+    "NameKH": "ទួលទទឹង",
+    "NameEN": "Tuol Totueng",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180214,
+    "NameKH": "វាលរេញ",
+    "NameEN": "Veal Renh",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180215,
+    "NameKH": "តានៃ",
+    "NameEN": "Ta Ney",
+    "DistrictCode": 1802
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180301,
+    "NameKH": "កំពេញ",
+    "NameEN": "Kampenh",
+    "DistrictCode": 1803
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180302,
+    "NameKH": "អូរត្រេះ",
+    "NameEN": "Ou Treh",
+    "DistrictCode": 1803
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180303,
+    "NameKH": "ទំនប់រលក",
+    "NameEN": "Tumnob Rolok",
+    "DistrictCode": 1803
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180304,
+    "NameKH": "កែវផុស",
+    "NameEN": "Kaev Phos",
+    "DistrictCode": 1803
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180401,
+    "NameKH": "ចំការហ្លួង",
+    "NameEN": "Chamkar Luong",
+    "DistrictCode": 1804
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180402,
+    "NameKH": "កំពង់សីលា",
+    "NameEN": "Kampong Seila",
+    "DistrictCode": 1804
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180403,
+    "NameKH": "អូរបាក់រទេះ",
+    "NameEN": "Ou Bak Roteh",
+    "DistrictCode": 1804
+  },
+  {
+    "Type": "ឃុំ",
+    "Code": 180404,
+    "NameKH": "ស្ទឹងឆាយ",
+    "NameEN": "Stueng Chhay",
+    "DistrictCode": 1804
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 180501,
+    "NameKH": "កោះរ៉ុង",
+    "NameEN": "Kaoh Rung",
+    "DistrictCode": 1805
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 180502,
+    "NameKH": "កោះរ៉ុងសន្លឹម",
+    "NameEN": "Koah Rung Sonlem",
+    "DistrictCode": 1805
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120101,
+    "NameKH": "ទន្លេបាសាក់",
+    "NameEN": "Tonle Basak",
+    "DistrictCode": 1201
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120109,
+    "NameKH": "ទួលទំពូងទី ២",
+    "NameEN": "Tuol Tumpung Ti Pir",
+    "DistrictCode": 1201
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120110,
+    "NameKH": "ទួលទំពូងទី ១",
+    "NameEN": "Tuol Tumpung Ti Muoy",
+    "DistrictCode": 1201
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120111,
+    "NameKH": "បឹងត្របែក",
+    "NameEN": "Boeng Trabaek",
+    "DistrictCode": 1201
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120112,
+    "NameKH": "ផ្សារដើមថ្កូវ",
+    "NameEN": "Phsar Daeum Thkov",
+    "DistrictCode": 1201
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120201,
+    "NameKH": "ផ្សារថ្មីទី ១",
+    "NameEN": "Phsar Thmei Ti Muoy",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120202,
+    "NameKH": "ផ្សារថ្មីទី ២",
+    "NameEN": "Phsar Thmei Ti Pir",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120203,
+    "NameKH": "ផ្សារថ្មីទី ៣",
+    "NameEN": "Phsar Thmei Ti Bei",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120204,
+    "NameKH": "បឹងរាំង",
+    "NameEN": "Boeng Reang",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120205,
+    "NameKH": "ផ្សារកណ្ដាលទី១",
+    "NameEN": "Phsar Kandal Ti Muoy",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120206,
+    "NameKH": "ផ្សារកណ្ដាលទី២",
+    "NameEN": "Phsar Kandal Ti Pir",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120207,
+    "NameKH": "ចតុមុខ",
+    "NameEN": "Chakto Mukh",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120208,
+    "NameKH": "ជ័យជំនះ",
+    "NameEN": "Chey Chummeah",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120209,
+    "NameKH": "ផ្សារចាស់",
+    "NameEN": "Phsar Chas",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120210,
+    "NameKH": "ស្រះចក",
+    "NameEN": "Srah Chak",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120211,
+    "NameKH": "វត្ដភ្នំ",
+    "NameEN": "Voat Phnum",
+    "DistrictCode": 1202
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120301,
+    "NameKH": "អូរឫស្សីទី ១",
+    "NameEN": "Ou Ruessei Ti Muoy",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120302,
+    "NameKH": "អូរឫស្សីទី ២",
+    "NameEN": "Ou Ruessei Ti Pir",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120303,
+    "NameKH": "អូរឫស្សីទី ៣",
+    "NameEN": "Ou Ruessei Ti Bei",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120304,
+    "NameKH": "អូរឫស្សីទី ៤",
+    "NameEN": "Ou Ruessei Ti Buon",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120305,
+    "NameKH": "មនោរម្យ",
+    "NameEN": "Monourom",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120306,
+    "NameKH": "មិត្ដភាព",
+    "NameEN": "Mittapheap",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120307,
+    "NameKH": "វាលវង់",
+    "NameEN": "Veal Vong",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120308,
+    "NameKH": "បឹងព្រលឹត",
+    "NameEN": "Boeng Proluet",
+    "DistrictCode": 1203
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120401,
+    "NameKH": "ផ្សារដេប៉ូទី ១",
+    "NameEN": "Phsar Depou Ti Muoy",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120402,
+    "NameKH": "ផ្សារដេប៉ូទី ២",
+    "NameEN": "Phsar Depou Ti Pir",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120403,
+    "NameKH": "ផ្សារដេប៉ូទី ៣",
+    "NameEN": "Phsar Depou Ti Bei",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120404,
+    "NameKH": "ទឹកល្អក់ទី ១",
+    "NameEN": "Tuek L'ak Ti Muoy",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120405,
+    "NameKH": "ទឹកល្អក់ទី ២",
+    "NameEN": "Tuek L'ak Ti Pir",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120406,
+    "NameKH": "ទឹកល្អក់ទី ៣",
+    "NameEN": "Tuek L'ak Ti Bei",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120407,
+    "NameKH": "បឹងកក់ទី ១",
+    "NameEN": "Boeng Kak Ti Muoy",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120408,
+    "NameKH": "បឹងកក់ទី ២",
+    "NameEN": "Boeng Kak Ti Pir",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120409,
+    "NameKH": "ផ្សារដើមគរ",
+    "NameEN": "Phsar Daeum Kor",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120410,
+    "NameKH": "បឹងសាឡាង",
+    "NameEN": "Boeng Salang",
+    "DistrictCode": 1204
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120501,
+    "NameKH": "ដង្កោ",
+    "NameEN": "Dangkao",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120507,
+    "NameKH": "ពងទឹក",
+    "NameEN": "Pong Tuek",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120508,
+    "NameKH": "ព្រៃវែង",
+    "NameEN": "Prey Veaeng",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120510,
+    "NameKH": "ព្រៃស",
+    "NameEN": "Prey Sa",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120512,
+    "NameKH": "ក្រាំងពង្រ",
+    "NameEN": "Krang Pongro",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120514,
+    "NameKH": "សាក់សំពៅ",
+    "NameEN": "Sak Sampov",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120515,
+    "NameKH": "ជើងឯក",
+    "NameEN": "Cheung Aek",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120516,
+    "NameKH": "គងនយ",
+    "NameEN": "Kong Noy",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120517,
+    "NameKH": "ព្រែកកំពឹស",
+    "NameEN": "Preaek Kampues",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120518,
+    "NameKH": "រលួស",
+    "NameEN": "Roluos",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120519,
+    "NameKH": "ស្ពានថ្ម",
+    "NameEN": "Spean Thma",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120520,
+    "NameKH": "ទៀន",
+    "NameEN": "Tien",
+    "DistrictCode": 1205
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120606,
+    "NameKH": "ចាក់អង្រែលើ",
+    "NameEN": "Chak Angrae Leu",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120607,
+    "NameKH": "ចាក់អង្រែក្រោម",
+    "NameEN": "Chak Angrae Kraom",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120608,
+    "NameKH": "ស្ទឹងមានជ័យទី១",
+    "NameEN": "Stueng Mean chey 1",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120609,
+    "NameKH": "ស្ទឹងមានជ័យទី២",
+    "NameEN": "Stueng Mean chey 2",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120610,
+    "NameKH": "ស្ទឹងមានជ័យទី៣",
+    "NameEN": "Stueng Mean chey 3",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120611,
+    "NameKH": "បឹងទំពុនទី១",
+    "NameEN": "Boeng Tumpun 1",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120612,
+    "NameKH": "បឹងទំពុនទី២",
+    "NameEN": "Boeng Tumpun 2",
+    "DistrictCode": 1206
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120703,
+    "NameKH": "ស្វាយប៉ាក",
+    "NameEN": "Svay Pak",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120704,
+    "NameKH": "គីឡូម៉ែត្រលេខ៦",
+    "NameEN": "Kilomaetr Lekh Prammuoy",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120706,
+    "NameKH": "ឫស្សីកែវ",
+    "NameEN": "Ruessei Kaev",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120711,
+    "NameKH": "ច្រាំងចំរេះទី ១",
+    "NameEN": "Chrang Chamreh Ti Muoy",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120712,
+    "NameKH": "ច្រាំងចំរេះទី ២",
+    "NameEN": "Chrang Chamreh Ti Pir",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120713,
+    "NameKH": "ទួលសង្កែទី១",
+    "NameEN": "Tuol Sangkae 1",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120714,
+    "NameKH": "ទួលសង្កែទី២",
+    "NameEN": "Tuol Sangkae 2",
+    "DistrictCode": 1207
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120801,
+    "NameKH": "ភ្នំពេញថ្មី",
+    "NameEN": "Phnom Penh Thmei",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120802,
+    "NameKH": "ទឹកថ្លា",
+    "NameEN": "Tuek Thla",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120803,
+    "NameKH": "ឃ្មួញ",
+    "NameEN": "Khmuonh",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120807,
+    "NameKH": "ក្រាំងធ្នង់",
+    "NameEN": "Krang Thnong",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120808,
+    "NameKH": "អូរបែកក្អម",
+    "NameEN": "Ou Baek K'am",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120809,
+    "NameKH": "គោកឃ្លាង",
+    "NameEN": "Kouk Khleang",
+    "DistrictCode": 1208
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120901,
+    "NameKH": "ត្រពាំងក្រសាំង",
+    "NameEN": "Trapeang Krasang",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120906,
+    "NameKH": "សំរោងក្រោម",
+    "NameEN": "Samraong Kraom",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120914,
+    "NameKH": "ចោមចៅទី១",
+    "NameEN": "Chaom Chau 1",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120915,
+    "NameKH": "ចោមចៅទី២",
+    "NameEN": "Chaom Chau 2",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120916,
+    "NameKH": "ចោមចៅទី៣",
+    "NameEN": "Chaom Chau 3",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120917,
+    "NameKH": "កាកាបទី១",
+    "NameEN": "Kakab 1",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 120918,
+    "NameKH": "កាកាបទី២",
+    "NameEN": "Kakab 2",
+    "DistrictCode": 1209
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121001,
+    "NameKH": "ជ្រោយចង្វារ",
+    "NameEN": "Chrouy Changvar",
+    "DistrictCode": 1210
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121002,
+    "NameKH": "ព្រែកលៀប",
+    "NameEN": "Preaek Lieb",
+    "DistrictCode": 1210
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121003,
+    "NameKH": "ព្រែកតាសេក",
+    "NameEN": "Preaek Ta Sek",
+    "DistrictCode": 1210
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121004,
+    "NameKH": "កោះដាច់",
+    "NameEN": "Kaoh Dach",
+    "DistrictCode": 1210
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121005,
+    "NameKH": "បាក់ខែង",
+    "NameEN": "Bak Kaeng",
+    "DistrictCode": 1210
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121101,
+    "NameKH": "ព្រែកព្នៅ",
+    "NameEN": "Preaek Phnov",
+    "DistrictCode": 1211
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121102,
+    "NameKH": "ពញាពន់",
+    "NameEN": "Ponhea Pon",
+    "DistrictCode": 1211
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121103,
+    "NameKH": "សំរោង",
+    "NameEN": "Samraong",
+    "DistrictCode": 1211
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121104,
+    "NameKH": "គោករកា",
+    "NameEN": "Kouk Roka",
+    "DistrictCode": 1211
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121105,
+    "NameKH": "ពន្សាំង",
+    "NameEN": "Ponsang",
+    "DistrictCode": 1211
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121201,
+    "NameKH": "ច្បារអំពៅទី ១",
+    "NameEN": "Chhbar Ampov Ti Muoy",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121202,
+    "NameKH": "ច្បារអំពៅទី ២",
+    "NameEN": "Chbar Ampov Ti Pir",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121203,
+    "NameKH": "និរោធ",
+    "NameEN": "Nirouth",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121204,
+    "NameKH": "ព្រែកប្រា",
+    "NameEN": "Preaek Pra",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121205,
+    "NameKH": "វាលស្បូវ",
+    "NameEN": "Veal Sbov",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121206,
+    "NameKH": "ព្រែកឯង",
+    "NameEN": "Preaek Aeng",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121207,
+    "NameKH": "ក្បាលកោះ",
+    "NameEN": "Kbal Kaoh",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121208,
+    "NameKH": "ព្រែកថ្មី",
+    "NameEN": "Preaek Thmei",
+    "DistrictCode": 1212
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121301,
+    "NameKH": "បឹងកេងកងទី ១",
+    "NameEN": "Boeng Keng Kang Ti Muoy",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121302,
+    "NameKH": "បឹងកេងកងទី ២",
+    "NameEN": "Boeng Keng Kang Ti Pir",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121303,
+    "NameKH": "បឹងកេងកងទី ៣",
+    "NameEN": "Boeng Keng Kang Ti Bei",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121304,
+    "NameKH": "អូឡាំពិក",
+    "NameEN": "Olympic",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121305,
+    "NameKH": "ទំនប់ទឹក",
+    "NameEN": "Tumnob Tuek",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121306,
+    "NameKH": "ទួលស្វាយព្រៃទី ១",
+    "NameEN": "Tuol Svay Prey Ti Muoy",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121307,
+    "NameKH": "ទួលស្វាយព្រៃទី ២",
+    "NameEN": "Tuol Svay Prey Ti Pir",
+    "DistrictCode": 1213
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121401,
+    "NameKH": "កំបូល",
+    "NameEN": "Kamboul",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121402,
+    "NameKH": "កន្ទោក",
+    "NameEN": "Kantaok",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121403,
+    "NameKH": "ឪឡោក",
+    "NameEN": "Ovlaok",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121404,
+    "NameKH": "ស្នោរ",
+    "NameEN": "Snaor",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121405,
+    "NameKH": "ភ្លើងឆេះរទេះ",
+    "NameEN": "Phleung Chheh Roteh",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121406,
+    "NameKH": "បឹងធំ",
+    "NameEN": "Boeng Thum",
+    "DistrictCode": 1214
+  },
+  {
+    "Type": "សង្កាត់",
+    "Code": 121407,
+    "NameKH": "ប្រទះឡាង",
+    "NameEN": "Prateah Lang",
+    "DistrictCode": 1214
+  }
+]

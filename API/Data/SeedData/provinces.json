@@ -1,0 +1,152 @@
+[
+  {
+    "Type": "ខេត្ត",
+    "Code": 1,
+    "NameKH": "បន្ទាយមានជ័យ",
+    "NameEN": "Banteay Meanchey"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 2,
+    "NameKH": "បាត់ដំបង",
+    "NameEN": "Battambang"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 3,
+    "NameKH": "កំពង់ចាម",
+    "NameEN": "Kampong Cham"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 4,
+    "NameKH": "កំពង់ឆ្នាំង",
+    "NameEN": "Kampong Chhnang"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 5,
+    "NameKH": "តកំពង់ស្ពឺ",
+    "NameEN": "Kampong Speu"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 6,
+    "NameKH": "កំពង់ធំ",
+    "NameEN": "Kampong Thom"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 7,
+    "NameKH": "កំពត",
+    "NameEN": "Kampot"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 8,
+    "NameKH": "កណ្ដាល",
+    "NameEN": "Kandal"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 9,
+    "NameKH": "កោះកុង",
+    "NameEN": "Koh Kong"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 10,
+    "NameKH": "ក្រចេះ",
+    "NameEN": "Kratie"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 11,
+    "NameKH": "មណ្ឌលគិរី",
+    "NameEN": "Mondul Kiri"
+  },
+  {
+    "Type": "រាជធានី",
+    "Code": 12,
+    "NameKH": "រាជធានីភ្នំពេញ",
+    "NameEN": "Phnom Penh"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 13,
+    "NameKH": "ព្រះវិហារ",
+    "NameEN": "Preah Vihear"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 14,
+    "NameKH": "ព្រៃវែង",
+    "NameEN": "Prey Veng"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 15,
+    "NameKH": "ពោធិ៍សាត់",
+    "NameEN": "Pursat"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 16,
+    "NameKH": "រតនគិរី",
+    "NameEN": "Ratanak Kiri"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 17,
+    "NameKH": "សៀមរាប",
+    "NameEN": "Siemreap"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 18,
+    "NameKH": "ព្រះសីហនុ",
+    "NameEN": "Preah Sihanouk"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 19,
+    "NameKH": "ស្ទឹងត្រែង",
+    "NameEN": "Stung Treng"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 20,
+    "NameKH": "ស្វាយរៀង",
+    "NameEN": "Svay Rieng"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 21,
+    "NameKH": "តាកែវ",
+    "NameEN": "Takeo"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 22,
+    "NameKH": "ឧត្ដរមានជ័យ",
+    "NameEN": "Oddar Meanchey"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 23,
+    "NameKH": "កែប",
+    "NameEN": "Kep"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 24,
+    "NameKH": "ប៉ៃលិន",
+    "NameEN": "Pailin"
+  },
+  {
+    "Type": "ខេត្ត",
+    "Code": 25,
+    "NameKH": "ត្បូងឃ្មុំ",
+    "NameEN": "Tboung Khmum"
+  }
+]
