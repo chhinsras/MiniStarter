@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
+#nullable disable
+
 namespace API.Extensions;
 public static class ServiceCollectionExtensions
 {
