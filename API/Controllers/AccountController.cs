@@ -1,6 +1,3 @@
-using API.Data;
-using Microsoft.AspNetCore.Authorization;
-
 namespace API.Controllers;
 public class AccountController : BaseApiController
 {
@@ -14,6 +11,7 @@ public class AccountController : BaseApiController
         _userManager = userManager;
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {

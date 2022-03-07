@@ -16,6 +16,7 @@ public static class ServiceCollectionExtensions
             .AddSwaggerDocumentation()
             .AddDependencyInjection(configuration)
             .AddDatabase(configuration)
+            .AddPermissions(configuration)
             .AddIdentity(configuration);
         services.AddScoped<TokenService>();
         
@@ -101,6 +102,12 @@ public static class ServiceCollectionExtensions
         using var scope = services.BuildServiceProvider().CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<DataContext>();
         dbContext.Database.Migrate();
+        return services;
+    }
+    public static IServiceCollection AddPermissions(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>()
+            .AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>();
         return services;
     }
     private static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration configuration)
