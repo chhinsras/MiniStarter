@@ -27,10 +27,9 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
     {
         services
+            .Configure<MiddlewareSettings>(configuration.GetSection(nameof(MiddlewareSettings)))
             .Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)))
-            .Configure<MiddlewareSettings>(configuration.GetSection(nameof(MiddlewareSettings)));
-            
-            // .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
+            .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
         return services;
     } 
     private static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)

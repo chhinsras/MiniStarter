@@ -12,3 +12,8 @@ public class MiddlewareSettings
 {
     public bool EnableLocalization { get; set; } = false;
 }
+
+public class CorsSettings
+{
+    public string? Angular { get; set; }
+}
