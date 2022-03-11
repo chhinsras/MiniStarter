@@ -31,7 +31,6 @@ global using API.Entities;
 global using API.Extensions;
 global using API.Helpers;
 global using API.Interfaces;
-global using API.Permission;
 global using API.Middleware;
 global using API.Services;
 global using API.ViewModels;

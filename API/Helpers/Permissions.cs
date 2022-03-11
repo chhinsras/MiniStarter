@@ -1,4 +1,4 @@
-namespace API.Permission;
+namespace API.Helpers;
 public static class Permissions
 {
     #region Application
