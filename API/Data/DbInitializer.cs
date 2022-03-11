@@ -136,31 +136,6 @@ public class DbInitializer : IDatabaseSeeder
             }
         }).GetAwaiter().GetResult();
     }
-    public async Task AddUsers()
-    {
-        if (!_userManager.Users.Any())
-        {
-            var user = new User
-            {
-                UserName = "bob",
-                Email = "bob@test.com"
-            };
-
-            await _userManager.CreateAsync(user, "Pa$$w0rd");
-            await _userManager.AddToRoleAsync(user, "Member");
-
-            var admin = new User
-            {
-                UserName = "admin",
-                Email = "admin@test.com"
-            };
-
-            await _userManager.CreateAsync(admin, "Pa$$w0rd");
-            await _userManager.AddToRolesAsync(admin, new[] {"Member", "Admin"});
-        }
-
-        _context.SaveChanges();
-    }
 
     private void AddCambodiaGazetteers()
     {
