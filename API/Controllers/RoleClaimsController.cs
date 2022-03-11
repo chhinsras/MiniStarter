@@ -45,21 +45,20 @@ public class RoleClaimsController : BaseApiController
     {
         if (request.RoleId == 0)
         {
-            return NotFound(_localizer["Role is required."]);
+            return NotFound(new ProblemDetails{Title = _localizer["Role is required."]});
         }
 
         if (request.Id == 0)
         {
             var existingRoleClaim =
                 await _context.RoleClaims
-                    .SingleOrDefaultAsync(x =>
-                        x.RoleId == request.RoleId && x.ClaimType == request.Type && x.ClaimValue == request.Value);
+                    .SingleOrDefaultAsync(x => x.RoleId == request.RoleId && x.ClaimType == request.Type && x.ClaimValue == request.Value);
             if (existingRoleClaim != null)
             {
-                return BadRequest(_localizer["Similar Role Claim already exists."]);
+                return BadRequest(new ProblemDetails{Title = _localizer["Similar Role Claim already exists."]});
             }
 
-            var roleClaim = existingRoleClaim?.Adapt<RoleClaim>();
+            var roleClaim = request.Adapt<RoleClaim>();
             await _context.RoleClaims.AddAsync(roleClaim!);
             await _context.SaveChangesAsync();
             return Ok(string.Format(_localizer["Role Claim {0} created."], request.Value));

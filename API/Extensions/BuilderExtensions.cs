@@ -6,11 +6,12 @@ public static class BuilderExtensions
  public static WebApplication UsePipelineBuilder(this WebApplication app, IConfiguration config)
     {
         app.UseMiddleware<ExceptionMiddleware>();
+        
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-            app.UseDeveloperExceptionPage();
+            // app.UseDeveloperExceptionPage();
         }
         app.UseHttpsRedirection();
 

@@ -4,15 +4,12 @@ public class AccountController : BaseApiController
 {
     private readonly UserManager<User> _userManager;
     private readonly TokenService _tokenService;
-    private readonly DataContext _context;
     private readonly JwtSettings _jwtSettings;
     private readonly IStringLocalizer<AccountController> _localizer;
 
-    public AccountController(UserManager<User> userManager, 
-        TokenService tokenService, DataContext context,
+    public AccountController(UserManager<User> userManager, TokenService tokenService,
         IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
     {
-        _context = context;
         _tokenService = tokenService;
         _userManager = userManager;
         _jwtSettings = jwtSettings.Value;
@@ -24,8 +21,8 @@ public class AccountController : BaseApiController
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByNameAsync(loginDto.Username);
-        if(!user.IsActive) return Unauthorized("User Is Not Active!");
-        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized();
+        if(!user.IsActive) return Unauthorized(new ProblemDetails { Title = _localizer["account.notactive"]});
+        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized(new ProblemDetails { Title = _localizer["auth.invalidcredential"]});
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
@@ -40,7 +37,7 @@ public class AccountController : BaseApiController
         if (user is null) return Unauthorized(_localizer["auth.failed"]);
         if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
-            return Unauthorized(_localizer["identity.invalidrefreshtoken"]);
+            return Unauthorized(_localizer["account.invalidrefreshtoken"]);
         }
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
@@ -75,7 +72,6 @@ public class AccountController : BaseApiController
         else
             return HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString();
     }
-
     private async Task<UserDto> CreateUserObject(User user, string ipAddress)
     {
         var tokenResponse = await _tokenService.GenerateTokensAndUpdateUser(user, ipAddress);
@@ -93,7 +89,6 @@ public class AccountController : BaseApiController
             RefreshTokenExpiryTime = tokenResponse.RefreshTokenExpiryTime
         };
     }
-
     private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
     {
         if (string.IsNullOrEmpty(_jwtSettings.Key))
@@ -118,7 +113,7 @@ public class AccountController : BaseApiController
                 SecurityAlgorithms.HmacSha256,
                 StringComparison.InvariantCultureIgnoreCase))
         {
-            throw new Exception("identity.invalidtoken");
+            throw new Exception("account.invalidtoken");
         }
 
         return principal;
