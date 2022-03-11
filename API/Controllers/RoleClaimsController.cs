@@ -19,7 +19,7 @@ public class RoleClaimsController : BaseApiController
     }
 
     [HttpGet]
-    [Authorize(Policy = Permissions.RoleClaims.View)]
+    [MustHavePermission(Permissions.RoleClaims.View)]
     public async Task<ActionResult<List<RoleClaimDto>>> GetAllAsync()
     {
         var roleClaims = await _context.RoleClaims.AsNoTracking().ToListAsync();
@@ -29,7 +29,7 @@ public class RoleClaimsController : BaseApiController
     }
 
     [HttpGet("{roleId}")]
-    [Authorize(Policy = Permissions.RoleClaims.View)]
+    [MustHavePermission(Permissions.RoleClaims.View)]
     public async Task<ActionResult<List<RoleClaimDto>>> GetAllByRoleIdAsync([FromRoute] int roleId)
     {
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
@@ -40,7 +40,7 @@ public class RoleClaimsController : BaseApiController
     }
 
     [HttpPost]
-    [Authorize(Policy = Permissions.RoleClaims.Create)]
+    [MustHavePermission(Permissions.RoleClaims.Create)]
     public async Task<ActionResult<string>> PostAsync(RoleClaimRequest request)
     {
         if (request.RoleId == 0)
@@ -88,7 +88,7 @@ public class RoleClaimsController : BaseApiController
     }
 
     [HttpDelete("{id:int}")]
-    [Authorize(Policy = Permissions.RoleClaims.Delete)]
+    [MustHavePermission(Permissions.RoleClaims.Delete)]
     public async Task<ActionResult<string>> DeleteAsync(int id)
     {
         var existingRoleClaim = await _context.RoleClaims
