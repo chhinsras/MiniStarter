@@ -8,7 +8,7 @@ public class AuditLogsController : BaseApiController
     }
 
     [HttpGet("{userId}")]
-    public async Task<List<AuditDto>> GetMyLogsAsync(int userId)
+    public async Task<ActionResult<List<AuditDto>>> GetMyLogsAsync(int userId)
     {
          var trails = await _context.AuditTrails
             .Where(a => a.UserId == userId)

@@ -33,7 +33,7 @@ public class RoleClaimsController : BaseApiController
     public async Task<ActionResult<List<RoleClaimDto>>> GetAllByRoleIdAsync([FromRoute] int roleId)
     {
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
-        if (role == null) return NotFound(_localizer["Role Not Found"]);
+        if (role == null) return NotFound(string.Format(_localizer["entity.notfoundofvalue"], typeof(Role).Name, roleId));
         var roleClaims = await _context.RoleClaims.AsNoTracking().Where(x => x.RoleId == roleId).ToListAsync();
         var roleClaimDtos = roleClaims.Adapt<List<RoleClaimDto>>();
         return roleClaimDtos;
@@ -45,7 +45,7 @@ public class RoleClaimsController : BaseApiController
     {
         if (request.RoleId == 0)
         {
-            return NotFound(new ProblemDetails{Title = _localizer["Role is required."]});
+            return NotFound(new ProblemDetails{Title = string.Format(_localizer["entity.required"], typeof(Role).Name)});
         }
 
         if (request.Id == 0)
@@ -55,13 +55,13 @@ public class RoleClaimsController : BaseApiController
                     .SingleOrDefaultAsync(x => x.RoleId == request.RoleId && x.ClaimType == request.Type && x.ClaimValue == request.Value);
             if (existingRoleClaim != null)
             {
-                return BadRequest(new ProblemDetails{Title = _localizer["Similar Role Claim already exists."]});
+                return BadRequest(new ProblemDetails{Title = string.Format(_localizer["entity.alreadyexisted"], typeof(RoleClaim).Name)});
             }
 
             var roleClaim = request.Adapt<RoleClaim>();
             await _context.RoleClaims.AddAsync(roleClaim!);
             await _context.SaveChangesAsync();
-            return Ok(string.Format(_localizer["Role Claim {0} created."], request.Value));
+            return Ok(string.Format(_localizer["entity.alreadyexisted"], typeof(RoleClaim).Name, request.Value));
         }
         else
         {
@@ -71,7 +71,7 @@ public class RoleClaimsController : BaseApiController
                     .SingleOrDefaultAsync(x => x.Id == request.Id);
             if (existingRoleClaim == null)
             {
-                return NotFound(_localizer["Role Claim does not exist."]);
+                return NotFound(string.Format(_localizer["entity.notfound"], typeof(Role).Name));
             }
             else
             {
@@ -98,7 +98,7 @@ public class RoleClaimsController : BaseApiController
         {
             if (existingRoleClaim.Role?.Name == Roles.SuperAdmin)
             {
-                return BadRequest(string.Format(_localizer["Not allowed to delete Permissions for {0} Role."], existingRoleClaim.Role.Name));
+                return BadRequest(new ProblemDetails {Title = string.Format(_localizer["Not allowed to delete Permissions for {0} Role."], existingRoleClaim.Role.Name)});
             }
 
             _context.RoleClaims.Remove(existingRoleClaim);

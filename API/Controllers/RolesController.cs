@@ -66,7 +66,7 @@ public class RolesController : BaseApiController
         if (role == null) return NotFound(_localizer["Role Not Found"]);
         if (role.Name == Roles.Admin)
         {
-            return BadRequest(_localizer["Not allowed to modify Permissions for this Role."]);
+            return BadRequest(new ProblemDetails { Title = _localizer["Not allowed to modify Permissions for this Role."]});
         }
 
         var currentPermissions = await _roleManager.GetClaimsAsync(role);
@@ -77,9 +77,12 @@ public class RolesController : BaseApiController
             var removeResult = await _roleManager.RemoveClaimAsync(role, claim);
             if (!removeResult.Succeeded)
             {
-                return BadRequest("Update permission failed.");
-                // TODO:
-                // return BadRequest(_localizer["Update permissions failed."], removeResult.Errors.Select(e => _localizer[e.Description].ToString()).ToList());
+                foreach (var error in removeResult.Errors)
+                {
+                    ModelState.AddModelError(error.Code, _localizer[error.Description].ToString());
+                }
+
+                return ValidationProblem();
             }
         }
 
@@ -91,9 +94,12 @@ public class RolesController : BaseApiController
                 var addResult = await _roleManager.AddClaimAsync(role, new Claim(CustomClaimTypes.Permission, permission));
                 if (!addResult.Succeeded)
                 {
-                    return BadRequest("Update permission failed.");
-               
-                    // throw new InternalServerException(_localizer["Update permissions failed."], addResult.Errors.Select(e => _localizer[e.Description].ToString()).ToList());
+                     foreach (var error in addResult.Errors)
+                    {
+                        ModelState.AddModelError(error.Code, _localizer[error.Description].ToString());
+                    }
+                    
+                    return ValidationProblem();
                 }
             }
         }
@@ -128,7 +134,7 @@ public class RolesController : BaseApiController
 
             if (DefaultRoles.Contains(role.Name))
             {
-                return BadRequest(string.Format(_localizer["Not allowed to modify {0} Role."], role.Name));
+                return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to modify {0} Role."], role.Name)});
             }
 
             role.Name = request.Name;
@@ -160,7 +166,7 @@ public class RolesController : BaseApiController
 
         if (DefaultRoles.Contains(role.Name))
         {
-            return BadRequest(string.Format(_localizer["Not allowed to delete {0} Role."], role.Name));
+            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role."], role.Name)});
         }
 
         bool roleIsNotUsed = true;
@@ -180,7 +186,7 @@ public class RolesController : BaseApiController
         }
         else
         {
-            return BadRequest(string.Format(_localizer["Not allowed to delete {0} Role as it is being used."], role.Name));
+            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role as it is being used."], role.Name)});
         }
     }
 

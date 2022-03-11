@@ -6,5 +6,9 @@
     "account.invalidcredentials": "Provided Credentials are invalid.",
     "account.invalidtoken": "Invalid Token.",
     "account.invalidrefreshtoken": "Invalid Refresh Token.",
-    "entity.notfound": "{0} {1} Not Found."
+    "entity.notfound": "{0} Not Found.",
+    "entity.notfoundofvalue": "{0} {1} Not Found.",
+    "entity.required": "{0} Is Required",
+    "entity.alreadyexisted": "{0} Already Existed.",
+    "entity.created": "{0} {1} Created."
 }

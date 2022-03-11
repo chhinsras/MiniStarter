@@ -127,7 +127,7 @@ public class UsersController : BaseApiController
         bool isAdmin = await _userManager.IsInRoleAsync(user, Roles.Admin);
         if (isAdmin)
         {
-            return BadRequest(_localizer["Administrators Profile's Status cannot be toggled"]);
+            return BadRequest(new ProblemDetails { Title = _localizer["Administrators Profile's Status cannot be toggled"]});
         }
 
         user.IsActive = request.ActivateUser;
