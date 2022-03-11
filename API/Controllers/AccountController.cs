@@ -19,30 +19,25 @@ public class AccountController : BaseApiController
         _localizer = localizer;
     }
 
-    [AllowAnonymous]
     [HttpPost("login")]
+    [AllowAnonymous]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByNameAsync(loginDto.Username);
-
-        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
-            return Unauthorized();
+        if(!user.IsActive) return Unauthorized("User Is Not Active!");
+        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized();
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
 
     [HttpPost("refresh")]
     [AllowAnonymous]
-    public async Task<ActionResult<TokenResponse>> RefreshAsync(RefreshTokenRequest request)
+    public async Task<ActionResult<UserDto>> RefreshAsync(RefreshTokenRequest request)
     {
         var userPrincipal = GetPrincipalFromExpiredToken(request.Token);
         string userEmail = userPrincipal.GetEmail();
         var user = await _userManager.FindByEmailAsync(userEmail);
-        if (user is null)
-        {
-            return Unauthorized(_localizer["auth.failed"]);
-        }
-
+        if (user is null) return Unauthorized(_localizer["auth.failed"]);
         if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
             return Unauthorized(_localizer["identity.invalidrefreshtoken"]);
