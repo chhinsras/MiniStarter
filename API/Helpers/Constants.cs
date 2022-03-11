@@ -3,6 +3,10 @@ namespace API.Helpers;
 public static class CustomClaimTypes
 {
     public const string Permission = "Permission";
+    public const string Fullname = "fullName";
+    public const string ImageUrl = "imageUrl";
+    public const string IpAddress = "ipAddress";
+    public const string Expiration = "exp";
 }
 
 public static class Users

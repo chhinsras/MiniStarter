@@ -1,14 +1,22 @@
+#nullable disable
 namespace API.Controllers;
 public class AccountController : BaseApiController
 {
     private readonly UserManager<User> _userManager;
     private readonly TokenService _tokenService;
     private readonly DataContext _context;
-    public AccountController(UserManager<User> userManager, TokenService tokenService, DataContext context)
+    private readonly JwtSettings _jwtSettings;
+    private readonly IStringLocalizer<AccountController> _localizer;
+
+    public AccountController(UserManager<User> userManager, 
+        TokenService tokenService, DataContext context,
+        IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
     {
         _context = context;
         _tokenService = tokenService;
         _userManager = userManager;
+        _jwtSettings = jwtSettings.Value;
+        _localizer = localizer;
     }
 
     [AllowAnonymous]
@@ -20,11 +28,27 @@ public class AccountController : BaseApiController
         if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
             return Unauthorized();
 
-        return new UserDto
+        return Ok(await CreateUserObject(user, GenerateIPAddress()));
+    }
+
+    [HttpPost("refresh")]
+    [AllowAnonymous]
+    public async Task<ActionResult<TokenResponse>> RefreshAsync(RefreshTokenRequest request)
+    {
+        var userPrincipal = GetPrincipalFromExpiredToken(request.Token);
+        string userEmail = userPrincipal.GetEmail();
+        var user = await _userManager.FindByEmailAsync(userEmail);
+        if (user is null)
         {
-            Email = user.Email,
-            Token = await _tokenService.GenerateToken(user),
-        };
+            return Unauthorized(_localizer["auth.failed"]);
+        }
+
+        if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+        {
+            return Unauthorized(_localizer["identity.invalidrefreshtoken"]);
+        }
+
+        return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
 
     [HttpPost("register")]
@@ -49,24 +73,59 @@ public class AccountController : BaseApiController
         return StatusCode(201);
     }
 
-    [Authorize]
-    [HttpGet("currentUser")]
-    public async Task<ActionResult<UserDto>> GetCurrentUser()
-    {
-        var user = await _userManager.FindByNameAsync(User.Identity!.Name);
-
-        return new UserDto
-        {
-            Email = user.Email,
-            Token = await _tokenService.GenerateToken(user)
-        };
-    }
-
-    private string? GenerateIPAddress()
+    private string GenerateIPAddress()
     {
         if (Request.Headers.ContainsKey("X-Forwarded-For"))
             return Request.Headers["X-Forwarded-For"];
         else
             return HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString();
+    }
+
+    private async Task<UserDto> CreateUserObject(User user, string ipAddress)
+    {
+        var tokenResponse = await _tokenService.GenerateTokensAndUpdateUser(user, ipAddress);
+
+        return new UserDto
+        {
+            UserName = user.UserName,
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            ImageUrl = user.ImageUrl,
+            IsActive = user.IsActive,
+            Token = tokenResponse.Token,
+            RefreshToken = tokenResponse.RefreshToken,
+            RefreshTokenExpiryTime = tokenResponse.RefreshTokenExpiryTime
+        };
+    }
+
+    private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+    {
+        if (string.IsNullOrEmpty(_jwtSettings.Key))
+        {
+            throw new InvalidOperationException("No Key defined in JwtSettings config.");
+        }
+
+        var tokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key)),
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            RoleClaimType = ClaimTypes.Role,
+            ClockSkew = TimeSpan.Zero,
+            ValidateLifetime = false
+        };
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
+        if (securityToken is not JwtSecurityToken jwtSecurityToken ||
+            !jwtSecurityToken.Header.Alg.Equals(
+                SecurityAlgorithms.HmacSha256,
+                StringComparison.InvariantCultureIgnoreCase))
+        {
+            throw new Exception("identity.invalidtoken");
+        }
+
+        return principal;
     }
 }

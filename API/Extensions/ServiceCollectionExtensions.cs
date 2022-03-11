@@ -13,6 +13,7 @@ public static class ServiceCollectionExtensions
         services.AddLocalization();
         services
             .AddAutoMapper(Assembly.GetExecutingAssembly())
+            .AddSettings(configuration)
             .AddSwaggerDocumentation()
             .AddDependencyInjection(configuration)
             .AddDatabase(configuration)
@@ -23,6 +24,13 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)));
+            // .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
+        return services;
+    } 
     private static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
     {
         services.AddSwaggerGen(c =>
@@ -118,6 +126,8 @@ public static class ServiceCollectionExtensions
         })
             .AddRoles<Role>()
             .AddEntityFrameworkStores<DataContext>();
+        var jwtSettings = services.GetOptions<JwtSettings>(nameof(JwtSettings));
+        var key = Encoding.ASCII.GetBytes(jwtSettings.Key);
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opt =>
             {
@@ -127,14 +137,12 @@ public static class ServiceCollectionExtensions
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
-                        .GetBytes(configuration["JWTSettings:TokenKey"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
         services.AddAuthorization();
         return services;
     }
-
     public static IServiceCollection AddDependencyInjection(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -160,5 +168,16 @@ public static class ServiceCollectionExtensions
         }
 
         return services;
+    }
+
+    public static T GetOptions<T>(this IServiceCollection services, string sectionName) where T : new()
+    {
+        using var serviceProvider = services.BuildServiceProvider();
+        var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+        var section = configuration.GetSection(sectionName);
+        var options = new T();
+        section.Bind(options);
+
+        return options;
     }
 }

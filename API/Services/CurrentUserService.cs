@@ -19,7 +19,7 @@ public class CurrentUserService : ICurrentUserService
 
     public string GetUserEmail()
     {
-        return IsAuthenticated() ? _accessor.HttpContext?.User.GetUserEmail() : string.Empty;
+        return IsAuthenticated() ? _accessor.HttpContext?.User.GetEmail() : string.Empty;
     }
 
     public bool IsAuthenticated()
