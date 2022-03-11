@@ -462,6 +462,13 @@
     "ProvinceCode": 7
   },
   {
+    "Type": "ក្រុង",
+    "Code": 709,
+    "NameKH": "បូកគោ",
+    "NameEN": "Bokor",
+    "ProvinceCode": 7
+  },
+  {
     "Type": "ស្រុក",
     "Code": 801,
     "NameKH": "កណ្ដាលស្ទឹង",
@@ -1420,4 +1427,4 @@
     "NameEN": "Tboung Khmum",
     "ProvinceCode": 25
   }
-]
+ ]
