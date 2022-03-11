@@ -10,10 +10,10 @@ public static class ServiceCollectionExtensions
     {
         services.AddControllersWithViews();
         services.AddRazorPages();
-        services.AddLocalization();
         services
             .AddAutoMapper(Assembly.GetExecutingAssembly())
             .AddSettings(configuration)
+            .AddLocalization(configuration)
             .AddSwaggerDocumentation()
             .AddDependencyInjection(configuration)
             .AddDatabase(configuration)
@@ -27,7 +27,9 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
     {
         services
-            .Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)));
+            .Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)))
+            .Configure<MiddlewareSettings>(configuration.GetSection(nameof(MiddlewareSettings)));
+            
             // .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
         return services;
     } 

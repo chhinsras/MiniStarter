@@ -1,0 +1,10 @@
+{
+    "auth.failed": "ការឡុកចូលប្រព័ន្ធ Failed.",
+    "account.usernotfound": "គណនីរកមិនឃើញ",
+    "account.usernotactive": "គណនីមិនទាន់បើក សូមធ្វើការទាក់ទងអ្នកកាន់ប្រព័ន្ធ",
+    "account.emailnotconfirmed": "អុីម៉ែលមិនទាន់បញ្ជាក់",
+    "account.invalidcredentials": "គណនីមិនត្រឹមត្រូវ",
+    "account.invalidtoken": "ធូឃីន មិនត្រឹមត្រូវ",
+    "account.invalidrefreshtoken": "Refresh ធូឃីន មិនត្រឹមត្រូវ",
+    "entity.notfound": "{0} {1} រកមិនឃើញ"
+}

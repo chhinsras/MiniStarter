@@ -1,0 +1,10 @@
+{
+    "auth.failed": "Authentication Failed.",
+    "account.usernotfound": "User Not Found.",
+    "account.usernotactive": "User Not Active. Please contact the administrator.",
+    "account.emailnotconfirmed": "E-Mail not confirmed.",
+    "account.invalidcredentials": "Provided Credentials are invalid.",
+    "account.invalidtoken": "Invalid Token.",
+    "account.invalidrefreshtoken": "Invalid Refresh Token.",
+    "entity.notfound": "{0} {1} Not Found."
+}

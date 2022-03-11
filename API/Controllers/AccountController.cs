@@ -21,8 +21,8 @@ public class AccountController : BaseApiController
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByNameAsync(loginDto.Username);
-        if(!user.IsActive) return Unauthorized(new ProblemDetails { Title = _localizer["account.notactive"]});
-        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized(new ProblemDetails { Title = _localizer["auth.invalidcredential"]});
+        if(!user.IsActive) return Unauthorized(new ProblemDetails { Title = _localizer["account.usernotactive"]});
+        if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized(new ProblemDetails { Title = _localizer["account.invalidcredentials"]});
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
