@@ -32,7 +32,7 @@ public class AccountController : BaseApiController
     [AllowAnonymous]
     public async Task<ActionResult<UserDto>> RefreshAsync(RefreshTokenRequest request)
     {
-        var userPrincipal = GetPrincipalFromExpiredToken(request.Token);
+        var userPrincipal = _tokenService.GetPrincipalFromExpiredToken(request.Token);
         string userEmail = userPrincipal.GetEmail();
         var user = await _userManager.FindByEmailAsync(userEmail);
         if (user is null) return Unauthorized(_localizer["auth.failed"]);
@@ -90,34 +90,5 @@ public class AccountController : BaseApiController
             RefreshToken = tokenResponse.RefreshToken,
             RefreshTokenExpiryTime = tokenResponse.RefreshTokenExpiryTime
         };
-    }
-    private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
-    {
-        if (string.IsNullOrEmpty(_jwtSettings.Key))
-        {
-            throw new InvalidOperationException("No Key defined in JwtSettings config.");
-        }
-
-        var tokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key)),
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            RoleClaimType = ClaimTypes.Role,
-            ClockSkew = TimeSpan.Zero,
-            ValidateLifetime = false
-        };
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
-        if (securityToken is not JwtSecurityToken jwtSecurityToken ||
-            !jwtSecurityToken.Header.Alg.Equals(
-                SecurityAlgorithms.HmacSha256,
-                StringComparison.InvariantCultureIgnoreCase))
-        {
-            throw new Exception("account.invalidtoken");
-        }
-
-        return principal;
     }
 }

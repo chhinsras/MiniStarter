@@ -25,6 +25,35 @@ public class TokenService
         return new TokenResponse(token, user.RefreshToken, user.RefreshTokenExpiryTime);
     }
 
+    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
+    {
+        if (string.IsNullOrEmpty(_jwtSettings.Key))
+        {
+            throw new InvalidOperationException("No Key defined in JwtSettings config.");
+        }
+
+        var tokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key)),
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            RoleClaimType = ClaimTypes.Role,
+            ClockSkew = TimeSpan.Zero,
+            ValidateLifetime = false
+        };
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
+        if (securityToken is not JwtSecurityToken jwtSecurityToken ||
+            !jwtSecurityToken.Header.Alg.Equals(
+                SecurityAlgorithms.HmacSha256,
+                StringComparison.InvariantCultureIgnoreCase))
+        {
+            throw new Exception("account.invalidtoken");
+        }
+
+        return principal;
+    }
     private async Task<string> GenerateJwt(User user, string ipAddress) =>
         GenerateEncryptedToken(GetSigningCredentials(), await GetClaims(user, ipAddress));
 
@@ -86,5 +115,4 @@ public class TokenService
         byte[] secret = Encoding.UTF8.GetBytes(_jwtSettings.Key);
         return new SigningCredentials(new SymmetricSecurityKey(secret), SecurityAlgorithms.HmacSha256);
     }
-
 }
