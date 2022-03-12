@@ -9,7 +9,14 @@ public class InvoiceViewModel
     public string? ZipCode { get; set; }
     public string? CompanyName { get; set; }
     public string? PaymentMethod { get; set; }
-    public decimal Amount => Items.Sum(i => i.Amount);
+    public decimal Amount
+    {
+        get
+        {
+            return Items?.Count > 0 ? Items.Sum(i => i.Amount) : 0;
+        }
+    }
+
     public ICollection<InvoiceItemViewModel>? Items { get; set; }
 }
 

@@ -155,24 +155,26 @@
                     Price
                 </td>
             </tr>
-            @foreach (var item in Model?.Items)
+            @if(Model != null && Model.Items?.Count > 0)
             {
-                <tr class="item">
-                    <td>
-                        @item.Name
-                    </td>
-                
-                    <td>
-                       $@item.Amount.ToString("F2")
-                    </td>
-                </tr>
+                @foreach (var item in Model.Items)
+                {
+                    <tr class="item">
+                        <td>
+                            @item.Name
+                        </td>
+                    
+                        <td>
+                        $@item.Amount.ToString("F2")
+                        </td>
+                    </tr>
+                }
             }
-            
             <tr class="total">
                 <td></td>
                 
                 <td>
-                   Total: $@Model.Amount
+                   Total: $@Model?.Amount
                 </td>
             </tr>
         </table>
