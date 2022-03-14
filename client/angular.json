@@ -23,6 +23,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "clone-deep",
+              "core-js",
+              "raf"
+            ],
             "outputPath": "../server/API/wwwroot",
             "index": "src/index.html",
             "main": "src/main.ts",
