@@ -25,8 +25,15 @@ public class RolesController : BaseApiController
         var roles = await _roleManager.Roles.ToListAsync();
 
         var roleDtos = roles.Adapt<List<RoleDto>>();
-        roleDtos.ForEach(role => role.IsDefault = DefaultRoles.Contains(role.Name));
-
+        roleDtos.ForEach((role) =>  
+        {
+            role.IsDefault = DefaultRoles.Contains(role.Name);
+            role.Permissions = _context.RoleClaims
+                .Where(a => a.RoleId == role.Id && a.ClaimType == CustomClaimTypes.Permission)
+                .Select(c => c.ClaimValue)
+                .ToList();
+        });
+        
         return roleDtos;
     }
 
@@ -54,7 +61,7 @@ public class RolesController : BaseApiController
             .Where(a => a.RoleId == roleId && a.ClaimType == CustomClaimTypes.Permission)
             .Select(c => c.ClaimValue)
             .ToListAsync());
-            
+
         return roleDto;
     }
 
@@ -112,7 +119,7 @@ public class RolesController : BaseApiController
     [MustHavePermission(Permissions.Roles.Create)]
     public async Task<ActionResult<string>> RegisterRoleAsync(RoleRequest request)
     {
-        if (string.IsNullOrEmpty(request.Id))
+        if (request.Id == 0)
         {
             var newRole = new Role(request.Name, request.Description);
             var result = await _roleManager.CreateAsync(newRole);
@@ -129,7 +136,7 @@ public class RolesController : BaseApiController
         }
         else
         {
-            var role = await _roleManager.FindByIdAsync(request.Id);
+            var role = await _roleManager.FindByIdAsync(request.Id.ToString());
 
             if (role == null) return NotFound(_localizer["Role Not Found"]);
 
