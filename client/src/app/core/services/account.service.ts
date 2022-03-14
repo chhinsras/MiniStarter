@@ -83,7 +83,7 @@ export class AccountService {
 
   public login(values: { email: string, password: string }): Observable<User> {
     console.log(values);
-    return this.http.post(this.baseUrl + 'tokens', values)
+    return this.http.post(this.baseUrl + 'account/login', values)
       .pipe(
         tap((result: User) => {
           if (result) {
@@ -107,7 +107,7 @@ export class AccountService {
     const jwtToken = this.getStorageToken ?? '';
     const refreshToken = this.getStorageRefreshToken ?? '';
 
-    this.http.post(this.baseUrl + 'tokens/refresh', {
+    this.http.post(this.baseUrl + 'account/refresh-token', {
       'refreshToken': refreshToken,
       'token': jwtToken
     })
