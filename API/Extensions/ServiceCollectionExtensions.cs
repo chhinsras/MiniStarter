@@ -12,6 +12,7 @@ public static class ServiceCollectionExtensions
         services.AddControllersWithViews();
         services.AddRazorPages();
         services
+            .AddCorsPolicy()
             .AddAutoMapper(Assembly.GetExecutingAssembly())
             .AddSettings(configuration)
             .AddLocalization(configuration)
@@ -33,6 +34,18 @@ public static class ServiceCollectionExtensions
             .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
         return services;
     } 
+
+    public static IServiceCollection AddCorsPolicy(this IServiceCollection services)
+    {
+        var corsSettings = services.GetOptions<CorsSettings>(nameof(CorsSettings));
+        return services.AddCors(opt =>
+        {
+            opt.AddPolicy("CorsPolicy", policy =>
+            {
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(corsSettings.Angular);
+            });
+        });
+    }
     private static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
     {
         services.AddSwaggerGen(c =>
