@@ -18,4 +18,4 @@ import { CoreModule } from 'src/app/core/core.module';
     CoreModule
   ]
 })
-export class AuthModule { }
+export class AccountModule { }
