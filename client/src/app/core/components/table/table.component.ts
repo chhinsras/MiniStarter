@@ -13,14 +13,14 @@ import { TableColumn } from './table-column';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { PaginatedFilter } from 'src/app/core/models/shared/filters/paginated-filter';
 import { PageEvent } from '@angular/material/paginator';
 import { CustomAction } from './custom-action';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import * as XLSX from 'xlsx';
+// import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { PaginatedFilter } from '../../models/pagination';
 
 @Component({
   selector: 'app-table',
@@ -181,18 +181,18 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   exportAs(type: string)
   {
-    if (type == 'xlsx') {
-      const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);//converts a DOM TABLE element to a worksheet
-      const wb: XLSX.WorkBook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    // if (type == 'xlsx') {
+    //   const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);//converts a DOM TABLE element to a worksheet
+    //   const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    //   XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
-      /* save to file */
-      XLSX.writeFile(wb, `${this.title}.xlsx`);
-    } else if (type == 'csv') {
-      const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);//converts a DOM TABLE element to a worksheet
-      const csv: string = XLSX.utils.sheet_to_csv(ws);
-      FileSaver.saveAs(new Blob([csv]), `${this.title}_${new Date().getTime()}.csv`);
-    }
+    //   /* save to file */
+    //   XLSX.writeFile(wb, `${this.title}.xlsx`);
+    // } else if (type == 'csv') {
+    //   const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);//converts a DOM TABLE element to a worksheet
+    //   const csv: string = XLSX.utils.sheet_to_csv(ws);
+    //   FileSaver.saveAs(new Blob([csv]), `${this.title}_${new Date().getTime()}.csv`);
+    // }
 
   }
 

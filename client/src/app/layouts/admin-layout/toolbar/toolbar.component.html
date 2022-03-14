@@ -1,0 +1,55 @@
+<mat-toolbar color="primary" class="sticky-header">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="inputSideNav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a mat-button routerLink="/" aria-label="childprotection">
+      <img class="angular-logo" src="/assets/images/logo.png" alt="M'Lop Tapang Logo">
+      <span style="font-weight:lighter;font-size: larger;" translate>site.title</span>
+    </a>
+
+    <span class="nav-spacer"></span>
+    <button mat-raised-button routerLink="/" color="warn" class="d-none d-lg-block"><mat-icon aria-hidden="false" aria-label="Go home">home</mat-icon>
+    </button>
+
+    <a mat-icon-button (click)="toggleDarkMode()" class="d-none d-sm-block">
+      <mat-icon>{{darkModeIcon}}</mat-icon>
+    </a>
+    <mat-divider vertical style="height:50%;margin: 10px;"></mat-divider>
+    <button mat-raised-button color="accent" [matMenuTriggerFor]="userMenu">
+      <span><span style="margin-right: 10px;" class="fas fa-caret-down"></span>{{fullName}}</span>
+    </button>
+    <mat-menu #userMenu="matMenu" style="padding-top: 0!important;">
+      <mat-card style="padding-top: 16px!important;margin-bottom: 0px!important;">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title style="margin-bottom: 10px;font-size:medium">{{fullName}}</mat-card-title>
+          <mat-card-subtitle style="margin-bottom: 5px;font-size:small">{{email}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <button mat-menu-item translate routerLink="/admin/identity/profile">userCard.profile</button>
+      <button mat-menu-item routerLink="/admin/settings" translate>userCard.settings</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="openLogoutDialog()" translate>userCard.logout</button>
+    </mat-menu>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="second-toolbar">
+    <button mat-button><mat-icon style="padding-right: 5px;">store</mat-icon>Dashboard</button>
+    <button mat-button [matMenuTriggerFor]="products"><mat-icon style="padding-right: 5px;">store</mat-icon>Product</button>
+    <button mat-button [matMenuTriggerFor]="products"><mat-icon style="padding-right: 5px;">store</mat-icon>Brand</button>
+    <button mat-button [matMenuTriggerFor]="products"><mat-icon style="padding-right: 5px;">store</mat-icon>Reports</button>
+
+    <mat-menu #products="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="listProduct">List</button>
+      <button mat-menu-item [matMenuTriggerFor]="manageProduct">Manage</button>
+    </mat-menu>
+    <mat-menu #listProduct="matMenu">
+         <button mat-menu-item routerLink="/admin/catalog/products">View</button>
+    </mat-menu>
+    <mat-menu #manageProduct="matMenu">
+       <button mat-menu-item>Manage</button>
+    </mat-menu>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
