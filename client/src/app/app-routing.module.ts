@@ -5,19 +5,18 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
 import { ServerErrorComponent } from './core/components/server-error/server-error.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
-// import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-// import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AccountLayoutComponent } from './layouts/account-layout/account-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
-  // {
-  //   path: '',
-  //   component: AccountLayoutComponent,
-  //   loadChildren: () => import('./modules/account/account.module').then(mod => mod.AuthModule),
-  // },
+  {
+    path: '',
+    component: AccountLayoutComponent,
+    loadChildren: () => import('./modules/account/account.module').then(mod => mod.AuthModule),
+  },
   {
     path: 'home',
     canActivate: [AuthGuard],

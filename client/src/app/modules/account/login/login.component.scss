@@ -1,0 +1,47 @@
+mat-card {
+  margin: 5em auto;
+  text-align: center;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.mat-card-login
+{
+  max-width: 1000px!important;
+padding: 0px!important;
+}
+
+@media (max-width: 991px) {
+  .mat-card-login
+  {
+    margin: 40px;
+  }
+}
+
+.mat-card-content-login
+{
+padding: 0px!important;
+}
+
+.login-form
+{
+  padding: 40px;
+  align-self: center;
+}
+
+.login-image
+{
+  background: url('/assets/images/50124-user-profile.gif') no-repeat center #ffffff;
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 700px;
+  border: inset 130px transparent;
+  box-sizing: border-box;
+
+}
