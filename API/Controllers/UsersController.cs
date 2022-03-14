@@ -35,7 +35,7 @@ public class UsersController : BaseApiController
             .Where(u => u.Id == userId)
             .FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(_localizer["User Not Found."]);
+        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
 
         return user.Adapt<UserDto>();
     }
@@ -68,7 +68,7 @@ public class UsersController : BaseApiController
     {
         var user = await _userManager.FindByIdAsync(userId.ToString());
 
-        if (user == null) return NotFound(_localizer["User Not Found."]);
+        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
 
         var permissions = new List<PermissionDto>();
         var userRoles = await _userManager.GetRolesAsync(user);
@@ -92,7 +92,7 @@ public class UsersController : BaseApiController
 
         var user = await _userManager.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(_localizer["User Not Found."]);
+        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
 
         foreach (var userRole in request.UserRoles)
         {
@@ -122,7 +122,7 @@ public class UsersController : BaseApiController
     {
         var user = await _userManager.Users.Where(u => u.Id == request.UserId).FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(_localizer["User Not Found."]);
+        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
 
         bool isAdmin = await _userManager.IsInRoleAsync(user, Roles.Admin);
         if (isAdmin)
