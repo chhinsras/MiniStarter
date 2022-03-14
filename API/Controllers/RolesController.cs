@@ -52,8 +52,9 @@ public class RolesController : BaseApiController
   
         roleDto.Permissions = (await _context.RoleClaims
             .Where(a => a.RoleId == roleId && a.ClaimType == CustomClaimTypes.Permission)
-            .ToListAsync())
-            .Adapt<List<PermissionDto>>();
+            .Select(c => c.ClaimValue)
+            .ToListAsync());
+            
         return roleDto;
     }
 
