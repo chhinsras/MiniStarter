@@ -20,11 +20,11 @@
         </a>
         <div class="nav-subheading">
           {{'layouts.admin.accSubhead'|translate}}</div>
-        <a *appHasPermission='["Permissions.Users.View"]' mat-list-item routerLink="identity/users"
+        <a *appHasPermission='["Permissions.Users.View"]' mat-list-item routerLink="users"
           (click)="sidenav.close()">
           <mat-icon style="padding-right: 10px;">face</mat-icon> {{'layouts.admin.users'|translate}}
         </a>
-        <a *appHasPermission='["Permissions.Roles.View"]' mat-list-item routerLink="identity/roles"
+        <a *appHasPermission='["Permissions.Roles.View"]' mat-list-item routerLink="roles"
           (click)="sidenav.close()">
           <mat-icon style="padding-right: 10px;">badge</mat-icon> {{'layouts.admin.roles'|translate}}
         </a>

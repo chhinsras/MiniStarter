@@ -4,6 +4,11 @@ export class Token {
   refreshTokenExpiryTime: Date;
 }
 
+export class Login {
+  userName: string;
+  password: string;
+}
+
 export interface RefreshTokenRequest {
   token: string;
   refreshToken: string;

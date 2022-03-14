@@ -16,6 +16,7 @@ export function getPaginatedResult<T>(url, params, http: HttpClient) {
   }
 
   export function getPaginationHeaders(pageNumber: number, pageSize: number) {
+    console.log(pageNumber + ", " + pageSize);
     let params = new HttpParams();
 
     params = params.append('pageNumber', pageNumber.toString());

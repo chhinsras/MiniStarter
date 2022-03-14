@@ -1,6 +1,9 @@
+import { RefreshTokenRequest } from './../models/account';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { getPaginatedResult } from '../helpers/paginationHelper';
+import { Login } from '../models/account';
 import { Audit } from '../models/audit';
 import { Commune } from '../models/commune';
 import { District } from '../models/district';
@@ -24,6 +27,8 @@ export class AgentApiService {
   getAudits = () => this.http.get<Audit[]>(this.baseUrl + 'auditlogs');
 
   // Account
+  loginUser = (login: Login) => this.http.post(this.baseUrl + 'account/login', login);
+  refreshToken = (request: RefreshTokenRequest) => this.http.post(this.baseUrl + 'account/refresh-token', request);
   registerUser = (user: User) => this.http.post(this.baseUrl + 'account/register', user);
   // confirmEmail = (params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-email', {params: params});
   // confirmPhoneNumber =(params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-phone-number', {params: params});
@@ -31,7 +36,7 @@ export class AgentApiService {
   // resetPassword = (resetPassword: ResetPassword) => this.http.post(this.baseUrl + 'account/reset-password', resetPassword);
 
   // User
-  getUsers = (params: HttpParams) => this.http.get(this.baseUrl + 'users', {params: params});
+  getUsers = (params: HttpParams) => getPaginatedResult<User[]>(this.baseUrl + 'users', params, this.http);
   getUser = (id: string) => this.http.get<User>(this.baseUrl + 'users/' + id);
   createUser = (user: User) => this.http.post(this.baseUrl + 'users', user);
   updateUser = (user: User) => this.http.put(this.baseUrl + 'users', user);

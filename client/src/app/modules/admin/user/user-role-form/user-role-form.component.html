@@ -1,0 +1,21 @@
+<div *ngIf="!userRoles" class="d-flex justify-center p-4">
+  <mat-icon>
+    <mat-spinner diameter="20">
+    </mat-spinner>
+  </mat-icon> Loading ...
+</div>
+<div [hidden]="!userRoles">
+  <mat-dialog-content>
+    <app-table [title]="'User Roles'" [subtitle]="'Manage User Role here.'"
+      [data]="userRoles" [columns]="userRoleColumns">
+    </app-table>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" class="mb-2">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"
+      [disabled]="false" (click)="submitUserRoles()">
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>
+

@@ -1,3 +1,4 @@
+import { Login } from './../models/account';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
@@ -8,6 +9,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../models/user';
+import { AgentApiService } from '../api/agent-api.service';
 
 @Injectable()
 export class AccountService {
@@ -16,7 +18,7 @@ export class AccountService {
   private currentUserTokenSource = new BehaviorSubject<string>(this.getStorageToken);
   public currentUserToken$ = this.currentUserTokenSource.asObservable();
 
-  constructor(private http: HttpClient, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
+  constructor(public api: AgentApiService, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
   }
 
   public get getToken(): string {
@@ -81,9 +83,9 @@ export class AccountService {
     return of(currentUserToken);
   }
 
-  public login(values: { email: string, password: string }): Observable<User> {
-    console.log(values);
-    return this.http.post(this.baseUrl + 'account/login', values)
+  public login(login: Login): Observable<User> {
+    console.log(login);
+    return this.api.loginUser(login)
       .pipe(
         tap((result: User) => {
           if (result) {
@@ -106,11 +108,11 @@ export class AccountService {
   public tryRefreshingToken(): void {
     const jwtToken = this.getStorageToken ?? '';
     const refreshToken = this.getStorageRefreshToken ?? '';
-
-    this.http.post(this.baseUrl + 'account/refresh-token', {
+    const request = {
       'refreshToken': refreshToken,
       'token': jwtToken
-    })
+    }
+    this.api.refreshToken(request)
       .pipe(
         tap((result: User) => {
           if (result) {
@@ -157,11 +159,11 @@ export class AccountService {
     return decodedToken;
   }
 
-  // registerUser(user: User): Observable<string> {
-  //   return this.api
-  //     .registerUser(user)
-  //     .pipe(map((response: string) => response));
-  // }
+  registerUser(user: User): Observable<string> {
+    return this.api
+      .registerUser(user)
+      .pipe(map((response: string) => response));
+  }
 
   // confirmEmail(confirmEmailParams: ConfirmEmailParams): Observable<string> {
   //   let params = new HttpParams();
