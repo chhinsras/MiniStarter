@@ -8,6 +8,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
 import { AccountLayoutComponent } from './layouts/account-layout/account-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -29,15 +30,15 @@ const routes: Routes = [
     component: HomeLayoutComponent,
     loadChildren: () => import('./modules/home/home.module').then(mod => mod.HomeModule),
   },
-  // {
-  //   path: 'admin',
-  //   canActivate: [AuthGuard, RoleGuard],
-  //   component: AdminLayoutComponent,
-  //   loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
-  //   data: {
-  //     allowedRoles: ['SuperAdmin']
-  //   }
-  // },
+  {
+    path: 'admin',
+    canActivate: [AuthGuard, RoleGuard],
+    component: AdminLayoutComponent,
+    loadChildren: () => import('./modules/admin/admin.module').then(mod => mod.AdminModule),
+    data: {
+      allowedRoles: ['SuperAdmin']
+    }
+  },
   {
     path: 'access-denial', component: AccessDenialComponent
   },

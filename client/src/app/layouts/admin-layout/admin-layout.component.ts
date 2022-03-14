@@ -14,7 +14,7 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
 })
 export class AdminLayoutComponent implements OnInit {
 
-  title = 'AppBoilerplate';
+  title = 'MiniStarter';
   fullName: string = '';
   email: string = '';
   alertIsVisible: boolean = false;
