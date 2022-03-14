@@ -8,6 +8,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
     {
+        MapsterSettings.Configure();
         services.AddControllersWithViews();
         services.AddRazorPages();
         services
