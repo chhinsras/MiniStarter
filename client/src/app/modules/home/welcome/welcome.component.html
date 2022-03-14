@@ -1,0 +1,54 @@
+<div class="home-center-screen">
+    <div class="row">
+        <div class="col-md-12 col-xl-12">
+            <div class="c-card background-color-primary" style="color: white;">
+                <div>
+                    <h1>Hi, {{fullName}}</h1>
+                    <p style="opacity: 75%;">Welcome! Choose a Module to continue.</p>
+                    <button mat-raised-button color="accent" (click)="onClickLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xl-6 u-mr-auto">
+            <div class="c-card is-animated background-color-primary" style="color: white;">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p style="opacity: 50%;">Go to dashboard.</p>
+                    <button mat-raised-button color="accent" routerLink="/admin/dashboard">Dashboard</button>
+                </div>
+            </div>
+        </div>
+        <div *appHasRole='["Admin"]' class="col-md-6 col-xl-6 u-ml-auto">
+            <div class="c-card is-animated">
+                <div>
+                    <h1>Web Portal</h1>
+                    <p style="opacity: 50%;">Manage portal.</p>
+                    <button mat-raised-button color="primary" routerLink="/admin/">Web Portal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *appHasRole='["SuperAdmin"]' class="row " style="place-content: center;">
+        <div class="col-md-6 col-xl-6 u-ml-auto">
+            <div class="c-card is-animated">
+                <div>
+                    <h1>Changelogs</h1>
+                    <p style="opacity: 50%;">View logs.</p>
+                    <button mat-raised-button color="primary" disabled>Changelogs</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-6 u-mr-auto">
+            <div class="c-card is-animated">
+                <div>
+                    <h1>Settings</h1>
+                    <p style="opacity: 50%;">All settings here.</p>
+                    <button mat-raised-button color="primary" disabled>Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
