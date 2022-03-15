@@ -31,7 +31,6 @@ export class UserRoleFormComponent implements OnInit {
 
   getUserRoles(): void {
     this.userService.getUserRoles(this.data.id).subscribe((response) => {
-      console.log(response)
       this.userRoles = response;
     });
   }
@@ -45,9 +44,8 @@ export class UserRoleFormComponent implements OnInit {
   }
 
   submitUserRoles(): void{
-    this.userService.assignUserRoles(this.data.id, this.userRoles).subscribe((response) => {
-      this.toastr.success(response);
-      // console.log(response)
+    this.userService.assignUserRoles(this.data.id, this.userRoles).subscribe(() => {
+      this.toastr.success("User Role Updated.");
       this.dialogRef.closeAll();
     });
   }
