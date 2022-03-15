@@ -29,6 +29,13 @@
       "eventLogs": "Event Logs"
     }
   },
+  "common": {
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "yes": "Yes",
+    "no": "No",
+    "entityUpdated": "{{entity}} Updated."
+  },
   "dashboard": {
     "title": "Dashboard",
     "subtitle": "Quick Overview of your Business."
@@ -108,12 +115,6 @@
     "uploader": {
       "upload": "Upload Image"
     }
-  },
-  "common": {
-    "cancel": "Cancel",
-    "ok": "Ok",
-    "yes": "Yes",
-    "no": "No"
   },
   "social": {
     "blog": "Blog",
