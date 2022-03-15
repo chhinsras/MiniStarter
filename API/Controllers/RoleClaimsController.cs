@@ -33,7 +33,7 @@ public class RoleClaimsController : BaseApiController
     public async Task<ActionResult<List<RoleClaimDto>>> GetAllByRoleIdAsync([FromRoute] int roleId)
     {
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
-        if (role == null) return NotFound(string.Format(_localizer["entity.notfoundofvalue"], typeof(Role).Name, roleId));
+        if (role == null) return NotFound();
         var roleClaims = await _context.RoleClaims.AsNoTracking().Where(x => x.RoleId == roleId).ToListAsync();
         var roleClaimDtos = roleClaims.Adapt<List<RoleClaimDto>>();
         return roleClaimDtos;
@@ -45,7 +45,7 @@ public class RoleClaimsController : BaseApiController
     {
         if (request.RoleId == 0)
         {
-            return NotFound(new ProblemDetails{Title = string.Format(_localizer["entity.required"], typeof(Role).Name)});
+            return NotFound();
         }
 
         if (request.Id == 0)
@@ -61,7 +61,7 @@ public class RoleClaimsController : BaseApiController
             var roleClaim = request.Adapt<RoleClaim>();
             await _context.RoleClaims.AddAsync(roleClaim!);
             await _context.SaveChangesAsync();
-            return Ok(string.Format(_localizer["entity.alreadyexisted"], typeof(RoleClaim).Name, request.Value));
+            return Ok();
         }
         else
         {
@@ -71,7 +71,7 @@ public class RoleClaimsController : BaseApiController
                     .SingleOrDefaultAsync(x => x.Id == request.Id);
             if (existingRoleClaim == null)
             {
-                return NotFound(string.Format(_localizer["entity.notfound"], typeof(Role).Name));
+                return NotFound();
             }
             else
             {
@@ -82,7 +82,7 @@ public class RoleClaimsController : BaseApiController
                 existingRoleClaim.RoleId = request.RoleId;
                 _context.RoleClaims.Update(existingRoleClaim);
                 await _context.SaveChangesAsync();
-                return Ok(string.Format(_localizer["Role Claim {0} for Role {1} updated."], request.Value, existingRoleClaim.Role?.Name));
+                return Ok();
             }
         }
     }
@@ -103,11 +103,11 @@ public class RoleClaimsController : BaseApiController
 
             _context.RoleClaims.Remove(existingRoleClaim);
             await _context.SaveChangesAsync();
-            return Ok(string.Format(_localizer["Role Claim {0} for {1} Role deleted."], existingRoleClaim.ClaimValue, existingRoleClaim.Role?.Name));
+            return Ok();
         }
         else
         {
-            return NotFound(_localizer["Role Claim does not exist."]);
+            return NotFound();
         }
     }
 }

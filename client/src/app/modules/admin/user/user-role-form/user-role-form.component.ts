@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -21,7 +22,8 @@ export class UserRoleFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: User,
     private dialogRef: MatDialog,
     public userService: UserService,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    public translate: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +33,6 @@ export class UserRoleFormComponent implements OnInit {
 
   getUserRoles(): void {
     this.userService.getUserRoles(this.data.id).subscribe((response) => {
-      console.log(response)
       this.userRoles = response;
     });
   }
@@ -45,9 +46,8 @@ export class UserRoleFormComponent implements OnInit {
   }
 
   submitUserRoles(): void{
-    this.userService.assignUserRoles(this.data.id, this.userRoles).subscribe((response) => {
-      this.toastr.success(response);
-      // console.log(response)
+    this.userService.assignUserRoles(this.data.id, this.userRoles).subscribe(() => {
+      this.toastr.success(this.translate.instant('common.entityUpdated', {entity: 'User Role'}));
       this.dialogRef.closeAll();
     });
   }
