@@ -21,9 +21,9 @@ public class AccountController : BaseApiController
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByNameAsync(loginDto.Username);
-        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["account.usernotfound"]});
-        if(!user.IsActive) return Unauthorized(new ProblemDetails { Title = _localizer["account.usernotactive"]});
-        if (!await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized(new ProblemDetails { Title = _localizer["account.invalidcredentials"]});
+        if (user == null) return NotFound();
+        if(!user.IsActive) return Unauthorized();
+        if (!await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized();
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
@@ -35,10 +35,10 @@ public class AccountController : BaseApiController
         var userPrincipal = _tokenService.GetPrincipalFromExpiredToken(request.Token);
         string userEmail = userPrincipal.GetEmail();
         var user = await _userManager.FindByEmailAsync(userEmail);
-        if (user is null) return Unauthorized(_localizer["auth.failed"]);
+        if (user is null) return Unauthorized();
         if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
-            return Unauthorized(_localizer["account.invalidrefreshtoken"]);
+            return Unauthorized();
         }
 
         return Ok(await CreateUserObject(user, GenerateIPAddress()));

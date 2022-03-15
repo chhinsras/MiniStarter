@@ -35,7 +35,7 @@ public class UsersController : BaseApiController
             .Where(u => u.Id == userId)
             .FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
+        if (user == null) return NotFound();
 
         return user.Adapt<UserDto>();
     }
@@ -59,8 +59,7 @@ public class UsersController : BaseApiController
             });
         }
 
-        // return userRoles;
-        return Ok("User Roles Updated Successfully.");
+        return userRoles;
     }
 
     [HttpGet("{userId}/permissions")]
@@ -69,7 +68,7 @@ public class UsersController : BaseApiController
     {
         var user = await _userManager.FindByIdAsync(userId.ToString());
 
-        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
+        if (user == null) return NotFound();
 
         var permissions = new List<PermissionDto>();
         var userRoles = await _userManager.GetRolesAsync(user);
@@ -93,7 +92,7 @@ public class UsersController : BaseApiController
 
         var user = await _userManager.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
+        if (user == null) return NotFound();
 
         foreach (var userRole in request.UserRoles)
         {
@@ -114,9 +113,7 @@ public class UsersController : BaseApiController
             }
         }
 
-        return Ok("User Roles Updated Successfully.");
-        // var message = _localizer["User Roles Updated Successfully."];
-        // return Ok(new {messages = message});
+        return Ok();
     }
 
     [HttpPost("toggle-status")]
@@ -125,7 +122,7 @@ public class UsersController : BaseApiController
     {
         var user = await _userManager.Users.Where(u => u.Id == request.UserId).FirstOrDefaultAsync();
 
-        if (user == null) return NotFound(new ProblemDetails { Title = _localizer["User Not Found."]});
+        if (user == null) return NotFound();
 
         bool isAdmin = await _userManager.IsInRoleAsync(user, Roles.Admin);
         if (isAdmin)

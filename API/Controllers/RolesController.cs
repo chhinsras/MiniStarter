@@ -42,7 +42,7 @@ public class RolesController : BaseApiController
     public async Task<ActionResult<RoleDto>> GetByIdAsync(int roleId)
     {
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
-        if (role == null) return NotFound(_localizer["Role Not Found"]);
+        if (role == null) return NotFound();
         var roleDto = role.Adapt<RoleDto>();
         roleDto.IsDefault = DefaultRoles.Contains(role.Name);
         return roleDto;
@@ -53,7 +53,7 @@ public class RolesController : BaseApiController
     public async Task<ActionResult<RoleDto>> GetByIdWithPermissionsAsync(int roleId)
     {
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
-        if (role == null) return NotFound(_localizer["Role Not Found"]);
+        if (role == null) return NotFound();
         var roleDto = role.Adapt<RoleDto>();
         roleDto.IsDefault = DefaultRoles.Contains(role.Name);
   
@@ -71,7 +71,7 @@ public class RolesController : BaseApiController
     {
         var selectedPermissions = request.Permissions;
         var role = await _roleManager.FindByIdAsync(request.RoleId);
-        if (role == null) return NotFound(_localizer["Role Not Found"]);
+        if (role == null) return NotFound();
         if (role.Name == Roles.Admin)
         {
             return BadRequest(new ProblemDetails { Title = _localizer["Not allowed to modify Permissions for this Role."]});
@@ -112,7 +112,7 @@ public class RolesController : BaseApiController
             }
         }
 
-        return Ok(_localizer["Permissions Updated."]);
+        return Ok();
     }
 
     [HttpPost]
@@ -138,7 +138,7 @@ public class RolesController : BaseApiController
         {
             var role = await _roleManager.FindByIdAsync(request.Id.ToString());
 
-            if (role == null) return NotFound(_localizer["Role Not Found"]);
+            if (role == null) return NotFound();
 
             if (DefaultRoles.Contains(role.Name))
             {
@@ -170,7 +170,7 @@ public class RolesController : BaseApiController
     {
         var role = await _roleManager.FindByIdAsync(roleId.ToString());
 
-        if (role == null) return NotFound(_localizer["Role Not Found"]);
+        if (role == null) return NotFound();
 
         if (DefaultRoles.Contains(role.Name))
         {
