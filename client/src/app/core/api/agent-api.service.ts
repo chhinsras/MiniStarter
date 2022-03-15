@@ -2,7 +2,7 @@ import { RefreshTokenRequest } from './../models/account';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { getPaginatedResult } from '../helpers/paginationHelper';
+import { getPaginatedResponse } from '../helpers/paginationHelper';
 import { Login } from '../models/account';
 import { Audit } from '../models/audit';
 import { Commune } from '../models/commune';
@@ -36,7 +36,7 @@ export class AgentApiService {
   // resetPassword = (resetPassword: ResetPassword) => this.http.post(this.baseUrl + 'account/reset-password', resetPassword);
 
   // User
-  getUsers = (params: HttpParams) => getPaginatedResult<User[]>(this.baseUrl + 'users', params, this.http);
+  getUsers = (params: HttpParams) => getPaginatedResponse<User[]>(this.baseUrl + 'users', params, this.http);
   getUser = (id: string) => this.http.get<User>(this.baseUrl + 'users/' + id);
   createUser = (user: User) => this.http.post(this.baseUrl + 'users', user);
   updateUser = (user: User) => this.http.put(this.baseUrl + 'users', user);

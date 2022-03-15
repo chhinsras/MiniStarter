@@ -3,7 +3,7 @@
     [data]="users && users" [columns]="userColumns" (onFilter)="filter($event)"
     (onReload)="reload()" (onCreateForm)="openForm()" (onEditForm)="openForm($event)" (onSort)="sort($event)"
     (onDelete)="remove($event)"
-    [totalCount]="pagination && pagination.totalItems" [pageSize]="pagination && pagination.itemsPerPage"
+    [totalCount]="metaData && metaData.totalCount" [pageSize]="metaData && metaData.pageSize"
     (onPageChanged)="pageChanged($event)"
     [customActionOneData]="userRoleActionData" (onCustomActionOne)="openUserRolesForm($event)"
     >

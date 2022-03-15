@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AgentApiService } from '../api/agent-api.service';
-import { getPaginatedResult, getPaginationHeaders } from '../helpers/paginationHelper';
+import { getPaginatedResponse, getPaginationHeaders } from '../helpers/paginationHelper';
 import { Permission } from '../models/permission';
 import { Role, RoleParams } from '../models/role';
 
@@ -20,7 +20,7 @@ export class RoleService {
     if (roleParams.orderBy) params = params.append('orderBy', roleParams.orderBy.toString());
     params = getPaginationHeaders(roleParams.pageNumber, roleParams.pageSize);
 
-    return getPaginatedResult<Role[]>(this.baseUrl + 'roles', params, this.http)
+    return getPaginatedResponse<Role[]>(this.baseUrl + 'roles', params, this.http)
       .pipe(map(response => {
         return response;
       }))

@@ -1,4 +1,4 @@
-import { PaginatedFilter, Pagination } from './../../../core/models/pagination';
+import { PaginatedFilter, MetaData } from './../../../core/models/pagination';
 import { Component, OnInit } from "@angular/core";
 import { User, UserParams } from 'src/app/core/models/user';
 import { TableColumn } from 'src/app/core/components/table/table-column';
@@ -18,7 +18,7 @@ import { UserRoleFormComponent } from './user-role-form/user-role-form.component
 })
 export class UserComponent implements OnInit {
   users: User[];
-  pagination: Pagination;
+  metaData: MetaData;
   userColumns: TableColumn[];
   userParams = new UserParams();
   searchString: string;
@@ -40,8 +40,8 @@ export class UserComponent implements OnInit {
   getUsers(): void {
     this.userService.setUserParams(this.userParams);
     this.userService.getUsers(this.userParams).subscribe((response) => {
-      this.users = response.result;
-      this.pagination = response.pagination;
+      this.users = response.items;
+      this.metaData = response.metaData;
     });
   }
 
