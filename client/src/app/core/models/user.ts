@@ -25,13 +25,14 @@ export class UserParams implements PaginatedFilter {
 }
 
 
-export interface UserRole
-{
-  userRoles: UserRoleModel[];
-}
+// export interface UserRole
+// {
+//   userRoles: UserRoleModel[];
+// }
 
-export interface UserRoleModel {
+export interface UserRole {
   roleId: string;
   roleName: string;
-  selected: boolean;
+  description: string;
+  enabled: boolean;
 }

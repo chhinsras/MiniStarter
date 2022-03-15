@@ -59,7 +59,8 @@ public class UsersController : BaseApiController
             });
         }
 
-        return userRoles;
+        // return userRoles;
+        return Ok("User Roles Updated Successfully.");
     }
 
     [HttpGet("{userId}/permissions")]
@@ -113,7 +114,9 @@ public class UsersController : BaseApiController
             }
         }
 
-        return Ok(_localizer["User Roles Updated Successfully."]);
+        return Ok("User Roles Updated Successfully.");
+        // var message = _localizer["User Roles Updated Successfully."];
+        // return Ok(new {messages = message});
     }
 
     [HttpPost("toggle-status")]

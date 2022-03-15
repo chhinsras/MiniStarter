@@ -41,8 +41,8 @@ export class AgentApiService {
   createUser = (user: User) => this.http.post(this.baseUrl + 'users', user);
   updateUser = (user: User) => this.http.put(this.baseUrl + 'users', user);
   deleteUser = (id: string) => this.http.delete(this.baseUrl + 'users/' + id);
-  getUserRoles = (id: string) => this.http.get(this.baseUrl + `users/roles/${id}`);
-  updateUserRoles = (id: string, request: UserRole) => this.http.put(this.baseUrl + `users/roles/${id}`, request);
+  getUserRoles = (id: string) => this.http.get(this.baseUrl + `users/${id}/roles`);
+  assignUserRoles = (id: string, request: UserRole[]) => this.http.post(this.baseUrl + `users/${id}/roles`, {userRole: request});
 
   // Role
   getRoles = (params: HttpParams) => this.http.get(this.baseUrl + 'roles', {params: params});

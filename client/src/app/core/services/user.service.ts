@@ -59,15 +59,15 @@ export class UserService {
       .pipe(map((response: string) => response));
   }
 
-  getUserRoles(id: string): Observable<UserRole> {
+  getUserRoles(id: string): Observable<UserRole[]> {
     return this.api
       .getUserRoles(id)
-      .pipe(map((response: UserRole) => response));
+      .pipe(map((response: UserRole[]) => response));
   }
 
-  updateUserRoles(id: string, request: UserRole): Observable<string> {
+  assignUserRoles(id: string, request: UserRole[]): Observable<string> {
     return this.api
-      .updateUserRoles(id, request)
+      .assignUserRoles(id, request)
       .pipe(map((response: string) => response));
   }
 }
