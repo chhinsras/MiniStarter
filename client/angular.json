@@ -28,7 +28,7 @@
               "core-js",
               "raf"
             ],
-            "outputPath": "../server/API/wwwroot",
+            "outputPath": "../API/wwwroot",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
