@@ -3,12 +3,13 @@ import { map } from 'rxjs/operators';
 import { PaginatedResponse } from '../models/pagination';
 
 export function getPaginatedResponse<T>(url, params, http: HttpClient) {
-    let paginatedResponse: PaginatedResponse<T>;
+    var paginatedResponse: PaginatedResponse<T> = new PaginatedResponse<T>();
     return http.get<T>(url, { observe: 'response', params }).pipe(
       map(response => {
         paginatedResponse.items = response.body;
-        if (response.headers.get('Pagination') !== null) {
-          paginatedResponse.metaData = JSON.parse(response.headers.get('Pagination'));
+        const pagination = response.headers['Pagination'];
+        if (pagination) {
+          paginatedResponse.metaData = JSON.parse(pagination);
         }
         return paginatedResponse;
       })
