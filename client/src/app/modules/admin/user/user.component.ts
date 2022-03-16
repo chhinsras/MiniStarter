@@ -66,17 +66,6 @@ export class UserComponent implements OnInit {
     this.getUsers();
   }
 
-  openForm(user?: User): void {
-    const dialogRef = this.dialog.open(UserFormComponent, {
-      data: user,
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.getUsers();
-      }
-    });
-  }
-
   remove($event: string): void {
     this.userService.deleteUser($event).subscribe(() => {
       this.getUsers();
@@ -100,6 +89,18 @@ export class UserComponent implements OnInit {
   reload(): void {
     this.userParams = this.userService.resetUserParams();
     this.getUsers();
+  }
+
+  openForm(user?: User): void {
+    const dialogRef = this.dialog.open(UserFormComponent, {
+      data: user,
+      panelClass: 'mat-dialog-container-no-padding'
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getUsers();
+      }
+    });
   }
 
   openUserRolesForm(user: User): void {

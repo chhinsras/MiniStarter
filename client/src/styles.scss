@@ -138,6 +138,10 @@ table {
   }
 }
 
+.panel-content {
+  padding: 24px;
+}
+
 .left {
     float: left;
 }
@@ -152,7 +156,7 @@ table {
 }
 
 .module-card {
-    padding-top: 32px!important;
+    padding-top: 0px !important;
 }
 
 .mat-list-item {
@@ -201,6 +205,16 @@ table {
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+}
+
+.second-toolbar {
+  background: white;
+  color: black;
+}
+
+.dark-theme .second-toolbar {
+  background-color: #424242 !important;
+  color: white;
 }
 
 .u-ml-auto {

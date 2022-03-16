@@ -22,6 +22,7 @@ import { RoleService } from './services/role.service';
 import { GazetteerService } from './services/gazetteer.service';
 import { AuditService } from './services/audit.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CardHeaderComponent } from './components/card-header/card-header.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     HasRoleDirective,
     DeleteDialogComponent,
     LogoutDialogComponent,
-    UploaderComponent
+    UploaderComponent,
+    CardHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -65,7 +67,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     HasRoleDirective,
     UploaderComponent,
     GoogleMapsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    CardHeaderComponent
   ],
 })
 export class CoreModule { }

@@ -1,5 +1,5 @@
-<h2 mat-dialog-title>{{ formTitle }}</h2>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<app-card-header [title]="'User Role'"></app-card-header>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="panel-content">
   <mat-dialog-content class="mat-typography" style="width: auto;">
     <div class="row">
         <input formControlName="id" type="hidden">

@@ -3,51 +3,51 @@
         <mat-card-title class="khmer-moul">
             {{ title | translate }}
         </mat-card-title>
-        <mat-card-subtitle>{{ subtitle | translate }}</mat-card-subtitle>
+        <!-- <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle> -->
     </mat-card-header>
-    <div style="margin: 0 26px 0 16px">
-        <div class="left">
-            <span class="mr-2">
-              <a *ngIf="onCreateForm.observers.length>0" mat-raised-button color="primary" (click)="openCreateForm()">
-                <mat-icon>add</mat-icon> {{'components.table.register'|translate}}
-              </a>
-              <a class="mr-6" *ngIf="onReload.observers.length>0" mat-raised-button color="accent" (click)="handleReload()">
-                  <mat-icon>refresh</mat-icon>{{'components.table.reload'|translate}}
-              </a>
-            </span>
-            <span class="ml-2">
-              <a *ngIf="enablePrint" mat-raised-button color="primary" (click)="handleReload()">
-                <mat-icon >print</mat-icon> {{'components.table.print'|translate}}
-              </a>
-                <a *ngIf="enableExportExcel" mat-raised-button color="primary" (click)="exportAs('xlsx')">
-                  <mat-icon>calculate</mat-icon> {{'components.table.excel'|translate}}
-              </a>
-              <a *ngIf="enableExportPDF" mat-raised-button color="primary" (click)="openPDF()">
-                <mat-icon>picture_as_pdf</mat-icon> {{'components.table.pdf'|translate}}
-              </a>
-              <a *ngIf="enableExportCSV" mat-raised-button color="primary" (click)="exportAs('csv')">
-                <mat-icon>code</mat-icon> {{'components.table.csv'|translate}}
-              </a>
-              <button *ngIf="enableCopyToClipboard" mat-raised-button color="primary" [cdkCopyToClipboard]="copyToClipboard" (mouseup)="copyData()" type="button">
-                <mat-icon>content_copy</mat-icon> {{'components.table.copyTable'|translate}}
-              </button>
-              <a *ngIf="enableShowColumns" mat-raised-button color="primary" (click)="handleReload()">
-                <mat-icon>list</mat-icon> {{'components.table.show'|translate}}
-              </a>
-            </span>
-        </div>
-        <div *ngIf="customActionData" class="right">
-          <a mat-raised-button color="{{customActionData.color}}" (click)="handleCustomAction()">
-            <mat-icon>{{customActionData.icon}}</mat-icon> {{ customActionData.title }}
-          </a>
-        </div>
-        <div *ngIf="onFilter.observers.length>0" class="right">
-            <mat-form-field>
-                <input matInput [(ngModel)]="searchString" name="searchString" type="text" autocomplete="off"
-                    (keyup)="handleFilter()" placeholder="{{'components.table.filter'|translate}} {{ title | translate}}" />
-            </mat-form-field>
-        </div>
-    </div>
+    <div class="panel-content">
+      <div class="left">
+          <span class="mr-2">
+            <a *ngIf="onCreateForm.observers.length>0" mat-raised-button color="primary" (click)="openCreateForm()">
+              <mat-icon>add</mat-icon> {{'components.table.register'|translate}}
+            </a>
+            <a class="mr-6" *ngIf="onReload.observers.length>0" mat-raised-button color="accent" (click)="handleReload()">
+                <mat-icon>refresh</mat-icon>{{'components.table.reload'|translate}}
+            </a>
+          </span>
+          <span class="ml-2">
+            <a *ngIf="enablePrint" mat-raised-button color="primary" (click)="handleReload()">
+              <mat-icon >print</mat-icon> {{'components.table.print'|translate}}
+            </a>
+              <a *ngIf="enableExportExcel" mat-raised-button color="primary" (click)="exportAs('xlsx')">
+                <mat-icon>calculate</mat-icon> {{'components.table.excel'|translate}}
+            </a>
+            <a *ngIf="enableExportPDF" mat-raised-button color="primary" (click)="openPDF()">
+              <mat-icon>picture_as_pdf</mat-icon> {{'components.table.pdf'|translate}}
+            </a>
+            <a *ngIf="enableExportCSV" mat-raised-button color="primary" (click)="exportAs('csv')">
+              <mat-icon>code</mat-icon> {{'components.table.csv'|translate}}
+            </a>
+            <button *ngIf="enableCopyToClipboard" mat-raised-button color="primary" [cdkCopyToClipboard]="copyToClipboard" (mouseup)="copyData()" type="button">
+              <mat-icon>content_copy</mat-icon> {{'components.table.copyTable'|translate}}
+            </button>
+            <a *ngIf="enableShowColumns" mat-raised-button color="primary" (click)="handleReload()">
+              <mat-icon>list</mat-icon> {{'components.table.show'|translate}}
+            </a>
+          </span>
+      </div>
+      <div *ngIf="customActionData" class="right">
+        <a mat-raised-button color="{{customActionData.color}}" (click)="handleCustomAction()">
+          <mat-icon>{{customActionData.icon}}</mat-icon> {{ customActionData.title }}
+        </a>
+      </div>
+      <div *ngIf="onFilter.observers.length>0" class="right">
+          <mat-form-field>
+              <input matInput [(ngModel)]="searchString" name="searchString" type="text" autocomplete="off"
+                  (keyup)="handleFilter()" placeholder="{{'components.table.filter'|translate}} {{ title | translate}}" />
+          </mat-form-field>
+      </div>
+  </div>
     <!-- Table -->
     <div id="htmlData" #TABLE>
       <table #table fixedLayout="true" mat-table mat-table-stripped [dataSource]="tableDataSource" matSort
