@@ -1,11 +1,15 @@
 <mat-card class="module-card" style="margin-bottom: 0px!important;padding-bottom: 4px!important;">
-    <mat-card-header>
+    <!-- <mat-card-header>
         <mat-card-title class="khmer-moul">
             {{ title | translate }}
         </mat-card-title>
-        <!-- <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle> -->
-    </mat-card-header>
-    <div class="panel-content">
+        <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle>
+    </mat-card-header> -->
+    <div
+      *ngIf="onReload.observers.length || onCreateForm.observers.length ||
+            enablePrint || enableExportExcel || enableExportPDF || enableExportCSV || enableCopyToClipboard || enableShowColumns ||
+            customActionData || onFilter.observers.length>0"
+      class="panel-content">
       <div class="left">
           <span class="mr-2">
             <a *ngIf="onCreateForm.observers.length>0" mat-raised-button color="primary" (click)="openCreateForm()">

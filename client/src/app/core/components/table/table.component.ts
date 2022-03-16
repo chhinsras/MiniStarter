@@ -43,8 +43,8 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, { static: true }) matSort: MatSort;
 
-  @Input() title: string;
-  @Input() subtitle: string;
+  @Input() title: string = 'Title';
+  @Input() subtitle: string = 'Subtitle';
 
   @Input() isSortable = false;
   @Input() columns: TableColumn[];

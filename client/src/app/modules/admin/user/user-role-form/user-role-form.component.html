@@ -5,6 +5,7 @@
   </mat-icon> Loading ...
 </div>
 <div [hidden]="!userRoles">
+  <app-card-header [title]="'User Role'"></app-card-header>
   <mat-dialog-content>
     <app-table [title]="'User Roles'" [subtitle]="'Manage User Role here.'"
       [data]="userRoles" [columns]="userRoleColumns">

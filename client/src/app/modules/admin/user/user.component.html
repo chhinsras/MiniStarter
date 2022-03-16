@@ -1,5 +1,6 @@
 <div [hidden]="!users">
-  <app-table [title]="'Users'" [subtitle]="'Manage, Register, Update or Remove Users here.'"
+  <app-page-header [title]="'Users'" [subtitle]="'Manage, Register, Update or Remove Users here.'"></app-page-header>
+  <app-table
     [data]="users && users" [columns]="userColumns" (onFilter)="filter($event)"
     (onReload)="reload()" (onCreateForm)="openForm()" (onEditForm)="openForm($event)" (onSort)="sort($event)"
     (onDelete)="remove($event)"

@@ -23,6 +23,7 @@ import { GazetteerService } from './services/gazetteer.service';
 import { AuditService } from './services/audit.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CardHeaderComponent } from './components/card-header/card-header.compon
     DeleteDialogComponent,
     LogoutDialogComponent,
     UploaderComponent,
-    CardHeaderComponent
+    CardHeaderComponent,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -68,7 +70,8 @@ import { CardHeaderComponent } from './components/card-header/card-header.compon
     UploaderComponent,
     GoogleMapsModule,
     NgxChartsModule,
-    CardHeaderComponent
+    CardHeaderComponent,
+    PageHeaderComponent
   ],
 })
 export class CoreModule { }

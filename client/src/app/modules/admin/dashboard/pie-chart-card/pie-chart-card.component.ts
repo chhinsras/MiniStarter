@@ -18,7 +18,7 @@ export class PieChartCardComponent implements OnInit {
   legendPosition: string = 'right';
 
   colorScheme = {
-    domain: ['#3f51b5', '#7aa3e5', '#aae3f5', '#AAAAAA']
+    domain: ['#009688', '#7aa3e5', '#aae3f5', '#AAAAAA']
   };
 
   constructor() {

@@ -13,7 +13,7 @@ export class NumberCardComponent implements OnInit {
   colorScheme = {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
-  cardColor: string = '#3f51b5';
+  cardColor: string = '#009688';
 
   constructor() {
     Object.assign(this, { single });
