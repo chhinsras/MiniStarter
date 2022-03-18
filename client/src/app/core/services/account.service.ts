@@ -13,8 +13,6 @@ import { AgentApiService } from '../api/agent-api.service';
 
 @Injectable()
 export class AccountService {
-
-  private baseUrl = environment.apiUrl;
   private currentUserTokenSource = new BehaviorSubject<string>(this.getStorageToken);
   public currentUserToken$ = this.currentUserTokenSource.asObservable();
 
