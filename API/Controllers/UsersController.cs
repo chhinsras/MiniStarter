@@ -85,6 +85,31 @@ public class UsersController : BaseApiController
         return permissions.Distinct().ToList();
     }
 
+    [HttpPut]
+    [MustHavePermission(Permissions.Users.Update)]
+    public async Task<ActionResult> UpdateUser(UserDetailDto userToUpdateDto)
+    {
+        var user = await _userManager.FindByIdAsync(userToUpdateDto.Id.ToString());
+        if (user == null) return NotFound();
+        userToUpdateDto.Adapt(user);
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to update user"});
+        return Ok();
+    }
+
+    [HttpPost("force-reset-password")]
+    [MustHavePermission(Permissions.Users.Update)]
+    public async Task<ActionResult> ForceResetPasasword(ForceResetPassword forceResetPassword)
+    {
+        if(forceResetPassword.Password != forceResetPassword.ConfirmPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
+        var user = await _userManager.FindByIdAsync(forceResetPassword.Id.ToString());
+        if (user == null) return NotFound();
+        // this can't be undone
+        await _userManager.RemovePasswordAsync(user);
+        await _userManager.AddPasswordAsync(user, forceResetPassword.Password);
+        return Ok();
+    }
+
     [HttpPost("{userId}/roles")]
     public async Task<ActionResult<string>> AssignRolesAsync(int userId, UserRolesRequest request)
     {
