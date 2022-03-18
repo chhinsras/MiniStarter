@@ -94,6 +94,7 @@ export class UserComponent implements OnInit {
   openForm(user?: User): void {
     const dialogRef = this.dialog.open(UserFormComponent, {
       data: user,
+      width: '50vw',
       panelClass: 'mat-dialog-container-no-padding'
     });
     dialogRef.afterClosed().subscribe((result) => {

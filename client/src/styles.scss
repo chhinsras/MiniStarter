@@ -275,6 +275,11 @@ table {
   }
 }
 
+.full-screen-modal .mat-dialog-container {
+  max-width: none;
+}
+
+
 .center-div {
   display: flex;
   justify-content: center;
