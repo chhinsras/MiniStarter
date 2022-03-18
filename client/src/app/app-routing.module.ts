@@ -1,4 +1,4 @@
-import { AboutComponent } from './modules/about/about.component';
+import { AboutComponent } from './modules/admin/about/about.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccessDenialComponent } from './core/components/access-denial/access-denial.component';
@@ -18,11 +18,6 @@ const routes: Routes = [
     path: '',
     component: AccountLayoutComponent,
     loadChildren: () => import('./modules/account/account.module').then(mod => mod.AccountModule),
-  },
-  {
-    path: 'about',
-    component: AboutComponent,
-    loadChildren: () => import('./modules/about/about.module').then(mod => mod.AboutModule),
   },
   {
     path: 'home',

@@ -48,6 +48,7 @@ mat-card-noshadow {
 }
 
 mat-card-header {
+  align-items: center;
   background: mat-color($app-primary)!important;
   border-bottom: 5px solid mat-color($app-primary, 200)!important;;
   // height: 50px;
