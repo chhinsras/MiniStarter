@@ -32,7 +32,7 @@ export class UserFormComponent implements OnInit {
       phoneNumber: [this.data && this.data.phoneNumber, Validators.required]
     })
     if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
-      this.formTitle = "Register User";
+      this.formTitle = "Add User";
     }
     else {
       this.formTitle = "Edit User";

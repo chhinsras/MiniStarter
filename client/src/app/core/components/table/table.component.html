@@ -128,11 +128,11 @@
                             (click)="openViewForm(element)">
                             <mat-icon>remove_red_eye</mat-icon>
                         </button>
-                        <button *ngIf="onEditForm.observers.length>0" matTooltip="{{'kidNetworks.table.edit' | translate}}" mat-raised-button color="accent"
+                        <button *ngIf="onEditForm.observers.length>0" matTooltip="{{'components.table.edit' | translate}}" mat-raised-button color="accent"
                             (click)="openEditForm(element)">
                             <mat-icon>mode_edit</mat-icon>
                         </button>
-                        <button *ngIf="onDelete.observers.length>0" matTooltip="{{'kidNetworks.table.delete' | translate}}" mat-raised-button color="danger"
+                        <button *ngIf="onDelete.observers.length>0" matTooltip="{{'components.table.delete' | translate}}" mat-raised-button color="danger"
                             (click)="openDeleteConfirmationDialog(element.id)">
                             <mat-icon>delete</mat-icon>
                         </button>
