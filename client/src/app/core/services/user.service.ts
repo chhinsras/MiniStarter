@@ -25,9 +25,7 @@ export class UserService {
   }
 
   resetUserParams() {
-    this.userParams.searchString = '';
-    this.userParams.pageNumber = 0;
-    this.userParams.pageSize = 0;
+    this.userParams = new UserParams();
     return this.userParams;
   }
 
@@ -39,6 +37,7 @@ export class UserService {
 
     return this.api.getUsers(params)
       .pipe(map(response => {
+        console.log(response);
         return response;
       }));
   }

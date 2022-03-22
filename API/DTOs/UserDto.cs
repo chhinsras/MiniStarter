@@ -1,7 +1,11 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace API.DTOs
 {
+    public class UserParams : PaginationParams
+    {
+        public string? OrderBy { get; set; }
+        public string? SearchTerm { get; set; }
+    }
+
     public class UserDto
     {
         public int Id { get; set; }

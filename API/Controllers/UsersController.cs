@@ -18,7 +18,7 @@ public class UsersController : BaseApiController
         _context = context;
     }
 
-    [HttpGet]
+    [HttpGet("all")]
     [MustHavePermission(Permissions.Users.View)]
     public async Task<ActionResult<List<UserDto>>> GetAllAsync() =>
         (await _userManager.Users
@@ -26,6 +26,20 @@ public class UsersController : BaseApiController
                 .ToListAsync())
                 .Adapt<List<UserDto>>();
 
+    [HttpGet]
+    [MustHavePermission(Permissions.Users.View)]
+    public async Task<ActionResult<List<UserDto>>> GetPagedAsync([FromQuery] UserParams userParams) {
+        var query = _userManager.Users
+            .Sort(userParams.OrderBy!)
+            .Search(userParams.SearchTerm!)
+            .AsQueryable();
+
+        var users = await PagedList<User>.ToPagedList(query, userParams.PageNumber, userParams.PageSize);
+        Response.AddPaginationHeader(users.MetaData);
+
+        return users.Adapt<List<UserDto>>();
+    }
+        
     [HttpGet("{userId}")]
     [MustHavePermission(Permissions.Users.View)]
     public async Task<ActionResult<UserDto>> GetByIdAsync(int userId)
