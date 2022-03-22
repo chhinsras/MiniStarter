@@ -8,7 +8,7 @@ export class Audit {
   timestamp: string;
   oldValues: string;
   newValues: string;
-  AffectedColumns: string;
+  affectedColumns: string;
   primaryKey: string;
 }
 
