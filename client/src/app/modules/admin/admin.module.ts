@@ -1,3 +1,4 @@
+import { TestErrorsComponent } from './test-errors/test-errors.component';
 import { AboutComponent } from './about/about.component';
 import { PieChartCardComponent } from './dashboard/pie-chart-card/pie-chart-card.component';
 import { NumberCardComponent } from './dashboard/number-card/number-card.component';
@@ -14,6 +15,7 @@ import { UserRoleFormComponent } from './user/user-role-form/user-role-form.comp
 
 @NgModule({
   declarations: [
+    TestErrorsComponent,
     AboutComponent,
     DashboardComponent,
     NumberCardComponent,
