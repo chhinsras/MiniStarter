@@ -67,6 +67,27 @@ public class AccountController : BaseApiController
         return StatusCode(201);
     }
 
+    [HttpGet("confirm-email")]
+    [AllowAnonymous]
+    public Task<string> ConfirmEmailAsync([FromQuery] string userId, [FromQuery] string code)
+    {
+        throw new NotImplementedException();
+    }
+
+    [HttpGet("confirm-phone-number")]
+    [AllowAnonymous]
+    public Task<string> ConfirmPhoneNumberAsync([FromQuery] string userId, [FromQuery] string code)
+    {
+        throw new NotImplementedException();
+    }
+
+    [HttpGet("forgot-password")]
+    [AllowAnonymous]
+    public Task<string> ForgotPasswordAsync([FromQuery] string userId, [FromQuery] string code)
+    {
+        throw new NotImplementedException();
+    }
+
     private string GenerateIPAddress()=>
         Request.Headers.ContainsKey("X-Forwarded-For")
             ? Request.Headers["X-Forwarded-For"]

@@ -174,4 +174,14 @@ public class UsersController : BaseApiController
         
         return Ok(identityResult);
     }
+
+    [HttpGet("logs")]
+    [Authorize]
+    public Task<List<AuditDto>> GetLogsAsync()
+    {
+        // get last 250 logs of logined user
+        throw new NotImplementedException();
+    }
+
+    private string GetOriginFromRequest() => $"{Request.Scheme}://{Request.Host.Value}{Request.PathBase.Value}";
 }

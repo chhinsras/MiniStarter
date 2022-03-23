@@ -66,6 +66,7 @@ public static class Permissions
     #region Reports
     public static class Reports
     {
+        public const string Dashboard = "Permission.Reports.Dashboard";
         public const string Invoice = "Permissions.Reports.Invoice";
     }
     #endregion
