@@ -7,6 +7,11 @@ public class AuditableEntity : BaseEntity, ISoftDelete
     public DateTime? LastModifiedOn { get; set; }
     public string? DeletedBy { get; set; }
     public DateTime? DeletedOn { get; set; }
+    protected AuditableEntity()
+    {
+        CreatedOn = DateTime.UtcNow;
+        LastModifiedOn = DateTime.UtcNow;
+    }
 }
 
 public class BaseEntity
