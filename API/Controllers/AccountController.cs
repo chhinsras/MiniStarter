@@ -5,10 +5,10 @@ public class AccountController : BaseApiController
     private readonly UserManager<User> _userManager;
     private readonly TokenService _tokenService;
     private readonly JwtSettings _jwtSettings;
-    private readonly IStringLocalizer<AccountController> _localizer;
+    private readonly IStringLocalizer _localizer;
 
     public AccountController(UserManager<User> userManager, TokenService tokenService,
-        IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
+        IOptions<JwtSettings> jwtSettings, IStringLocalizer localizer)
     {
         _tokenService = tokenService;
         _userManager = userManager;
@@ -36,11 +36,8 @@ public class AccountController : BaseApiController
         string userEmail = userPrincipal.GetEmail();
         var user = await _userManager.FindByEmailAsync(userEmail);
         if (user is null) return Unauthorized();
-        if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
-        {
-            return Unauthorized();
-        }
-
+        if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow) return Unauthorized();
+        
         return Ok(await CreateUserObject(user, GenerateIPAddress()));
     }
 

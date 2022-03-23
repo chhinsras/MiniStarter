@@ -3,13 +3,13 @@ public class UsersController : BaseApiController
 {
     private readonly UserManager<User> _userManager;
     private readonly RoleManager<Role> _roleManager;
-    private readonly IStringLocalizer<UsersController> _localizer;
+    private readonly IStringLocalizer _localizer;
     private readonly DataContext _context;
 
     public UsersController(
         UserManager<User> userManager,
         RoleManager<Role> roleManager,
-        IStringLocalizer<UsersController> localizer,
+        IStringLocalizer localizer,
         DataContext context)
     {
         _userManager = userManager;
@@ -111,9 +111,9 @@ public class UsersController : BaseApiController
         return Ok();
     }
 
-    [HttpPost("force-reset-password")]
+    [HttpPost("force-change-password")]
     [MustHavePermission(Permissions.Users.Update)]
-    public async Task<ActionResult> ForceResetPasasword(ForceResetPassword forceResetPassword)
+    public async Task<ActionResult> ForceChangePasasword(ForceChangePassword forceResetPassword)
     {
         if(forceResetPassword.Password != forceResetPassword.ConfirmPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
         var user = await _userManager.FindByIdAsync(forceResetPassword.Id.ToString());

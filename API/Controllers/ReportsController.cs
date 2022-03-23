@@ -10,13 +10,7 @@ public class ReportsController : BaseApiController
     }
 
     #region Reports Endpoints
-
-    [HttpGet("test")]
-    public ActionResult Test()
-    {
-        return Ok("work");
-    }
-
+    
     [HttpGet("InvoiceTemplate")]
     // [MustHavePermission(Permissions.Reports.Invoice)]
     public async Task<ActionResult> InvoiceReport()

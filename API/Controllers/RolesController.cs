@@ -3,13 +3,13 @@ public class RolesController : BaseApiController
 {
     private readonly UserManager<User> _userManager;
     private readonly RoleManager<Role> _roleManager;
-    private readonly IStringLocalizer<RolesController> _localizer;
+    private readonly IStringLocalizer _localizer;
     private readonly DataContext _context;
 
     public RolesController(
         UserManager<User> userManager,
         RoleManager<Role> roleManager,
-        IStringLocalizer<RolesController> localizer,
+        IStringLocalizer localizer,
         DataContext context)
     {
         _userManager = userManager;
