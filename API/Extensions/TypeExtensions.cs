@@ -1,6 +1,6 @@
 #nullable disable
-namespace API.Helpers;
-public static class TypeUtilities
+namespace API.Extensions;
+public static class TypeExtensions
 {
     public static List<T> GetAllPublicConstantValues<T>(this Type type)
     {
