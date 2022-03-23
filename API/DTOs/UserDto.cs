@@ -32,17 +32,8 @@ namespace API.DTOs
         public bool IsActive { get; set; } 
     }
 
-    public class ForceChangePassword
-    {
-        [Required] public int Id { get; set; }
-        [Required] public string? Password { get; set; }
-        [Required] public string? ConfirmPassword { get; set; }
-    }
-    public class ToggleUserStatusRequest
-    {
-        public bool ActivateUser { get; set; }
-        public int UserId { get; set; }
-    }
+    public record ForceChangePassword([Required] int Id, [Required] string Password, [Required] string ConfirmPassword);
+    public record ToggleUserStatusRequest([Required] bool ActivateUser, [Required] int UserId);
 
     
 }
