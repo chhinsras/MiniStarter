@@ -67,13 +67,11 @@ public class AccountController : BaseApiController
         return StatusCode(201);
     }
 
-    private string GenerateIPAddress()
-    {
-        if (Request.Headers.ContainsKey("X-Forwarded-For"))
-            return Request.Headers["X-Forwarded-For"];
-        else
-            return HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString();
-    }
+    private string GenerateIPAddress()=>
+        Request.Headers.ContainsKey("X-Forwarded-For")
+            ? Request.Headers["X-Forwarded-For"]
+            : HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString() ?? "N/A";
+    
     private async Task<UserDto> CreateUserObject(User user, string ipAddress)
     {
         var tokenResponse = await _tokenService.GenerateTokensAndUpdateUser(user, ipAddress);
