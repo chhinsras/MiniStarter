@@ -8,7 +8,7 @@ public class AccountController : BaseApiController
     private readonly IStringLocalizer _localizer;
 
     public AccountController(UserManager<User> userManager, TokenService tokenService,
-        IOptions<JwtSettings> jwtSettings, IStringLocalizer localizer)
+        IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
     {
         _tokenService = tokenService;
         _userManager = userManager;

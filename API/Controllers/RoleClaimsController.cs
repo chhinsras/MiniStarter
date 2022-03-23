@@ -9,7 +9,7 @@ public class RoleClaimsController : BaseApiController
     public RoleClaimsController(
         UserManager<User> userManager,
         RoleManager<Role> roleManager,
-        IStringLocalizer localizer,
+        IStringLocalizer<RoleClaimsController> localizer,
         DataContext context)
     {
         _userManager = userManager;
