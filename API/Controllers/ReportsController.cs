@@ -6,10 +6,24 @@ public class ReportsController : BaseApiController
 {
     private readonly ITemplateService _templateService;
     private readonly DataContext _context;
+    private PdfOptions pdfOptions;
     public ReportsController(ITemplateService templateService, DataContext context)
     {
         _context = context;
         _templateService = templateService;
+        pdfOptions = new PdfOptions
+        {
+            Format = PaperFormat.A4,
+            DisplayHeaderFooter = true,
+            MarginOptions = new MarginOptions
+            {
+                Top = "20px",
+                Right = "20px",
+                Bottom = "60px",
+                Left = "20px"
+            },
+            FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
+        };
     }
 
     #region Reports Endpoints
@@ -22,29 +36,7 @@ public class ReportsController : BaseApiController
         var items = await _context.Districts.ToListAsync();
         var model = new TableViewModel(items.Adapt<List<DistrictDto>>());
         var html = await _templateService.RenderAsync(Reports.TableReport, model);
-        await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
-        {
-            Headless = true,
-            ExecutablePath = PuppeteerExtensions.ExecutablePath
-        });
-        await using var page = await browser.NewPageAsync();
-        await page.EmulateMediaTypeAsync(MediaType.Screen);
-        await page.SetContentAsync(html);
-        var pdfContent = await page.PdfStreamAsync(new PdfOptions
-        {
-            Format = PaperFormat.A4,
-            DisplayHeaderFooter = true,
-            MarginOptions = new MarginOptions
-            {
-                Top = "20px",
-                Right = "20px",
-                Bottom = "60px",
-                Left = "20px"
-            },
-            FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
-        });
-
-        return File(pdfContent, "application/pdf", $"Table-{DateTime.Now}.pdf");
+        return File(await GeneratePdfContent(html), "application/pdf", $"Table-{DateTime.Now}.pdf");
     }
 
 
@@ -69,6 +61,12 @@ public class ReportsController : BaseApiController
             }
         };
         var html = await _templateService.RenderAsync(Reports.InvoiceReport, model);
+       
+        return File(await GeneratePdfContent(html), "application/pdf", $"Invoice-{DateTime.Now}.pdf");
+    }
+
+    private async Task<Stream> GeneratePdfContent(string html) 
+    {
         await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
         {
             Headless = true,
@@ -77,21 +75,9 @@ public class ReportsController : BaseApiController
         await using var page = await browser.NewPageAsync();
         await page.EmulateMediaTypeAsync(MediaType.Screen);
         await page.SetContentAsync(html);
-        var pdfContent = await page.PdfStreamAsync(new PdfOptions
-        {
-            Format = PaperFormat.A4,
-            DisplayHeaderFooter = true,
-            MarginOptions = new MarginOptions
-            {
-                Top = "20px",
-                Right = "20px",
-                Bottom = "60px",
-                Left = "20px"
-            },
-            FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
-        });
+        var pdfContent = await page.PdfStreamAsync(pdfOptions);
 
-        return File(pdfContent, "application/pdf", $"Invoice-{DateTime.Now}.pdf");
+        return pdfContent;
     }
 
     #endregion
