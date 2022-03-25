@@ -5,12 +5,49 @@ namespace API.Controllers;
 public class ReportsController : BaseApiController
 {
     private readonly ITemplateService _templateService;
-    public ReportsController(ITemplateService templateService) {
+    private readonly DataContext _context;
+    public ReportsController(ITemplateService templateService, DataContext context)
+    {
+        _context = context;
         _templateService = templateService;
     }
 
     #region Reports Endpoints
-    
+
+
+    [HttpGet("TableTemplate")]
+    // [MustHavePermission(Permissions.Reports.Invoice)]
+    public async Task<ActionResult> TableReport()
+    {
+        var items = await _context.Districts.ToListAsync();
+        var model = new TableViewModel(items.Adapt<List<DistrictDto>>());
+        var html = await _templateService.RenderAsync(Reports.TableReport, model);
+        await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
+        {
+            Headless = true,
+            ExecutablePath = PuppeteerExtensions.ExecutablePath
+        });
+        await using var page = await browser.NewPageAsync();
+        await page.EmulateMediaTypeAsync(MediaType.Screen);
+        await page.SetContentAsync(html);
+        var pdfContent = await page.PdfStreamAsync(new PdfOptions
+        {
+            Format = PaperFormat.A4,
+            DisplayHeaderFooter = true,
+            MarginOptions = new MarginOptions
+            {
+                Top = "20px",
+                Right = "20px",
+                Bottom = "60px",
+                Left = "20px"
+            },
+            FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
+        });
+
+        return File(pdfContent, "application/pdf", $"Table-{DateTime.Now}.pdf");
+    }
+
+
     [HttpGet("InvoiceTemplate")]
     // [MustHavePermission(Permissions.Reports.Invoice)]
     public async Task<ActionResult> InvoiceReport()
@@ -43,17 +80,17 @@ public class ReportsController : BaseApiController
         var pdfContent = await page.PdfStreamAsync(new PdfOptions
         {
             Format = PaperFormat.A4,
-                DisplayHeaderFooter = true,
-                MarginOptions = new MarginOptions
-                {
-                    Top = "20px",
-                    Right = "20px",
-                    Bottom = "60px",
-                    Left = "20px"
-                },
-                FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
+            DisplayHeaderFooter = true,
+            MarginOptions = new MarginOptions
+            {
+                Top = "20px",
+                Right = "20px",
+                Bottom = "60px",
+                Left = "20px"
+            },
+            FooterTemplate = "<div id=\"footer-template\" style=\"font-size:10px !important; color:#808080; padding-left:10px\"><p class=\"khmer-content\">ជើងទំព័រ</p></div>"
         });
-        
+
         return File(pdfContent, "application/pdf", $"Invoice-{DateTime.Now}.pdf");
     }
 

@@ -24,4 +24,6 @@ public static class Roles
 public static class Reports
 {
     public const string InvoiceReport = "Templates/InvoiceTemplate";
+    public const string TableReport = "Templates/TableTemplate";
+    
 }
