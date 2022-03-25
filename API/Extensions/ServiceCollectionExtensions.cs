@@ -22,6 +22,7 @@ public static class ServiceCollectionExtensions
             .AddPermissions(configuration)
             .AddIdentity(configuration);
         services.AddScoped<TokenService>();
+        services.AddScoped<ExportService>();
         
         return services;
     }
