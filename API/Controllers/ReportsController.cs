@@ -35,8 +35,7 @@ public class ReportsController : BaseApiController
     {
         var items = await _context.Districts.ToListAsync();
         var model = new TableViewModel(items.Adapt<List<DistrictDto>>());
-        var html = await _templateService.RenderAsync(Reports.TableReport, model);
-        return File(await GeneratePdfContent(html), "application/pdf", $"Table-{DateTime.Now}.pdf");
+        return File(await GeneratePdfContent(Reports.TableReport, model), "application/pdf", $"Table-{DateTime.Now}.pdf");
     }
 
 
@@ -60,13 +59,12 @@ public class ReportsController : BaseApiController
                 new InvoiceItemViewModel("Website creation", 1231.99m)
             }
         };
-        var html = await _templateService.RenderAsync(Reports.InvoiceReport, model);
-       
-        return File(await GeneratePdfContent(html), "application/pdf", $"Invoice-{DateTime.Now}.pdf");
+        return File(await GeneratePdfContent(Reports.InvoiceReport, model), "application/pdf", $"Invoice-{DateTime.Now}.pdf");
     }
 
-    private async Task<Stream> GeneratePdfContent(string html) 
+    private async Task<Stream> GeneratePdfContent(string reportName, IViewModel model) 
     {
+        var html = await _templateService.RenderAsync(Reports.TableReport, model);
         await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
         {
             Headless = true,

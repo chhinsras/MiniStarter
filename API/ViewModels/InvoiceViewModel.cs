@@ -1,5 +1,5 @@
 namespace API.ViewModels;
-public class InvoiceViewModel
+public class InvoiceViewModel : IViewModel
 {
     public DateTime CreatedAt { get; set; }
     public DateTime Due { get; set; }

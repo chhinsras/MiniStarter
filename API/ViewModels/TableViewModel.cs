@@ -1,5 +1,5 @@
 namespace API.ViewModels;
-public class TableViewModel
+public class TableViewModel : IViewModel
 {
     public TableViewModel(List<DistrictDto> items)
     {
