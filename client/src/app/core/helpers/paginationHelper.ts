@@ -8,8 +8,8 @@ export function getPaginatedResponse<T>(url, params, http: HttpClient) {
     map(response => {
       console.log(response);
       paginatedResponse.items = response.body;
-      const pagination = response.headers['Pagination'];
-      console.log(response.headers['Pagination']);
+      const pagination = response.headers.get('Pagination')
+      console.log(response.headers.get('Pagination'));
       if (pagination) {
         paginatedResponse.metaData = JSON.parse(pagination);
       }
