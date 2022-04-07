@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
-import { getPaginatedResponse, getPaginationHeaders } from '../helpers/paginationHelper';
+import { getPaginatedResponse, getPaginationHeaders } from '../helpers/pagination-helper';
 import { Permission } from '../../shared/models/permission';
 import { Role, RoleParams } from '../../shared/models/role';
 

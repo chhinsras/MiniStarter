@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
-import { getPaginationHeaders } from '../helpers/paginationHelper';
+import { getPaginationHeaders } from '../helpers/pagination-helper';
 import { User, UserParams, UserRole } from '../../shared/models/user';
 
 @Injectable()

@@ -2,7 +2,7 @@ import { RefreshTokenRequest } from '../../shared/models/account';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { getPaginatedResponse } from '../helpers/paginationHelper';
+import { getPaginatedResponse } from '../helpers/pagination-helper';
 import { Login } from '../../shared/models/account';
 import { Audit } from '../../shared/models/audit';
 import { Commune } from '../../shared/models/commune';
