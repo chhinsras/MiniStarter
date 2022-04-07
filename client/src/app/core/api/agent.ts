@@ -16,7 +16,7 @@ import { Village } from '../../shared/models/village';
 @Injectable({
   providedIn: 'root'
 })
-export class AgentApiService {
+export class Agent {
 
   baseUrl = environment.apiUrl;
 

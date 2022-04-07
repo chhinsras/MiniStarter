@@ -1,13 +1,10 @@
-import { AgentApiService } from './api/agent-api.service';
+import { Agent } from './api/agent';
 import { NgModule } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { UserService } from './services/user.service';
 import { RoleService } from './services/role.service';
 import { GazetteerService } from './services/gazetteer.service';
 import { AuditService } from './services/audit.service';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -19,7 +16,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     }),
   ],
   providers: [
-    AgentApiService,
+    Agent,
     UserService,
     RoleService,
     AuditService,
