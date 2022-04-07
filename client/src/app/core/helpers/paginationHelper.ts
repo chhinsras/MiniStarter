@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { PaginatedResponse } from '../models/pagination';
+import { PaginatedResponse } from '../../shared/models/pagination';
 
 export function getPaginatedResponse<T>(url, params, http: HttpClient) {
   var paginatedResponse: PaginatedResponse<T> = new PaginatedResponse<T>();

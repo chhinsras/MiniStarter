@@ -14,7 +14,7 @@ import { RoleGuard } from './core/guards/role.guard';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
-import { MaterialModule } from './core/material/material.module';
+import { MaterialModule } from './shared/material/material.module';
 import { AccountService } from './core/services/account.service';
 import { BusyService } from './core/services/busy.service';
 import { LocalStorageService } from './core/services/local-storage.service';
@@ -24,6 +24,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { FooterComponent } from './layouts/admin-layout/footer/footer.component';
 import { ToolbarComponent } from './layouts/admin-layout/toolbar/toolbar.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { SharedModule } from './shared/shared.module';
 
 
 export function rootLoaderFactory(http: HttpClient)
@@ -45,6 +46,7 @@ export function rootLoaderFactory(http: HttpClient)
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader:{

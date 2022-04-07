@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AgentApiService } from '../api/agent-api.service';
 import { getPaginationHeaders } from '../helpers/paginationHelper';
-import { User, UserParams, UserRole } from '../models/user';
+import { User, UserParams, UserRole } from '../../shared/models/user';
 
 @Injectable()
 export class UserService {

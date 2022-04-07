@@ -2,9 +2,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { CustomAction } from 'src/app/core/components/table/custom-action';
-import { TableColumn } from 'src/app/core/components/table/table-column';
-import { User, UserRole } from 'src/app/core/models/user';
+import { CustomAction } from 'src/app/shared/components/table/custom-action';
+import { TableColumn } from 'src/app/shared/components/table/table-column';
+import { User, UserRole } from 'src/app/shared/models/user';
 import { UserService } from 'src/app/core/services/user.service';
 
 @Component({

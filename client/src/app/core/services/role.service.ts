@@ -5,8 +5,8 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AgentApiService } from '../api/agent-api.service';
 import { getPaginatedResponse, getPaginationHeaders } from '../helpers/paginationHelper';
-import { Permission } from '../models/permission';
-import { Role, RoleParams } from '../models/role';
+import { Permission } from '../../shared/models/permission';
+import { Role, RoleParams } from '../../shared/models/role';
 
 @Injectable()
 export class RoleService {

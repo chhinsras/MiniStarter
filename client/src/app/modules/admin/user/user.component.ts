@@ -1,8 +1,8 @@
-import { PaginatedFilter, MetaData } from './../../../core/models/pagination';
+import { PaginatedFilter, MetaData } from '../../../shared/models/pagination';
 import { Component, OnInit } from "@angular/core";
-import { User, UserParams } from 'src/app/core/models/user';
-import { TableColumn } from 'src/app/core/components/table/table-column';
-import { CustomAction } from 'src/app/core/components/table/custom-action';
+import { User, UserParams } from 'src/app/shared/models/user';
+import { TableColumn } from 'src/app/shared/components/table/table-column';
+import { CustomAction } from 'src/app/shared/components/table/custom-action';
 import { UserService } from 'src/app/core/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';

@@ -1,17 +1,17 @@
-import { RefreshTokenRequest } from './../models/account';
+import { RefreshTokenRequest } from '../../shared/models/account';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { getPaginatedResponse } from '../helpers/paginationHelper';
-import { Login } from '../models/account';
-import { Audit } from '../models/audit';
-import { Commune } from '../models/commune';
-import { District } from '../models/district';
-import { Permission } from '../models/permission';
-import { Province } from '../models/province';
-import { Role } from '../models/role';
-import { User, UserRole } from '../models/user';
-import { Village } from '../models/village';
+import { Login } from '../../shared/models/account';
+import { Audit } from '../../shared/models/audit';
+import { Commune } from '../../shared/models/commune';
+import { District } from '../../shared/models/district';
+import { Permission } from '../../shared/models/permission';
+import { Province } from '../../shared/models/province';
+import { Role } from '../../shared/models/role';
+import { User, UserRole } from '../../shared/models/user';
+import { Village } from '../../shared/models/village';
 
 @Injectable({
   providedIn: 'root'

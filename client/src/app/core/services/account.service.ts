@@ -1,4 +1,4 @@
-import { Login } from './../models/account';
+import { Login } from '../../shared/models/account';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { User } from '../models/user';
+import { User } from '../../shared/models/user';
 import { AgentApiService } from '../api/agent-api.service';
 
 @Injectable()

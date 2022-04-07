@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { AgentApiService } from "../api/agent-api.service";
-import { Audit } from "../models/audit";
+import { Audit } from "../../shared/models/audit";
 
 @Injectable()
 export class AuditService {
