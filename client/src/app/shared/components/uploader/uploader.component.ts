@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Upload, UploadType } from 'src/app/core/models/upload';;
+import { Upload, UploadType } from 'src/app/shared/models/upload';;
 
 @Component({
   selector: 'app-uploader',

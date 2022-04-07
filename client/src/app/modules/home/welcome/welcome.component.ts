@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LogoutDialogComponent } from 'src/app/core/components/logout-dialog/logout-dialog.component';
+import { LogoutDialogComponent } from 'src/app/shared/components/logout-dialog/logout-dialog.component';
 import { AccountService } from "../../../core/services/account.service";
 
 @Component({

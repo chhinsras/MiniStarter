@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { AgentApiService } from '../api/agent-api.service';
-import { getPaginationHeaders } from '../helpers/paginationHelper';
-import { User, UserParams, UserRole } from '../models/user';
+import { Agent } from '../api/agent';
+import { getPaginationHeaders } from '../helpers/pagination-helper';
+import { User, UserParams, UserRole } from '../../shared/models/user';
 
 @Injectable()
 export class UserService {
   baseUrl = environment.apiUrl;
   userParams: UserParams;
 
-  constructor(private api: AgentApiService) {
+  constructor(private agent: Agent) {
     this.userParams = new UserParams();
   }
 
@@ -35,7 +35,7 @@ export class UserService {
     if (userParams.orderBy) params = params.append('orderBy', userParams.orderBy.toString());
     params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
 
-    return this.api.getUsers(params)
+    return this.agent.getUsers(params)
       .pipe(map(response => {
         console.log(response);
         return response;
@@ -43,29 +43,29 @@ export class UserService {
   }
 
   getUserById(id: string): Observable<User> {
-    return this.api.getUser(id).pipe(map((response: User) => response));
+    return this.agent.getUser(id).pipe(map((response: User) => response));
   }
 
   updateUser(User: User): Observable<string> {
-    return this.api
+    return this.agent
       .updateUser(User)
       .pipe(map((response: string) => response));
   }
 
   deleteUser(id: string): Observable<string> {
-    return this.api
+    return this.agent
       .deleteUser(id)
       .pipe(map((response: string) => response));
   }
 
   getUserRoles(id: string): Observable<UserRole[]> {
-    return this.api
+    return this.agent
       .getUserRoles(id)
       .pipe(map((response: UserRole[]) => response));
   }
 
   assignUserRoles(id: string, request: UserRole[]): Observable<string> {
-    return this.api
+    return this.agent
       .assignUserRoles(id, request)
       .pipe(map((response: string) => response));
   }

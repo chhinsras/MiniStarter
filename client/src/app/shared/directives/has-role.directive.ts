@@ -1,18 +1,18 @@
 import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { AccountService } from '../services/account.service';
+import { AccountService } from '../../core/services/account.service';
 
 @Directive({
-  selector: '[appHasPermission]'
+  selector: '[appHasRole]'
 })
-export class HasPermissionDirective implements OnInit{
-  @Input() appHasPermission: string[];
+export class HasRoleDirective implements OnInit{
+  @Input() appHasRole: string[];
 
   constructor(private viewContainerRef: ViewContainerRef,
     private templateRef: TemplateRef<any>,
     private accountService: AccountService) {}
 
     ngOnInit(): void {
-      const isAuthorized = this.accountService.isAuthorized('Permission', this.appHasPermission);
+      const isAuthorized = this.accountService.isAuthorized('Role', this.appHasRole);
       if (!isAuthorized) {
         this.viewContainerRef.clear();
       } else {

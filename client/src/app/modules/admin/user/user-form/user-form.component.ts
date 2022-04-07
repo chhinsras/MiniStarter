@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/core/models/user';
+import { User } from 'src/app/shared/models/user';
 import { AccountService } from 'src/app/core/services/account.service';
 import { UserService } from 'src/app/core/services/user.service';
 

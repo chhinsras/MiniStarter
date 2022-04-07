@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
-import { LogoutDialogComponent } from 'src/app/core/components/logout-dialog/logout-dialog.component';
+import { LogoutDialogComponent } from 'src/app/shared/components/logout-dialog/logout-dialog.component';
 import { AccountService } from 'src/app/core/services/account.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { ThemeService } from 'src/app/core/services/theme.service';

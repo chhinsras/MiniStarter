@@ -1,5 +1,4 @@
-import { Login } from './../models/account';
-import { HttpClient } from '@angular/common/http';
+import { Login } from '../../shared/models/account';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { environment } from 'src/environments/environment';
@@ -8,15 +7,15 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { User } from '../models/user';
-import { AgentApiService } from '../api/agent-api.service';
+import { User } from '../../shared/models/user';
+import { Agent } from '../api/agent';
 
 @Injectable()
 export class AccountService {
   private currentUserTokenSource = new BehaviorSubject<string>(this.getStorageToken);
   public currentUserToken$ = this.currentUserTokenSource.asObservable();
 
-  constructor(public api: AgentApiService, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
+  constructor(public agent: Agent, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
   }
 
   public get getToken(): string {
@@ -83,7 +82,7 @@ export class AccountService {
 
   public login(login: Login): Observable<User> {
     console.log(login);
-    return this.api.loginUser(login)
+    return this.agent.loginUser(login)
       .pipe(
         tap((result: User) => {
           if (result) {
@@ -110,7 +109,7 @@ export class AccountService {
       'refreshToken': refreshToken,
       'token': jwtToken
     }
-    this.api.refreshToken(request)
+    this.agent.refreshToken(request)
       .pipe(
         tap((result: User) => {
           if (result) {
@@ -158,7 +157,7 @@ export class AccountService {
   }
 
   registerUser(user: User): Observable<string> {
-    return this.api
+    return this.agent
       .registerUser(user)
       .pipe(map((response: string) => response));
   }
@@ -170,7 +169,7 @@ export class AccountService {
   //   if (confirmEmailParams.code)
   //     params = params.append('code', confirmEmailParams.code);
 
-  //   return this.api
+  //   return this.agent
   //     .confirmEmail(params)
   //     .pipe(map((response: string) => response));
   // }
@@ -182,19 +181,19 @@ export class AccountService {
   //   if (confirmPhoneNumber.code)
   //     params = params.append('code', confirmPhoneNumber.code);
 
-  //   return this.api
+  //   return this.agent
   //     .confirmEmail(params)
   //     .pipe(map((response: string) => response));
   // }
 
   // forgotPassword(email: string) {
-  //   return this.api
+  //   return this.agent
   //   .forgotPassword(email)
   //   .pipe(map((response: string) => response));
   // }
 
   // resetPassword(resetPassword: ResetPassword) {
-  //   return this.api
+  //   return this.agent
   //       .resetPassword(resetPassword)
   //       .pipe(map((response: string) => response));
   // }

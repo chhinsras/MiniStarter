@@ -1,9 +1,9 @@
 import { AboutComponent } from './modules/admin/about/about.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccessDenialComponent } from './core/components/access-denial/access-denial.component';
-import { NotFoundComponent } from './core/components/not-found/not-found.component';
-import { ServerErrorComponent } from './core/components/server-error/server-error.component';
+import { AccessDenialComponent } from './shared/components/access-denial/access-denial.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { ServerErrorComponent } from './shared/components/server-error/server-error.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
 import { AccountLayoutComponent } from './layouts/account-layout/account-layout.component';

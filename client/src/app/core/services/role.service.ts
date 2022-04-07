@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { AgentApiService } from '../api/agent-api.service';
-import { getPaginatedResponse, getPaginationHeaders } from '../helpers/paginationHelper';
-import { Permission } from '../models/permission';
-import { Role, RoleParams } from '../models/role';
+import { Agent } from '../api/agent';
+import { getPaginatedResponse, getPaginationHeaders } from '../helpers/pagination-helper';
+import { Permission } from '../../shared/models/permission';
+import { Role, RoleParams } from '../../shared/models/role';
 
 @Injectable()
 export class RoleService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private api: AgentApiService) {}
+  constructor(private http: HttpClient, private agent: Agent) {}
 
   getRoles(roleParams: RoleParams){
     let params = new HttpParams();
@@ -27,35 +27,35 @@ export class RoleService {
   }
 
   getRoleById(id: string): Observable<Role> {
-    return this.api.getRole(id).pipe(map((response: Role) => response));
+    return this.agent.getRole(id).pipe(map((response: Role) => response));
   }
 
   createRole(Role: Role): Observable<Role> {
-    return this.api
+    return this.agent
       .createRole(Role)
       .pipe(map((response: Role) => response));
   }
 
   updateRole(Role: Role): Observable<Role> {
-    return this.api
+    return this.agent
       .updateRole(Role)
       .pipe(map((response: Role) => response));
   }
 
   deleteRole(id: string): Observable<string> {
-    return this.api
+    return this.agent
       .deleteRole(id)
       .pipe(map((response: string) => response));
   }
 
   getRolePermissionsByRoleId(roleId: number) {
-    return this.api
+    return this.agent
       .getRolePermissions(roleId)
       .pipe(map((response: Permission) => response));
   }
 
   updateRolePermissions(request: Permission): Observable<string> {
-    return this.api
+    return this.agent
       .updateRolePermissions(request)
       .pipe(map((response: string) => response));
   }
