@@ -1,10 +1,10 @@
 namespace API.ViewModels;
-public class TableViewModel : IViewModel
+public class TableViewModel<T> : IViewModel
 {
-    public TableViewModel(List<DistrictDto> items)
+    public TableViewModel(List<T> items)
     {
         this.items = items;
     }
 
-    public List<DistrictDto> items { get; set; } = default!;
+    public List<T> items { get; set; } = default!;
 }

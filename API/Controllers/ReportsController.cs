@@ -17,7 +17,7 @@ public class ReportsController : BaseApiController
     public async Task<ActionResult> TableReport()
     {
         var items = await _context.Districts.ToListAsync();
-        var model = new TableViewModel(items.Adapt<List<DistrictDto>>());
+        var model = new TableViewModel<DistrictDto>(items.Adapt<List<DistrictDto>>());
         return File(await _exportService.GeneratePdfContent(Reports.TableReport, model), "application/pdf", $"Table-{DateTime.Now}.pdf");
     }
 
