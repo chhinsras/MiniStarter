@@ -177,10 +177,16 @@ public class UsersController : BaseApiController
 
     [HttpGet("logs")]
     [Authorize]
-    public Task<List<AuditDto>> GetLogsAsync()
+    public async Task<List<AuditDto>> GetLogsAsync()
     {
-        // get last 250 logs of logined user
-        throw new NotImplementedException();
+        var loggedInUser = HttpContext.User;
+        var trails = await _context.AuditTrails
+        .Where(a => a.UserId == loggedInUser.GetUserId())
+        .OrderByDescending(a => a.DateTime)
+        .Take(250)
+        .ToListAsync();
+
+        return trails.Adapt<List<AuditDto>>();
     }
 
     private string GetOriginFromRequest() => $"{Request.Scheme}://{Request.Host.Value}{Request.PathBase.Value}";

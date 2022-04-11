@@ -1,6 +1,3 @@
-using PuppeteerSharp;
-using PuppeteerSharp.Media;
-
 namespace API.Controllers;
 public class ReportsController : BaseApiController
 {

@@ -8,6 +8,18 @@ public class AuditLogsController : BaseApiController
     }
 
     [HttpGet("{userId}")]
+    public async Task<ActionResult<List<AuditDto>>> GetPagedLogsAsync([FromQuery]AuditParams auditParams)
+    {
+        var query = _context.AuditTrails.AsQueryable();
+
+        var trails = await PagedList<AuditTrail>.ToPagedList(query, auditParams.PageNumber, auditParams.PageSize);
+        Response.AddPaginationHeader(trails.MetaData);
+
+        return trails.Adapt<List<AuditDto>>();
+ 
+    }
+
+    [HttpGet("{userId}")]
     public async Task<ActionResult<List<AuditDto>>> GetMyLogsAsync(int userId)
     {
          var trails = await _context.AuditTrails

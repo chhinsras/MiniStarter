@@ -12,3 +12,9 @@ public class AuditDto
     public string? AffectedColumns { get; set; }
     public string? PrimaryKey { get; set; }
 }
+
+public class AuditParams : PaginationParams
+    {
+        // public string? OrderBy { get; set; }
+        // public string? SearchTerm { get; set; }
+    }
