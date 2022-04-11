@@ -1,4 +1,3 @@
-#nullable disable
 namespace API.Controllers;
 public class AccountController : BaseApiController
 {
@@ -33,7 +32,7 @@ public class AccountController : BaseApiController
     public async Task<ActionResult<UserDto>> RefreshAsync(RefreshTokenRequest request)
     {
         var userPrincipal = _tokenService.GetPrincipalFromExpiredToken(request.Token);
-        string userEmail = userPrincipal.GetEmail();
+        string? userEmail = userPrincipal.GetEmail();
         var user = await _userManager.FindByEmailAsync(userEmail);
         if (user is null) return Unauthorized();
         if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow) return Unauthorized();
