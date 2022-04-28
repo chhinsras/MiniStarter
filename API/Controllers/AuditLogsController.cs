@@ -7,7 +7,8 @@ public class AuditLogsController : BaseApiController
         _context = context;
     }
 
-    [HttpGet("{userId}")]
+    [HttpGet]
+    [MustHavePermission(Permissions.Audit.View)]
     public async Task<ActionResult<List<AuditDto>>> GetPagedLogsAsync([FromQuery]AuditParams auditParams)
     {
         var query = _context.AuditTrails.AsQueryable();
@@ -20,6 +21,7 @@ public class AuditLogsController : BaseApiController
     }
 
     [HttpGet("{userId}")]
+    [MustHavePermission(Permissions.Audit.View)]
     public async Task<ActionResult<List<AuditDto>>> GetMyLogsAsync(int userId)
     {
          var trails = await _context.AuditTrails
@@ -31,7 +33,4 @@ public class AuditLogsController : BaseApiController
         return trails.Adapt<List<AuditDto>>();
  
     }
-
-   
-
 }

@@ -1,5 +1,12 @@
 namespace API.Helpers;
 
+
+public static class DatabaseProvider 
+{
+    public const string MSSQL = "MSSQL";
+    public const string POSGRESSQL = "POSGRESSQL";
+}
+
 public static class CustomClaimTypes
 {
     public const string Permission = "Permission";

@@ -83,7 +83,7 @@ public static class ServiceCollectionExtensions
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
         var hostWithHeroku = true; // set to false if not hosting with heroku
-        var databaseProvider = "MSSQL"; // MSSQL, POSGRESSQL
+        var databaseProvider = DatabaseProvider.MSSQL; // MSSQL, POSGRESSQL
 
         services.AddDbContext<DataContext>(options => {
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -109,15 +109,15 @@ public static class ServiceCollectionExtensions
             } else
             {
                 // Use connection string from file.
-                connectionString = databaseProvider == "MSSQL" ? configuration.GetConnectionString("MSSQL") 
-                    : configuration.GetConnectionString("PostgresSQL");
+                connectionString = databaseProvider == DatabaseProvider.MSSQL ? configuration.GetConnectionString(DatabaseProvider.MSSQL) 
+                    : configuration.GetConnectionString(DatabaseProvider.POSGRESSQL);
             }
 
             // Whether the connection string came from the local development configuration file
             // or from the environment variable from Heroku, use it to set up your DbContext.
-            if(databaseProvider == "MSSQL") {
+            if(databaseProvider == DatabaseProvider.MSSQL) {
                 options.UseSqlServer(connectionString);
-            } else if (databaseProvider == "POSGRESSQL")
+            } else if (databaseProvider == DatabaseProvider.POSGRESSQL)
             {
                 options.UseNpgsql(connectionString);
             }

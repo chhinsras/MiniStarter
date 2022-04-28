@@ -13,7 +13,7 @@ public class ReportsController : BaseApiController
 
 
     [HttpGet("TableTemplate")]
-    // [MustHavePermission(Permissions.Reports.Invoice)]
+    [MustHavePermission(Permissions.Reports.Table)]
     public async Task<ActionResult> TableReport()
     {
         var items = await _context.Districts.ToListAsync();
@@ -22,7 +22,7 @@ public class ReportsController : BaseApiController
     }
 
     [HttpGet("InvoiceTemplate")]
-    // [MustHavePermission(Permissions.Reports.Invoice)]
+    [MustHavePermission(Permissions.Reports.Invoice)]
     public async Task<ActionResult> InvoiceReport()
     {
         var model = new InvoiceViewModel

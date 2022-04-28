@@ -16,6 +16,7 @@ public class AuditableEntity : BaseEntity, ISoftDelete
 
 public class BaseEntity
 {
+    [Required]
     public int Id { get; set; }
 }
 

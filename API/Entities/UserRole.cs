@@ -1,6 +1,6 @@
 ﻿namespace API.Entities;
 public class UserRole : IdentityUserRole<int>
 {
-    public User? User { get; set; }
-    public Role? Role { get; set; }
+    [Required] public User User { get; set; } = default!;
+    [Required] public Role Role { get; set; } = default!;
 }
