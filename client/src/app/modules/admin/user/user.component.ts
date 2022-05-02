@@ -75,14 +75,11 @@ export class UserComponent implements OnInit {
 
   sort($event: Sort): void {
     this.userParams.orderBy = $event.active + ' ' + $event.direction;
-    console.log(this.userParams.orderBy);
     this.getUsers();
   }
 
   filter($event: string): void {
     this.userParams.searchString = $event.trim().toLocaleLowerCase();
-    this.userParams.pageNumber = 0;
-    this.userParams.pageSize = 0;
     this.getUsers();
   }
 

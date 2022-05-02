@@ -31,13 +31,11 @@ export class UserService {
 
   getUsers(userParams: UserParams){
     let params = new HttpParams();
+    params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
     if (userParams.searchString) params = params.append('searchString', userParams.searchString);
     if (userParams.orderBy) params = params.append('orderBy', userParams.orderBy.toString());
-    params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
-
     return this.agent.getUsers(params)
       .pipe(map(response => {
-        console.log(response);
         return response;
       }));
   }

@@ -6,12 +6,10 @@ namespace API.Extensions
         {
             if (string.IsNullOrEmpty(orderBy)) return query.OrderByDescending(p => p.Id); 
 
-            query = orderBy switch
-            {
-                "firstName" => query.OrderBy(p => p.FirstName),
-                "lastName" => query.OrderBy(p => p.LastName),
-                _ => query.OrderByDescending(p => p.Id)
-            };
+            if (orderBy.StartsWith("firstName")) query = orderBy.Contains("asc") ? query.OrderBy(x => x.FirstName) : query.OrderByDescending(x => x.FirstName);
+            if (orderBy.StartsWith("lastName")) query = orderBy.Contains("asc") ? query.OrderBy(x => x.LastName) : query.OrderByDescending(x => x.LastName);
+            if (orderBy.StartsWith("userName")) query = orderBy.Contains("asc") ? query.OrderBy(x => x.UserName) : query.OrderByDescending(x => x.UserName);
+            if (orderBy.StartsWith("id")) query = orderBy.Contains("asc") ? query.OrderBy(x => x.Id) : query.OrderByDescending(x => x.Id);
 
             return query;
         }
