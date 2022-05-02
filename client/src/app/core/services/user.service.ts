@@ -32,7 +32,7 @@ export class UserService {
   getUsers(userParams: UserParams){
     let params = new HttpParams();
     params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
-    if (userParams.searchString) params = params.append('searchString', userParams.searchString);
+    if (userParams.searchTerm) params = params.append('searchTerm', userParams.searchTerm);
     if (userParams.orderBy) params = params.append('orderBy', userParams.orderBy.toString());
     return this.agent.getUsers(params)
       .pipe(map(response => {

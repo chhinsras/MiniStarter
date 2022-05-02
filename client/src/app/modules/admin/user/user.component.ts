@@ -79,7 +79,7 @@ export class UserComponent implements OnInit {
   }
 
   filter($event: string): void {
-    this.userParams.searchString = $event.trim().toLocaleLowerCase();
+    this.userParams.searchTerm = $event.trim().toLocaleLowerCase();
     this.getUsers();
   }
 

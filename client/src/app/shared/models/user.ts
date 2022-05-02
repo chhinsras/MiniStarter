@@ -18,7 +18,7 @@ export interface User {
 }
 
 export class UserParams implements PaginatedFilter {
-  searchString: string;
+  searchTerm: string;
   pageNumber: number = 1;
   pageSize: number = 5;
   orderBy: string;

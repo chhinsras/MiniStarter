@@ -20,7 +20,9 @@ namespace API.Extensions
 
             var lowerCaseSearchTerm = searchTerm.Trim().ToLower();
 
-            return query.Where(p => p.FirstName!.ToLower().Contains(lowerCaseSearchTerm) || p.LastName!.ToLower().Contains(lowerCaseSearchTerm));
+            return query.Where(
+                p => p.Id!.ToString().Contains(lowerCaseSearchTerm) || p.UserName!.ToLower().Contains(lowerCaseSearchTerm) ||
+                p.FirstName!.ToLower().Contains(lowerCaseSearchTerm) || p.LastName!.ToLower().Contains(lowerCaseSearchTerm));
         }
     }
 }
