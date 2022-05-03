@@ -12,12 +12,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_flutter:
     defaults:
       run:
         working-directory: hybrid
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
@@ -35,3 +34,61 @@ jobs:
         run: flutter analyze
       - name: Run tests
         run: flutter test
+        
+  build_web:
+    name: Build Flutter (Web)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: subosito/flutter-action@v1
+      with:
+          channel: 'dev'
+    - run: flutter pub get
+    - run: flutter config --enable-web
+    - run: flutter build web
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: web-build
+        path: build/web
+        
+  build_ios:
+    name: Build Flutter (iOS)
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+          channel: 'dev'
+    - run: flutter pub get
+    - run: flutter clean
+    - run: flutter build ios --release --no-codesign
+    - name: Upload iPA
+      uses: actions/upload-artifact@master
+      with:
+        name: ios-build
+        path: build/ios/iphoneos
+        
+  build_apk:
+    name: Build Flutter (Android)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+          channel: 'dev'
+    - run: flutter pub get
+    #     - run: flutter build apk --target-platform android-arm,android-arm64 --split-per-abi
+    #     - run: flutter build appbundle --target-platform android-arm,android-arm64
+    - run: flutter build appbundle
+    - name: Upload APK
+      uses: actions/upload-artifact@master
+      with:
+        name: apk-build
+        path: build/app/outputs/apk/release
