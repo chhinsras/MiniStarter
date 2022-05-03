@@ -68,6 +68,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
+          architecture: arm64
           channel: 'dev'
     - run: flutter pub get
     - run: flutter clean
