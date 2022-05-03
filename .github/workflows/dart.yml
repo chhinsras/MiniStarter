@@ -13,6 +13,9 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: hybrid
     runs-on: ubuntu-latest
 
     steps:
