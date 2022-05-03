@@ -1,12 +1,15 @@
-name: Angular
 
 on:
   push:
-    branches:
-    - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  deploy:
+  build_angular:
+    defaults:
+      run:
+        working-directory: client
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
