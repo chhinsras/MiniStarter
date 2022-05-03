@@ -1,3 +1,4 @@
+name: Angular
 
 on:
   push:
@@ -6,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build_angular:
+  build:
     defaults:
       run:
         working-directory: client
@@ -24,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Run tests
-      run: npm run test:headless
+      run: npm run test
 
     - name: Build
       run: npm run build:prod
