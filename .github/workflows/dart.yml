@@ -37,6 +37,9 @@ jobs:
         
   build_web:
     name: Build Flutter (Web)
+    defaults:
+      run:
+        working-directory: hybrid
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -54,6 +57,9 @@ jobs:
         
   build_ios:
     name: Build Flutter (iOS)
+    defaults:
+      run:
+        working-directory: hybrid
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
@@ -74,6 +80,9 @@ jobs:
         
   build_apk:
     name: Build Flutter (Android)
+    defaults:
+      run:
+        working-directory: hybrid
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
