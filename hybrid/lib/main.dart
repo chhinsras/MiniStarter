@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:hybrid/providers/profile_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'config/config.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends ConsumerWidget {
+  MyApp({Key? key}) : super(key: key);
 
+  final profileProvider = ChangeNotifierProvider<ProfileProvider>((ref) {
+    return ProfileProvider();
+  });
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ProfileProvider profileManager = ref.watch(profileProvider);
+    ThemeData theme;
+    if (profileManager.darkMode) {
+      theme = AppTheme.dark();
+    } else {
+      theme = AppTheme.light();
+    }
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
+      title: 'Mini Starter',
+      theme: theme,
+      home: const MyHomePage(title: 'Mini Starter'),
     );
   }
 }
