@@ -44,7 +44,7 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
         DefaultCupertinoLocalizations.delegate,
       ],
-      home: const HomeScreen(title: 'Minid Starter'),
+      home: HomeScreen(title: appProvider.appLocale.toString()),
     );
   }
 }
