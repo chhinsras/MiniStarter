@@ -48,3 +48,16 @@ The goal of this repository is to previde feature rich and production ready for 
 - [ ] JSON Localization
 - [ ] Http Interceptor
 - [ ] Dynamic Spinner
+
+
+## Flutter 
+- [ ] Flutter 2.0 Supports iOS / Android / MacOS / Windows / Web
+- [ ] Responsive
+- [ ] Riverpod
+- [ ] Navigation 2.0 with Beamer / Auto_Route
+- [ ] Custom Theme
+- [ ] Dio with Interceptor
+- [ ] Shared Preference
+- [ ] JSON Serialization / JSON/Object Mapping Generation
+- [ ] JSON Localization
+- [ ] SQLite with Moor
