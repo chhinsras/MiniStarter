@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/components.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key, required this.title}) : super(key: key);
 
@@ -17,11 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Container(
-          child: const Text(
-            'Home Page',
-          ),
-        ),
+        child: AppLanguage(),
       ),
     );
   }
