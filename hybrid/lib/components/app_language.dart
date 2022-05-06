@@ -21,7 +21,7 @@ class AppLanguage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              context.i18n.translate('app_message'),
+              context.localization.translate('app_message'),
               style: const TextStyle(fontSize: 32),
             ),
             Row(
