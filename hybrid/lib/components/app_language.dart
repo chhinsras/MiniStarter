@@ -13,7 +13,7 @@ class AppLanguage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('app_title')),
+        title: Text(context.localization.translate('app_title')),
       ),
       body: Center(
         child: Column(

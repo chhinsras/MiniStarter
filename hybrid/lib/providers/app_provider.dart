@@ -20,7 +20,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   void changeLanguage(Locale type) async {
-    print("languageCode::${type.languageCode}");
+    // print("languageCode::${type.languageCode}");
     var prefs = await SharedPreferences.getInstance();
     _globle.lang = type.languageCode;
     _appLocale = type;

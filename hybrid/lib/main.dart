@@ -23,12 +23,14 @@ void main() async {
   // }));
   // response = await dio.get('https://localhost:5001/api/AuditLogs');R
   // print(response);
-
-  runApp(ProviderScope(child: MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  initializeApp(AppProvider appProvider) async =>
+      {await appProvider.fetchLocale()};
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,19 +43,22 @@ class MyApp extends ConsumerWidget {
     } else {
       theme = AppTheme.light();
     }
-    return MaterialApp(
-      title: 'Mini Starter',
-      theme: theme,
-      locale: appManager.appLocale,
-      supportedLocales: AppProvider.supportedLanguage,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        DefaultCupertinoLocalizations.delegate,
-      ],
-      home: HomeScreen(title: appManager.appLocale.toString()),
+    return FutureBuilder(
+      future: appManager.fetchLocale(),
+      builder: (context, snapshot) => MaterialApp(
+        title: 'Mini Starter',
+        theme: theme,
+        locale: appManager.appLocale,
+        supportedLocales: AppProvider.supportedLanguage,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          DefaultCupertinoLocalizations.delegate,
+        ],
+        home: HomeScreen(title: appManager.appLocale.toString()),
+      ),
     );
   }
 }
