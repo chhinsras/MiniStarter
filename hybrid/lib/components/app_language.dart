@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hybrid/extensions/extensions.dart';
 import '../helpers/app_localizations.dart';
 import '../providers/providers.dart';
 
@@ -20,7 +21,7 @@ class AppLanguage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              AppLocalizations.of(context).translate('app_message'),
+              context.i18n.translate('app_message'),
               style: const TextStyle(fontSize: 32),
             ),
             Row(
