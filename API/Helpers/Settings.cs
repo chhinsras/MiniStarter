@@ -16,4 +16,5 @@ public class MiddlewareSettings
 public class CorsSettings
 {
     public string? Angular { get; set; }
+    public string? Flutter { get; set; }
 }

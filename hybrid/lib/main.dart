@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hybrid/providers/profile_provider.dart';
@@ -8,7 +9,12 @@ import 'helpers/app_localizations.dart';
 import 'providers/app_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+void main() async {
+  Response response;
+  var dio = Dio();
+  response = await dio.get('https://localhost:5001/api/AuditLogs');
+  print(response.data.toString());
+
   runApp(ProviderScope(child: MyApp()));
 }
 

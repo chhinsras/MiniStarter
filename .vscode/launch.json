@@ -30,6 +30,13 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
-        }
+        },
+        {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "args": ["-d", "chrome","--web-port", "7000"],
+            "program": "hybrid/lib/main.dart"
+        },
     ]
 }

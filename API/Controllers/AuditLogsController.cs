@@ -8,7 +8,7 @@ public class AuditLogsController : BaseApiController
     }
 
     [HttpGet]
-    [MustHavePermission(Permissions.Audit.View)]
+    // [MustHavePermission(Permissions.Audit.View)]
     public async Task<ActionResult<List<AuditDto>>> GetPagedLogsAsync([FromQuery]AuditParams auditParams)
     {
         var query = _context.AuditTrails.AsQueryable();

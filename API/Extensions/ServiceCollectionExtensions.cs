@@ -44,6 +44,7 @@ public static class ServiceCollectionExtensions
             opt.AddPolicy("CorsPolicy", policy =>
             {
                 policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(corsSettings.Angular);
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(corsSettings.Flutter);
             });
         });
     }
