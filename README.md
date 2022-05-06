@@ -51,13 +51,13 @@ The goal of this repository is to previde feature rich and production ready for 
 
 
 ## Flutter 
-- [ ] Flutter 2.0 Supports iOS / Android / MacOS / Windows / Web
+- [x] Flutter 2.0 Supports iOS / Android / MacOS / Windows / Web
 - [ ] Responsive
-- [ ] Riverpod
+- [x] Riverpod
 - [ ] Navigation 2.0 with Beamer / Auto_Route
-- [ ] Custom Theme
+- [x] Custom Theme
 - [ ] Dio with Interceptor
-- [ ] Shared Preference
+- [x] Shared Preference
 - [ ] JSON Serialization / JSON/Object Mapping Generation
 - [ ] JSON Localization
 - [ ] SQLite with Moor
