@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
-import '../helpers/app_localizations.dart';
 import '../providers/providers.dart';
 
 class AppLanguage extends ConsumerWidget {

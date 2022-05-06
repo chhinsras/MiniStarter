@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hybrid/screens/screens.dart';
+import 'package:hybrid/views/views.dart';
 import 'config/config.dart';
 import 'helpers/app_localizations.dart';
 import 'providers/app_provider.dart';
@@ -23,14 +23,13 @@ void main() async {
   // }));
   // response = await dio.get('https://localhost:5001/api/AuditLogs');R
   // print(response);
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends ConsumerWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
-  initializeApp(AppProvider appProvider) async =>
-      {await appProvider.fetchLocale()};
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -43,9 +42,10 @@ class MyApp extends ConsumerWidget {
     } else {
       theme = AppTheme.light();
     }
+
     return FutureBuilder(
       future: appManager.fetchLocale(),
-      builder: (context, snapshot) => MaterialApp(
+      builder: (context, snapshot) => MaterialApp.router(
         title: 'Mini Starter',
         theme: theme,
         locale: appManager.appLocale,
@@ -57,7 +57,8 @@ class MyApp extends ConsumerWidget {
           GlobalCupertinoLocalizations.delegate,
           DefaultCupertinoLocalizations.delegate,
         ],
-        home: HomeScreen(title: appManager.appLocale.toString()),
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
     );
   }
