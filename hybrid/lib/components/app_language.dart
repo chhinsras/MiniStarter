@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hybrid/providers/app_provider.dart';
-
 import '../helpers/app_localizations.dart';
+import '../providers/providers.dart';
 
 class AppLanguage extends ConsumerWidget {
-  final _appProvider = ChangeNotifierProvider<AppProvider>((ref) {
-    return AppProvider();
-  });
-
-  AppLanguage({Key? key}) : super(key: key);
+  const AppLanguage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appProvider = ref.watch(_appProvider);
+    final appManager = ref.watch(appProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -33,13 +28,13 @@ class AppLanguage extends ConsumerWidget {
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () {
-                    appProvider.changeLanguage(const Locale("en"));
+                    appManager.changeLanguage(const Locale("en"));
                   },
-                  child: const Text('English'),
+                  child: const Text('Englissh'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    appProvider.changeLanguage(const Locale("km"));
+                    appManager.changeLanguage(const Locale("km"));
                   },
                   child: const Text('Khmer'),
                 )
