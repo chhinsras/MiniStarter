@@ -54,7 +54,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Flutter 2.0 Supports iOS / Android / MacOS / Windows / Web
 - [ ] Responsive
 - [x] Riverpod
-- [ ] Navigation 2.0 with Beamer / Auto_Route
+- [x] Navigation 2.0 with Auto_Route (TBD: Beamer)
 - [x] Custom Theme
 - [ ] Dio with Interceptor
 - [x] Shared Preference
