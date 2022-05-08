@@ -34,20 +34,20 @@ The goal of this repository is to previde feature rich and production ready for 
   - [x] AutoMapper
 
 ## Angular 
-- [ ] Angular 13
-- [ ] Angular Material
+- [x] Angular 13
+- [x] Angular Material
 - [ ] Tailwind Support
 - [ ] Charts
 - [ ] Export PDF
 - [ ] MudTable Export CSV, Excel, CopyClipboard
-- [ ] Bootstrap Grid
+- [x] Bootstrap Grid
 - [ ] Realtime Dashboard
 - [ ] Notification with SignalR
 - [ ] Advanced Notification - Notification like Facebook
-- [ ] Dark Mode
-- [ ] JSON Localization
-- [ ] Http Interceptor
-- [ ] Dynamic Spinner
+- [x] Dark Mode
+- [x] JSON Localization
+- [x] Http Interceptor
+- [x] Dynamic Spinner
 
 
 ## Flutter 
