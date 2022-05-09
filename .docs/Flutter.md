@@ -5,3 +5,4 @@
 
 ## Build Runner Code Generation
 ```flutter packages pub run build_runner watch```
+```flutter pub run build_runner watch```

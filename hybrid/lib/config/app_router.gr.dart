@@ -18,8 +18,10 @@ class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const HomePage());
+          routeData: routeData, child: HomePage(key: args.key));
     },
     AuditRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -41,10 +43,22 @@ class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '/');
+class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
+  HomeRoute({Key? key})
+      : super(HomeRoute.name, path: '/', args: HomeRouteArgs(key: key));
 
   static const String name = 'HomeRoute';
+}
+
+class HomeRouteArgs {
+  const HomeRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'HomeRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
