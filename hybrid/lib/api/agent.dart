@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../helpers/helpers.dart';
 import '../models/models.dart';
 
@@ -10,7 +11,7 @@ class Agent {
 
   Agent() {
     var options = BaseOptions(
-      baseUrl: 'https://localhost:5001/api/',
+      baseUrl: dotenv.env['BASE_URL']!,
       connectTimeout: 50000,
       receiveTimeout: 30000,
     );

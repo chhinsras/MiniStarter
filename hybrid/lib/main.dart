@@ -8,8 +8,10 @@ import 'providers/app_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'providers/providers.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+Future main() async {
+  await dotenv.load(fileName: ".env");
   runApp(ProviderScope(child: MyApp()));
 }
 
