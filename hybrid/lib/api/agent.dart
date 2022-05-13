@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../helpers/helpers.dart';
 import '../models/models.dart';
@@ -35,7 +34,7 @@ class Agent {
               Toastr.showError(text: 'Invalid Request.');
               break;
             case 401:
-              Toastr.showWarning(text: 'text');
+              Toastr.showWarning(text: 'Unauthorized.');
               break;
             case 403:
               Toastr.showWarning(text: 'Access Denied.');

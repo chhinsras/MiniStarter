@@ -23,6 +23,12 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: HomePage(key: args.key));
     },
+    DashboardRoute.name: (routeData) {
+      final args = routeData.argsAs<DashboardRouteArgs>(
+          orElse: () => const DashboardRouteArgs());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: DashboardPage(key: args.key));
+    },
     AuditRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const AuditPage());
@@ -36,6 +42,7 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
+        RouteConfig(DashboardRoute.name, path: '/dashboard-page'),
         RouteConfig(AuditRoute.name, path: '/audit-page'),
         RouteConfig(SettingRoute.name, path: '/setting-page')
       ];
@@ -58,6 +65,27 @@ class HomeRouteArgs {
   @override
   String toString() {
     return 'HomeRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [DashboardPage]
+class DashboardRoute extends PageRouteInfo<DashboardRouteArgs> {
+  DashboardRoute({Key? key})
+      : super(DashboardRoute.name,
+            path: '/dashboard-page', args: DashboardRouteArgs(key: key));
+
+  static const String name = 'DashboardRoute';
+}
+
+class DashboardRouteArgs {
+  const DashboardRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'DashboardRouteArgs{key: $key}';
   }
 }
 
