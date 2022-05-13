@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
+import 'package:hybrid/helpers/helpers.dart';
 import '../providers/providers.dart';
 
 class AppLanguage extends ConsumerWidget {
@@ -29,12 +30,18 @@ class AppLanguage extends ConsumerWidget {
                 ElevatedButton(
                   onPressed: () {
                     appManager.changeLanguage(const Locale("en"));
+                    Toastr.showSuccessAction(
+                        text: context.localization
+                            .translate('switch_language_en'));
                   },
-                  child: const Text('Englissh'),
+                  child: const Text('English'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     appManager.changeLanguage(const Locale("km"));
+                    Toastr.showSuccessAction(
+                        text: context.localization
+                            .translate('switch_language_km'));
                   },
                   child: const Text('Khmer'),
                 )

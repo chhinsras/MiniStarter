@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import '../helpers/helpers.dart';
 import '../models/models.dart';
 
 class Agent {
@@ -23,9 +24,13 @@ class Agent {
       final response = e.response!;
       switch (response.statusCode) {
         case 400:
+          Toastr.showBadRequest();
           break;
         case 401:
-          // toast(response.statusMessage);
+          Toastr.showUnauthorized();
+          break;
+        case 403:
+          Toastr.showAccessDenied();
           break;
         case 500:
           // toast(response.statusMessage);
@@ -52,6 +57,7 @@ class Agent {
         responseType: ResponseType.plain,
       ),
     );
+    print(response);
     List<Audit> result = [];
 
     (jsonDecode(response.data.toString())).forEach((element) {

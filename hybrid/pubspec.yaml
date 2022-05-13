@@ -16,6 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_colorpicker: ^0.6.0
+  bot_toast: ^4.0.1
   flutter_localizations:
     sdk: flutter
   flutter_riverpod: ^1.0.3
@@ -36,12 +37,12 @@ dependencies:
   uuid: ^3.0.4
 
 dev_dependencies:
+  auto_route_generator: ^3.2.3
   build_runner: ^2.1.1
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
   json_serializable: ^6.2.0
-  auto_route_generator: ^3.2.3
 
 flutter:
   uses-material-design: true

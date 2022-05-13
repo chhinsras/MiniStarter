@@ -1,4 +1,6 @@
 {
     "app_title": "កម្មវិធី Starter",
-    "app_message": "ផ្លាស់ប្តូរភាសា"
+    "app_message": "ផ្លាស់ប្តូរភាសា",
+    "switch_language_km": "ប្រព័ន្ធបានប្តូរទៅជាភាសាខ្មែរ",
+    "switch_language_en": "ប្រព័ន្ធបានប្តូរទៅជាភាសាអង់គ្លេស"
 }
