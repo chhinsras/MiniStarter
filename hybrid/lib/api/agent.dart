@@ -21,22 +21,45 @@ class Agent {
     }, onResponse: (response, handler) {
       return handler.next(response);
     }, onError: (DioError e, handler) {
-      final response = e.response!;
-      switch (response.statusCode) {
-        case 400:
-          Toastr.showBadRequest();
+      switch (e.type) {
+        case DioErrorType.connectTimeout:
+        case DioErrorType.receiveTimeout:
+        case DioErrorType.sendTimeout:
+          Toastr.showError(
+              text: 'The connection has timed out, please try again.');
           break;
-        case 401:
-          Toastr.showUnauthorized();
+        case DioErrorType.response:
+          switch (e.response?.statusCode) {
+            case 400:
+              Toastr.showError(text: 'Invalid Request.');
+              break;
+            case 401:
+              Toastr.showWarning(text: 'text');
+              break;
+            case 403:
+              Toastr.showWarning(text: 'Access Denied.');
+              break;
+            case 404:
+              Toastr.showError(
+                  text: 'The requested information could not be found');
+              break;
+            case 409:
+              Toastr.showError(text: 'Conflict occurred.');
+              break;
+            case 500:
+              Toastr.showError(
+                  text: 'Internal Server Error, please try again later.');
+              break;
+            default:
+          }
           break;
-        case 403:
-          Toastr.showAccessDenied();
+        case DioErrorType.cancel:
           break;
-        case 500:
-          // toast(response.statusMessage);
-          break;
-        default:
+        case DioErrorType.other:
+          Toastr.showError(
+              text: 'No internet connection detected, please try again.');
       }
+
       return handler.next(e);
     }));
   }

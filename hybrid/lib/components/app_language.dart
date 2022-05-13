@@ -30,7 +30,7 @@ class AppLanguage extends ConsumerWidget {
                 ElevatedButton(
                   onPressed: () {
                     appManager.changeLanguage(const Locale("en"));
-                    Toastr.showSuccessAction(
+                    Toastr.showSuccess(
                         text: context.localization
                             .translate('switch_language_en'));
                   },
@@ -39,7 +39,7 @@ class AppLanguage extends ConsumerWidget {
                 ElevatedButton(
                   onPressed: () {
                     appManager.changeLanguage(const Locale("km"));
-                    Toastr.showSuccessAction(
+                    Toastr.showSuccess(
                         text: context.localization
                             .translate('switch_language_km'));
                   },
