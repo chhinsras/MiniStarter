@@ -39,7 +39,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [ ] Tailwind Support
 - [ ] Charts
 - [ ] Export PDF
-- [ ] MudTable Export CSV, Excel, CopyClipboard
+- [x] MudTable Export CSV, Excel, CopyClipboard
 - [x] Bootstrap Grid
 - [ ] Realtime Dashboard
 - [ ] Notification with SignalR
@@ -56,7 +56,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Riverpod
 - [x] Navigation 2.0 with Auto_Route (TBD: Beamer)
 - [x] Custom Theme
-- [ ] Dio with Interceptor
+- [x] Dio with Interceptor
 - [x] Shared Preference
 - [ ] JSON Serialization / JSON/Object Mapping Generation
 - [ ] JSON Localization

@@ -65,14 +65,6 @@ class Agent {
     }));
   }
 
-  toast(BuildContext context, String? message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message ?? ""),
-      ),
-    );
-  }
-
 // Auditing
   Future<List<Audit>> getAudits() async {
     var response = await dio.get(
@@ -81,7 +73,6 @@ class Agent {
         responseType: ResponseType.plain,
       ),
     );
-    print(response);
     List<Audit> result = [];
 
     (jsonDecode(response.data.toString())).forEach((element) {
