@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hybrid/views/dashboard/menu_list.dart';
-
 import '../../config/config.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -71,7 +69,7 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(
               height: 10.0,
             ),
-            for (MenuItem menuItem in menuList)
+            for (AppMenuItem item in menuList)
               Container(
                   width: 120,
                   height: 100,
@@ -85,12 +83,12 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        menuItem.icon,
+                        item.icon,
                         size: 40.0,
                       ),
                       // const SizedBox(width: 8.0),
                       Text(
-                        menuItem.text!,
+                        item.text!,
                         style: const TextStyle(fontSize: 16.0),
                       )
                     ],
