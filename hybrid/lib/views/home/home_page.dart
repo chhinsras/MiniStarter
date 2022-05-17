@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hybrid/api/agent.dart';
-
+import 'package:hybrid/extensions/extensions.dart';
 import '../../components/components.dart';
 import '../../config/config.dart';
 import '../../models/models.dart';
@@ -25,15 +25,48 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('widget.title'),
+        title: Text(context.localization.translate('app_title')),
       ),
       body: SafeArea(
-          child: Row(
+          child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          Flexible(
             flex: 2,
-            child: leftSideNav(),
+            child: Container(
+              color: Colors.red,
+              width: double.infinity,
+              // height: SizeConfig.screenHeight,
+              child: Wrap(children: [
+                for (AppMenuItem item in menuList)
+                  InkWell(
+                    onTap: () => context.go(item.route!),
+                    child: Container(
+                        width: 100,
+                        // height: 50,
+                        margin: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                            color: Colors.red.shade900,
+                            borderRadius: BorderRadius.circular(5.0)),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              item.icon,
+                              size: 20.0,
+                            ),
+                            // const SizedBox(width: 8.0),
+                            Text(
+                              item.text!,
+                              style: const TextStyle(fontSize: 12.0),
+                            )
+                          ],
+                        )),
+                  ),
+              ]),
+            ),
           ),
           Expanded(
             flex: 10,
@@ -43,71 +76,8 @@ class _HomePageState extends State<HomePage> {
               height: SizeConfig.screenHeight,
             ),
           ),
-          // Expanded(
-          //     flex: 4,
-          //     child: Container(
-          //       color: Colors.blue,
-          //       width: double.infinity,
-          //       height: SizeConfig.screenHeight,
-          //     ))
         ],
       )),
-    );
-  }
-
-  Drawer leftSideNav() {
-    return Drawer(
-      elevation: 0,
-      child: Container(
-        color: Colors.red.shade400,
-        width: double.infinity,
-        height: SizeConfig.screenHeight,
-        child: SingleChildScrollView(
-            child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              color: Colors.red.shade900,
-              height: 100,
-              alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 20),
-              child: const Center(
-                child: Icon(
-                  Icons.home,
-                  size: 50,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10.0,
-            ),
-            for (AppMenuItem item in menuList)
-              Container(
-                  width: 120,
-                  height: 100,
-                  margin: const EdgeInsets.all(10.0),
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                      color: Colors.red.shade900,
-                      borderRadius: BorderRadius.circular(5.0)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        item.icon,
-                        size: 40.0,
-                      ),
-                      // const SizedBox(width: 8.0),
-                      Text(
-                        item.text!,
-                        style: const TextStyle(fontSize: 16.0),
-                      )
-                    ],
-                  )),
-          ],
-        )),
-      ),
     );
   }
 }

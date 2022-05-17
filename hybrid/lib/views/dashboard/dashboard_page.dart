@@ -14,7 +14,7 @@ class _DashboardPageState extends State<DashboardPage> {
       appBar: AppBar(
         title: Text('widget.title'),
       ),
-      body: Center(child: Text('Dashboard')),
+      body: Center(child: Text('Dashboard Page')),
     );
   }
 }

@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hybrid/router/routes.dart';
 import 'config/config.dart';
 import 'helpers/app_localizations.dart';
 import 'providers/app_provider.dart';
@@ -17,7 +17,6 @@ Future main() async {
 
 class MyApp extends ConsumerWidget {
   MyApp({Key? key}) : super(key: key);
-  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,9 +45,8 @@ class MyApp extends ConsumerWidget {
           DefaultCupertinoLocalizations.delegate,
         ],
         builder: BotToastInit(),
-        routerDelegate: AutoRouterDelegate(_appRouter,
-            navigatorObservers: () => [BotToastNavigatorObserver()]),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerDelegate: appRouter.routerDelegate,
+        routeInformationParser: appRouter.routeInformationParser,
       ),
     );
   }
