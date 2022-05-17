@@ -1,28 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hybrid/api/agent.dart';
 import 'package:hybrid/extensions/extensions.dart';
+import 'package:hybrid/providers/providers.dart';
+import 'package:hybrid/views/audit/audit_page.dart';
+import 'package:hybrid/views/dashboard/dashboard_page.dart';
+import 'package:hybrid/views/views.dart';
 import '../../components/components.dart';
 import '../../config/config.dart';
 import '../../models/models.dart';
 import 'menu_list.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
-  // final String title;
-
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> {
+  static List<Widget> pages = <Widget>[
+    DashboardPage(),
+    const GazetteerPage(),
+    const UserPage(),
+    const RolePage(),
+    const AuditPage()
+  ];
+
+  @override
   void initState() {
     super.initState();
+    ref.read(appProvider);
   }
 
   @override
   Widget build(BuildContext context) {
+    final appState = ref.watch(appProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(context.localization.translate('app_title')),
@@ -70,14 +84,29 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             flex: 10,
-            child: Container(
-              color: Colors.green,
-              width: double.infinity,
-              height: SizeConfig.screenHeight,
+            child: IndexedStack(
+              index: appState.getSelectedTab,
+              children: pages,
             ),
           ),
         ],
       )),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: appState.getSelectedTab,
+          onTap: (index) {
+            appState.goToTab(index);
+          },
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.dashboard), label: 'Dashboard'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.table_bar), label: 'Gazetteer'),
+            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.supervised_user_circle), label: 'Roles'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.code), label: 'Changelogs'),
+          ]),
     );
   }
 }
