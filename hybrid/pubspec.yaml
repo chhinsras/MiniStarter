@@ -9,7 +9,11 @@ environment:
 
 dependencies:
   auto_route: ^4.0.1
-  bot_toast: ^4.0.1
+  # bot_toast: ^4.0.1
+  bot_toast:
+    git:
+      url: https://github.com/MMMzq/bot_toast.git
+      ref: 8d4535073aa56578409e31c243f485e4517f40e4
   cached_network_image: ^3.2.0
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
