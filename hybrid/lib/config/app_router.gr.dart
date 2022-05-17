@@ -41,18 +41,24 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(HomeRoute.name, path: '/'),
-        RouteConfig(DashboardRoute.name, path: '/dashboard-page'),
-        RouteConfig(AuditRoute.name, path: '/audit-page'),
-        RouteConfig(SettingRoute.name, path: '/setting-page')
+        RouteConfig(HomeRoute.name, path: '/', children: [
+          RouteConfig(DashboardRoute.name,
+              path: 'dashboard', parent: HomeRoute.name),
+          RouteConfig(AuditRoute.name, path: 'audit', parent: HomeRoute.name),
+          RouteConfig(SettingRoute.name,
+              path: 'setting', parent: HomeRoute.name)
+        ])
       ];
 }
 
 /// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({Key? key})
-      : super(HomeRoute.name, path: '/', args: HomeRouteArgs(key: key));
+  HomeRoute({Key? key, List<PageRouteInfo>? children})
+      : super(HomeRoute.name,
+            path: '/',
+            args: HomeRouteArgs(key: key),
+            initialChildren: children);
 
   static const String name = 'HomeRoute';
 }
@@ -73,7 +79,7 @@ class HomeRouteArgs {
 class DashboardRoute extends PageRouteInfo<DashboardRouteArgs> {
   DashboardRoute({Key? key})
       : super(DashboardRoute.name,
-            path: '/dashboard-page', args: DashboardRouteArgs(key: key));
+            path: 'dashboard', args: DashboardRouteArgs(key: key));
 
   static const String name = 'DashboardRoute';
 }
@@ -92,7 +98,7 @@ class DashboardRouteArgs {
 /// generated route for
 /// [AuditPage]
 class AuditRoute extends PageRouteInfo<void> {
-  const AuditRoute() : super(AuditRoute.name, path: '/audit-page');
+  const AuditRoute() : super(AuditRoute.name, path: 'audit');
 
   static const String name = 'AuditRoute';
 }
@@ -100,7 +106,7 @@ class AuditRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [SettingPage]
 class SettingRoute extends PageRouteInfo<void> {
-  const SettingRoute() : super(SettingRoute.name, path: '/setting-page');
+  const SettingRoute() : super(SettingRoute.name, path: 'setting');
 
   static const String name = 'SettingRoute';
 }

@@ -9,10 +9,11 @@ part 'app_router.gr.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: HomePage, initial: true),
-    AutoRoute(page: DashboardPage),
-    AutoRoute(page: AuditPage),
-    AutoRoute(page: SettingPage),
+    AutoRoute(page: HomePage, initial: true, children: [
+      AutoRoute(page: DashboardPage, path: 'dashboard'),
+      AutoRoute(page: AuditPage, path: 'audit'),
+      AutoRoute(page: SettingPage, path: 'setting'),
+    ]),
   ],
 )
 class AppRouter extends _$AppRouter {}
