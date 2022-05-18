@@ -10,10 +10,11 @@ class AppMenuItem {
 
 List<AppMenuItem> drawerMenuList = [
   AppMenuItem(text: 'Dashboard', icon: Icons.dashboard, route: '/dashboard'),
-  AppMenuItem(text: 'Gazetteer', icon: Icons.table_bar, route: '/gazetteer'),
-  AppMenuItem(text: 'Users', icon: Icons.people, route: '/user'),
+  AppMenuItem(
+      text: 'Gazetteer', icon: Icons.table_bar, route: '/admin/gazetteer'),
+  AppMenuItem(text: 'Users', icon: Icons.people, route: '/admin/user'),
   AppMenuItem(text: 'Admin', icon: Icons.admin_panel_settings, route: '/admin'),
-  AppMenuItem(text: 'Changelogs', icon: Icons.code, route: '/audit'),
+  AppMenuItem(text: 'Changelogs', icon: Icons.code, route: '/admin/audit'),
 ];
 
 List<AppMenuItem> moduleMenuList = [

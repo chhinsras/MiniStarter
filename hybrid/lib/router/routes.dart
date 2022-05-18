@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,7 @@ import '../views/views.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
+  observers: [BotToastNavigatorObserver()],
   routes: [
     GoRoute(
         path: '/',
@@ -20,25 +22,26 @@ final appRouter = GoRouter(
             builder: (context, state) => DashboardPage(),
           ),
           GoRoute(
-            path: 'gazetteer',
-            builder: (context, state) => const GazetteerPage(),
-          ),
-          GoRoute(
-            path: 'user',
-            builder: (context, state) => const UserPage(),
-          ),
-          GoRoute(
-            path: 'role',
-            builder: (context, state) => const RolePage(),
-          ),
-          GoRoute(
-            path: 'admin',
-            builder: (context, state) => const AdminPage(),
-          ),
-          GoRoute(
-            path: 'audit',
-            builder: (context, state) => const AuditPage(),
-          ),
+              path: 'admin',
+              builder: (context, state) => const AdminPage(),
+              routes: [
+                GoRoute(
+                  path: 'gazetteer',
+                  builder: (context, state) => const GazetteerPage(),
+                ),
+                GoRoute(
+                  path: 'user',
+                  builder: (context, state) => const UserPage(),
+                ),
+                GoRoute(
+                  path: 'role',
+                  builder: (context, state) => const RolePage(),
+                ),
+                GoRoute(
+                  path: 'audit',
+                  builder: (context, state) => const AuditPage(),
+                ),
+              ]),
         ]),
   ],
   navigatorBuilder: (context, state, child) => Material(

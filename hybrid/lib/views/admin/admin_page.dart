@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hybrid/extensions/extensions.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({Key? key}) : super(key: key);
@@ -8,11 +9,16 @@ class AdminPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // leading: IconButton(
-          //   icon: const Icon(Icons.close),
-          //   onPressed: () {},
-          // ),
-          ),
+        title: Text(
+          context.localization.translate('admin'),
+        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.close),
+        //   onPressed: () {
+        //     context.pop();
+        //   },
+        // ),
+      ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,20 +39,26 @@ class AdminPage extends StatelessWidget {
         ListTile(
           title: const Text('Manage Users'),
           onTap: () {
-            context.go('/user');
+            context.go('/admin/user');
           },
         ),
         ListTile(
           title: const Text('Manage Roles'),
-          onTap: () {},
+          onTap: () {
+            context.go('/admin/role');
+          },
         ),
         ListTile(
           title: const Text('Manage Gazetteers'),
-          onTap: () {},
+          onTap: () {
+            context.go('/admin/gazetteer');
+          },
         ),
         ListTile(
           title: const Text('Changelogs'),
-          onTap: () {},
+          onTap: () {
+            context.go('/admin/audit');
+          },
         ),
       ],
     );

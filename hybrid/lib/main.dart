@@ -48,6 +48,7 @@ class MyApp extends ConsumerWidget {
         builder: BotToastInit(),
         routerDelegate: appRouter.routerDelegate,
         routeInformationParser: appRouter.routeInformationParser,
+        backButtonDispatcher: RootBackButtonDispatcher(),
       ),
     );
   }

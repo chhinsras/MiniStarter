@@ -5,7 +5,7 @@ class Toastr {
   static showSuccess({required String text}) {
     BotToast.showText(
       text: '✅ ' + text,
-      contentColor: Colors.green,
+      contentColor: Colors.teal,
       contentPadding: const EdgeInsets.all(12.0),
       align: const Alignment(0.9, 0.9),
     );

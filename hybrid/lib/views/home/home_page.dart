@@ -11,6 +11,7 @@ import 'package:hybrid/views/dashboard/dashboard_page.dart';
 import 'package:hybrid/views/views.dart';
 import '../../components/components.dart';
 import '../../config/config.dart';
+import '../../helpers/helpers.dart';
 import '../../models/models.dart';
 import 'menu_list.dart';
 
@@ -56,60 +57,89 @@ class _HomePageState extends ConsumerState<HomePage>
   Widget build(BuildContext context) {
     final appState = ref.watch(appProvider);
     return Scaffold(
-        appBar: AppBar(
-          title: Text(context.localization.translate('app_title')),
-          leading: Builder(builder: (BuildContext context) {
-            return IconButton(
-                icon: const Icon(Icons.menu),
+      appBar: AppBar(
+        title: Text(context.localization.translate('app_title')),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              });
+        }),
+        // bottom: TabBar(
+        //   controller: _controller,
+        //   tabs: [for (final page in menuList) Tab(text: page.text)],
+        //   onTap: (index) => _tap(context, index, menuList[index].route!),
+        // ),
+      ),
+      drawer: appDrawer(context),
+      body: Column(
+        children: [
+          Expanded(
+            child: GridView.count(
+              padding: const EdgeInsets.all(8),
+              crossAxisCount: 3,
+              children: [
+                for (AppMenuItem item in moduleMenuList) moduleMenuItem(item),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
                 onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                });
-          }),
-          // bottom: TabBar(
-          //   controller: _controller,
-          //   tabs: [for (final page in menuList) Tab(text: page.text)],
-          //   onTap: (index) => _tap(context, index, menuList[index].route!),
-          // ),
-        ),
-        drawer: appDrawer(context),
-        body: GridView.count(
-          padding: const EdgeInsets.all(8),
-          crossAxisCount: 3,
-          children: [
-            for (AppMenuItem item in moduleMenuList) moduleMenuItem(item),
-          ],
-        )
-        // SafeArea(
-        //     child: Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Expanded(
-        //       flex: 10,
-        //       child: IndexedStack(
-        //         index: appState.getSelectedTab,
-        //         children: pages,
-        //       ),
-        //     ),
-        //   ],
-        // )),
-        // body: TabBarView(controller: _controller, children: pages),
-        // bottomNavigationBar: BottomNavigationBar(
-        //     currentIndex: appState.getSelectedTab,
-        //     onTap: (index) {
-        //       appState.goToTab(index);
-        //     },
-        //     items: const <BottomNavigationBarItem>[
-        //       BottomNavigationBarItem(
-        //           icon: Icon(Icons.dashboard), label: 'Dashboard'),
-        //       BottomNavigationBarItem(
-        //           icon: Icon(Icons.table_bar), label: 'Gazetteer'),
-        //       BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
-        //       BottomNavigationBarItem(
-        //           icon: Icon(Icons.admin_panel_settings), label: 'Admin'),
-        //       BottomNavigationBarItem(
-        //           icon: Icon(Icons.code), label: 'Changelogs'),
-        //     ]),
-        );
+                  appState.changeLanguage(const Locale("en"));
+                  Toastr.showSuccess(
+                      text:
+                          context.localization.translate('switch_language_en'));
+                },
+                child: const Text('English'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  appState.changeLanguage(const Locale("km"));
+                  Toastr.showSuccess(
+                      text:
+                          context.localization.translate('switch_language_km'));
+                },
+                child: const Text('Khmer'),
+              )
+            ],
+          ),
+        ],
+      ),
+      // SafeArea(
+      //     child: Column(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: [
+      //     Expanded(
+      //       flex: 10,
+      //       child: IndexedStack(
+      //         index: appState.getSelectedTab,
+      //         children: pages,
+      //       ),
+      //     ),
+      //   ],
+      // )),
+      // body: TabBarView(controller: _controller, children: pages),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     currentIndex: appState.getSelectedTab,
+      //     onTap: (index) {
+      //       appState.goToTab(index);
+      //     },
+      //     items: const <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //           icon: Icon(Icons.dashboard), label: 'Dashboard'),
+      //       BottomNavigationBarItem(
+      //           icon: Icon(Icons.table_bar), label: 'Gazetteer'),
+      //       BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
+      //       BottomNavigationBarItem(
+      //           icon: Icon(Icons.admin_panel_settings), label: 'Admin'),
+      //       BottomNavigationBarItem(
+      //           icon: Icon(Icons.code), label: 'Changelogs'),
+      //     ]),
+    );
   }
 
   Container moduleMenuItem(AppMenuItem item) {
@@ -178,7 +208,7 @@ class _HomePageState extends ConsumerState<HomePage>
                 ),
               ),
           ]),
-          buildDarkModeRow()
+          buildDarkModeRow(),
         ],
       ),
     );

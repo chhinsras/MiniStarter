@@ -2,5 +2,12 @@
     "app_title": "Mini Starter",
     "app_message": "Change your language.",
     "switch_language_km": "Changed system language to Khmer",
-    "switch_language_en": "Changed system language to English"
+    "switch_language_en": "Changed system language to English",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "user": "Users",
+    "role": "Roles",
+    "changelog": "Changelog",
+    "gazetteer": "Gazetteer"
+    
 }
