@@ -10,18 +10,49 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
         path: '/',
-        builder: (context, state) => HomePage(key: state.pageKey),
-        routes: [
-          GoRoute(
-            path: 'dashboard',
-            builder: (context, state) => DashboardPage(),
-          ),
-          GoRoute(
-            path: 'audit',
-            builder: (context, state) => const AuditPage(),
-          ),
-        ]),
+        builder: (context, state) => HomePage(
+              key: state.pageKey,
+              currentTab: ProviderContainer().read(appProvider).getSelectedTab,
+            ),
+        routes: []),
+    GoRoute(
+      path: '/:route',
+      builder: (context, state) => HomePage(
+          key: state.pageKey,
+          currentTab: ProviderContainer().read(appProvider).getSelectedTab),
+    ),
+    // GoRoute(
+    //   path: '/dashboard',
+    //   builder: (context, state) => DashboardPage(),
+    // ),
+    // GoRoute(
+    //   path: '/gazetteer',
+    //   builder: (context, state) => DashboardPage(),
+    // ),
+    // GoRoute(
+    //   path: '/user',
+    //   builder: (context, state) => DashboardPage(),
+    // ),
+    // GoRoute(
+    //   path: '/role',
+    //   builder: (context, state) => DashboardPage(),
+    // ),
+    // GoRoute(
+    //   path: '/audit',
+    //   builder: (context, state) => const AuditPage(),
+    // ),
   ],
+  navigatorBuilder: (context, state, child) => Material(
+    child: Column(
+      children: [
+        Expanded(child: child),
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Text(state.location),
+        ),
+      ],
+    ),
+  ),
   errorPageBuilder: (context, state) => MaterialPage(
     key: state.pageKey,
     child: Scaffold(
