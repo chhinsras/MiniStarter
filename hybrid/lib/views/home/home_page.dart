@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hybrid/api/agent.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/providers/app_provider.dart';
@@ -16,9 +16,8 @@ import '../../models/models.dart';
 import 'menu_list.dart';
 
 class HomePage extends ConsumerStatefulWidget {
-  HomePage({Key? key, required this.currentTab}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
-  final int currentTab;
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
 }
@@ -40,8 +39,8 @@ class _HomePageState extends ConsumerState<HomePage>
     super.initState();
     ref.read(appProvider);
 
-    _controller = TabController(
-        length: pages.length, vsync: this, initialIndex: widget.currentTab);
+    // _controller = TabController(
+    //     length: pages.length, vsync: this, initialIndex: widget.currentTab);
   }
 
   @override
@@ -51,7 +50,7 @@ class _HomePageState extends ConsumerState<HomePage>
   }
 
   void _tap(BuildContext context, int index, String route) =>
-      context.go('/$route');
+      context.router.pushNamed('/$route');
 
   @override
   Widget build(BuildContext context) {
@@ -75,15 +74,16 @@ class _HomePageState extends ConsumerState<HomePage>
       drawer: appDrawer(context),
       body: Column(
         children: [
-          Expanded(
-            child: GridView.count(
-              padding: const EdgeInsets.all(8),
-              crossAxisCount: 3,
-              children: [
-                for (AppMenuItem item in moduleMenuList) moduleMenuItem(item),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: GridView.count(
+          //     padding: const EdgeInsets.all(8),
+          //     crossAxisCount: 3,
+          //     children: [
+          //       for (AppMenuItem item in moduleMenuList) moduleMenuItem(item),
+          //     ],
+          //   ),
+          // ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -179,9 +179,9 @@ class _HomePageState extends ConsumerState<HomePage>
           Wrap(children: [
             for (AppMenuItem item in drawerMenuList)
               InkWell(
-                onTap: () => context.go(item.route),
+                onTap: () => context.router.pushNamed(item.route),
                 child: InkWell(
-                  onTap: () => context.go(item.route),
+                  // onTap: () => context.go(item.route),
                   child: Container(
                       // width: 100,
                       // height: 50,
