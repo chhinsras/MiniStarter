@@ -14,33 +14,32 @@ final appRouter = GoRouter(
               key: state.pageKey,
               currentTab: ProviderContainer().read(appProvider).getSelectedTab,
             ),
-        routes: []),
-    GoRoute(
-      path: '/:route',
-      builder: (context, state) => HomePage(
-          key: state.pageKey,
-          currentTab: ProviderContainer().read(appProvider).getSelectedTab),
-    ),
-    // GoRoute(
-    //   path: '/dashboard',
-    //   builder: (context, state) => DashboardPage(),
-    // ),
-    // GoRoute(
-    //   path: '/gazetteer',
-    //   builder: (context, state) => DashboardPage(),
-    // ),
-    // GoRoute(
-    //   path: '/user',
-    //   builder: (context, state) => DashboardPage(),
-    // ),
-    // GoRoute(
-    //   path: '/role',
-    //   builder: (context, state) => DashboardPage(),
-    // ),
-    // GoRoute(
-    //   path: '/audit',
-    //   builder: (context, state) => const AuditPage(),
-    // ),
+        routes: [
+          GoRoute(
+            path: 'dashboard',
+            builder: (context, state) => DashboardPage(),
+          ),
+          GoRoute(
+            path: 'gazetteer',
+            builder: (context, state) => const GazetteerPage(),
+          ),
+          GoRoute(
+            path: 'user',
+            builder: (context, state) => const UserPage(),
+          ),
+          GoRoute(
+            path: 'role',
+            builder: (context, state) => const RolePage(),
+          ),
+          GoRoute(
+            path: 'admin',
+            builder: (context, state) => const AdminPage(),
+          ),
+          GoRoute(
+            path: 'audit',
+            builder: (context, state) => const AuditPage(),
+          ),
+        ]),
   ],
   navigatorBuilder: (context, state, child) => Material(
     child: Column(
