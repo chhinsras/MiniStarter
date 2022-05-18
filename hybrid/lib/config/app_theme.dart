@@ -60,6 +60,7 @@ class AppTheme {
 
   static ThemeData light() {
     return ThemeData(
+      primaryColor: Colors.teal,
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
@@ -70,14 +71,14 @@ class AppTheme {
       ),
       appBarTheme: const AppBarTheme(
         foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.teal,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.teal,
       ),
       textTheme: lightTextTheme,
     );
@@ -85,6 +86,7 @@ class AppTheme {
 
   static ThemeData dark() {
     return ThemeData(
+      primaryColor: Colors.black,
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,
@@ -92,10 +94,10 @@ class AppTheme {
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.teal,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.teal,
       ),
       textTheme: darkTextTheme,
     );

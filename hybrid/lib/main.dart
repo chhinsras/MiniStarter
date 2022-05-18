@@ -34,6 +34,7 @@ class MyApp extends ConsumerWidget {
       future: appManager.fetchLocale(),
       builder: (context, snapshot) => MaterialApp.router(
         title: 'Mini Starter',
+        debugShowCheckedModeBanner: false,
         theme: theme,
         locale: appManager.appLocale,
         supportedLocales: AppProvider.supportedLanguage,

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hybrid/api/agent.dart';
 import 'package:hybrid/extensions/extensions.dart';
+import 'package:hybrid/providers/app_provider.dart';
 import 'package:hybrid/providers/providers.dart';
 import 'package:hybrid/views/admin/admin_page.dart';
 import 'package:hybrid/views/audit/audit_page.dart';
@@ -55,36 +56,102 @@ class _HomePageState extends ConsumerState<HomePage>
   Widget build(BuildContext context) {
     final appState = ref.watch(appProvider);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(context.localization.translate('app_title')),
-        leading: Builder(builder: (BuildContext context) {
-          return IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              });
-        }),
-        // bottom: TabBar(
-        //   controller: _controller,
-        //   tabs: [for (final page in menuList) Tab(text: page.text)],
-        //   onTap: (index) => _tap(context, index, menuList[index].route!),
-        // ),
-      ),
-      drawer: Drawer(
-        child: ListView(
+        appBar: AppBar(
+          title: Text(context.localization.translate('app_title')),
+          leading: Builder(builder: (BuildContext context) {
+            return IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                });
+          }),
+          // bottom: TabBar(
+          //   controller: _controller,
+          //   tabs: [for (final page in menuList) Tab(text: page.text)],
+          //   onTap: (index) => _tap(context, index, menuList[index].route!),
+          // ),
+        ),
+        drawer: appDrawer(context),
+        body: GridView.count(
+          padding: const EdgeInsets.all(8),
+          crossAxisCount: 3,
           children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(),
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [Text('Chhin Sras'), Text('Flutter Developer')],
-              )),
+            for (AppMenuItem item in moduleMenuList) moduleMenuItem(item),
+          ],
+        )
+        // SafeArea(
+        //     child: Column(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   children: [
+        //     Expanded(
+        //       flex: 10,
+        //       child: IndexedStack(
+        //         index: appState.getSelectedTab,
+        //         children: pages,
+        //       ),
+        //     ),
+        //   ],
+        // )),
+        // body: TabBarView(controller: _controller, children: pages),
+        // bottomNavigationBar: BottomNavigationBar(
+        //     currentIndex: appState.getSelectedTab,
+        //     onTap: (index) {
+        //       appState.goToTab(index);
+        //     },
+        //     items: const <BottomNavigationBarItem>[
+        //       BottomNavigationBarItem(
+        //           icon: Icon(Icons.dashboard), label: 'Dashboard'),
+        //       BottomNavigationBarItem(
+        //           icon: Icon(Icons.table_bar), label: 'Gazetteer'),
+        //       BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
+        //       BottomNavigationBarItem(
+        //           icon: Icon(Icons.admin_panel_settings), label: 'Admin'),
+        //       BottomNavigationBarItem(
+        //           icon: Icon(Icons.code), label: 'Changelogs'),
+        //     ]),
+        );
+  }
+
+  Container moduleMenuItem(AppMenuItem item) {
+    return Container(
+        margin: const EdgeInsets.all(10),
+        width: 100,
+        height: 100,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Theme.of(context).primaryColor),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              item.icon,
+              size: 25,
             ),
-            Wrap(children: [
-              for (AppMenuItem item in menuList)
-                InkWell(
-                  onTap: () => context.go(item.route!),
+            Text(item.text),
+          ],
+        ));
+  }
+
+  Drawer appDrawer(BuildContext context) {
+    return Drawer(
+      backgroundColor: Theme.of(context).primaryColor,
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(),
+            child: Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [Text('Chhin Sras'), Text('Flutter Developer')],
+            )),
+          ),
+          Wrap(children: [
+            for (AppMenuItem item in drawerMenuList)
+              InkWell(
+                onTap: () => context.go(item.route),
+                child: InkWell(
+                  onTap: () => context.go(item.route),
                   child: Container(
                       // width: 100,
                       // height: 50,
@@ -103,83 +170,36 @@ class _HomePageState extends ConsumerState<HomePage>
                           ),
                           const SizedBox(width: 8.0),
                           Text(
-                            item.text!,
+                            item.text,
                             style: const TextStyle(fontSize: 12.0),
                           )
                         ],
                       )),
                 ),
-            ]),
-          ],
-        ),
-      ),
-      body: SafeArea(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Flexible(
-          //   flex: 2,
-          //   child: Container(
-          //     color: Colors.red,
-          //     width: double.infinity,
-          //     // height: SizeConfig.screenHeight,
-          //     child: Wrap(children: [
-          //       for (AppMenuItem item in menuList)
-          //         InkWell(
-          //           onTap: () => context.go(item.route!),
-          //           child: Container(
-          //               width: 100,
-          //               // height: 50,
-          //               margin: const EdgeInsets.all(10.0),
-          //               padding: const EdgeInsets.all(8.0),
-          //               decoration: BoxDecoration(
-          //                   color: Colors.red.shade900,
-          //                   borderRadius: BorderRadius.circular(5.0)),
-          //               child: Row(
-          //                 crossAxisAlignment: CrossAxisAlignment.center,
-          //                 mainAxisAlignment: MainAxisAlignment.center,
-          //                 children: [
-          //                   Icon(
-          //                     item.icon,
-          //                     size: 20.0,
-          //                   ),
-          //                   // const SizedBox(width: 8.0),
-          //                   Text(
-          //                     item.text!,
-          //                     style: const TextStyle(fontSize: 12.0),
-          //                   )
-          //                 ],
-          //               )),
-          //         ),
-          //     ]),
-          //   ),
-          // ),
-          Expanded(
-            flex: 10,
-            child: IndexedStack(
-              index: appState.getSelectedTab,
-              children: pages,
-            ),
-          ),
-        ],
-      )),
-      // body: TabBarView(controller: _controller, children: pages),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: appState.getSelectedTab,
-          onTap: (index) {
-            appState.goToTab(index);
-          },
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.dashboard), label: 'Dashboard'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.table_bar), label: 'Gazetteer'),
-            BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.admin_panel_settings), label: 'Admin'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.code), label: 'Changelogs'),
+              ),
           ]),
+          buildDarkModeRow()
+        ],
+      ),
+    );
+  }
+
+  Widget buildDarkModeRow() {
+    final profileState = ref.read(profileProvider);
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text('Dark Mode'),
+          Switch(
+            value: profileState.darkMode,
+            onChanged: (value) {
+              profileState.darkMode = value;
+            },
+          )
+        ],
+      ),
     );
   }
 }
