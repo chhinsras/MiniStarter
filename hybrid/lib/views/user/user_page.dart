@@ -6,15 +6,8 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          context.localization.translate('user'),
-        ),
-      ),
-      body: const Center(
-        child: Text("User Screen"),
-      ),
+    return const Center(
+      child: Text("User Screen"),
     );
   }
 }

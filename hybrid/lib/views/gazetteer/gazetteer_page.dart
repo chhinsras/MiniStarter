@@ -6,15 +6,8 @@ class GazetteerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          context.localization.translate('gazetteer'),
-        ),
-      ),
-      body: const Center(
-        child: Text("Gazetter Screen"),
-      ),
+    return const Center(
+      child: Text("Gazetter Page"),
     );
   }
 }
