@@ -53,12 +53,10 @@ packages:
   bot_toast:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "8d4535073aa56578409e31c243f485e4517f40e4"
-      resolved-ref: "8d4535073aa56578409e31c243f485e4517f40e4"
-      url: "https://github.com/MMMzq/bot_toast.git"
-    source: git
-    version: "4.0.1"
+      name: bot_toast
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.2"
   build:
     dependency: transitive
     description:

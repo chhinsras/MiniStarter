@@ -1,23 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
 
-class DashboardPage extends StatefulWidget {
+import '../../components/components.dart';
+import '../../helpers/helpers.dart';
+import '../../providers/providers.dart';
+
+class DashboardPage extends ConsumerWidget {
   DashboardPage({Key? key}) : super(key: key);
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
-}
-
-class _DashboardPageState extends State<DashboardPage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appManager = ref.watch(appProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(
           context.localization.translate('dashboard'),
         ),
       ),
-      body: const Center(child: Text('Dashboard Page')),
+      body: Column(
+        children: [
+          Column(
+            children: [
+              const Center(
+                child: Text('Dashboard Page'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      appManager.changeLanguage(const Locale("en"));
+                      Toastr.showSuccess(
+                          text: context.localization
+                              .translate('switch_language_en'));
+                    },
+                    child: const Text('English'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      appManager.changeLanguage(const Locale("km"));
+                      Toastr.showSuccess(
+                          text: context.localization
+                              .translate('switch_language_km'));
+                    },
+                    child: const Text('Khmer'),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

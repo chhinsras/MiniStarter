@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Toastr {
   static showSuccess({required String text}) {
     BotToast.showText(
-      text: '✅ ' + text,
+      text: '✅ $text',
       contentColor: Colors.teal,
       contentPadding: const EdgeInsets.all(12.0),
       align: const Alignment(0.9, 0.9),
