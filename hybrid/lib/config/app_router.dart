@@ -1,12 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:hybrid/views/admin/admin_page.dart';
-import 'package:hybrid/views/audit/audit_page.dart';
-import 'package:hybrid/views/dashboard/dashboard_page.dart';
-import 'package:hybrid/views/gazetteer/gazetteer_page.dart';
-import 'package:hybrid/views/home/home_page.dart';
-import 'package:hybrid/views/role/role_page.dart';
-import 'package:hybrid/views/user/user_page.dart';
+import '../layouts/admin-layout.dart';
+import '../views/views.dart';
 
 part 'app_router.gr.dart';
 
@@ -14,8 +9,8 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(page: HomePage, path: '/', initial: true),
-    AutoRoute(page: DashboardPage, path: '/dashboard'),
-    AutoRoute(path: '/admin', page: AdminPage, children: [
+    AutoRoute(path: '/admin', page: AdminLayoutPage, children: [
+      AutoRoute(page: DashboardPage, path: 'dashboard', initial: true),
       AutoRoute(page: GazetteerPage, path: 'gazetteer'),
       AutoRoute(page: UserPage, path: 'user'),
       AutoRoute(page: RolePage, path: 'role'),

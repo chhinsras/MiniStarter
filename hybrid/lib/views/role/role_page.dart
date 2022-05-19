@@ -8,15 +8,8 @@ class RolePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          context.localization.translate('role'),
-        ),
-      ),
-      body: const Center(
-        child: Text("Role Screen"),
-      ),
+    return const Center(
+      child: Text("Role Screen"),
     );
   }
 }

@@ -18,20 +18,20 @@ class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: HomePage(key: args.key));
+          routeData: routeData, child: const HomePage());
+    },
+    AdminLayoutRoute.name: (routeData) {
+      final args = routeData.argsAs<AdminLayoutRouteArgs>(
+          orElse: () => const AdminLayoutRouteArgs());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: AdminLayoutPage(key: args.key));
     },
     DashboardRoute.name: (routeData) {
       final args = routeData.argsAs<DashboardRouteArgs>(
           orElse: () => const DashboardRouteArgs());
       return MaterialPageX<dynamic>(
           routeData: routeData, child: DashboardPage(key: args.key));
-    },
-    AdminRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const AdminPage());
     },
     GazetteerRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -54,34 +54,54 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
-        RouteConfig(DashboardRoute.name, path: '/dashboard'),
-        RouteConfig(AdminRoute.name, path: '/admin', children: [
+        RouteConfig(AdminLayoutRoute.name, path: '/admin', children: [
+          RouteConfig('#redirect',
+              path: '',
+              parent: AdminLayoutRoute.name,
+              redirectTo: 'dashboard',
+              fullMatch: true),
+          RouteConfig(DashboardRoute.name,
+              path: 'dashboard', parent: AdminLayoutRoute.name),
           RouteConfig(GazetteerRoute.name,
-              path: 'gazetteer', parent: AdminRoute.name),
-          RouteConfig(UserRoute.name, path: 'user', parent: AdminRoute.name),
-          RouteConfig(RoleRoute.name, path: 'role', parent: AdminRoute.name),
-          RouteConfig(AuditRoute.name, path: 'audit', parent: AdminRoute.name)
+              path: 'gazetteer', parent: AdminLayoutRoute.name),
+          RouteConfig(UserRoute.name,
+              path: 'user', parent: AdminLayoutRoute.name),
+          RouteConfig(RoleRoute.name,
+              path: 'role', parent: AdminLayoutRoute.name),
+          RouteConfig(AuditRoute.name,
+              path: 'audit', parent: AdminLayoutRoute.name)
         ])
       ];
 }
 
 /// generated route for
 /// [HomePage]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({Key? key})
-      : super(HomeRoute.name, path: '/', args: HomeRouteArgs(key: key));
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute() : super(HomeRoute.name, path: '/');
 
   static const String name = 'HomeRoute';
 }
 
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
+/// generated route for
+/// [AdminLayoutPage]
+class AdminLayoutRoute extends PageRouteInfo<AdminLayoutRouteArgs> {
+  AdminLayoutRoute({Key? key, List<PageRouteInfo>? children})
+      : super(AdminLayoutRoute.name,
+            path: '/admin',
+            args: AdminLayoutRouteArgs(key: key),
+            initialChildren: children);
+
+  static const String name = 'AdminLayoutRoute';
+}
+
+class AdminLayoutRouteArgs {
+  const AdminLayoutRouteArgs({this.key});
 
   final Key? key;
 
   @override
   String toString() {
-    return 'HomeRouteArgs{key: $key}';
+    return 'AdminLayoutRouteArgs{key: $key}';
   }
 }
 
@@ -90,7 +110,7 @@ class HomeRouteArgs {
 class DashboardRoute extends PageRouteInfo<DashboardRouteArgs> {
   DashboardRoute({Key? key})
       : super(DashboardRoute.name,
-            path: '/dashboard', args: DashboardRouteArgs(key: key));
+            path: 'dashboard', args: DashboardRouteArgs(key: key));
 
   static const String name = 'DashboardRoute';
 }
@@ -104,15 +124,6 @@ class DashboardRouteArgs {
   String toString() {
     return 'DashboardRouteArgs{key: $key}';
   }
-}
-
-/// generated route for
-/// [AdminPage]
-class AdminRoute extends PageRouteInfo<void> {
-  const AdminRoute({List<PageRouteInfo>? children})
-      : super(AdminRoute.name, path: '/admin', initialChildren: children);
-
-  static const String name = 'AdminRoute';
 }
 
 /// generated route for
