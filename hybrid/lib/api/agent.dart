@@ -56,8 +56,7 @@ class Agent {
         case DioErrorType.cancel:
           break;
         case DioErrorType.other:
-          Toastr.showError(
-              text: 'No internet connection detected, please try again.');
+          Toastr.showError(text: e.message);
       }
 
       return handler.next(e);
