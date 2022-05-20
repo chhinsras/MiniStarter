@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/providers/providers.dart';
-import 'package:hybrid/views/dashboard/dashboard_page.dart';
 import 'package:hybrid/views/views.dart';
 import '../../config/config.dart';
 import 'menu_list.dart';
 
 class AdminLayoutPage extends ConsumerStatefulWidget {
-  AdminLayoutPage({Key? key}) : super(key: key);
+  const AdminLayoutPage({Key? key}) : super(key: key);
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
@@ -18,7 +17,7 @@ class AdminLayoutPage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<AdminLayoutPage>
     with TickerProviderStateMixin {
   static List<Widget> pages = <Widget>[
-    DashboardPage(),
+    const DashboardPage(),
     const GazetteerPage(),
     const UserPage(),
     const AdminPage(),

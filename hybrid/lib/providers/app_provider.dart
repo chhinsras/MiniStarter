@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../config/globals.dart' as _globle;
+import '../config/globals.dart' as globle;
 
 class AppTab {
   static const int dashboard = 0;
@@ -32,7 +32,7 @@ class AppProvider extends ChangeNotifier {
   void changeLanguage(Locale type) async {
     // print("languageCode::${type.languageCode}");
     var prefs = await SharedPreferences.getInstance();
-    _globle.lang = type.languageCode;
+    globle.lang = type.languageCode;
     _appLocale = type;
     await prefs.setString('language_code', type.languageCode);
     await prefs.setString('countryCode', '');
