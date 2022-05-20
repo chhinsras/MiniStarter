@@ -21,7 +21,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
     const GazetteerPage(),
     const UserPage(),
     const AdminPage(),
-    const AuditPage()
+    AuditPage()
   ];
 
   late final TabController _controller;

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../helpers/helpers.dart';
@@ -7,6 +6,7 @@ import '../models/models.dart';
 
 class Agent {
   final Dio dio = Dio();
+  final plainResponseOptions = Options(responseType: ResponseType.plain);
 
   Agent() {
     var options = BaseOptions(
@@ -65,20 +65,8 @@ class Agent {
   }
 
 // Auditing
-  Future<List<Audit>> getAudits() async {
-    var response = await dio.get(
-      'auditlogs',
-      options: Options(
-        responseType: ResponseType.plain,
-      ),
-    );
-    List<Audit> result = [];
-
-    (jsonDecode(response.data.toString())).forEach((element) {
-      result.add(Audit.fromJson(element));
-    });
-    return result;
-  }
+  Future<Response> getAudits() async =>
+      dio.get('auditlogs', options: plainResponseOptions);
 
 // Account
   Future<Response> loginUser(Login login) async =>
