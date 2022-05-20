@@ -11,6 +11,7 @@ class Agent {
   final plainResponseOptions = Options(responseType: ResponseType.plain);
 
   Agent() {
+    // self-signed certificate for https workaround
     (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (HttpClient client) {
       client.badCertificateCallback =
