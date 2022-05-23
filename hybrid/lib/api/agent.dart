@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:universal_platform/universal_platform.dart';
 import '../helpers/helpers.dart';
 import '../models/models.dart';
 
@@ -12,16 +13,18 @@ class Agent {
 
   Agent() {
     // self-signed certificate for https workaround
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (HttpClient client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
-      return client;
-    };
+    if (UniversalPlatform.isIOS || UniversalPlatform.isMacOS) {
+      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+          (HttpClient client) {
+        client.badCertificateCallback =
+            (X509Certificate cert, String host, int port) => true;
+        return client;
+      };
+    }
     var options = BaseOptions(
       baseUrl: dotenv.env['BASE_URL']!,
-      connectTimeout: 50000,
-      receiveTimeout: 30000,
+      connectTimeout: 5000,
+      receiveTimeout: 3000,
     );
     dio.options = options;
 
