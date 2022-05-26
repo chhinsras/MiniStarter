@@ -21,16 +21,16 @@ class HomePage extends StatelessWidget {
               LoginRoute(),
             ),
           ),
-          // Expanded(
-          //   child: GridView.count(
-          //     padding: const EdgeInsets.all(8),
-          //     crossAxisCount: 3,
-          //     children: [
-          //       for (AppMenuItem item in moduleMenuList)
-          //         moduleMenuItem(context, item),
-          //     ],
-          //   ),
-          // ),
+          Expanded(
+            child: GridView.count(
+              padding: const EdgeInsets.all(8),
+              crossAxisCount: 3,
+              children: [
+                for (AppMenuItem item in moduleMenuList)
+                  moduleMenuItem(context, item),
+              ],
+            ),
+          ),
         ],
       ),
     );

@@ -91,7 +91,7 @@ class AppTheme {
       brightness: Brightness.dark,
       appBarTheme: const AppBarTheme(
         foregroundColor: colorWhite,
-        backgroundColor: colorGrey,
+        backgroundColor: colorBlack,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: colorWhite,
