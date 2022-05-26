@@ -14,28 +14,36 @@ class AuditPage extends StatelessWidget {
     return FutureBuilder(
       future: auditService.getAudits(),
       builder: (context, AsyncSnapshot<List<Audit>> snapshot) {
-        if (snapshot.hasData) {
-          children = [
-            Column(
-              children: [
-                for (var element in snapshot.data!)
-                  Text(element.tableName.toString())
-              ],
-            )
-          ];
-        } else if (snapshot.hasError) {
-        } else {
-          children = const [
-            Center(
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting:
+            return const Center(
               child: CircularProgressIndicator(),
-            ),
-            Text('Loading')
-          ];
+            );
+          case ConnectionState.done:
+            if (snapshot.hasError) {
+              return Center(
+                child: Text(
+                  snapshot.error.toString(),
+                ),
+              );
+            } else {
+              return Column(
+                children: [
+                  for (var element in snapshot.data!)
+                    Text(element.tableName.toString())
+                ],
+              );
+            }
+          case ConnectionState.none:
+            // TODO: Handle this case.
+            break;
+          case ConnectionState.active:
+            // TODO: Handle this case.
+            break;
+          default:
+            return const Text('Unhandle states.');
         }
-
-        return Center(
-          child: Column(children: children),
-        );
+        return const Center();
       },
     );
   }
