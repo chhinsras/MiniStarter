@@ -21,6 +21,13 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomePage());
     },
+    LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: LoginPage(key: args.key, username: args.username));
+    },
     AdminLayoutRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const AdminLayoutPage());
@@ -52,6 +59,7 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
+        RouteConfig(LoginRoute.name, path: '/login'),
         RouteConfig(AdminLayoutRoute.name, path: '/admin', children: [
           RouteConfig('#redirect',
               path: '',
@@ -78,6 +86,29 @@ class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute() : super(HomeRoute.name, path: '/');
 
   static const String name = 'HomeRoute';
+}
+
+/// generated route for
+/// [LoginPage]
+class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
+  LoginRoute({Key? key, String? username})
+      : super(LoginRoute.name,
+            path: '/login', args: LoginRouteArgs(key: key, username: username));
+
+  static const String name = 'LoginRoute';
+}
+
+class LoginRouteArgs {
+  const LoginRouteArgs({this.key, this.username});
+
+  final Key? key;
+
+  final String? username;
+
+  @override
+  String toString() {
+    return 'LoginRouteArgs{key: $key, username: $username}';
+  }
 }
 
 /// generated route for

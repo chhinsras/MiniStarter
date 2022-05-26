@@ -9,6 +9,7 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(page: HomePage, path: '/', initial: true),
+    AutoRoute(path: '/login', page: LoginPage),
     AutoRoute(path: '/admin', page: AdminLayoutPage, children: [
       AutoRoute(page: DashboardPage, path: 'dashboard', initial: true),
       AutoRoute(page: GazetteerPage, path: 'gazetteer'),

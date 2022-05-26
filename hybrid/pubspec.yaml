@@ -28,6 +28,7 @@ dependencies:
   json_annotation: ^4.5.0
   logging: ^1.0.2
   path_provider: ^2.0.9
+  reactive_forms: ^13.0.0
   shared_preferences: ^2.0.13
   smooth_page_indicator: ^1.0.0+2
   sqflite: ^2.0.2+1
@@ -52,3 +53,4 @@ flutter:
     - .env
     - assets/
     - assets/i18n/
+    - assets/images/

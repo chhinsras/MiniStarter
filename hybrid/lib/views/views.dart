@@ -6,3 +6,4 @@ export 'admin/admin_page.dart';
 export 'audit/audit_page.dart';
 export 'dashboard/dashboard_page.dart';
 export 'setting/setting_page.dart';
+export 'account/login_page.dart';

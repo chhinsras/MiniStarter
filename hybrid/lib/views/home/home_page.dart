@@ -12,16 +12,25 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: GridView.count(
-              padding: const EdgeInsets.all(8),
-              crossAxisCount: 3,
-              children: [
-                for (AppMenuItem item in moduleMenuList)
-                  moduleMenuItem(context, item),
-              ],
+          MaterialButton(
+            child: const Text(
+              'Go to Login',
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () => context.router.navigate(
+              LoginRoute(),
             ),
           ),
+          // Expanded(
+          //   child: GridView.count(
+          //     padding: const EdgeInsets.all(8),
+          //     crossAxisCount: 3,
+          //     children: [
+          //       for (AppMenuItem item in moduleMenuList)
+          //         moduleMenuItem(context, item),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
