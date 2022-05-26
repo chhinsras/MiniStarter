@@ -63,6 +63,8 @@ class Agent {
                   text: 'Internal Server Error, please try again later.');
               break;
             default:
+                Toastr.showError(text: 'Unable to Connect to Server..');
+                break;
           }
           break;
         case DioErrorType.cancel:
