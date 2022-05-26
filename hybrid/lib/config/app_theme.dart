@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hybrid/config/colors.dart';
 
 class AppTheme {
   static TextTheme lightTextTheme = TextTheme(
@@ -60,7 +61,7 @@ class AppTheme {
 
   static ThemeData light() {
     return ThemeData(
-      primaryColor: Colors.teal,
+      primaryColor: colorPrimary,
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
@@ -70,15 +71,15 @@ class AppTheme {
         ),
       ),
       appBarTheme: const AppBarTheme(
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.teal,
+        foregroundColor: colorBlack,
+        backgroundColor: colorPrimary,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
+        foregroundColor: colorWhite,
+        backgroundColor: colorBlack,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.teal,
+        selectedItemColor: colorPrimary,
       ),
       textTheme: lightTextTheme,
     );
@@ -86,18 +87,18 @@ class AppTheme {
 
   static ThemeData dark() {
     return ThemeData(
-      primaryColor: Colors.black,
+      primaryColor: colorBlack,
       brightness: Brightness.dark,
-      appBarTheme: AppBarTheme(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.grey[900],
+      appBarTheme: const AppBarTheme(
+        foregroundColor: colorWhite,
+        backgroundColor: colorGrey,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.teal,
+        foregroundColor: colorWhite,
+        backgroundColor: colorPrimary,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.teal,
+        selectedItemColor: colorPrimary,
       ),
       textTheme: darkTextTheme,
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hybrid/components/app_submit_button.dart';
+import 'package:hybrid/components/app_textfield.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class LoginPage extends StatelessWidget {
@@ -43,79 +45,31 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                ReactiveTextField(
+                AppTextField(
+                  hintText: 'UserName',
                   formControlName: 'username',
-                  validationMessages: (control) =>
-                      {'required': 'The username must not be empty'},
+                  validationMessages: (control) => {
+                    ValidationMessage.required: 'The username must not be empty'
+                  },
                 ),
-                // buildTextfield(username ?? '🍔 username', 'username'),
                 const SizedBox(height: 16),
-                // buildTextfield('🎹 password', 'password', true),
-                ReactiveTextField(
+                AppTextField(
+                  hintText: 'Password',
                   formControlName: 'password',
-                  validationMessages: (control) =>
-                      {'required': 'The password must not be empty'},
+                  validationMessages: (control) => {
+                    ValidationMessage.required: 'The password must not be empty'
+                  },
                   obscureText: true,
                 ),
                 const SizedBox(height: 16),
-                ReactiveFormConsumer(
-                  builder: (context, loginForm, child) {
-                    return MaterialButton(
-                      onPressed: () {
-                        loginForm.valid ? login() : null;
-                      },
-                      color: loginForm.valid ? rwColor : Colors.grey,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0)),
-                      child: const Text('Submit'),
-                    );
-                  },
-                ),
-
-                // SizedBox(
-                //   height: 55,
-                //   child: ReactiveFormConsumer(
-                //     builder: ((context, form, child) => MaterialButton(
-                //           color: rwColor,
-                //           shape: RoundedRectangleBorder(
-                //               borderRadius: BorderRadius.circular(8.0)),
-                //           // onPressed: () => login(),
-                //           onPressed: () => form.valid ? login() : null,
-                //           child: const Text(
-                //             'Login',
-                //             style: TextStyle(color: Colors.white),
-                //           ),
-                //         )),
-                //   ),
-                // ),
-                Text(loginForm.value.toString()),
-                Text(loginForm.valid.toString())
+                AppSubmitButton(
+                  label: 'Submit',
+                  onPress: () => login,
+                )
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget buildTextfield(String hintText, String formControlName,
-      [bool obscureText = false]) {
-    return ReactiveTextField(
-      formControlName: formControlName,
-      cursorColor: rwColor,
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.green,
-            width: 1.0,
-          ),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.green),
-        ),
-        hintText: hintText,
-        hintStyle: const TextStyle(height: 0.5),
       ),
     );
   }
