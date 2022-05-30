@@ -3,17 +3,12 @@ import 'package:hybrid/components/app_submit_button.dart';
 import 'package:hybrid/components/app_textfield.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
+import '../../services/services.dart';
+
 class LoginPage extends StatelessWidget {
   final String? username;
 
-  LoginPage({
-    Key? key,
-    this.username,
-  }) : super(key: key);
-
-  final Color rwColor = const Color.fromRGBO(64, 143, 77, 1);
-  final TextStyle focusedStyle = const TextStyle(color: Colors.green);
-  final TextStyle unfocusedStyle = const TextStyle(color: Colors.grey);
+  LoginPage({Key? key, this.username}) : super(key: key);
 
   final loginForm = FormGroup({
     'username': FormControl<String>(
@@ -22,8 +17,7 @@ class LoginPage extends StatelessWidget {
   });
 
   login() {
-    print('login');
-    print(loginForm.value);
+    AccountService().login(loginForm.value);
   }
 
   @override
@@ -62,10 +56,7 @@ class LoginPage extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(height: 16),
-                AppSubmitButton(
-                  label: 'Submit',
-                  onPress: () => login,
-                )
+                AppSubmitButton(label: 'Submit', onPress: () => login)
               ],
             ),
           ),

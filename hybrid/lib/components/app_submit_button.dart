@@ -4,8 +4,8 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 class AppSubmitButton extends StatelessWidget {
   final String label;
-  final Function onPress;
-  const AppSubmitButton({Key? key, required this.label, required this.onPress})
+  Function onPress;
+  AppSubmitButton({Key? key, required this.label, required this.onPress})
       : super(key: key);
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hybrid/services/audit-service.dart';
+import 'package:hybrid/services/audit_service.dart';
 import '../../models/models.dart';
 
 class AuditPage extends StatelessWidget {

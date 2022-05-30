@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'config/config.dart';
+import 'guards/auth-guard.dart';
 import 'helpers/app_localizations.dart';
 import 'providers/app_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,7 +19,7 @@ Future main() async {
 class MyApp extends ConsumerWidget {
   MyApp({Key? key}) : super(key: key);
 
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(authGuard: AuthGuard());
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appManager = ref.watch(appProvider);
