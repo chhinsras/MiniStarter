@@ -22,7 +22,7 @@ class Toastr {
 
   static showWarning({required String text}) {
     BotToast.showText(
-      text: "Access Denied.",
+      text: text,
       contentColor: Colors.amber,
       contentPadding: const EdgeInsets.all(12.0),
       align: const Alignment(0.9, 0.9),
