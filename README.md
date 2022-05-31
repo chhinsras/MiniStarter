@@ -15,15 +15,15 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] JSON Localization
 - [ ] Cambodia Gazetteer
 - [ ] API Versioning
-- [ ] Audit Logging
+- [x] Audit Logging
 - [ ] Fluent Validation
 - [ ] Advanced Search
 - [ ] Postman Collection
 - [ ] Email Verification with Template
-- [ ] Advanced User & Role Based Permission Management
+- [x] Advanced User & Role Based Permission Management
 - [x] JWT Authentication and Refresh Token
 - [x] JSON Data Seeding
-- [ ] Swagger Supports
+- [x] Swagger Supports
 - [x] Pagination with Response Header
 - [ ] Hangfire Support
 - [ ] File Storage Service
