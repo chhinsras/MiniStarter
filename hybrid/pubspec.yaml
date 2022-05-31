@@ -23,10 +23,12 @@ dependencies:
   flutter_riverpod: ^1.0.3
   flutter_slidable: ^1.2.0
   flutter_svg: ^1.0.3
+  get_it: ^7.2.0
   google_fonts: ^2.1.0
   intl: ^0.17.0
   json_annotation: ^4.5.0
   jwt_decoder: ^2.0.1
+  logger: ^1.1.0
   logging: ^1.0.2
   path_provider: ^2.0.9
   reactive_forms: ^13.0.0

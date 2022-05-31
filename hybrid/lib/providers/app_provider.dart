@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../config/app_cache.dart';
+import '../config/config.dart';
 import '../config/globals.dart' as globle;
+import '../routes/app_router.dart';
 
 class AppTab {
   static const int dashboard = 0;
@@ -13,11 +18,28 @@ class AppTab {
 class AppProvider extends ChangeNotifier {
   Locale? _appLocale = const Locale('en');
   int _selectedTab = AppTab.audit;
+  bool _initialized = false;
+  final _appCache = AppCache();
 
   Locale get appLocale => _appLocale ?? const Locale("en");
   int get getSelectedTab => _selectedTab;
+  bool get isInitialized => _initialized;
 
   static const supportedLanguage = [Locale('en', 'US'), Locale('km', 'KH')];
+
+  void initializeApp() async {
+    bool loggedIn = await isAuthenticated();
+    if (loggedIn) {
+      getIt<AppRouter>().push(const AdminLayoutRoute());
+    } else {
+      getIt<AppRouter>().push(LoginRoute());
+    }
+
+    Timer(const Duration(milliseconds: 2000), () {
+      _initialized = true;
+      notifyListeners();
+    });
+  }
 
   fetchLocale() async {
     var prefs = await SharedPreferences.getInstance();
@@ -42,5 +64,28 @@ class AppProvider extends ChangeNotifier {
   void goToTab(index) {
     _selectedTab = index;
     notifyListeners();
+  }
+
+  void login(String username, String password) async {
+    await _appCache.cacheUserToken();
+    getIt<AppRouter>().push(const AdminLayoutRoute());
+    notifyListeners();
+  }
+
+  void logout() async {
+    _initialized = false;
+    _selectedTab = 0;
+    await _appCache.invalidate();
+    initializeApp();
+    getIt<AppRouter>().push(LoginRoute());
+    notifyListeners();
+  }
+
+  Future<bool> isAuthenticated() async {
+    var prefs = await SharedPreferences.getInstance();
+    if (prefs.getString('token') != null) {
+      return true;
+    }
+    return false;
   }
 }

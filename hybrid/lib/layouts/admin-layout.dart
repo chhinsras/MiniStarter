@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/providers/providers.dart';
+import 'package:hybrid/services/account_service.dart';
 import 'package:hybrid/views/views.dart';
 import '../../config/config.dart';
 import 'menu_list.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
     AuditPage()
   ];
 
-  late final TabController _controller;
+  // late final TabController _controller;
 
   @override
   void initState() {
@@ -37,7 +38,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
 
   @override
   void dispose() {
-    _controller.dispose();
+    // _controller.dispose();
     super.dispose();
   }
 
@@ -46,7 +47,6 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
 
   @override
   Widget build(BuildContext context) {
-    final appState = ref.watch(appProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(context.localization.translate('app_title')),
@@ -221,6 +221,9 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
               ),
           ]),
           buildDarkModeRow(),
+          MaterialButton(
+              onPressed: () => ref.read(appProvider).logout(),
+              child: const Text('Logout'))
         ],
       ),
     );

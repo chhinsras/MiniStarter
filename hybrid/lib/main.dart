@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/routes/app_router.dart';
 import 'config/config.dart';
-import 'routes/auth-guard.dart';
-import 'helpers/app_localizations.dart';
+import 'helpers/helpers.dart';
+import 'routes/auth_guard.dart';
 import 'providers/app_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'providers/providers.dart';
@@ -13,16 +13,23 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  runApp(ProviderScope(child: MyApp()));
+
+  final container = ProviderContainer();
+  container.read(appProvider).initializeApp();
+
+  getIt.registerSingleton<AppRouter>(
+      AppRouter(authGuard: AuthGuard(container: container)));
+  runApp(ProviderScope(observers: [Logger()], child: const MyApp()));
 }
 
 class MyApp extends ConsumerWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-  final _appRouter = AppRouter(authGuard: AuthGuard());
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final appRouter = getIt<AppRouter>();
     final appManager = ref.watch(appProvider);
     final profileManager = ref.watch(profileProvider);
 
@@ -49,9 +56,9 @@ class MyApp extends ConsumerWidget {
           DefaultCupertinoLocalizations.delegate,
         ],
         builder: BotToastInit(),
-        routerDelegate: AutoRouterDelegate(_appRouter,
+        routerDelegate: AutoRouterDelegate(appRouter,
             navigatorObservers: () => [BotToastNavigatorObserver()]),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        routeInformationParser: appRouter.defaultRouteParser(),
         backButtonDispatcher: RootBackButtonDispatcher(),
       ),
     );

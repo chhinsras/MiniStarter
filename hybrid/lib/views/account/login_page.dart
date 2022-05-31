@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/components/app_submit_button.dart';
 import 'package:hybrid/components/app_textfield.dart';
+import 'package:hybrid/providers/providers.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../services/services.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends ConsumerWidget {
   final String? username;
 
   LoginPage({Key? key, this.username}) : super(key: key);
@@ -16,12 +18,9 @@ class LoginPage extends StatelessWidget {
     'password': FormControl<String>(validators: [Validators.required]),
   });
 
-  login() {
-    AccountService().login(loginForm.value);
-  }
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appManager = ref.watch(appProvider);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -56,7 +55,10 @@ class LoginPage extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(height: 16),
-                AppSubmitButton(label: 'Submit', onPress: () => login)
+                AppSubmitButton(
+                  label: 'Submit',
+                  onPress: () => appManager.login('test', 'password'),
+                )
               ],
             ),
           ),

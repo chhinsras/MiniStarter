@@ -4,7 +4,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 class AppSubmitButton extends StatelessWidget {
   final String label;
-  Function onPress;
+  Function() onPress;
   AppSubmitButton({Key? key, required this.label, required this.onPress})
       : super(key: key);
 
@@ -17,7 +17,7 @@ class AppSubmitButton extends StatelessWidget {
         color: colorPrimary,
         disabledColor: colorGrey,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-        onPressed: form!.valid ? onPress() : null,
+        onPressed: form!.valid ? onPress : null,
         child: Text(
           label,
           style: const TextStyle(color: Colors.white),

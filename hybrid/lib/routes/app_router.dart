@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'auth-guard.dart';
+import 'auth_guard.dart';
 import '../layouts/admin-layout.dart';
 import '../views/views.dart';
 
@@ -20,6 +20,7 @@ part 'app_router.gr.dart';
       AutoRoute(page: RolePage, path: 'role'),
       AutoRoute(page: AuditPage, path: 'audit')
     ]),
+    AutoRoute(path: '*', page: NotFoundPage),
   ],
 )
 // extend the generated private router

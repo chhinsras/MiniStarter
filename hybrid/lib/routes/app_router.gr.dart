@@ -36,6 +36,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const AdminLayoutPage());
     },
+    NotFoundRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const NotFoundPage());
+    },
     DashboardRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const DashboardPage());
@@ -82,7 +86,8 @@ class _$AppRouter extends RootStackRouter {
               path: 'role', parent: AdminLayoutRoute.name),
           RouteConfig(AuditRoute.name,
               path: 'audit', parent: AdminLayoutRoute.name)
-        ])
+        ]),
+        RouteConfig(NotFoundRoute.name, path: '*')
       ];
 }
 
@@ -124,6 +129,14 @@ class AdminLayoutRoute extends PageRouteInfo<void> {
       : super(AdminLayoutRoute.name, path: '/admin', initialChildren: children);
 
   static const String name = 'AdminLayoutRoute';
+}
+
+/// generated route for
+/// [NotFoundPage]
+class NotFoundRoute extends PageRouteInfo<void> {
+  const NotFoundRoute() : super(NotFoundRoute.name, path: '*');
+
+  static const String name = 'NotFoundRoute';
 }
 
 /// generated route for
