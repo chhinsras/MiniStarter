@@ -56,8 +56,9 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Riverpod
 - [x] Navigation 2.0 with Auto_Route / Go Router (TBD: Beamer)
 - [x] Custom Theme
-- [x] Dio with Interceptor
+- [x] Dio with JWT and Error Interceptors
 - [x] Shared Preference
+- [x] Serviced Based API
 - [ ] JSON Serialization / JSON/Object Mapping Generation
 - [ ] JSON Localization
 - [ ] SQLite with Moor
