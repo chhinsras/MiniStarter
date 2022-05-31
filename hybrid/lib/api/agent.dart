@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
@@ -63,8 +64,8 @@ class Agent {
                   text: 'Internal Server Error, please try again later.');
               break;
             default:
-                Toastr.showError(text: 'Unable to Connect to Server..');
-                break;
+              Toastr.showError(text: 'Unable to Connect to Server..');
+              break;
           }
           break;
         case DioErrorType.cancel:
@@ -82,8 +83,8 @@ class Agent {
       dio.get('auditlogs', options: plainResponseOptions);
 
 // Account
-  Future<Response> loginUser(Login login) async =>
-      dio.post('account/login', data: {login});
+  Future<Response> loginUser(dynamic login) async =>
+      dio.post('account/login', data: jsonEncode(login));
   Future<Response> refreshToken(RefreshTokenRequest request) async =>
       dio.post('account/refresh-token', data: {request});
   Future<Response> registerUser(User user) async =>

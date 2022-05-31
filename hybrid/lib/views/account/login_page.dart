@@ -13,7 +13,7 @@ class LoginPage extends ConsumerWidget {
   LoginPage({Key? key, this.username}) : super(key: key);
 
   final loginForm = FormGroup({
-    'username': FormControl<String>(
+    'userName': FormControl<String>(
         value: 'superadmin', validators: [Validators.required]),
     'password': FormControl<String>(validators: [Validators.required]),
   });
@@ -40,7 +40,7 @@ class LoginPage extends ConsumerWidget {
                 const SizedBox(height: 16),
                 AppTextField(
                   hintText: 'UserName',
-                  formControlName: 'username',
+                  formControlName: 'userName',
                   validationMessages: (control) => {
                     ValidationMessage.required: 'The username must not be empty'
                   },
@@ -57,7 +57,7 @@ class LoginPage extends ConsumerWidget {
                 const SizedBox(height: 16),
                 AppSubmitButton(
                   label: 'Submit',
-                  onPress: () => appManager.login('test', 'password'),
+                  onPress: () => appManager.login(loginForm.value),
                 )
               ],
             ),

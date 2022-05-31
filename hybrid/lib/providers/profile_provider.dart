@@ -3,10 +3,12 @@ import '../models/models.dart';
 
 class ProfileProvider extends ChangeNotifier {
   User get getUser => User(
+      userName: 'chhinsras',
       firstName: 'Sras',
       lastName: 'Chhin',
       imageUrl: 'assets/profile_pics/person_stef.jpeg',
-      darkMode: _darkMode);
+      darkMode: _darkMode,
+      isActive: true);
 
   bool get didSelectUser => _didSelectUser;
   bool get darkMode => _darkMode;

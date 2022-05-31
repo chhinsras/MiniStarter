@@ -1,6 +1,10 @@
+import 'dart:convert';
+
+import 'package:hybrid/helpers/helpers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import '../api/agent.dart';
+import '../models/models.dart';
 
 class AccountService {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
@@ -40,21 +44,16 @@ class AccountService {
     throw UnimplementedError();
   }
 
-  bool login(dynamic login) {
-    print(login);
-    setToken(
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2NTM4Nzc3ODUsImV4cCI6MTY4NTQxMzc4NSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.Mu0KqJ9e7TS7DEe8je3cYbZXiw0ateTi39kLhRrDyNQ');
-    isAuthenticated().then(
-      (value) => print(value),
-    );
-    return true;
-    // agent.loginUser(login).then((value) => print(value));
+  Future<User?> login(dynamic login) async {
+    var response = await agent.loginUser(login);
+    if (response.data != null) {
+      Toastr.showSuccess(text: 'User Logged In');
+      return User.fromJson(response.data);
+    }
+    return null;
   }
 
   logout() async {
     removeToken();
-    isAuthenticated().then(
-      (value) => print(value),
-    );
   }
 }

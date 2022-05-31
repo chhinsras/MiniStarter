@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hybrid/models/account.dart';
+import 'package:hybrid/services/account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config/app_cache.dart';
 import '../config/config.dart';
@@ -66,8 +68,9 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void login(String username, String password) async {
-    await _appCache.cacheUserToken();
+  void login(dynamic request) async {
+    var user = await AccountService().login(request);
+    if (user != null) await _appCache.cacheUserToken(user.token);
     getIt<AppRouter>().push(const AdminLayoutRoute());
     notifyListeners();
   }
@@ -82,10 +85,6 @@ class AppProvider extends ChangeNotifier {
   }
 
   Future<bool> isAuthenticated() async {
-    var prefs = await SharedPreferences.getInstance();
-    if (prefs.getString('token') != null) {
-      return true;
-    }
-    return false;
+    return AccountService().isAuthenticated();
   }
 }
