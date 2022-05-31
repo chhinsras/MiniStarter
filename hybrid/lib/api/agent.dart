@@ -4,7 +4,8 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:hybrid/api/error_interceptors.dart';
+import 'package:hybrid/api/error_interceptor.dart';
+import 'package:hybrid/api/jwt_interceptor.dart';
 import 'package:universal_platform/universal_platform.dart';
 import '../models/models.dart';
 
@@ -30,7 +31,8 @@ class Agent {
     dio.options = options;
 
     dio.interceptors.addAll({
-      ErrorInterceptors(dio: dio),
+      JwtInterceptor(dio: dio),
+      ErrorInterceptor(dio: dio),
     });
   }
 

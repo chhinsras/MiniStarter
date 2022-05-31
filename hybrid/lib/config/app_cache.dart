@@ -8,7 +8,7 @@ class AppCache {
     await prefs.remove(kToken);
   }
 
-  Future<String> getUserToken() async {
+  Future<String?> getUserToken() async {
     final prefs = await SharedPreferences.getInstance();
     return Future.value(prefs.getString(kToken));
   }
