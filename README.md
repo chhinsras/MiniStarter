@@ -59,6 +59,6 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Dio with JWT and Error Interceptors
 - [x] Shared Preference
 - [x] Serviced Based API
-- [ ] JSON Serialization / JSON/Object Mapping Generation
-- [ ] JSON Localization
+- [x] JSON Serialization / JSON/Object Mapping Generation
+- [x] JSON Localization
 - [ ] SQLite with Moor
