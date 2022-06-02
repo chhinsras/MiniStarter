@@ -5,10 +5,18 @@ import 'package:flutter/material.dart';
 
 import '../../config/colors.dart';
 
-class UserPage extends StatelessWidget {
+class UserPage extends StatefulWidget {
   UserPage({Key? key}) : super(key: key);
 
+  @override
+  State<UserPage> createState() => _UserPageState();
+}
+
+class _UserPageState extends State<UserPage> {
   final DataTableSource _data = MyData();
+
+  int _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
+
   final _columns = const [
     DataColumn(label: Text('ID')),
     DataColumn(label: Text('Name')),
@@ -20,6 +28,7 @@ class UserPage extends StatelessWidget {
     DataColumn(label: Text('Name')),
     DataColumn(label: Text('Action'))
   ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -30,6 +39,12 @@ class UserPage extends StatelessWidget {
           child: PaginatedDataTable(
             source: _data,
             header: const AutoSizeText('My Datatable', maxLines: 1),
+            rowsPerPage: _rowsPerPage,
+            onRowsPerPageChanged: (value) {
+              setState(() {
+                _rowsPerPage = value!;
+              });
+            },
             actions: [
               SingleChildScrollView(
                 child: Row(children: [
@@ -71,8 +86,8 @@ class UserPage extends StatelessWidget {
             columns: _columns,
             columnSpacing: 100,
             horizontalMargin: 10,
-            rowsPerPage: 8,
             showCheckboxColumn: true,
+            showFirstLastButtons: true,
           ),
         ),
       ),
@@ -84,7 +99,7 @@ class UserPage extends StatelessWidget {
 class MyData extends DataTableSource {
   // Generate some made-up data
   final List<Map<String, dynamic>> _data = List.generate(
-      200,
+      1000,
       (index) => {
             "id": index,
             "title": "Item $index",
@@ -106,8 +121,8 @@ class MyData extends DataTableSource {
   @override
   DataRow getRow(int index) {
     return DataRow(
-        color: MaterialStateColor.resolveWith((states) =>
-            index % 2 == 1 ? Colors.grey[200]! : Colors.transparent),
+        // color: MaterialStateColor.resolveWith((states) =>
+        //     index % 2 == 1 ? Colors.grey[200]! : Colors.transparent),
         cells: [
           DataCell(Text(_data[index]['id'].toString())),
           DataCell(Text(_data[index]["title"])),
