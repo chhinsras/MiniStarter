@@ -6,7 +6,6 @@ import 'package:jwt_decoder/jwt_decoder.dart';
 class JwtInterceptor extends Interceptor {
   final Dio dio;
   final AppCache _appCache = AppCache();
-  final AccountService _accountService = AccountService();
 
   JwtInterceptor({required this.dio});
 
@@ -31,7 +30,7 @@ class JwtInterceptor extends Interceptor {
       bool isNotExpired = JwtDecoder.isExpired(localToken);
       var remainingTime = JwtDecoder.getRemainingTime(localToken);
       if (!isNotExpired && remainingTime.inMinutes < 60) {
-        await _accountService.tryRefreshingToken();
+        await AccountService().tryRefreshingToken();
       }
     }
   }
