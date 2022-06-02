@@ -29,7 +29,7 @@ class JwtInterceptor extends Interceptor {
 
       bool isNotExpired = JwtDecoder.isExpired(localToken);
       var remainingTime = JwtDecoder.getRemainingTime(localToken);
-      if (!isNotExpired && remainingTime.inMinutes < 60) {
+      if (!isNotExpired && remainingTime.inMinutes < 2) {
         await AccountService().tryRefreshingToken();
       }
     }

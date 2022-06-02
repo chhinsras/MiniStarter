@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:hybrid/models/account.dart';
 import 'package:hybrid/services/account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config/app_cache.dart';
@@ -70,7 +68,10 @@ class AppProvider extends ChangeNotifier {
 
   void login(dynamic request) async {
     var user = await AccountService().login(request);
-    if (user != null) await _appCache.cacheUserToken(user.token);
+    if (user != null) {
+      await _appCache.cacheUserToken(user.token);
+      await _appCache.cacheUserRefreshToken(user.refreshToken);
+    }
     getIt<AppRouter>().push(const AdminLayoutRoute());
     notifyListeners();
   }

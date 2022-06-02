@@ -37,6 +37,8 @@ class AccountService {
     var response = await _agent.refreshToken(request);
     if (response.data != null) {
       Toastr.showSuccess(text: 'Refreshed token.');
+      await _appCache.cacheUserToken(response.data['token']);
+      await _appCache.cacheUserRefreshToken(response.data['refreshToken']);
       return User.fromJson(response.data);
     } else {
       Toastr.showError(text: 'Something went wrong.');

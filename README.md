@@ -54,11 +54,12 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Flutter 3.0 Supports iOS / Android / MacOS / Windows / Linux / Web
 - [ ] Responsive
 - [x] Riverpod
-- [x] Navigation 2.0 with Auto_Route / Go Router (TBD: Beamer)
-- [x] Custom Theme
+- [x] Navigation 2.0 with Auto_Route / Go Router (TBD)
+- [x] Custom Theme - Dark Mode Supports
 - [x] Dio with JWT and Error Interceptors
 - [x] Shared Preference
 - [x] Serviced Based API
 - [x] JSON Serialization / JSON/Object Mapping Generation
 - [x] JSON Localization
+- [x] Reactive Form
 - [ ] SQLite with Moor
