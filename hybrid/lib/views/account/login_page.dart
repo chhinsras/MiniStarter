@@ -5,8 +5,6 @@ import 'package:hybrid/components/app_textfield.dart';
 import 'package:hybrid/providers/providers.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-import '../../services/services.dart';
-
 class LoginPage extends ConsumerWidget {
   final String? username;
 
@@ -17,6 +15,14 @@ class LoginPage extends ConsumerWidget {
         value: 'superadmin', validators: [Validators.required]),
     'password': FormControl<String>(validators: [Validators.required]),
   });
+
+  fillAdministration() {
+    loginForm.value = {'userName': 'superadmin', 'password': "Pa\$\$w0rd"};
+  }
+
+  fillUser() {
+    loginForm.value = {'userName': 'staff', 'password': "Pa\$\$w0rd"};
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,6 +64,19 @@ class LoginPage extends ConsumerWidget {
                 AppSubmitButton(
                   label: 'Submit',
                   onPress: () => appManager.login(loginForm.value),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MaterialButton(
+                      onPressed: fillAdministration,
+                      child: const Text('Fill Administration'),
+                    ),
+                    MaterialButton(
+                      onPressed: fillUser,
+                      child: const Text('Fill User'),
+                    )
+                  ],
                 )
               ],
             ),
