@@ -49,8 +49,7 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const GazetteerPage());
     },
     UserRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const UserPage());
+      return MaterialPageX<dynamic>(routeData: routeData, child: UserPage());
     },
     RoleRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
