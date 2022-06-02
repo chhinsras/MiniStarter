@@ -15,11 +15,10 @@ class JwtInterceptor extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     String? accessToken = await _appCache.getUserToken();
     if (accessToken != null) {
-      // check if token is expired
       // try refresh token
+      await refreshToken(options);
       options.headers['Authorization'] = 'Bearer $accessToken';
     }
-    await refreshToken(options);
 
     return handler.next(options);
   }
