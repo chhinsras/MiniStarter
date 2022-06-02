@@ -41,10 +41,10 @@ class Agent {
       dio.get('auditlogs', options: plainResponseOptions);
 
 // Account
-  Future<Response> loginUser(dynamic login) async =>
+  Future<Response> loginUser(Map<String, dynamic> login) async =>
       dio.post('account/login', data: jsonEncode(login));
-  Future<Response> refreshToken(RefreshTokenRequest request) async =>
-      dio.post('account/refresh-token', data: {request});
+  Future<Response> refreshToken(Map<String, dynamic> request) async =>
+      dio.post('account/refresh-token', data: jsonEncode(request));
   Future<Response> registerUser(User user) async =>
       dio.post('account/register', data: {user});
   Future<Response> confirmEmail(Map<String, dynamic> params) async =>

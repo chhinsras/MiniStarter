@@ -1,41 +1,17 @@
-import 'dart:convert';
-
+import 'package:hybrid/config/app_cache.dart';
 import 'package:hybrid/helpers/helpers.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import '../api/agent.dart';
 import '../models/models.dart';
 
 class AccountService {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  final Agent agent = Agent();
-
-  String? _token;
-
-  get token => _token;
-
-  Future<String?> getToken() async {
-    final prefs = await _prefs;
-    _token = prefs.getString('token');
-    return _token;
-  }
-
-  void setToken(String token) async {
-    final prefs = await _prefs;
-    _token = token;
-    prefs.setString('token', _token!);
-  }
-
-  void removeToken() async {
-    final prefs = await _prefs;
-    _token = null;
-    prefs.remove('token');
-  }
+  final Agent _agent = Agent();
+  final AppCache _appCache = AppCache();
 
   Future<bool> isAuthenticated() async {
-    await getToken();
-    if (_token != null) {
-      return !JwtDecoder.isExpired(_token!);
+    var token = await _appCache.getUserToken();
+    if (token != null) {
+      return !JwtDecoder.isExpired(token);
     }
     return false;
   }
@@ -45,7 +21,7 @@ class AccountService {
   }
 
   Future<User?> login(dynamic login) async {
-    var response = await agent.loginUser(login);
+    var response = await _agent.loginUser(login);
     if (response.data != null) {
       Toastr.showSuccess(text: 'User Logged In');
       return User.fromJson(response.data);
@@ -53,7 +29,19 @@ class AccountService {
     return null;
   }
 
-  logout() async {
-    removeToken();
+  Future<User?> tryRefreshingToken() async {
+    var jwtToken = await _appCache.getUserToken();
+    var refreshToken = await _appCache.getUserRefreshToken();
+    var request = {'token': jwtToken, 'refreshToken': refreshToken};
+
+    var response = await _agent.refreshToken(request);
+    if (response.data != null) {
+      Toastr.showSuccess(text: 'Refreshed token.');
+      return User.fromJson(response.data);
+    } else {
+      Toastr.showError(text: 'Something went wrong.');
+      await _appCache.invalidate();
+    }
+    return null;
   }
 }
