@@ -1,10 +1,15 @@
+import 'dart:io';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:printing/printing.dart';
+import 'package:universal_platform/universal_platform.dart';
 import '../config/colors.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+
+import '../config/config.dart';
+import '../helpers/helpers.dart';
 
 class AppDataColumn {
   String label;
@@ -51,41 +56,46 @@ class _AppDataTableState extends State<AppDataTable> {
             });
           },
           actions: [
-            SingleChildScrollView(
-              child: Row(children: [
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.add)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.refresh)),
-                const VerticalDivider(
-                  indent: 10,
-                  endIndent: 10,
-                ),
-                IconButton(
-                    onPressed: () => exportPDF(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.print)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.calculate)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.picture_as_pdf)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.code)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.copy)),
-              ]),
+            SizedBox(
+              width: Responsive.isSmallMobile(context) ? 200 : null,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.add)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.refresh)),
+                  const VerticalDivider(
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+                  IconButton(
+                      onPressed: () => exportPDF(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.print)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.calculate)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.picture_as_pdf)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.code)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.copy)),
+                ]),
+              ),
             )
           ],
           columns: [
@@ -103,10 +113,10 @@ class _AppDataTableState extends State<AppDataTable> {
   }
 
   exportPDF() async {
-    final font =
-        await rootBundle.load("/assets/fonts/KhmerOSBattambang-Regular.ttf");
-    final gFont = await PdfGoogleFonts.nunitoExtraLight();
-    final ttf = pw.Font.ttf(font);
+    // final font =
+    //     await rootBundle.load("/assets/fonts/KhmerOSBattambang-Regular.ttf");
+    // final gFont = await PdfGoogleFonts.nunitoExtraLight();
+    // final ttf = pw.Font.ttf(font);
     final pdf = pw.Document();
     pdf.addPage(
       pw.MultiPage(
@@ -144,8 +154,8 @@ class _AppDataTableState extends State<AppDataTable> {
                   children: [
                     for (var column in widget.columns)
                       pw.Container(
-                          margin: const pw.EdgeInsets.all(4.0),
-                          padding: const pw.EdgeInsets.all(4.0),
+                          margin: const pw.EdgeInsets.all(2.0),
+                          padding: const pw.EdgeInsets.all(2.0),
                           child: pw.Text(
                               widget.data[index][column.key].toString())),
                   ],
@@ -155,9 +165,17 @@ class _AppDataTableState extends State<AppDataTable> {
         ],
       ),
     );
-    await Printing.sharePdf(
-        bytes: await pdf.save(),
-        filename: '${widget.title}-${DateTime.now()}.pdf');
+    if (UniversalPlatform.isWeb) {
+      await Printing.sharePdf(
+          bytes: await pdf.save(),
+          filename: '${widget.title}-${DateTime.now()}.pdf');
+    } else if (UniversalPlatform.isDesktop) {
+      final output = await getApplicationDocumentsDirectory();
+      final file =
+          File("${output.path}/${widget.title}-${DateTime.now()}.pdf'");
+      await file.writeAsBytes(await pdf.save());
+    }
+    Toastr.showSuccess(text: 'PDF Exported.');
   }
 }
 

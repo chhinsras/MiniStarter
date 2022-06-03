@@ -65,6 +65,8 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
         ),
         drawer: sideMenu(context),
         body: Responsive(
+          smallMobile: SizedBox(
+              height: SizeConfig.screenHeight, child: const AutoRouter()),
           mobile: SizedBox(
               height: SizeConfig.screenHeight, child: const AutoRouter()),
           tablet: Row(
