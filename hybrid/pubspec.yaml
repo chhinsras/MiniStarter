@@ -31,6 +31,8 @@ dependencies:
   jwt_decoder: ^2.0.1
   logger: ^1.1.0
   path_provider: ^2.0.9
+  pdf: ^3.8.1
+  printing: ^5.9.1
   reactive_forms: ^13.0.0
   shared_preferences: ^2.0.13
   smooth_page_indicator: ^1.0.0+2
@@ -57,3 +59,4 @@ flutter:
     - assets/
     - assets/i18n/
     - assets/images/
+    - assets/fonts/

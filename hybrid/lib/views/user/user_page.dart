@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/components.dart';
@@ -12,7 +11,7 @@ class UserPage extends StatefulWidget {
 
 class _UserPageState extends State<UserPage> {
   final _data = List.generate(
-      2000,
+      100,
       (index) => {
             "id": index,
             "name": "Item $index",
@@ -30,7 +29,7 @@ class _UserPageState extends State<UserPage> {
       child: AppDataTable(
         data: _data,
         columns: _columns,
-        header: const AutoSizeText('Users', maxLines: 1),
+        title: 'Users',
       ),
     );
   }

@@ -1,5 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:printing/printing.dart';
 import '../config/colors.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 
 class AppDataColumn {
   String label;
@@ -12,13 +17,14 @@ class AppDataColumn {
 class AppDataTable extends StatefulWidget {
   const AppDataTable(
       {Key? key,
+      required this.title,
       required this.data,
-      required this.columns,
-      required this.header})
+      required this.columns})
       : super(key: key);
+
+  final String title;
   final List<Map<String, dynamic>> data;
   final List<AppDataColumn> columns;
-  final Widget header;
 
   @override
   State<AppDataTable> createState() => _AppDataTableState();
@@ -37,7 +43,7 @@ class _AppDataTableState extends State<AppDataTable> {
         width: double.infinity,
         child: PaginatedDataTable(
           source: _source,
-          header: widget.header,
+          header: AutoSizeText(widget.title, maxLines: 1),
           rowsPerPage: _rowsPerPage,
           onRowsPerPageChanged: (value) {
             setState(() {
@@ -60,7 +66,7 @@ class _AppDataTableState extends State<AppDataTable> {
                   endIndent: 10,
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () => exportPDF(),
                     color: Theme.of(context).primaryColor,
                     icon: const Icon(Icons.print)),
                 IconButton(
@@ -94,6 +100,63 @@ class _AppDataTableState extends State<AppDataTable> {
         ),
       ),
     );
+  }
+
+  exportPDF() async {
+    final font = await rootBundle.load("/fonts/KhmerOSBattambang-Regular.ttf");
+    final gFont = await PdfGoogleFonts.nunitoExtraLight();
+    final ttf = pw.Font.ttf(font);
+    final pdf = pw.Document();
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        maxPages: 100,
+        build: (pw.Context context) => [
+          pw.Center(
+              heightFactor: 2.0,
+              child: pw.Text(widget.title,
+                  style: const pw.TextStyle(fontSize: 16))),
+          pw.Table(
+            defaultColumnWidth: const pw.FixedColumnWidth(120.0),
+            border: pw.TableBorder.all(
+                color: PdfColor.fromHex('#8E8E8E'), width: 0.5),
+            children: [
+              pw.TableRow(
+                  decoration: const pw.BoxDecoration(
+                    color: PdfColors.grey,
+                  ),
+                  children: [
+                    for (var column in widget.columns)
+                      pw.Container(
+                          margin: const pw.EdgeInsets.all(2.0),
+                          padding: const pw.EdgeInsets.all(2.0),
+                          child: pw.Text(column.label,
+                              style:
+                                  pw.TextStyle(fontWeight: pw.FontWeight.bold)))
+                  ]),
+              for (int index = 0; index < widget.data.length; index++)
+                pw.TableRow(
+                  verticalAlignment: pw.TableCellVerticalAlignment.middle,
+                  decoration: pw.BoxDecoration(
+                      color:
+                          index % 2 == 1 ? PdfColors.grey200 : PdfColors.white),
+                  children: [
+                    for (var column in widget.columns)
+                      pw.Container(
+                          margin: const pw.EdgeInsets.all(4.0),
+                          padding: const pw.EdgeInsets.all(4.0),
+                          child: pw.Text(
+                              widget.data[index][column.key].toString())),
+                  ],
+                )
+            ],
+          ),
+        ],
+      ),
+    );
+    await Printing.sharePdf(
+        bytes: await pdf.save(),
+        filename: '${widget.title}-${DateTime.now()}.pdf');
   }
 }
 
