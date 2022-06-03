@@ -34,7 +34,7 @@ The goal of this repository is to previde feature rich and production ready for 
   - [x] AutoMapper
 
 ## Angular 
-- [x] Angular 13
+- [x] Angular 14
 - [x] Angular Material
 - [ ] Tailwind Support
 - [ ] Charts
