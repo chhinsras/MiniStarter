@@ -12,9 +12,12 @@ dependencies:
   auto_size_text: ^3.0.0
   bot_toast: ^4.0.2
   cached_network_image: ^3.2.0
+  connectivity_plus: ^2.3.2
   cupertino_icons: ^1.0.2
+  device_info_plus: ^3.2.3
   dio: ^4.0.6
   equatable: ^2.0.3
+  file_picker: ^4.6.1
   flutter:
     sdk: flutter
   flutter_colorpicker: ^1.0.3
@@ -24,13 +27,18 @@ dependencies:
   flutter_riverpod: ^1.0.3
   flutter_slidable: ^1.2.0
   flutter_svg: ^1.0.3
+  font_awesome_flutter: ^10.1.0
+  freezed: ^2.0.3+1
+  geolocator: ^8.2.1
   get_it: ^7.2.0
   google_fonts: ^2.1.0
   intl: ^0.17.0
   json_annotation: ^4.5.0
   jwt_decoder: ^2.0.1
   logger: ^1.1.0
-  path_provider: ^2.0.9
+  network_info_plus: ^2.1.3
+  package_info_plus: ^1.4.2
+  path_provider: ^2.0.10
   pdf: ^3.8.1
   printing: ^5.9.1
   reactive_forms: ^13.0.0
@@ -39,6 +47,7 @@ dependencies:
   sqflite: ^2.0.2+1
   sqlbrite: ^2.2.0
   synchronized: ^3.0.0+2
+  toggle_switch: ^2.0.1
   universal_html: ^2.0.8
   universal_platform: ^1.0.0+1
   url_launcher: ^6.0.10

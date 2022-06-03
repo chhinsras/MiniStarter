@@ -103,7 +103,8 @@ class _AppDataTableState extends State<AppDataTable> {
   }
 
   exportPDF() async {
-    final font = await rootBundle.load("/fonts/KhmerOSBattambang-Regular.ttf");
+    final font =
+        await rootBundle.load("/assets/fonts/KhmerOSBattambang-Regular.ttf");
     final gFont = await PdfGoogleFonts.nunitoExtraLight();
     final ttf = pw.Font.ttf(font);
     final pdf = pw.Document();
