@@ -61,5 +61,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] Serviced Based API
 - [x] JSON Serialization / JSON/Object Mapping Generation
 - [x] JSON Localization
-- [x] Reactive Form
+- [x] Reactive Form Inspire by Angular
+- [x] PDF and Printing
+- [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] SQLite with Moor
