@@ -1,0 +1,143 @@
+{
+  "site": {
+    "title": "MiniStarter",
+    "fork": "Fork this repository!",
+    "support": "Support me",
+    "footer": "@Copyrights, 2021"
+  },
+  "toolbar": {
+    "product": {
+      "title": "Product",
+      "list": "List"
+    },
+    "brand": {
+      "title": "Brand",
+      "list": "List"
+    },
+    "report": "Reports"
+  },
+  "layouts": {
+    "admin": {
+      "dashboard": "Dashboard",
+      "setupSubhead": "Setup Management",
+      "gazetteers": "Gazetteers",
+      "about": "About",
+      "appSubhead": "Application",
+      "roles": "Roles",
+      "users": "Users",
+      "accSubhead": "Access Management",
+      "eventLogs": "Event Logs"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "yes": "Yes",
+    "no": "No",
+    "entityUpdated": "{{entity}} Updated."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Quick Overview of your Business."
+  },
+  "eventLogs": {
+    "title": "Event Logs",
+    "subtitle": "Monitor Events Logs of Users."
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Everything about childprotection.",
+    "header": "Core Team"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage Application Settings.",
+    "generalSettings": "General Settings",
+    "language": "Language",
+    "english": "English",
+    "khmer": "Khmer"
+  },
+  "userCard": {
+    "profile": "Profile",
+    "settings": "Setting",
+    "logout": "Logout"
+  },
+  "dialogs": {
+    "logout": {
+      "title": "Logout",
+      "message": "Do you want to logout?",
+      "button": "Logout"
+    },
+    "checkOut": {
+      "title": "Checkout",
+      "message": "Make an Order!",
+      "button" : "Confirm",
+      "buttonProcessing" : "Processing..."
+    },
+    "delete": {
+      "title": "Delete Confirmation",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      }
+    }
+  },
+  "components": {
+    "accessDenial": {
+      "header": "Access Denial.",
+      "text": "You do not have permission to access the page you were looking for, contact to system administator.",
+      "button": "Go Home"
+    },
+    "notFound": {
+      "header": "Page not found.",
+      "text": "The page you were looking for could not be found.It might have been removed,renamed or did not exist in the first place.",
+      "button": "Go Home"
+    },
+    "serverError": {
+      "header": "Internal Server Error.",
+      "text": "There is problem with the internal server",
+      "button": "Go Home"
+    },
+    "table": {
+      "register": "Add New",
+      "reload": "Reload",
+      "filter": "Filter",
+      "print": "Print",
+      "pdf": "PDF",
+      "excel": "Excel",
+      "csv": "CSV",
+      "copyTable": "Copy Table",
+      "show": "Show",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "uploader": {
+      "upload": "Upload Image"
+    }
+  },
+  "social": {
+    "blog": "Blog",
+    "site": "Personal Site",
+    "linkedin": "LinkedIn",
+    "github": "Github",
+    "facebook": "Facebook",
+    "habr": "Habr",
+    "medium": "Medium",
+    "devto": "DevTo",
+    "support": "Support"
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Manage Profile",
+    "upload": "Upload Image",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "updateBtn": "Update Profile",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password"
+  }
+}
