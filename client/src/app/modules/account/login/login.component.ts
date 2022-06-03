@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AccountService } from 'src/app/core/services/account.service';
@@ -11,7 +11,7 @@ import { AccountService } from 'src/app/core/services/account.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   returnUrl: string;
   isBeingLoggedIn: boolean = false;
   constructor(private accountService: AccountService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   initializeForm() {
-    this.loginForm = new FormGroup({
-      userName: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+    this.loginForm = new UntypedFormGroup({
+      userName: new UntypedFormControl('', Validators.required),
+      password: new UntypedFormControl('', Validators.required)
     });
   }
 
@@ -39,16 +39,16 @@ export class LoginComponent implements OnInit {
   }
 
   fillSuperAdminCredentials() {
-    this.loginForm = new FormGroup({
-      userName: new FormControl('superadmin', Validators.required),
-      password: new FormControl('Pa$$w0rd', Validators.required)
+    this.loginForm = new UntypedFormGroup({
+      userName: new UntypedFormControl('superadmin', Validators.required),
+      password: new UntypedFormControl('Pa$$w0rd', Validators.required)
     });
   }
 
   fillStaffCredentials() {
-    this.loginForm = new FormGroup({
-      userName: new FormControl('staff', Validators.required),
-      password: new FormControl('Pa$$w0rd', Validators.required)
+    this.loginForm = new UntypedFormGroup({
+      userName: new UntypedFormControl('staff', Validators.required),
+      password: new UntypedFormControl('Pa$$w0rd', Validators.required)
     });
   }
 }

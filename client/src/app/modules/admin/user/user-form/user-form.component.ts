@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/models/user';
@@ -12,9 +12,9 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  userForm: FormGroup;
+  userForm: UntypedFormGroup;
   formTitle: string;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: User, private accountService: AccountService, private userService: UserService, private toastr: ToastrService, private fb: FormBuilder) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: User, private accountService: AccountService, private userService: UserService, private toastr: ToastrService, private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.initializeForm();
