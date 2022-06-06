@@ -39,7 +39,7 @@ class HomePage extends ConsumerWidget {
   Widget moduleMenuItem(BuildContext context, AppMenuItem item) {
     return InkWell(
       onTap: () => context.router.navigate(
-        AdminLayoutRoute(),
+        const AdminLayoutRoute(),
       ),
       child: Container(
           margin: const EdgeInsets.all(10),

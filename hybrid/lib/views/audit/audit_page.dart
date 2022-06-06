@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hybrid/services/audit_service.dart';
 import '../../components/components.dart';
@@ -22,8 +21,6 @@ class AuditPage extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    List<Widget> children = [];
-
     return FutureBuilder(
       future: auditService.getAudits(),
       builder: (context, AsyncSnapshot<List<Audit>> snapshot) {
@@ -49,10 +46,8 @@ class AuditPage extends StatelessWidget {
               );
             }
           case ConnectionState.none:
-            // TODO: Handle this case.
             break;
           case ConnectionState.active:
-            // TODO: Handle this case.
             break;
           default:
             return const Text('Unhandle states.');

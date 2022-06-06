@@ -1,10 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/providers/providers.dart';
-import 'package:hybrid/services/account_service.dart';
-import 'package:hybrid/views/views.dart';
 import '../../config/config.dart';
 import 'menu_list.dart';
 
@@ -17,13 +15,13 @@ class AdminLayoutPage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<AdminLayoutPage>
     with TickerProviderStateMixin {
-  static List<Widget> pages = <Widget>[
-    const DashboardPage(),
-    const GazetteerPage(),
-    UserPage(),
-    const AdminPage(),
-    AuditPage()
-  ];
+  // static List<Widget> pages = <Widget>[
+  //   const DashboardPage(),
+  //   const GazetteerPage(),
+  //   const UserPage(),
+  //   const AdminPage(),
+  //   AuditPage()
+  // ];
 
   // late final TabController _controller;
 
@@ -42,8 +40,8 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
     super.dispose();
   }
 
-  void _tap(BuildContext context, int index, String route) =>
-      context.router.pushNamed('/$route');
+  // void _tap(BuildContext context, int index, String route) =>
+  //     context.router.pushNamed('/$route');
 
   @override
   Widget build(BuildContext context) {
