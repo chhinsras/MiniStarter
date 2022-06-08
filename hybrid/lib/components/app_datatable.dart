@@ -114,7 +114,10 @@ class _AppDataTableState extends State<AppDataTable> {
   }
 
   printPDF() {
-    Toastr.showWarning(text: 'This Feature Is Not Supported.');
+    Printing.layoutPdf(onLayout: ((format) {
+      final pdf = _generateDataTablePDF(format);
+      return pdf.save();
+    }));
   }
 
   exportExcel() {
@@ -122,6 +125,56 @@ class _AppDataTableState extends State<AppDataTable> {
   }
 
   exportPDF() async {
+    final pdf = _generateDataTablePDF(PdfPageFormat.a4);
+    if (UniversalPlatform.isWeb) {
+      await Printing.sharePdf(
+          bytes: await pdf.save(),
+          filename: '${widget.title}-${DateTime.now()}.pdf');
+    } else if (UniversalPlatform.isDesktop) {
+      final output = await getDownloadsDirectory();
+      final file =
+          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
+      await file.writeAsBytes(await pdf.save());
+    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
+      final output = await getDownloadsDirectory();
+      final file =
+          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
+      await file.writeAsBytes(await pdf.save());
+    }
+    Toastr.showSuccess(text: 'PDF Exported.');
+  }
+
+  exportCSV() async {
+    List<List<dynamic>> rows = [];
+    List<dynamic> row = [];
+    row.addAll(widget.columns.map((e) => e.key).toList());
+    for (var item in widget.data) {
+      row.addAll(item.values.toList());
+    }
+    rows.add(row);
+
+    String csv = const ListToCsvConverter().convert(rows);
+    if (UniversalPlatform.isWeb) {
+      Toastr.showWarning(text: 'CSV Export Not Supported on Web.');
+    } else if (UniversalPlatform.isDesktop) {
+      final output = await getDownloadsDirectory();
+      final file =
+          File("${output?.path}/${widget.title}-${DateTime.now()}.csv");
+      await file.writeAsString(csv);
+      Toastr.showSuccess(text: 'CSV Exported.');
+    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
+      final output = await getApplicationDocumentsDirectory();
+      final file = File("${output.path}/${widget.title}-${DateTime.now()}.csv");
+      await file.writeAsString(csv);
+      Toastr.showSuccess(text: 'CSV Exported.');
+    }
+  }
+
+  copyToClipBoard() {
+    Toastr.showWarning(text: 'This Feature Is Not Supported.');
+  }
+
+  pw.Document _generateDataTablePDF(PdfPageFormat format) {
     // final font =
     //     await rootBundle.load("/assets/fonts/KhmerOSBattambang-Regular.ttf");
     // final gFont = await PdfGoogleFonts.nunitoExtraLight();
@@ -174,52 +227,7 @@ class _AppDataTableState extends State<AppDataTable> {
         ],
       ),
     );
-    if (UniversalPlatform.isWeb) {
-      await Printing.sharePdf(
-          bytes: await pdf.save(),
-          filename: '${widget.title}-${DateTime.now()}.pdf');
-    } else if (UniversalPlatform.isDesktop) {
-      final output = await getDownloadsDirectory();
-      final file =
-          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
-      await file.writeAsBytes(await pdf.save());
-    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
-      final output = await getDownloadsDirectory();
-      final file =
-          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
-      await file.writeAsBytes(await pdf.save());
-    }
-    Toastr.showSuccess(text: 'PDF Exported.');
-  }
-
-  exportCSV() async {
-    List<List<dynamic>> rows = [];
-    List<dynamic> row = [];
-    row.addAll(widget.columns.map((e) => e.key).toList());
-    for (var item in widget.data) {
-      row.addAll(item.values.toList());
-    }
-    rows.add(row);
-
-    String csv = const ListToCsvConverter().convert(rows);
-    if (UniversalPlatform.isWeb) {
-      Toastr.showWarning(text: 'CSV Export Not Supported on Web.');
-    } else if (UniversalPlatform.isDesktop) {
-      final output = await getDownloadsDirectory();
-      final file =
-          File("${output?.path}/${widget.title}-${DateTime.now()}.csv");
-      await file.writeAsString(csv);
-      Toastr.showSuccess(text: 'CSV Exported.');
-    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
-      final output = await getApplicationDocumentsDirectory();
-      final file = File("${output.path}/${widget.title}-${DateTime.now()}.csv");
-      await file.writeAsString(csv);
-      Toastr.showSuccess(text: 'CSV Exported.');
-    }
-  }
-
-  copyToClipBoard() {
-    Toastr.showWarning(text: 'This Feature Is Not Supported.');
+    return pdf;
   }
 }
 
