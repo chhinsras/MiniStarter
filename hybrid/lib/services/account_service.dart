@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:hybrid/config/app_cache.dart';
 import 'package:hybrid/helpers/helpers.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
@@ -16,8 +18,33 @@ class AccountService {
     return false;
   }
 
-  bool isAuthorized(String authorizationType, List<String> allowedData) {
-    throw UnimplementedError();
+  Future<bool> isAuthorized(
+      String authorizationType, List<String> allowedData) async {
+    if (allowedData.isEmpty) {
+      return true;
+    }
+    var token = await _appCache.getUserToken();
+
+    if (token != null) {
+      Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
+      jsonEncode(decodedToken); // has to add this line
+      if (decodedToken.isEmpty) {
+        return false;
+      }
+      if (authorizationType == 'Role') {
+        final roles = decodedToken[
+            'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+
+        if (roles.isEmpty) return false;
+        return allowedData.any((element) => roles.contains(element));
+      } else if (authorizationType == 'Permission') {
+        final List<String> permissions = decodedToken['Permission'];
+        if (permissions.isEmpty) return false;
+        return allowedData.any((element) => permissions.contains(element));
+      }
+    }
+
+    return false;
   }
 
   Future<User?> login(dynamic login) async {
