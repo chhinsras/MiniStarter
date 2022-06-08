@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:printing/printing.dart';
 import 'package:universal_platform/universal_platform.dart';
@@ -92,7 +93,7 @@ class _AppDataTableState extends State<AppDataTable> {
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.code)),
                   IconButton(
-                      onPressed: () => copyToClipBoard(),
+                      onPressed: () => copyToClipboard(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.copy)),
                 ]),
@@ -145,15 +146,7 @@ class _AppDataTableState extends State<AppDataTable> {
   }
 
   exportCSV() async {
-    List<List<dynamic>> rows = [];
-    List<dynamic> row = [];
-    row.addAll(widget.columns.map((e) => e.key).toList());
-    for (var item in widget.data) {
-      row.addAll(item.values.toList());
-    }
-    rows.add(row);
-
-    String csv = const ListToCsvConverter().convert(rows);
+    final csv = _generateCSVString();
     if (UniversalPlatform.isWeb) {
       Toastr.showWarning(text: 'CSV Export Not Supported on Web.');
     } else if (UniversalPlatform.isDesktop) {
@@ -170,8 +163,10 @@ class _AppDataTableState extends State<AppDataTable> {
     }
   }
 
-  copyToClipBoard() {
-    Toastr.showWarning(text: 'This Feature Is Not Supported.');
+  copyToClipboard() {
+    final csv = _generateCSVString();
+    Clipboard.setData(ClipboardData(text: csv));
+    Toastr.showSuccess(text: 'Clipboard Copied.');
   }
 
   pw.Document _generateDataTablePDF(PdfPageFormat format) {
@@ -228,6 +223,19 @@ class _AppDataTableState extends State<AppDataTable> {
       ),
     );
     return pdf;
+  }
+
+  String _generateCSVString() {
+    List<List<dynamic>> rows = [];
+    List<dynamic> row = [];
+    row.addAll(widget.columns.map((e) => e.key).toList());
+    for (var item in widget.data) {
+      row.addAll(item.values.toList());
+    }
+    rows.add(row);
+
+    String csv = const ListToCsvConverter().convert(rows);
+    return csv;
   }
 }
 
