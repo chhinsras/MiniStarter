@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/extensions/extensions.dart';
-import '../../helpers/helpers.dart';
-import '../../providers/providers.dart';
+import 'package:hybrid/helpers/helpers.dart';
+import 'package:hybrid/providers/providers.dart';
 
 class DashboardPage extends ConsumerWidget {
   const DashboardPage({Key? key}) : super(key: key);

@@ -1,10 +1,9 @@
 import 'dart:convert';
-
+import 'package:hybrid/api/agent.dart';
 import 'package:hybrid/config/app_cache.dart';
 import 'package:hybrid/helpers/helpers.dart';
+import 'package:hybrid/models/models.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
-import '../api/agent.dart';
-import '../models/models.dart';
 
 class AccountService {
   final Agent _agent = Agent();

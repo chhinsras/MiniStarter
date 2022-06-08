@@ -1,6 +1,6 @@
 import 'dart:convert';
-import '../api/agent.dart';
-import '../models/models.dart';
+import 'package:hybrid/api/agent.dart';
+import 'package:hybrid/models/models.dart';
 
 class AuditService {
   final agent = Agent();

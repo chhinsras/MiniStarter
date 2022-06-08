@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/models.dart';
+import 'package:hybrid/models/models.dart';
 
 class ProfileProvider extends ChangeNotifier {
   User get getUser => User(

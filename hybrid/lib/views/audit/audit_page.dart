@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hybrid/components/components.dart';
+import 'package:hybrid/models/models.dart';
 import 'package:hybrid/services/audit_service.dart';
-import '../../components/components.dart';
-import '../../models/models.dart';
 
 class AuditPage extends StatelessWidget {
   AuditPage({Key? key}) : super(key: key);

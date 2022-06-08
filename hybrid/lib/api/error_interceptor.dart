@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../helpers/helpers.dart';
+import 'package:hybrid/helpers/helpers.dart';
 
 class ErrorInterceptor extends Interceptor {
   final Dio dio;

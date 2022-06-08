@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hybrid/config/config.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/providers/providers.dart';
-import '../../config/config.dart';
 import 'menu_list.dart';
 
 class AdminLayoutPage extends ConsumerStatefulWidget {

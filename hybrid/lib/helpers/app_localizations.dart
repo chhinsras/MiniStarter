@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../providers/app_provider.dart';
+import 'package:hybrid/providers/app_provider.dart';
 
 class AppLocalizations {
   final Locale? locale;

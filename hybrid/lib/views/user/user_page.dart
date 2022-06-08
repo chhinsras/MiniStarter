@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-
-import '../../components/components.dart';
+import 'package:hybrid/components/components.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({Key? key}) : super(key: key);

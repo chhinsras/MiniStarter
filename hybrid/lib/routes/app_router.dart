@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:hybrid/layouts/admin_layout.dart';
+import 'package:hybrid/views/views.dart';
 import 'auth_guard.dart';
-import '../layouts/admin_layout.dart';
-import '../views/views.dart';
-
 part 'app_router.gr.dart';
 
 @MaterialAutoRouter(

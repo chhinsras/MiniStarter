@@ -3,15 +3,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hybrid/config/config.dart';
+import 'package:hybrid/helpers/helpers.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:printing/printing.dart';
 import 'package:universal_platform/universal_platform.dart';
-import '../config/colors.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-
-import '../config/config.dart';
-import '../helpers/helpers.dart';
 
 class AppDataColumn {
   String label;

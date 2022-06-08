@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:hybrid/config/app_cache.dart';
+import 'package:hybrid/config/config.dart';
+import 'package:hybrid/routes/app_router.dart';
 import 'package:hybrid/services/account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../config/app_cache.dart';
-import '../config/config.dart';
-import '../config/globals.dart' as globle;
-import '../routes/app_router.dart';
+import 'package:hybrid/config/globals.dart' as globle;
 
 class AppTab {
   static const int dashboard = 0;
