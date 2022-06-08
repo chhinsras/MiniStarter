@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:printing/printing.dart';
@@ -87,7 +88,7 @@ class _AppDataTableState extends State<AppDataTable> {
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.picture_as_pdf)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () => exportCSV(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.code)),
                   IconButton(
@@ -170,12 +171,43 @@ class _AppDataTableState extends State<AppDataTable> {
           bytes: await pdf.save(),
           filename: '${widget.title}-${DateTime.now()}.pdf');
     } else if (UniversalPlatform.isDesktop) {
-      final output = await getApplicationDocumentsDirectory();
+      final output = await getDownloadsDirectory();
       final file =
-          File("${output.path}/${widget.title}-${DateTime.now()}.pdf'");
+          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
+      await file.writeAsBytes(await pdf.save());
+    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
+      final output = await getDownloadsDirectory();
+      final file =
+          File("${output?.path}/${widget.title}-${DateTime.now()}.pdf");
       await file.writeAsBytes(await pdf.save());
     }
     Toastr.showSuccess(text: 'PDF Exported.');
+  }
+
+  exportCSV() async {
+    List<List<dynamic>> rows = [];
+    List<dynamic> row = [];
+    row.addAll(widget.columns.map((e) => e.key).toList());
+    for (var item in widget.data) {
+      row.addAll(item.values.toList());
+    }
+    rows.add(row);
+
+    String csv = const ListToCsvConverter().convert(rows);
+    if (UniversalPlatform.isWeb) {
+      Toastr.showWarning(text: 'CSV Export Not Supported on Web.');
+    } else if (UniversalPlatform.isDesktop) {
+      final output = await getDownloadsDirectory();
+      final file =
+          File("${output?.path}/${widget.title}-${DateTime.now()}.csv");
+      await file.writeAsString(csv);
+      Toastr.showSuccess(text: 'CSV Exported.');
+    } else if (UniversalPlatform.isIOS || UniversalPlatform.isAndroid) {
+      final output = await getApplicationDocumentsDirectory();
+      final file = File("${output.path}/${widget.title}-${DateTime.now()}.csv");
+      await file.writeAsString(csv);
+      Toastr.showSuccess(text: 'CSV Exported.');
+    }
   }
 }
 
