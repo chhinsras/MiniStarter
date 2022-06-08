@@ -1,6 +1,6 @@
 # MiniStarter
- Server: Asp.Net Core Web API
- Client: Angular & Flutter
+ - Server: Asp.Net Core Web API
+ - Client: Angular & Flutter
 
 ## Goals
 
