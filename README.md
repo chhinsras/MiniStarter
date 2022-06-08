@@ -52,7 +52,7 @@ The goal of this repository is to previde feature rich and production ready for 
 
 ## Flutter 
 - [x] Flutter 3.0 Supports Mobile / Web / Desktop
-- [ ] Responsive
+- [x] Responsive
 - [x] Riverpod
 - [x] Navigation 2.0 with Auto_Route / Go Router (TBD)
 - [x] Custom Theme - Dark Mode Supports
@@ -62,6 +62,8 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] JSON Serialization / JSON/Object Mapping Generation
 - [x] JSON Localization
 - [x] Reactive Form Inspire by Angular
+- [x] UI Role Based Widget Rendering
+- [ ] UI Permission Based Widget Rendering
 - [x] PDF and Printing
 - [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] SQLite with Moor
