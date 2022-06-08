@@ -76,15 +76,15 @@ class _AppDataTableState extends State<AppDataTable> {
                     endIndent: 10,
                   ),
                   IconButton(
-                      onPressed: () => exportPDF(),
+                      onPressed: () => printPDF(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.print)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () => exportExcel(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.calculate)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () => exportPDF(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.picture_as_pdf)),
                   IconButton(
@@ -92,7 +92,7 @@ class _AppDataTableState extends State<AppDataTable> {
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.code)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () => copyToClipBoard(),
                       color: Theme.of(context).primaryColor,
                       icon: const Icon(Icons.copy)),
                 ]),
@@ -111,6 +111,14 @@ class _AppDataTableState extends State<AppDataTable> {
         ),
       ),
     );
+  }
+
+  printPDF() {
+    Toastr.showWarning(text: 'This Feature Is Not Supported.');
+  }
+
+  exportExcel() {
+    Toastr.showWarning(text: 'This Feature Is Not Supported.');
   }
 
   exportPDF() async {
@@ -208,6 +216,10 @@ class _AppDataTableState extends State<AppDataTable> {
       await file.writeAsString(csv);
       Toastr.showSuccess(text: 'CSV Exported.');
     }
+  }
+
+  copyToClipBoard() {
+    Toastr.showWarning(text: 'This Feature Is Not Supported.');
   }
 }
 
