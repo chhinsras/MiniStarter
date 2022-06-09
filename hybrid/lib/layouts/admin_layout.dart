@@ -250,7 +250,10 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
                     )),
               ),
           ]),
-          AppHasRole(roles: const ['SuperAdmin'], child: buildDarkModeRow()),
+          AppHasPermission(
+              permissions: const ['Permissions.RoleClaims.View'],
+              child: buildDarkModeRow()),
+          // AppHasRole(roles: const ['SuperAdmin'], child: buildDarkModeRow()),
           MaterialButton(
               onPressed: () => ref.read(appProvider).logout(),
               child: const Text('Logout'))

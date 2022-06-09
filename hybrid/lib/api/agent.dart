@@ -6,8 +6,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hybrid/api/error_interceptor.dart';
 import 'package:hybrid/api/jwt_interceptor.dart';
+import 'package:hybrid/models/models.dart';
 import 'package:universal_platform/universal_platform.dart';
-import '../models/models.dart';
 
 class Agent {
   final Dio dio = Dio();

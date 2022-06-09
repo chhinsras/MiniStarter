@@ -37,7 +37,7 @@ class AccountService {
         if (roles.isEmpty) return false;
         return allowedData.any((element) => roles.contains(element));
       } else if (authorizationType == 'Permission') {
-        final List<String> permissions = decodedToken['Permission'];
+        final permissions = decodedToken['Permission'];
         if (permissions.isEmpty) return false;
         return allowedData.any((element) => permissions.contains(element));
       }
