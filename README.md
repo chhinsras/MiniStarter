@@ -65,7 +65,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] JSON Localization
 - [x] Reactive Form Inspire by Angular
 - [x] UI Role Based Widget Rendering
-- [ ] UI Permission Based Widget Rendering
+- [x] UI Permission Based Widget Rendering
 - [x] PDF and Printing
 - [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] AsyncDatatable (pagination filter server side)
