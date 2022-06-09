@@ -23,14 +23,13 @@ class _UserPageState extends State<UserPage> {
     AppDataColumn(key: 'price', label: 'Price')
   ];
 
-  final _pagination =
-      Pagination(currentPage: 1, totalPages: 10, pageSize: 50, totalCount: 100);
+  // final _pagination =
+  //     Pagination(currentPage: 1, totalPages: 10, pageSize: 50, totalCount: 100);
 
   @override
   Widget build(BuildContext context) {
     return AppDataTable(
       data: _data,
-      pagination: _pagination,
       columns: _columns,
       title: 'Users',
     );

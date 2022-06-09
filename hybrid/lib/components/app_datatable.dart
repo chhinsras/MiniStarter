@@ -1,12 +1,11 @@
 import 'dart:io';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:csv/csv.dart';
-import 'package:data_table_2/paginated_data_table_2.dart';
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hybrid/config/config.dart';
 import 'package:hybrid/helpers/helpers.dart';
-import 'package:hybrid/models/models.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:printing/printing.dart';
 import 'package:universal_platform/universal_platform.dart';
@@ -26,13 +25,11 @@ class AppDataTable extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.data,
-      required this.pagination,
       required this.columns})
       : super(key: key);
 
   final String title;
   final List<Map<String, dynamic>> data;
-  final Pagination pagination;
   final List<AppDataColumn> columns;
 
   @override
