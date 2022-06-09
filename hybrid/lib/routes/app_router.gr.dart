@@ -49,11 +49,16 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const GazetteerPage());
     },
     UserRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: UserPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const UserPage());
     },
     RoleRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const RolePage());
+    },
+    SettingRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const SettingPage());
     },
     AuditRoute.name: (routeData) {
       final args = routeData.argsAs<AuditRouteArgs>(
@@ -83,6 +88,8 @@ class _$AppRouter extends RootStackRouter {
               path: 'user', parent: AdminLayoutRoute.name),
           RouteConfig(RoleRoute.name,
               path: 'role', parent: AdminLayoutRoute.name),
+          RouteConfig(SettingRoute.name,
+              path: 'setting', parent: AdminLayoutRoute.name),
           RouteConfig(AuditRoute.name,
               path: 'audit', parent: AdminLayoutRoute.name)
         ]),
@@ -168,6 +175,14 @@ class RoleRoute extends PageRouteInfo<void> {
   const RoleRoute() : super(RoleRoute.name, path: 'role');
 
   static const String name = 'RoleRoute';
+}
+
+/// generated route for
+/// [SettingPage]
+class SettingRoute extends PageRouteInfo<void> {
+  const SettingRoute() : super(SettingRoute.name, path: 'setting');
+
+  static const String name = 'SettingRoute';
 }
 
 /// generated route for

@@ -225,35 +225,35 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
           ),
           Wrap(children: [
             for (AppMenuItem item in drawerMenuList)
-              InkWell(
-                onTap: () => context.router.navigateNamed(item.route),
-                child: Container(
-                    margin: const EdgeInsets.all(8.0),
-                    padding: const EdgeInsets.all(8.0),
-                    // decoration: BoxDecoration(
-                    //     color: Colors.red.shade900,
-                    //     borderRadius: BorderRadius.circular(5.0)),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          item.icon,
-                          size: 20.0,
-                        ),
-                        const SizedBox(width: 8.0),
-                        Text(
-                          item.text,
-                          style: const TextStyle(fontSize: 12.0),
-                        )
-                      ],
-                    )),
+              AppHasPermission(
+                permissions: [item.permission],
+                child: InkWell(
+                  onTap: () => context.router.navigateNamed(item.route),
+                  child: Container(
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
+                      // decoration: BoxDecoration(
+                      //     color: Colors.red.shade900,
+                      //     borderRadius: BorderRadius.circular(5.0)),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            item.icon,
+                            size: 20.0,
+                          ),
+                          const SizedBox(width: 8.0),
+                          Text(
+                            item.text,
+                            style: const TextStyle(fontSize: 12.0),
+                          )
+                        ],
+                      )),
+                ),
               ),
           ]),
-          AppHasPermission(
-              permissions: const ['Permissions.RoleClaims.View'],
-              child: buildDarkModeRow()),
-          // AppHasRole(roles: const ['SuperAdmin'], child: buildDarkModeRow()),
+          buildDarkModeRow(),
           MaterialButton(
               onPressed: () => ref.read(appProvider).logout(),
               child: const Text('Logout'))

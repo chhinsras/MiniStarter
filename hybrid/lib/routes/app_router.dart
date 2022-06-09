@@ -17,6 +17,7 @@ part 'app_router.gr.dart';
       AutoRoute(page: GazetteerPage, path: 'gazetteer'),
       AutoRoute(page: UserPage, path: 'user'),
       AutoRoute(page: RolePage, path: 'role'),
+      AutoRoute(page: SettingPage, path: 'setting'),
       AutoRoute(page: AuditPage, path: 'audit')
     ]),
     AutoRoute(path: '*', page: NotFoundPage),
