@@ -53,6 +53,7 @@ The goal of this repository is to previde feature rich and production ready for 
 
 ## Flutter 
 - [x] Flutter 3.0 Supports Mobile / Web / Desktop
+- [ ] MVC + S Pattern
 - [x] Responsive
 - [x] Riverpod
 - [x] Navigation 2.0 with Auto_Route / Go Router (TBD)
@@ -70,3 +71,6 @@ The goal of this repository is to previde feature rich and production ready for 
 - [ ] AsyncDatatable (pagination filter server side)
 - [ ] SQLite with Moor
 - [ ] PageTransition on Web (Fade Mode)
+- [ ] Logging
+- [ ] Online / Offline Connection Status
+- [ ] File Upload

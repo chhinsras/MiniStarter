@@ -45,19 +45,15 @@ public class AccountController : BaseApiController
     public async Task<ActionResult> Register(RegisterDto registerDto)
     {
         var user = new User { UserName = registerDto.Username, Email = registerDto.Email };
-
         var result = await _userManager.CreateAsync(user, registerDto.Password);
-
         if (!result.Succeeded)
         {
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(error.Code, error.Description);
             }
-
             return ValidationProblem();
         }
-
         await _userManager.AddToRoleAsync(user, Roles.BasicUser);
 
         return StatusCode(201);

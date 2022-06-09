@@ -191,7 +191,7 @@ packages:
     source: hosted
     version: "4.1.0"
   collection:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: collection
       url: "https://pub.dartlang.org"
@@ -431,6 +431,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_offline:
+    dependency: "direct main"
+    description:
+      name: flutter_offline
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -1153,6 +1160,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
+  time:
+    dependency: "direct main"
+    description:
+      name: time
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   timing:
     dependency: transitive
     description:

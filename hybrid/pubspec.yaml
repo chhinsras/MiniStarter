@@ -8,6 +8,9 @@ environment:
   sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
+  collection: ^1.16.0
+  time: ^2.1.1
+  flutter_offline: ^2.1.0
   auto_route: ^4.0.1
   auto_size_text: ^3.0.0
   bot_toast: ^4.0.2
