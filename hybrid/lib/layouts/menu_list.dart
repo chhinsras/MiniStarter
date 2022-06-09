@@ -35,9 +35,9 @@ List<AppMenuItem> drawerMenuList = [
       route: '/admin/role',
       permission: 'Permissions.Roles.View'),
   AppMenuItem(
-      text: 'Admin',
+      text: 'Setting',
       icon: Icons.admin_panel_settings,
-      route: '/setting',
+      route: '/admin/setting',
       permission: 'Permissions.Reports.Dashboard'),
   AppMenuItem(
       text: 'Changelogs',

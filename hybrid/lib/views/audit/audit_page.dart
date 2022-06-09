@@ -37,12 +37,12 @@ class AuditPage extends StatelessWidget {
                 ),
               );
             } else {
-              return SingleChildScrollView(
-                child: AppDataTable(
-                  data: snapshot.data!.map((e) => e.toJson()).toList(),
-                  columns: _columns,
-                  title: 'Audits',
-                ),
+              return AppDataTable(
+                pagination: Pagination(
+                    currentPage: 1, totalCount: 1, pageSize: 1, totalPages: 1),
+                data: snapshot.data!.map((e) => e.toJson()).toList(),
+                columns: _columns,
+                title: 'Audits',
               );
             }
           case ConnectionState.none:

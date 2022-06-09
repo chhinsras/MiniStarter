@@ -15,6 +15,7 @@ dependencies:
   connectivity_plus: ^2.3.2
   csv: ^5.0.1
   cupertino_icons: ^1.0.2
+  data_table_2: ^2.3.0
   device_info_plus: ^3.2.3
   dio: ^4.0.6
   equatable: ^2.0.3

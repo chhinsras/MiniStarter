@@ -68,3 +68,4 @@ The goal of this repository is to previde feature rich and production ready for 
 - [x] PDF and Printing
 - [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] SQLite with Moor
+- [ ] PageTransition on Web (Fade Mode)

@@ -32,3 +32,10 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
+
+class UserParams {
+  String? searchTerm;
+  int pageNumber = 1;
+  int pageSize = 20;
+  String? orderBy;
+}

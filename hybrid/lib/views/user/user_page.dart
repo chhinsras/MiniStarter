@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hybrid/components/components.dart';
+import 'package:hybrid/models/models.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({Key? key}) : super(key: key);
@@ -22,14 +23,16 @@ class _UserPageState extends State<UserPage> {
     AppDataColumn(key: 'price', label: 'Price')
   ];
 
+  final _pagination =
+      Pagination(currentPage: 1, totalPages: 10, pageSize: 50, totalCount: 100);
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: AppDataTable(
-        data: _data,
-        columns: _columns,
-        title: 'Users',
-      ),
+    return AppDataTable(
+      data: _data,
+      pagination: _pagination,
+      columns: _columns,
+      title: 'Users',
     );
   }
 }
