@@ -10,7 +10,7 @@ class AuthGuard extends AutoRouteGuard {
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
-    container.read(appModel).isAuthenticated().then(
+    container.read(accountModel).isAuthenticated().then(
           (authenticatd) => {
             if (authenticatd)
               {resolver.next(true)}

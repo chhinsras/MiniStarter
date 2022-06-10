@@ -62,7 +62,7 @@ class LoginPage extends ConsumerWidget {
                 const SizedBox(height: 16),
                 AppSubmitButton(
                   label: 'Submit',
-                  onPress: () => ref.watch(appModel).login(loginForm.value),
+                  onPress: () => ref.watch(accountModel).login(loginForm.value),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

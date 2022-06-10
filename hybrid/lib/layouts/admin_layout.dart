@@ -255,7 +255,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
           ]),
           buildDarkModeRow(),
           MaterialButton(
-              onPressed: () => ref.read(appModel).logout(),
+              onPressed: () => ref.read(accountModel).logout(),
               child: const Text('Logout'))
         ],
       ),

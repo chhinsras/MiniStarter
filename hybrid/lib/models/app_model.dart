@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hybrid/config/config.dart';
-import 'package:hybrid/models/app_cache.dart';
 import 'package:hybrid/models/base_model.dart';
+import 'package:hybrid/models/models.dart';
 import 'package:hybrid/routes/app_router.dart';
-import 'package:hybrid/services/account_service.dart';
 import 'package:hybrid/config/globals.dart' as globle;
 
 class AppTab {
@@ -19,7 +18,6 @@ class AppModel extends BaseModel {
   Locale? _appLocale = const Locale('en');
   int _selectedTab = AppTab.audit;
   bool _initialized = false;
-  final _appCache = AppCache();
 
   Locale get appLocale => _appLocale ?? const Locale("en");
   int get getSelectedTab => _selectedTab;
@@ -28,7 +26,7 @@ class AppModel extends BaseModel {
   static const supportedLanguage = [Locale('en', 'US'), Locale('km', 'KH')];
 
   void initializeApp() async {
-    bool loggedIn = await isAuthenticated();
+    bool loggedIn = await ref.read(accountModel).isAuthenticated();
     if (loggedIn) {
       getIt<AppRouter>().push(const AdminLayoutRoute());
     } else {
@@ -41,8 +39,15 @@ class AppModel extends BaseModel {
     });
   }
 
+  reInitializeApp() async {
+    _initialized = false;
+    _selectedTab = 0;
+    initializeApp();
+    notifyListeners();
+  }
+
   fetchLocale() async {
-    final languageCode = await _appCache.getLanguageCode();
+    final languageCode = await appCache.getLanguageCode();
     if (languageCode == null) {
       _appLocale = const Locale('en');
       return Null;
@@ -55,36 +60,13 @@ class AppModel extends BaseModel {
     // print("languageCode::${type.languageCode}");
     globle.lang = type.languageCode;
     _appLocale = type;
-    _appCache.cacheLanguageCode(type.languageCode);
-    _appCache.cacheCountryCode(type.countryCode);
+    appCache.cacheLanguageCode(type.languageCode);
+    appCache.cacheCountryCode(type.countryCode);
     notifyListeners();
   }
 
   void goToTab(index) {
     _selectedTab = index;
     notifyListeners();
-  }
-
-  void login(dynamic request) async {
-    var user = await AccountService().login(request);
-    if (user != null) {
-      await _appCache.cacheUserToken(user.token);
-      await _appCache.cacheUserRefreshToken(user.refreshToken);
-    }
-    getIt<AppRouter>().push(const AdminLayoutRoute());
-    notifyListeners();
-  }
-
-  void logout() async {
-    _initialized = false;
-    _selectedTab = 0;
-    await _appCache.invalidate();
-    initializeApp();
-    getIt<AppRouter>().push(LoginRoute());
-    notifyListeners();
-  }
-
-  Future<bool> isAuthenticated() async {
-    return AccountService().isAuthenticated();
   }
 }
