@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:hybrid/models/models.dart';
+import 'package:hybrid/entities/entities.dart';
+import 'package:hybrid/models/base_model.dart';
 
-class ProfileProvider extends ChangeNotifier {
+class ProfileModel extends BaseModel {
   User get getUser => User(
       userName: 'chhinsras',
       firstName: 'Sras',

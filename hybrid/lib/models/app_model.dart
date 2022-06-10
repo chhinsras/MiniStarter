@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hybrid/config/app_cache.dart';
 import 'package:hybrid/config/config.dart';
+import 'package:hybrid/models/app_cache.dart';
 import 'package:hybrid/routes/app_router.dart';
 import 'package:hybrid/services/account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,7 +15,7 @@ class AppTab {
   static const int audit = 4;
 }
 
-class AppProvider extends ChangeNotifier {
+class AppModel extends ChangeNotifier {
   Locale? _appLocale = const Locale('en');
   int _selectedTab = AppTab.audit;
   bool _initialized = false;

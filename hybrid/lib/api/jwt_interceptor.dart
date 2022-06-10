@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hybrid/config/app_cache.dart';
+import 'package:hybrid/models/app_cache.dart';
 import 'package:hybrid/services/account_service.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 

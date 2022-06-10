@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hybrid/providers/app_provider.dart';
+import 'package:hybrid/models/app_model.dart';
 
 class AppLocalizations {
   final Locale? locale;
@@ -51,7 +51,7 @@ class _AppLocalizationsDelegate
   bool isSupported(Locale locale) {
     List<String> supportedCodes = [];
     if (supportedCodes.isEmpty) {
-      for (Locale locale in AppProvider.supportedLanguage) {
+      for (Locale locale in AppModel.supportedLanguage) {
         supportedCodes.add(locale.languageCode);
       }
     }

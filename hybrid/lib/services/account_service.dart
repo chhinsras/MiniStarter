@@ -1,12 +1,11 @@
 import 'dart:convert';
-import 'package:hybrid/api/agent.dart';
-import 'package:hybrid/config/app_cache.dart';
+import 'package:hybrid/entities/entities.dart';
 import 'package:hybrid/helpers/helpers.dart';
-import 'package:hybrid/models/models.dart';
+import 'package:hybrid/models/app_cache.dart';
+import 'package:hybrid/services/base_service.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 
-class AccountService {
-  final Agent _agent = Agent();
+class AccountService extends BaseService {
   final AppCache _appCache = AppCache();
 
   Future<bool> isAuthenticated() async {
@@ -47,7 +46,7 @@ class AccountService {
   }
 
   Future<User?> login(dynamic login) async {
-    var response = await _agent.loginUser(login);
+    var response = await agent.loginUser(login);
     if (response.data != null) {
       Toastr.showSuccess(text: 'User Logged In');
       return User.fromJson(response.data);
@@ -60,7 +59,7 @@ class AccountService {
     var refreshToken = await _appCache.getUserRefreshToken();
     var request = {'token': jwtToken, 'refreshToken': refreshToken};
 
-    var response = await _agent.refreshToken(request);
+    var response = await agent.refreshToken(request);
     if (response.data != null) {
       Toastr.showSuccess(text: 'Refreshed token.');
       await _appCache.cacheUserToken(response.data['token']);

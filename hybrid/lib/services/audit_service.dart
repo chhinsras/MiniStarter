@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'package:hybrid/api/agent.dart';
-import 'package:hybrid/models/models.dart';
+import 'package:hybrid/entities/entities.dart';
+import 'package:hybrid/services/base_service.dart';
 
-class AuditService {
-  final agent = Agent();
-
+class AuditService extends BaseService {
   Future<List<Audit>> getAudits() async {
     var response = await agent.getAudits();
     List<Audit> result = [];

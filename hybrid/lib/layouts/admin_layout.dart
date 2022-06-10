@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/config/config.dart';
 import 'package:hybrid/extensions/extensions.dart';
 import 'package:hybrid/helpers/helpers.dart';
-import 'package:hybrid/providers/providers.dart';
+import 'package:hybrid/models/models.dart';
 import 'menu_list.dart';
 
 class AdminLayoutPage extends ConsumerStatefulWidget {
@@ -29,7 +29,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
   @override
   void initState() {
     super.initState();
-    ref.read(appProvider);
+    ref.read(appModel);
 
     // _controller = TabController(
     //     length: pages.length, vsync: this, initialIndex: widget.currentTab);
@@ -255,7 +255,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
           ]),
           buildDarkModeRow(),
           MaterialButton(
-              onPressed: () => ref.read(appProvider).logout(),
+              onPressed: () => ref.read(appModel).logout(),
               child: const Text('Logout'))
         ],
       ),
@@ -263,7 +263,7 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
   }
 
   Widget buildDarkModeRow() {
-    final profileState = ref.read(profileProvider);
+    final profileState = ref.read(profileModel);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(

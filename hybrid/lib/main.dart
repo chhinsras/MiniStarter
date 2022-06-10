@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hybrid/models/app_model.dart';
+import 'package:hybrid/models/models.dart';
 import 'package:hybrid/routes/app_router.dart';
 import 'config/config.dart';
 import 'helpers/helpers.dart';
 import 'routes/auth_guard.dart';
-import 'providers/app_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'providers/providers.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -17,7 +17,7 @@ Future main() async {
   await dotenv.load(fileName: ".env");
 
   final container = ProviderContainer();
-  container.read(appProvider).initializeApp();
+  container.read(appModel).initializeApp();
 
   getIt.registerSingleton<AppRouter>(
       AppRouter(authGuard: AuthGuard(container: container)));
@@ -30,8 +30,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appRouter = getIt<AppRouter>();
-    final appManager = ref.watch(appProvider);
-    final profileManager = ref.watch(profileProvider);
+    final appManager = ref.watch(appModel);
+    final profileManager = ref.watch(profileModel);
 
     ThemeData theme;
     if (profileManager.darkMode) {
@@ -47,7 +47,7 @@ class MyApp extends ConsumerWidget {
         debugShowCheckedModeBanner: false,
         theme: theme,
         locale: appManager.appLocale,
-        supportedLocales: AppProvider.supportedLanguage,
+        supportedLocales: AppModel.supportedLanguage,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

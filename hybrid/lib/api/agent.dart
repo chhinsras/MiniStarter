@@ -6,17 +6,17 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hybrid/api/error_interceptor.dart';
 import 'package:hybrid/api/jwt_interceptor.dart';
-import 'package:hybrid/models/models.dart';
+import 'package:hybrid/entities/entities.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 class Agent {
-  final Dio dio = Dio();
+  final Dio _dio = Dio();
   final plainResponseOptions = Options(responseType: ResponseType.plain);
 
   Agent() {
     // self-signed certificate for https workaround
     if (UniversalPlatform.isIOS || UniversalPlatform.isMacOS) {
-      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+      (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
           (HttpClient client) {
         client.badCertificateCallback =
             (X509Certificate cert, String host, int port) => true;
@@ -28,32 +28,32 @@ class Agent {
       connectTimeout: 5000,
       receiveTimeout: 3000,
     );
-    dio.options = options;
+    _dio.options = options;
 
-    dio.interceptors.addAll({
-      JwtInterceptor(dio: dio),
-      ErrorInterceptor(dio: dio),
+    _dio.interceptors.addAll({
+      JwtInterceptor(dio: _dio),
+      ErrorInterceptor(dio: _dio),
     });
   }
 
 // Auditing
   Future<Response> getAudits() async =>
-      dio.get('auditlogs', options: plainResponseOptions);
+      _dio.get('auditlogs', options: plainResponseOptions);
 
 // Account
   Future<Response> loginUser(Map<String, dynamic> login) async =>
-      dio.post('account/login', data: jsonEncode(login));
+      _dio.post('account/login', data: jsonEncode(login));
   Future<Response> refreshToken(Map<String, dynamic> request) async =>
-      dio.post('account/refresh-token', data: jsonEncode(request));
+      _dio.post('account/refresh-token', data: jsonEncode(request));
   Future<Response> registerUser(User user) async =>
-      dio.post('account/register', data: {user});
+      _dio.post('account/register', data: {user});
   Future<Response> confirmEmail(Map<String, dynamic> params) async =>
-      dio.post('account/confirm-email', queryParameters: params);
+      _dio.post('account/confirm-email', queryParameters: params);
   // static Future<Response> confirmPhoneNumber(
   //         Map<String, dynamic> params) async =>
-  //     dio.post('account/confirm-phone-number', queryParameters: params);
+  //     _dio.post('account/confirm-phone-number', queryParameters: params);
   // static Future<Response> forgotPassword(String email) async =>
-  //     dio.post('account/forgot-password', data: {email});
+  //     _dio.post('account/forgot-password', data: {email});
   // static Future<Response> resetPassword(ResetPassword resetPassword) async =>
-  //     dio.post('account/reset-password', data: {resetPassword});
+  //     _dio.post('account/reset-password', data: {resetPassword});
 }
