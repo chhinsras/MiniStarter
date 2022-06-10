@@ -263,7 +263,6 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
   }
 
   Widget buildDarkModeRow() {
-    final profileState = ref.read(profileModel);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(
@@ -271,9 +270,9 @@ class _HomePageState extends ConsumerState<AdminLayoutPage>
         children: [
           const Text('Dark Mode'),
           Switch(
-            value: profileState.darkMode,
+            value: ref.read(profileModel).darkMode,
             onChanged: (value) {
-              profileState.darkMode = value;
+              ref.read(profileModel).darkMode = value;
             },
           )
         ],

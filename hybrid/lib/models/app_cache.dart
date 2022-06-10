@@ -5,6 +5,7 @@ class AppCache {
   static const kRefreshToken = 'refreshToken';
   static const kLanguageCode = 'languageCode';
   static const kCountryCode = 'countryCode';
+  static const kDarkMode = 'darkMode';
 
   Future<void> invalidateAuthentication() async {
     final prefs = await SharedPreferences.getInstance();
@@ -50,5 +51,15 @@ class AppCache {
   Future<void> cacheCountryCode(String? countryCode) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(kCountryCode, countryCode!);
+  }
+
+  Future<bool> getDarkMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    return Future.value(prefs.getBool(kDarkMode));
+  }
+
+  Future<void> cacheDarkMode(bool darkMode) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(kDarkMode, darkMode);
   }
 }
