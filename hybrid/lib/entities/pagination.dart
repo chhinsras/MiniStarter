@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'pagination.g.dart';
+
+@JsonSerializable()
 class Pagination {
   int currentPage;
   int totalPages;
@@ -9,10 +14,15 @@ class Pagination {
       required this.totalPages,
       required this.pageSize,
       required this.totalCount});
+
+  factory Pagination.fromJson(Map<String, dynamic> json) =>
+      _$PaginationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PaginationToJson(this);
 }
 
-class PaginatedResponse<T> {
-  T items;
+class PaginatedResponse {
+  dynamic items;
   Pagination pagination;
 
   PaginatedResponse({required this.items, required this.pagination});

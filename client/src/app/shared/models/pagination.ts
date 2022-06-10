@@ -5,8 +5,8 @@ export interface MetaData {
   totalCount: number;
 }
 
-export class PaginatedResponse<T> {
-  items: T;
+export class PaginatedResponse<dynamic> {
+  items: dynamic;
   metaData: MetaData;
 
   // constructor(items: T, metaData: MetaData) {
