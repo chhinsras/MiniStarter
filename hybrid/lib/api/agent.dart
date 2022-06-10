@@ -29,7 +29,6 @@ class Agent {
       receiveTimeout: 3000,
     );
     _dio.options = options;
-
     _dio.interceptors.addAll({
       JwtInterceptor(dio: _dio),
       ErrorInterceptor(dio: _dio),

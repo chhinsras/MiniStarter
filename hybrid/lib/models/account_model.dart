@@ -16,7 +16,7 @@ class AccountModel extends BaseModel {
   }
 
   void logout() async {
-    await appCache.invalidate();
+    await appCache.invalidateAuthentication();
     await ref.read(appModel).reInitializeApp();
     await getIt<AppRouter>().push(LoginRoute());
     notifyListeners();

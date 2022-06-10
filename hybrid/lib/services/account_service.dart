@@ -67,7 +67,7 @@ class AccountService extends BaseService {
       return User.fromJson(response.data);
     } else {
       Toastr.showError(text: 'Something went wrong.');
-      await _appCache.invalidate();
+      await _appCache.invalidateAuthentication();
     }
     return null;
   }

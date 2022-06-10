@@ -6,7 +6,7 @@ class AppCache {
   static const kLanguageCode = 'languageCode';
   static const kCountryCode = 'countryCode';
 
-  Future<void> invalidate() async {
+  Future<void> invalidateAuthentication() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(kToken);
     await prefs.remove(kRefreshToken);
