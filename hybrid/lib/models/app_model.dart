@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hybrid/config/config.dart';
 import 'package:hybrid/models/app_cache.dart';
+import 'package:hybrid/models/base_model.dart';
 import 'package:hybrid/routes/app_router.dart';
 import 'package:hybrid/services/account_service.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hybrid/config/globals.dart' as globle;
 
 class AppTab {
@@ -15,7 +15,7 @@ class AppTab {
   static const int audit = 4;
 }
 
-class AppModel extends ChangeNotifier {
+class AppModel extends BaseModel {
   Locale? _appLocale = const Locale('en');
   int _selectedTab = AppTab.audit;
   bool _initialized = false;
@@ -42,22 +42,21 @@ class AppModel extends ChangeNotifier {
   }
 
   fetchLocale() async {
-    var prefs = await SharedPreferences.getInstance();
-    if (prefs.getString('language_code') == null) {
+    final languageCode = await _appCache.getLanguageCode();
+    if (languageCode == null) {
       _appLocale = const Locale('en');
       return Null;
     }
-    _appLocale = Locale(prefs.getString('language_code').toString());
+    _appLocale = Locale(languageCode);
     return Null;
   }
 
   void changeLanguage(Locale type) async {
     // print("languageCode::${type.languageCode}");
-    var prefs = await SharedPreferences.getInstance();
     globle.lang = type.languageCode;
     _appLocale = type;
-    await prefs.setString('language_code', type.languageCode);
-    await prefs.setString('countryCode', '');
+    _appCache.cacheLanguageCode(type.languageCode);
+    _appCache.cacheCountryCode(type.countryCode);
     notifyListeners();
   }
 
