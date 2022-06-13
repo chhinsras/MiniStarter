@@ -10,10 +10,13 @@ import 'package:hybrid/entities/entities.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 class Agent {
+  static final Agent _instance = Agent._();
+  factory Agent() => _instance;
+
   final Dio _dio = Dio();
   final plainResponseOptions = Options(responseType: ResponseType.plain);
 
-  Agent() {
+  Agent._() {
     // self-signed certificate for https workaround
     if (UniversalPlatform.isIOS || UniversalPlatform.isMacOS) {
       (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
