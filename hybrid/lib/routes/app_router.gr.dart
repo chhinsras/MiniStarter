@@ -22,49 +22,88 @@ class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const HomePage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const HomePage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     LoginRoute.name: (routeData) {
       final args = routeData.argsAs<LoginRouteArgs>(
           orElse: () => const LoginRouteArgs());
-      return MaterialPageX<dynamic>(
+      return CustomPage<dynamic>(
           routeData: routeData,
-          child: LoginPage(key: args.key, username: args.username));
+          child: LoginPage(key: args.key, username: args.username),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     AdminLayoutRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const AdminLayoutPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const AdminLayoutPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     NotFoundRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const NotFoundPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const NotFoundPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     DashboardRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const DashboardPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const DashboardPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     GazetteerRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const GazetteerPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const GazetteerPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     UserRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const UserPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const UserPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     RoleRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const RolePage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const RolePage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     SettingRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const SettingPage());
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: const SettingPage(),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     AuditRoute.name: (routeData) {
       final args = routeData.argsAs<AuditRouteArgs>(
           orElse: () => const AuditRouteArgs());
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: AuditPage(key: args.key));
+      return CustomPage<dynamic>(
+          routeData: routeData,
+          child: AuditPage(key: args.key),
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 
@@ -75,11 +114,6 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AdminLayoutRoute.name, path: '/admin', guards: [
           authGuard
         ], children: [
-          RouteConfig('#redirect',
-              path: '',
-              parent: AdminLayoutRoute.name,
-              redirectTo: 'dashboard',
-              fullMatch: true),
           RouteConfig(DashboardRoute.name,
               path: 'dashboard', parent: AdminLayoutRoute.name),
           RouteConfig(GazetteerRoute.name,

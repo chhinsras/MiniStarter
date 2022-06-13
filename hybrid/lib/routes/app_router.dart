@@ -8,19 +8,51 @@ part 'app_router.gr.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: HomePage, path: '/', initial: true),
-    AutoRoute(path: '/login', page: LoginPage),
-    AutoRoute(path: '/admin', page: AdminLayoutPage, guards: [
-      AuthGuard
-    ], children: [
-      AutoRoute(page: DashboardPage, path: 'dashboard', initial: true),
-      AutoRoute(page: GazetteerPage, path: 'gazetteer'),
-      AutoRoute(page: UserPage, path: 'user'),
-      AutoRoute(page: RolePage, path: 'role'),
-      AutoRoute(page: SettingPage, path: 'setting'),
-      AutoRoute(page: AuditPage, path: 'audit')
-    ]),
-    AutoRoute(path: '*', page: NotFoundPage),
+    CustomRoute(
+        page: HomePage,
+        path: '/',
+        initial: true,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
+    CustomRoute(
+        path: '/login',
+        page: LoginPage,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
+    CustomRoute(
+        path: '/admin',
+        page: AdminLayoutPage,
+        guards: [AuthGuard],
+        children: [
+          CustomRoute(
+              page: DashboardPage,
+              path: 'dashboard',
+              // initial: true,
+              transitionsBuilder: TransitionsBuilders.fadeIn),
+          CustomRoute(
+              page: GazetteerPage,
+              path: 'gazetteer',
+              transitionsBuilder: TransitionsBuilders.fadeIn),
+          CustomRoute(
+              page: UserPage,
+              path: 'user',
+              transitionsBuilder: TransitionsBuilders.fadeIn),
+          CustomRoute(
+              page: RolePage,
+              path: 'role',
+              transitionsBuilder: TransitionsBuilders.fadeIn),
+          CustomRoute(
+              page: SettingPage,
+              path: 'setting',
+              transitionsBuilder: TransitionsBuilders.fadeIn),
+          CustomRoute(
+              page: AuditPage,
+              path: 'audit',
+              transitionsBuilder: TransitionsBuilders.fadeIn)
+        ],
+        transitionsBuilder: TransitionsBuilders.fadeIn),
+    CustomRoute(
+        path: '*',
+        page: NotFoundPage,
+        transitionsBuilder: TransitionsBuilders.fadeIn),
   ],
 )
 // extend the generated private router
