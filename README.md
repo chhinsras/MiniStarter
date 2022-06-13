@@ -70,7 +70,7 @@ The goal of this repository is to previde feature rich and production ready for 
 - [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] AsyncDatatable (pagination filter server side)
 - [ ] SQLite with Moor
-- [ ] PageTransition on Web (Fade Mode)
+- [x] PageTransition on Web (Fade Mode)
 - [ ] Logging
 - [ ] Online / Offline Connection Status
 - [ ] File Upload
