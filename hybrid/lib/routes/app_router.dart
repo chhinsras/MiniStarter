@@ -25,7 +25,7 @@ part 'app_router.gr.dart';
           CustomRoute(
               page: DashboardPage,
               path: 'dashboard',
-              // initial: true,
+              initial: true,
               transitionsBuilder: TransitionsBuilders.fadeIn),
           CustomRoute(
               page: GazetteerPage,

@@ -114,6 +114,11 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AdminLayoutRoute.name, path: '/admin', guards: [
           authGuard
         ], children: [
+          RouteConfig('#redirect',
+              path: '',
+              parent: AdminLayoutRoute.name,
+              redirectTo: 'dashboard',
+              fullMatch: true),
           RouteConfig(DashboardRoute.name,
               path: 'dashboard', parent: AdminLayoutRoute.name),
           RouteConfig(GazetteerRoute.name,
