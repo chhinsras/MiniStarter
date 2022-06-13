@@ -4,7 +4,8 @@
 
 ## Goals
 
-The goal of this repository is to previde feature rich and production ready for any project with simple and less code in mind. 
+The goal of this repository is to previde feature rich and production ready for any project with simple and less code in mind. The project is not aimed for clean architecture, MVC will be extensively used for both backend and client project. 
+This project will be great resources for beginner to intermediate programmer in Asp.Net, Angular and Flutter.
 
 ## Features
 
