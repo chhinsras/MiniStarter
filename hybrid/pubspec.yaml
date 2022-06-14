@@ -8,13 +8,11 @@ environment:
   sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
-  collection: ^1.16.0
-  time: ^2.1.1
-  flutter_offline: ^2.1.0
   auto_route: ^4.0.1
   auto_size_text: ^3.0.0
   bot_toast: ^4.0.2
   cached_network_image: ^3.2.0
+  collection: ^1.16.0
   connectivity_plus: ^2.3.2
   csv: ^5.0.1
   cupertino_icons: ^1.0.2
@@ -29,6 +27,7 @@ dependencies:
   flutter_dotenv: ^5.0.2
   flutter_localizations:
     sdk: flutter
+  flutter_offline: ^2.1.0
   flutter_riverpod: ^1.0.3
   flutter_slidable: ^1.2.0
   flutter_svg: ^1.0.3
@@ -52,6 +51,7 @@ dependencies:
   sqflite: ^2.0.2+1
   sqlbrite: ^2.2.0
   synchronized: ^3.0.0+2
+  time: ^2.1.1
   toggle_switch: ^2.0.1
   universal_html: ^2.0.8
   universal_platform: ^1.0.0+1
@@ -61,11 +61,17 @@ dependencies:
 dev_dependencies:
   auto_route_generator: ^4.0.0
   build_runner: ^2.1.1
+  flutter_gen_runner: ^4.3.0
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
   json_serializable: ^6.2.0
 
+flutter_gen:
+  output: lib/helpers/
+  integrations:
+    flutter_svg: true
+  
 flutter:
   uses-material-design: true
   assets:

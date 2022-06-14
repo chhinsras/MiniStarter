@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/components/app_submit_button.dart';
 import 'package:hybrid/components/app_textfield.dart';
+import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/models/models.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -36,11 +37,9 @@ class LoginPage extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 200,
-                  child: Image(
-                    image: AssetImage('assets/images/logo.png'),
-                  ),
+                  child: Image.asset(Assets.images.logo.path),
                 ),
                 const SizedBox(height: 16),
                 AppTextField(
