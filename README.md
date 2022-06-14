@@ -4,14 +4,15 @@
 
 ## Goals
 
-The goal of this repository is to previde feature rich and production ready for any project with simple and less code in mind. 
+- The goal of this repository is to previde feature rich and production ready for any project with simple and less code in mind. The MVC architecture will be extensively used for both backend and client project. 
+- This project will be great resources for beginner to intermediate programmer in Asp.Net, Angular and Flutter.
 
 ## Features
 
 - [x] Built on .NET 6.0
 - [x] API and Client Project Seperation
 - [x] Entitiy Framework Core
-- [x] Simplified Project and Folder Structure
+- [x] Simplified Project and Folder Structure based on MVC architecture
 - [x] Supports MSSQL or PosgreSQL (support heroku deploy via github action)
 - [x] JSON Localization
 - [ ] Cambodia Gazetteer
@@ -53,24 +54,24 @@ The goal of this repository is to previde feature rich and production ready for 
 
 ## Flutter 
 - [x] Flutter 3.0 Supports Mobile / Web / Desktop
-- [ ] MVC + S Pattern
+- [x] MVC Architecture
 - [x] Responsive
 - [x] Riverpod
-- [x] Navigation 2.0 with Auto_Route / Go Router (TBD)
+- [x] Navigation 2.0 with Auto_Route
 - [x] Custom Theme - Dark Mode Supports
 - [x] Dio with JWT and Error Interceptors
 - [x] Shared Preference
 - [x] Serviced Based API
-- [x] JSON Serialization / JSON/Object Mapping Generation
+- [x] JSON Serialization / JSON and Object Mapping Generation
 - [x] JSON Localization
-- [x] Reactive Form Inspire by Angular
+- [x] Reactive Form Inspired by Angular
 - [x] UI Role Based Widget Rendering
 - [x] UI Permission Based Widget Rendering
 - [x] PDF and Printing
 - [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
 - [ ] AsyncDatatable (pagination filter server side)
 - [ ] SQLite with Moor
-- [ ] PageTransition on Web (Fade Mode)
+- [x] PageTransition on Web (Fade Mode)
 - [ ] Logging
 - [ ] Online / Offline Connection Status
 - [ ] File Upload
