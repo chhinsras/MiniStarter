@@ -3,12 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/components/components.dart';
 import 'package:hybrid/entities/entities.dart';
 import 'package:hybrid/models/models.dart';
-import 'package:hybrid/services/audit_service.dart';
 
 class AuditPage extends ConsumerWidget {
   AuditPage({Key? key}) : super(key: key);
-
-  final auditService = AuditService();
 
   final _columns = [
     AppDataColumn(key: 'id', label: 'ID'),

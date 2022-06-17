@@ -11,6 +11,6 @@ final accountModel =
 final profileModel =
     ChangeNotifierProvider<ProfileModel>((ref) => ProfileModel());
 final auditModel = ChangeNotifierProvider<AuditModel>((ref) => AuditModel());
-final userProvider = ChangeNotifierProvider<UserModel>((ref) {
+final userModel = ChangeNotifierProvider<UserModel>((ref) {
   return UserModel();
 });

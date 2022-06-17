@@ -18,9 +18,8 @@ class UserPage extends ConsumerWidget {
   ];
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userModel = ref.read(userProvider);
     return FutureBuilder(
-      future: userModel.loadAllUsers(),
+      future: ref.read(userModel).loadAllUsers(),
       builder: (context, AsyncSnapshot<List<User>> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
