@@ -25,7 +25,7 @@ class AdminPage extends StatelessWidget {
             Column(
               children: [
                 InkWell(
-                    onTap: () => context.router.push(const UserRoute()),
+                    onTap: () => context.router.push(UserRoute()),
                     child: const Text('User')),
                 InkWell(
                     onTap: () => context.router.push(const RoleRoute()),

@@ -38,11 +38,11 @@ class Agent {
     });
   }
 
-// Auditing
+  // Auditing
   Future<Response> getAudits() async =>
       _dio.get('auditlogs', options: plainResponseOptions);
 
-// Account
+  // Account
   Future<Response> loginUser(Map<String, dynamic> login) async =>
       _dio.post('account/login', data: jsonEncode(login));
   Future<Response> refreshToken(Map<String, dynamic> request) async =>
@@ -58,4 +58,8 @@ class Agent {
   //     _dio.post('account/forgot-password', data: {email});
   // static Future<Response> resetPassword(ResetPassword resetPassword) async =>
   //     _dio.post('account/reset-password', data: {resetPassword});
+
+  // User
+  Future<Response> getAllUsers() async =>
+      _dio.get('users/all', options: plainResponseOptions);
 }
