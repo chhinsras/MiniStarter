@@ -43,9 +43,9 @@ class _AppDataTableState extends State<AppDataTable> {
   @override
   Widget build(BuildContext context) {
     _source = AppDataTableSource(data: widget.data, columns: widget.columns);
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
         child: PaginatedDataTable(
           source: _source,
           header: AutoSizeText(widget.title, maxLines: 1),
