@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hybrid/components/components.dart';
 import 'package:hybrid/models/app_model.dart';
 import 'package:hybrid/models/models.dart';
 import 'package:hybrid/routes/app_router.dart';
@@ -60,6 +61,7 @@ class MyApp extends ConsumerWidget {
             navigatorObservers: () => [BotToastNavigatorObserver()]),
         routeInformationParser: appRouter.defaultRouteParser(),
         backButtonDispatcher: RootBackButtonDispatcher(),
+        scrollBehavior: AppScrollBehavior(),
       ),
     );
   }

@@ -45,66 +45,69 @@ class _AppDataTableState extends State<AppDataTable> {
     _source = AppDataTableSource(data: widget.data, columns: widget.columns);
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: PaginatedDataTable(
-        source: _source,
-        header: AutoSizeText(widget.title, maxLines: 1),
-        columnSpacing: 100,
-        horizontalMargin: 10,
-        showCheckboxColumn: true,
-        showFirstLastButtons: true,
-        rowsPerPage: _rowsPerPage,
-        onRowsPerPageChanged: (value) {
-          setState(() {
-            _rowsPerPage = value!;
-          });
-        },
-        actions: [
-          SizedBox(
-            width: Responsive.isSmallMobile(context) ? 200 : null,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.add)),
-                IconButton(
-                    onPressed: () {},
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.refresh)),
-                const VerticalDivider(
-                  indent: 10,
-                  endIndent: 10,
-                ),
-                IconButton(
-                    onPressed: () => printPDF(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.print)),
-                IconButton(
-                    onPressed: () => exportExcel(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.calculate)),
-                IconButton(
-                    onPressed: () => exportPDF(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.picture_as_pdf)),
-                IconButton(
-                    onPressed: () => exportCSV(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.code)),
-                IconButton(
-                    onPressed: () => copyToClipboard(),
-                    color: Theme.of(context).primaryColor,
-                    icon: const Icon(Icons.copy)),
-              ]),
-            ),
-          )
-        ],
-        columns: [
-          for (var column in widget.columns)
-            DataColumn(label: Text(column.label)),
-          const DataColumn(label: Text('Action'))
-        ],
+      child: SingleChildScrollView(
+        child: PaginatedDataTable(
+          source: _source,
+          header: AutoSizeText(widget.title, maxLines: 1),
+          columnSpacing: 100,
+          horizontalMargin: 10,
+          showCheckboxColumn: true,
+          showFirstLastButtons: true,
+          rowsPerPage: _rowsPerPage,
+          onRowsPerPageChanged: (value) {
+            setState(() {
+              _rowsPerPage = value!;
+            });
+          },
+          actions: [
+            SizedBox(
+              width: Responsive.isSmallMobile(context) ? 200 : null,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.add)),
+                  IconButton(
+                      onPressed: () {},
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.refresh)),
+                  const VerticalDivider(
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+                  IconButton(
+                      onPressed: () => printPDF(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.print)),
+                  IconButton(
+                      onPressed: () => exportExcel(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.calculate)),
+                  IconButton(
+                      onPressed: () => exportPDF(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.picture_as_pdf)),
+                  IconButton(
+                      onPressed: () => exportCSV(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.code)),
+                  IconButton(
+                      onPressed: () => copyToClipboard(),
+                      color: Theme.of(context).primaryColor,
+                      icon: const Icon(Icons.copy)),
+                ]),
+              ),
+            )
+          ],
+          columns: [
+            for (var column in widget.columns)
+              DataColumn(label: Text(column.label)),
+            const DataColumn(label: Text('Action'))
+          ],
+        ),
       ),
     );
   }
