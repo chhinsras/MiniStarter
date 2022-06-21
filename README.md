@@ -18,7 +18,7 @@
 - [ ] Cambodia Gazetteer
 - [ ] API Versioning
 - [x] Audit Logging
-- [ ] Fluent Validation
+- [ ] Data Annotation Validation
 - [ ] Advanced Search
 - [ ] Postman Collection
 - [ ] Email Verification with Template
