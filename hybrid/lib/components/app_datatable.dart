@@ -25,12 +25,18 @@ class AppDataTable extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.data,
-      required this.columns})
+      required this.columns,
+      this.onView,
+      this.onEdit,
+      this.onDelete})
       : super(key: key);
 
   final String title;
   final List<Map<String, dynamic>> data;
   final List<AppDataColumn> columns;
+  final Function(int)? onView;
+  final Function(int)? onEdit;
+  final Function(int)? onDelete;
 
   @override
   State<AppDataTable> createState() => _AppDataTableState();
@@ -42,7 +48,12 @@ class _AppDataTableState extends State<AppDataTable> {
   late DataTableSource _source;
   @override
   Widget build(BuildContext context) {
-    _source = AppDataTableSource(data: widget.data, columns: widget.columns);
+    _source = AppDataTableSource(
+        data: widget.data,
+        columns: widget.columns,
+        onView: widget.onView,
+        onEdit: widget.onEdit,
+        onDelete: widget.onDelete);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -238,10 +249,18 @@ class _AppDataTableState extends State<AppDataTable> {
 }
 
 class AppDataTableSource extends DataTableSource {
-  AppDataTableSource({required this.data, required this.columns});
+  AppDataTableSource(
+      {required this.data,
+      required this.columns,
+      this.onView,
+      this.onEdit,
+      this.onDelete});
 
   List<Map<String, dynamic>> data;
   List<AppDataColumn> columns;
+  Function(int)? onView;
+  Function(int)? onEdit;
+  Function(int)? onDelete;
 
   @override
   bool get isRowCountApproximate => false;
@@ -259,19 +278,24 @@ class AppDataTableSource extends DataTableSource {
           DataCell(Row(
             children: [
               IconButton(
-                icon: const Icon(Icons.remove_red_eye),
-                color: colorPrimary,
-                onPressed: () {},
-              ),
+                  icon: const Icon(Icons.remove_red_eye),
+                  color: colorPrimary,
+                  onPressed: () {
+                    onView!(data[index]['id']);
+                  }),
               IconButton(
                 icon: const Icon(Icons.edit),
                 color: Colors.amber,
-                onPressed: () {},
+                onPressed: () {
+                  onEdit!(data[index]['id']);
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.delete),
                 color: Colors.red,
-                onPressed: () {},
+                onPressed: () {
+                  onDelete!(data[index]['id']);
+                },
               )
             ],
           )),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/components/components.dart';
 import 'package:hybrid/entities/entities.dart';
+import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/models/models.dart';
 
 class UserPage extends ConsumerWidget {
@@ -38,6 +39,11 @@ class UserPage extends ConsumerWidget {
                 data: snapshot.data!.map((e) => e.toJson()).toList(),
                 columns: _columns,
                 title: 'Users',
+                onView: (data) => Toastr.showSuccess(text: data.toString()),
+                onEdit: (data) => Toastr.showWarning(text: data.toString()),
+                onDelete: (data) => Toastr.showError(
+                  text: data.toString(),
+                ),
               );
             }
           case ConnectionState.none:
