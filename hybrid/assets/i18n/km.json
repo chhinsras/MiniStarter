@@ -2,5 +2,15 @@
     "app_title": "កម្មវិធី Starter",
     "app_message": "ផ្លាស់ប្តូរភាសា",
     "switch_language_km": "ប្រព័ន្ធបានប្តូរទៅជាភាសាខ្មែរ",
-    "switch_language_en": "ប្រព័ន្ធបានប្តូរទៅជាភាសាអង់គ្លេស"
+    "switch_language_en": "ប្រព័ន្ធបានប្តូរទៅជាភាសាអង់គ្លេស",
+    "login_form.title": "ចូលប្រព័ន្ធ",
+    "login_form.username": "ឈ្មោះអ្នកប្រើប្រាស់",
+    "login_form.username_placeholder": "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
+    "login_form.username_required": "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវតែបំពេញ",
+    "login_form.password": "លេខសម្ងាត់",
+    "login_form.password_placeholder": "បញ្ចូលលេខសម្ងាត់",
+    "login_form.password_required": "លេខសម្ងាត់ត្រូវតែបំពេញ",
+    "login_form.login_button": "ចូល",
+    "login_form.forgot_password": "ភ្លេចលេខសម្ងាត់?"
+
 }

@@ -8,6 +8,15 @@
     "user": "Users",
     "role": "Roles",
     "changelog": "Changelog",
-    "gazetteer": "Gazetteer"
-    
+    "gazetteer": "Gazetteer",
+    "login_form.title": "Login",
+    "login_form.username": "UserName",
+    "login_form.username_placeholder": "Enter UserName",
+    "login_form.username_required": "The username must not be empty",
+    "login_form.password": "Password",
+    "login_form.password_placeholder": "Enter Password",
+    "login_form.password_required": "The password must not be empty",
+    "login_form.login_button": "Login",
+    "login_form.forgot_password": "Forgot Password?"
+   
 }

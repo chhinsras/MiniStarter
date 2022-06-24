@@ -35,7 +35,7 @@ dependencies:
   freezed: ^2.0.3+1
   geolocator: ^8.2.1
   get_it: ^7.2.0
-  google_fonts: ^2.1.0
+  google_fonts: ^3.0.1
   intl: ^0.17.0
   json_annotation: ^4.5.0
   jwt_decoder: ^2.0.1
