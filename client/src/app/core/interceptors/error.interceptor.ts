@@ -54,7 +54,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             this.toastr.error('Something Went Wrong', response.error.title);
             break;
         }
-        return throwError(response.error);
+        return throwError(() => response.error);
       })
     );
   }
