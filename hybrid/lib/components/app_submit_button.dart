@@ -20,7 +20,7 @@ class AppSubmitButton extends StatelessWidget {
         onPressed: form!.valid ? onPress : null,
         child: Text(
           label,
-          style: const TextStyle(color: Colors.white),
+          style: Theme.of(context).textTheme.labelLarge,
         ),
       ),
     );

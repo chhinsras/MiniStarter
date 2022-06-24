@@ -1,6 +1,5 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class AppTextField extends StatelessWidget {
@@ -30,7 +29,7 @@ class AppTextField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.battambang(fontSize: 16),
+          style: Theme.of(context).textTheme.labelMedium,
         ),
         const SizedBox(
           height: 10,
@@ -51,7 +50,11 @@ class AppTextField extends StatelessWidget {
               borderSide: BorderSide(color: Colors.green),
             ),
             hintText: placeholder,
-            hintStyle: const TextStyle(height: 0.5),
+            hintStyle: Theme.of(context).textTheme.bodyMedium,
+            errorStyle: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.apply(color: Colors.red),
           ),
         ),
       ],

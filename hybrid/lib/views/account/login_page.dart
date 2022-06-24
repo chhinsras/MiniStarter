@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hybrid/components/app_submit_button.dart';
 import 'package:hybrid/components/app_textfield.dart';
 import 'package:hybrid/config/config.dart';
 import 'package:hybrid/extensions/extensions.dart';
-import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/models/models.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -60,11 +58,9 @@ class LoginPage extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                              context.localization
-                                  .translate('login_form.title'),
-                              style: GoogleFonts.moul(
-                                fontSize: 20,
-                              )),
+                            context.localization.translate('login_form.title'),
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
                           Column(
                             children: [
                               AppTextField(
@@ -112,12 +108,16 @@ class LoginPage extends ConsumerWidget {
                               ),
                               Center(
                                 child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      context.localization.translate(
-                                          'login_form.forgot_password'),
-                                      style: GoogleFonts.battambang(),
-                                    )),
+                                  onPressed: () {},
+                                  child: Text(
+                                    context.localization.translate(
+                                        'login_form.forgot_password'),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.apply(color: Colors.blue),
+                                  ),
+                                ),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,

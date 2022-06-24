@@ -4,57 +4,157 @@ import 'package:hybrid/config/colors.dart';
 
 class AppTheme {
   static TextTheme lightTextTheme = TextTheme(
-    bodyText1: GoogleFonts.openSans(
+    displayLarge: GoogleFonts.moul(
+      fontSize: 57.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    ),
+    displayMedium: GoogleFonts.moul(
+      fontSize: 45.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    displaySmall: GoogleFonts.moul(
+      fontSize: 36.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    headlineLarge: GoogleFonts.moul(
+      fontSize: 32.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    headlineMedium: GoogleFonts.moul(
+      fontSize: 28.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    headlineSmall: GoogleFonts.moul(
+      fontSize: 24.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    titleLarge: GoogleFonts.moul(
+      fontSize: 22.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    titleMedium: GoogleFonts.moul(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    titleSmall: GoogleFonts.moul(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
-    headline1: GoogleFonts.openSans(
-      fontSize: 32.0,
-      fontWeight: FontWeight.bold,
+    labelLarge: GoogleFonts.battambang(
+      fontSize: 18.0,
       color: Colors.black,
+      fontWeight: FontWeight.w500,
     ),
-    headline2: GoogleFonts.openSans(
-      fontSize: 21.0,
-      fontWeight: FontWeight.w700,
-      color: Colors.black,
-    ),
-    headline3: GoogleFonts.openSans(
+    labelMedium: GoogleFonts.battambang(
       fontSize: 16.0,
-      fontWeight: FontWeight.w600,
+      color: Colors.black,
+      fontWeight: FontWeight.w500,
+    ),
+    labelSmall: GoogleFonts.battambang(
+      fontSize: 14.0,
+      color: Colors.black,
+      fontWeight: FontWeight.w500,
+    ),
+    bodyLarge: GoogleFonts.battambang(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
-    headline6: GoogleFonts.openSans(
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
+    bodyMedium: GoogleFonts.battambang(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.black,
+    ),
+    bodySmall: GoogleFonts.battambang(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    bodyText1: GoogleFonts.openSans(
+    displayLarge: GoogleFonts.moul(
+      fontSize: 57.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+    displayMedium: GoogleFonts.moul(
+      fontSize: 45.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    displaySmall: GoogleFonts.moul(
+      fontSize: 36.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    headlineLarge: GoogleFonts.moul(
+      fontSize: 32.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    headlineMedium: GoogleFonts.moul(
+      fontSize: 28.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    headlineSmall: GoogleFonts.moul(
+      fontSize: 24.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    titleLarge: GoogleFonts.moul(
+      fontSize: 22.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    titleMedium: GoogleFonts.moul(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    titleSmall: GoogleFonts.moul(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline1: GoogleFonts.openSans(
-      fontSize: 32.0,
-      fontWeight: FontWeight.bold,
+    labelLarge: GoogleFonts.battambang(
+      fontSize: 18.0,
       color: Colors.white,
+      fontWeight: FontWeight.w500,
     ),
-    headline2: GoogleFonts.openSans(
-      fontSize: 21.0,
-      fontWeight: FontWeight.w700,
-      color: Colors.white,
-    ),
-    headline3: GoogleFonts.openSans(
+    labelMedium: GoogleFonts.battambang(
       fontSize: 16.0,
-      fontWeight: FontWeight.w600,
+      color: Colors.white,
+      fontWeight: FontWeight.w500,
+    ),
+    labelSmall: GoogleFonts.battambang(
+      fontSize: 14.0,
+      color: Colors.white,
+      fontWeight: FontWeight.w500,
+    ),
+    bodyLarge: GoogleFonts.battambang(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
-    headline6: GoogleFonts.openSans(
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
+    bodyMedium: GoogleFonts.battambang(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.white,
+    ),
+    bodySmall: GoogleFonts.battambang(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
   );
