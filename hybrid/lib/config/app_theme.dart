@@ -62,6 +62,7 @@ class AppTheme {
   static ThemeData light() {
     return ThemeData(
       primaryColor: colorPrimary,
+      backgroundColor: colorWhite,
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
@@ -88,6 +89,7 @@ class AppTheme {
   static ThemeData dark() {
     return ThemeData(
       primaryColor: colorBlack,
+      backgroundColor: colorBlack,
       brightness: Brightness.dark,
       appBarTheme: const AppBarTheme(
         foregroundColor: colorWhite,

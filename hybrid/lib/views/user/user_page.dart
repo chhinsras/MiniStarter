@@ -4,6 +4,7 @@ import 'package:hybrid/components/components.dart';
 import 'package:hybrid/entities/entities.dart';
 import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/models/models.dart';
+import 'package:hybrid/views/user/user_form.dart';
 
 class UserPage extends ConsumerWidget {
   UserPage({Key? key}) : super(key: key);
@@ -39,7 +40,10 @@ class UserPage extends ConsumerWidget {
                 data: snapshot.data!.map((e) => e.toJson()).toList(),
                 columns: _columns,
                 title: 'Users',
-                onView: (data) => Toastr.showSuccess(text: data.toString()),
+                onView: (data) => showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) => const UserForm()),
                 onEdit: (data) => Toastr.showWarning(text: data.toString()),
                 onDelete: (data) => Toastr.showError(
                   text: data.toString(),
