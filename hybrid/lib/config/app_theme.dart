@@ -161,6 +161,7 @@ class AppTheme {
 
   static ThemeData light() {
     return ThemeData(
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       primaryColor: colorPrimary,
       backgroundColor: colorWhite,
       brightness: Brightness.light,
@@ -188,6 +189,7 @@ class AppTheme {
 
   static ThemeData dark() {
     return ThemeData(
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       primaryColor: colorBlack,
       backgroundColor: colorBlack,
       brightness: Brightness.dark,
