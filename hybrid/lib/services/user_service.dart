@@ -1,14 +1,18 @@
 import 'dart:convert';
 import 'package:hybrid/entities/entities.dart';
+import 'package:hybrid/helpers/helpers.dart';
 import 'package:hybrid/services/base_service.dart';
 
 class UserService extends BaseService {
-  Future<List<User>> getAllUsers() async {
+  Future<PaginatedResponse> getAllUsers() async {
     var response = await agent.getAllUsers();
-    List<User> users = [];
-    (jsonDecode(response.data.toString())).forEach((element) {
-      users.add(User.fromJson(element));
+    var pagination = PaginationHelper.getPaginatedResponse(response);
+    List<User> items = [];
+    (jsonDecode(response.data.toString())).forEach((item) {
+      items.add(User.fromJson(item));
     });
-    return users;
+    PaginatedResponse paginatedResponse =
+        PaginatedResponse(items: items, pagination: pagination!);
+    return paginatedResponse;
   }
 }

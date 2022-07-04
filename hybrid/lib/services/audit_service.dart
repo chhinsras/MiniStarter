@@ -12,10 +12,10 @@ class AuditService extends BaseService {
       items.add(Audit.fromJson(element));
     });
     PaginatedResponse paginatedResponse =
-        PaginatedResponse(items: items, pagination: pagination!);
-    for (Audit element in paginatedResponse.items) {
-      print(element.toJson());
-    }
+        PaginatedResponse(items: response.data, pagination: pagination!);
+    // for (Audit element in paginatedResponse.items) {
+    //   print(element.toJson());
+    // }
     return items;
   }
 }

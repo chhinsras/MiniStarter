@@ -46,6 +46,7 @@ dependencies:
   pdf: ^3.8.1
   printing: ^5.9.1
   reactive_forms: ^13.0.0
+  responsive_table: ^0.2.0+2
   shared_preferences: ^2.0.13
   smooth_page_indicator: ^1.0.0+2
   sqflite: ^2.0.2+1
@@ -71,7 +72,7 @@ flutter_gen:
   output: lib/helpers/
   integrations:
     flutter_svg: true
-  
+
 flutter:
   uses-material-design: true
   assets:
