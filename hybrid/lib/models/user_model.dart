@@ -3,7 +3,7 @@ import 'package:hybrid/services/services.dart';
 import '../entities/entities.dart';
 
 class UserModel extends BaseModel {
-  Future<List<User>> loadAllUsers() async {
+  Future<PaginatedResponse> loadAllUsers() async {
     return await UserService().getAllUsers();
   }
 }

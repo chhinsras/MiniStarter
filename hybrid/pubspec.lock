@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "38.0.0"
+  adaptivex:
+    dependency: transitive
+    description:
+      name: adaptivex
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+4"
   analyzer:
     dependency: transitive
     description:
@@ -15,6 +22,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.4.1"
+  ansicolor:
+    dependency: transitive
+    description:
+      name: ansicolor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   archive:
     dependency: transitive
     description:
@@ -952,6 +966,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.9.1"
+  printx:
+    dependency: transitive
+    description:
+      name: printx
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   process:
     dependency: transitive
     description:
@@ -987,6 +1008,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "13.0.0"
+  responsive_table:
+    dependency: "direct main"
+    description:
+      name: responsive_table
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0+2"
   riverpod:
     dependency: transitive
     description:

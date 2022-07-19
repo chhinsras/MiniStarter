@@ -22,15 +22,26 @@ public static class ModelBuilderExtensions
         builder.Entity<User>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.User)
-            .HasForeignKey(ur => ur.UserId)
-            .IsRequired();
+            .HasForeignKey(ur => ur.UserId);
+            // .IsRequired();
 
         builder.Entity<Role>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.Role)
+            .HasForeignKey(ur => ur.RoleId);
+            // .IsRequired();
+
+        builder.Entity<UserRole>()
+            .HasOne(u => u.User)
+            .WithMany(ur => ur.UserRoles)
+            .HasForeignKey(ur => ur.UserId)
+            .IsRequired();
+        builder.Entity<UserRole>()
+            .HasOne(u => u.Role)
+            .WithMany(ur => ur.UserRoles)
             .HasForeignKey(ur => ur.RoleId)
             .IsRequired();
-
+            
         builder.Entity<RoleClaim>(entity =>
         {
             entity.ToTable(name: "RoleClaims");

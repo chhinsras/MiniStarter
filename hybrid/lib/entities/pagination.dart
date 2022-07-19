@@ -22,7 +22,7 @@ class Pagination {
 }
 
 class PaginatedResponse {
-  dynamic items;
+  List<dynamic> items;
   Pagination pagination;
 
   PaginatedResponse({required this.items, required this.pagination});
