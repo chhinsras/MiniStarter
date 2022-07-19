@@ -27,8 +27,8 @@ public class DbInitializer : IDatabaseSeeder
         {
             AddDefaultRoles();
             AddUsers();
-            // AddSuperAdmin();
-            // AddBasicUser();
+            AddSuperAdmin();
+            AddBasicUser();
             AddCambodiaGazetteers();
             _context.SaveChanges();
         }
