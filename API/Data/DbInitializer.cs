@@ -26,8 +26,9 @@ public class DbInitializer : IDatabaseSeeder
         try
         {
             AddDefaultRoles();
-            AddSuperAdmin();
-            AddBasicUser();
+            AddUsers();
+            // AddSuperAdmin();
+            // AddBasicUser();
             AddCambodiaGazetteers();
             _context.SaveChanges();
         }
@@ -136,7 +137,33 @@ public class DbInitializer : IDatabaseSeeder
             }
         }).GetAwaiter().GetResult();
     }
+    private void AddUsers()
+    {
+        Task.Run(async () =>
+        {
+            string? path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            if (!_context.Users.Any())
+                {
+                    var userData = File.ReadAllText(path + @"/Data/SeedData/users.json");
+                    var users = JsonSerializer.Deserialize<List<User>>(userData);
+                    if (users == null) return;
 
+                    foreach (var user in users)
+                    {
+                        user.UserName = user.UserName.ToLower();
+                        user.EmailConfirmed = true;
+                        user.PhoneNumberConfirmed = true;
+                        user.IsActive = true;
+            
+                        await _userManager.CreateAsync(user, Users.DefaultPassword);
+                        await _userManager.AddToRoleAsync(user, Roles.BasicUser);
+                    }
+                  
+                    _logger.LogInformation(_localizer["Seeded Users."]);
+
+                }
+        }).GetAwaiter().GetResult();
+    }
     private void AddCambodiaGazetteers()
     {
         Task.Run(async () =>

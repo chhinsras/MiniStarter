@@ -7,6 +7,10 @@ public class User : IdentityUser<int>
      public bool IsActive { get; set; }
      public string? RefreshToken { get; set; }
      public DateTime RefreshTokenExpiryTime { get; set; }
+
+     public DateTime Created { get; set; } = DateTime.Now;
+     public DateTime LastActive { get; set; } = DateTime.Now;
+
      public ICollection<UserRole>? UserRoles { get; set; }
 
 }
