@@ -51,42 +51,37 @@ class UserPageState extends ConsumerState<UserPage> {
           show: true,
           // flex: 2,
           sortable: true,
-          editable: true,
-          textAlign: TextAlign.left),
+          textAlign: TextAlign.center),
       DatatableHeader(
           text: "Email",
           value: "email",
+          flex: 2,
           show: true,
           sortable: true,
-          editable: true,
           textAlign: TextAlign.left),
       DatatableHeader(
           text: "First Name",
           value: "firstName",
           show: true,
           sortable: true,
-          editable: true,
           textAlign: TextAlign.left),
       DatatableHeader(
           text: "Last Name",
           value: "lastName",
           show: true,
           sortable: true,
-          editable: true,
           textAlign: TextAlign.left),
       DatatableHeader(
           text: "Is Active",
           value: "isActive",
           show: true,
           sortable: true,
-          editable: true,
           textAlign: TextAlign.left),
       DatatableHeader(
           text: "New Values",
           value: "newValues",
           show: true,
           sortable: true,
-          editable: true,
           textAlign: TextAlign.left)
     ];
   }
