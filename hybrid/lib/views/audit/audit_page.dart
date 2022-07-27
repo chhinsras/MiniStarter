@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hybrid/components/components.dart';
 import 'package:hybrid/entities/entities.dart';
 import 'package:hybrid/models/models.dart';
+import 'package:hybrid/views/audit/audit_detail.dart';
 
 class AuditPage extends ConsumerWidget {
   AuditPage({Key? key}) : super(key: key);
@@ -13,8 +14,8 @@ class AuditPage extends ConsumerWidget {
     AppDataColumn(key: 'type', label: 'Type'),
     AppDataColumn(key: 'tableName', label: 'Table Name'),
     AppDataColumn(key: 'dateTime', label: 'DateTime'),
-    AppDataColumn(key: 'oldValues', label: 'Old Values'),
-    AppDataColumn(key: 'newValues', label: 'New Values'),
+    // AppDataColumn(key: 'oldValues', label: 'Old Values'),
+    // AppDataColumn(key: 'newValues', label: 'New Values'),
     AppDataColumn(key: 'affectedColumns', label: 'Affected Columns'),
     AppDataColumn(key: 'primaryKey', label: 'Primary Key')
   ];
@@ -40,6 +41,10 @@ class AuditPage extends ConsumerWidget {
                 data: snapshot.data!.map((e) => e.toJson()).toList(),
                 columns: _columns,
                 title: 'Audits',
+                onView: (data) => showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) => const AuditDetail()),
               );
             }
           case ConnectionState.none:

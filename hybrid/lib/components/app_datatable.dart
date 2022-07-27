@@ -277,26 +277,29 @@ class AppDataTableSource extends DataTableSource {
           for (var i in columns) DataCell(Text(data[index][i.key].toString())),
           DataCell(Row(
             children: [
-              IconButton(
-                  icon: const Icon(Icons.remove_red_eye),
-                  color: colorPrimary,
+              if (onView != null)
+                IconButton(
+                    icon: const Icon(Icons.remove_red_eye),
+                    color: colorPrimary,
+                    onPressed: () {
+                      onView!(data[index]['id']);
+                    }),
+              if (onEdit != null)
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  color: Colors.amber,
                   onPressed: () {
-                    onView!(data[index]['id']);
-                  }),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                color: Colors.amber,
-                onPressed: () {
-                  onEdit!(data[index]['id']);
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.delete),
-                color: Colors.red,
-                onPressed: () {
-                  onDelete!(data[index]['id']);
-                },
-              )
+                    onEdit!(data[index]['id']);
+                  },
+                ),
+              if (onDelete != null)
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  color: Colors.red,
+                  onPressed: () {
+                    onDelete!(data[index]['id']);
+                  },
+                )
             ],
           )),
         ]);
