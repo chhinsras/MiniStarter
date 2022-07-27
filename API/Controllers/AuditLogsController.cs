@@ -20,6 +20,14 @@ public class AuditLogsController : BaseApiController
  
     }
 
+    [HttpGet("all")]
+    [MustHavePermission(Permissions.Audit.View)]
+    public async Task<ActionResult<List<AuditDto>>> GetAllLogsAsync()
+    {
+        var trails = await _context.AuditTrails.ToListAsync();
+        return trails.Adapt<List<AuditDto>>();
+    }
+
     [HttpGet("{userId}")]
     [MustHavePermission(Permissions.Audit.View)]
     public async Task<ActionResult<List<AuditDto>>> GetMyLogsAsync(int userId)

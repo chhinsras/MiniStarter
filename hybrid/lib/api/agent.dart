@@ -40,7 +40,7 @@ class Agent {
 
   // Auditing
   Future<Response> getAudits() async =>
-      _dio.get('auditlogs', options: plainResponseOptions);
+      _dio.get('auditlogs/all', options: plainResponseOptions);
 
   // Account
   Future<Response> loginUser(Map<String, dynamic> login) async =>
