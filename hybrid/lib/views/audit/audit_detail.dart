@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_json_viewer/flutter_json_viewer.dart';
 import 'package:hybrid/components/components.dart';
 import 'package:hybrid/config/size_config.dart';
 import 'package:hybrid/entities/entities.dart';
@@ -68,9 +71,17 @@ class AuditDetail extends StatelessWidget {
                         appTableRow(
                             'Primary Key', Text(audit.primaryKey ?? 'N/A')),
                         appTableRow(
-                            'Old Values', Text(audit.oldValues ?? 'N/A')),
+                          'Old Values',
+                          JsonViewer(
+                            jsonDecode(audit.oldValues ?? '{}'),
+                          ),
+                        ),
                         appTableRow(
-                            'New Values', Text(audit.newValues ?? 'N/A')),
+                          'New Values',
+                          JsonViewer(
+                            jsonDecode(audit.newValues ?? '{}'),
+                          ),
+                        ),
                       ],
                     ),
                   ],

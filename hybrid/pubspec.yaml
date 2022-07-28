@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   flutter_colorpicker: ^1.0.3
   flutter_dotenv: ^5.0.2
+  flutter_json_viewer: ^1.0.1
   flutter_localizations:
     sdk: flutter
   flutter_offline: ^2.1.0
