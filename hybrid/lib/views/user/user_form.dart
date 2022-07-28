@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hybrid/config/size_config.dart';
+import 'package:hybrid/entities/entities.dart';
 
 class UserForm extends StatelessWidget {
-  const UserForm({Key? key}) : super(key: key);
-
+  UserForm({Key? key, required this.user}) : super(key: key);
+  User user;
   @override
   Widget build(BuildContext context) {
     return Dialog(

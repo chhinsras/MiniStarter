@@ -3,7 +3,13 @@ import 'package:hybrid/services/services.dart';
 import '../entities/entities.dart';
 
 class UserModel extends BaseModel {
-  Future<PaginatedResponse> loadAllUsers() async {
-    return await UserService().getAllUsers();
+  List<User> users = [];
+
+  Future<List<User>> loadUsers() async {
+    return users.isNotEmpty ? users : users = await UserService().getAllUsers();
+  }
+
+  User getUserById(int id) {
+    return users.firstWhere((element) => element.id == id);
   }
 }

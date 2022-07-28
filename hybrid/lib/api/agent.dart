@@ -61,5 +61,5 @@ class Agent {
 
   // User
   Future<Response> getAllUsers() async =>
-      _dio.get('users', options: plainResponseOptions);
+      _dio.get('users/all', options: plainResponseOptions);
 }
