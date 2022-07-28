@@ -28,8 +28,8 @@ class Agent {
     }
     var options = BaseOptions(
       baseUrl: dotenv.env['BASE_URL']!,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
+      connectTimeout: 10000,
+      receiveTimeout: 50000,
     );
     _dio.options = options;
     _dio.interceptors.addAll({

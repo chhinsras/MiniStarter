@@ -10,4 +10,8 @@ class AuditModel extends BaseModel {
         ? audits
         : audits = await AuditService().getAudits();
   }
+
+  Audit getAuditById(int id) {
+    return audits.firstWhere((element) => element.id == id);
+  }
 }

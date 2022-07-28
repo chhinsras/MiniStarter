@@ -44,7 +44,8 @@ class AuditPage extends ConsumerWidget {
                 onView: (data) => showDialog(
                     barrierDismissible: false,
                     context: context,
-                    builder: (BuildContext context) => const AuditDetail()),
+                    builder: (BuildContext context) => AuditDetail(
+                        audit: ref.read(auditModel).getAuditById(data))),
               );
             }
           case ConnectionState.none:
