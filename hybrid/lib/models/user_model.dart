@@ -1,15 +1,26 @@
+import 'package:hybrid/entities/entities.dart';
 import 'package:hybrid/models/base_model.dart';
 import 'package:hybrid/services/services.dart';
-import '../entities/entities.dart';
 
 class UserModel extends BaseModel {
   List<User> users = [];
+  UserParams params = UserParams(pageNumber: 1, pageSize: 10);
 
-  Future<List<User>> loadUsers() async {
-    return users.isNotEmpty ? users : users = await UserService().getAllUsers();
+  PaginatedResponse<User> data = PaginatedResponse(
+      items: [],
+      pagination: Pagination(
+          currentPage: 1, pageSize: 1, totalCount: 1, totalPages: 1));
+
+  Future<PaginatedResponse<User>> loadUsers() async {
+    data = await UserService().getAllUsers(params);
+    return data;
   }
 
   User getUserById(int id) {
-    return users.firstWhere((element) => element.id == id);
+    return data.items.firstWhere((element) => element.id == id);
+  }
+
+  void setParams(UserParams params) {
+    params = params;
   }
 }

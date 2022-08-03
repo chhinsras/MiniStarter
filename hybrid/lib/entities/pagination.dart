@@ -21,15 +21,15 @@ class Pagination {
   Map<String, dynamic> toJson() => _$PaginationToJson(this);
 }
 
-class PaginatedResponse {
-  List<dynamic> items;
+class PaginatedResponse<T> {
+  List<T> items;
   Pagination pagination;
 
   PaginatedResponse({required this.items, required this.pagination});
 }
 
 class PaginatedFilter {
-  int pageNumber;
-  int pageSize;
+  int pageNumber = 1;
+  int pageSize = 10;
   PaginatedFilter({required this.pageNumber, required this.pageSize});
 }

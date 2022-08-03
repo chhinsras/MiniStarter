@@ -72,11 +72,9 @@ class _$AppRouter extends RootStackRouter {
           barrierDismissible: false);
     },
     UserRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<UserRouteArgs>(orElse: () => const UserRouteArgs());
       return CustomPage<dynamic>(
           routeData: routeData,
-          child: UserPage(key: args.key),
+          child: const UserPage(),
           transitionsBuilder: TransitionsBuilders.fadeIn,
           opaque: true,
           barrierDismissible: false);
@@ -204,22 +202,10 @@ class GazetteerRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [UserPage]
-class UserRoute extends PageRouteInfo<UserRouteArgs> {
-  UserRoute({Key? key})
-      : super(UserRoute.name, path: 'user', args: UserRouteArgs(key: key));
+class UserRoute extends PageRouteInfo<void> {
+  const UserRoute() : super(UserRoute.name, path: 'user');
 
   static const String name = 'UserRoute';
-}
-
-class UserRouteArgs {
-  const UserRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'UserRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

@@ -18,10 +18,7 @@ class UserPageState extends ConsumerState<UserPage> {
   @override
   void initState() {
     super.initState();
-    ref.read(userModel);
   }
-
-  late List<Map<String, dynamic>> data;
 
   final List<AppDataColumn> _columns = [
     AppDataColumn(key: 'id', label: 'ID'),
@@ -31,13 +28,71 @@ class UserPageState extends ConsumerState<UserPage> {
     AppDataColumn(key: 'lastName', label: 'Last Name'),
     AppDataColumn(key: 'isActive', label: 'Is Active')
   ];
-  int _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
+
+  List<DataColumn> getColumns() {
+    List<DataColumn> columns = [];
+    for (var column in _columns) {
+      columns.add(DataColumn(label: Text(column.label)));
+    }
+    columns.add(const DataColumn(label: Text('Action')));
+    return columns;
+  }
+
+  List<DataRow> getRows(PaginatedResponse<User> data) {
+    List<DataRow> rows = [];
+    for (var item in data.items) {
+      rows.add(
+        DataRow(
+          // color: MaterialStateColor.resolveWith((states) =>
+          //     index % 2 == 1 ? Colors.grey[200]! : Colors.transparent),
+          cells: [
+            DataCell(Text(item.id.toString())),
+            DataCell(Text(item.userName.toString())),
+            DataCell(Text(item.email.toString())),
+            DataCell(Text(item.firstName.toString())),
+            DataCell(Text(item.lastName.toString())),
+            DataCell(Text(item.isActive ? '✅' : '❌')),
+            DataCell(Row(
+              children: [
+                IconButton(
+                    icon: const Icon(Icons.remove_red_eye),
+                    color: colorPrimary,
+                    onPressed: () {
+                      showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (BuildContext context) => UserForm(
+                              user: ref.read(userModel).getUserById(item.id!)));
+                    }),
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  color: Colors.amber,
+                  onPressed: () {
+                    // onEdit!(data[index]['id']);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  color: Colors.red,
+                  onPressed: () {
+                    // onDelete!(data[index]['id']);
+                  },
+                )
+              ],
+            )),
+          ],
+        ),
+      );
+    }
+    return rows;
+  }
 
   @override
   Widget build(BuildContext context) {
+    var model = ref.read(userModel);
     return FutureBuilder(
       future: ref.read(userModel).loadUsers(),
-      builder: (context, AsyncSnapshot<List<User>> snapshot) {
+      builder: (context, AsyncSnapshot<PaginatedResponse<User>> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
             return const Center(
@@ -52,75 +107,40 @@ class UserPageState extends ConsumerState<UserPage> {
               );
             } else {
               return SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: PaginatedDataTable(
-                    source: UserDataTableSource(
-                      context: context,
-                      ref: ref,
-                      data: snapshot.data!.map((e) => e.toJson()).toList(),
-                      columns: _columns,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: DataTable(
+                        rows: getRows(snapshot.data!),
+                        columnSpacing: 100,
+                        horizontalMargin: 10,
+                        showCheckboxColumn: true,
+                        columns: getColumns(),
+                      ),
                     ),
-                    header: const AutoSizeText('Users', maxLines: 1),
-                    columnSpacing: 100,
-                    horizontalMargin: 10,
-                    showCheckboxColumn: true,
-                    showFirstLastButtons: true,
-                    rowsPerPage: _rowsPerPage,
-                    onRowsPerPageChanged: (value) {
-                      setState(() {
-                        _rowsPerPage = value!;
-                      });
-                    },
-                    // actions: [
-                    //   SizedBox(
-                    //     width: Responsive.isSmallMobile(context) ? 200 : null,
-                    //     child: SingleChildScrollView(
-                    //       scrollDirection: Axis.horizontal,
-                    //       child:
-                    //           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    //         IconButton(
-                    //             onPressed: () {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.add)),
-                    //         IconButton(
-                    //             onPressed: () {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.refresh)),
-                    //         const VerticalDivider(
-                    //           indent: 10,
-                    //           endIndent: 10,
-                    //         ),
-                    //         IconButton(
-                    //             onPressed: () => {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.print)),
-                    //         IconButton(
-                    //             onPressed: () => {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.calculate)),
-                    //         IconButton(
-                    //             onPressed: () => {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.picture_as_pdf)),
-                    //         IconButton(
-                    //             onPressed: () => {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.code)),
-                    //         IconButton(
-                    //             onPressed: () => {},
-                    //             color: Theme.of(context).primaryColor,
-                    //             icon: const Icon(Icons.copy)),
-                    //       ]),
-                    //     ),
-                    //   )
-                    // ],
-                    columns: [
-                      for (var column in _columns)
-                        DataColumn(label: Text(column.label)),
-                      const DataColumn(label: Text('Action'))
-                    ],
-                  ),
+                    AppPagination(
+                      currentPage: snapshot.data!.pagination.currentPage,
+                      totalPages: snapshot.data!.pagination.totalPages,
+                      totalCount: snapshot.data!.pagination.totalCount,
+                      pageSize: snapshot.data!.pagination.pageSize,
+                      showFirstLastButtons: true,
+                      onPageChanged: (page) {
+                        setState(() {
+                          model.params.pageNumber = page;
+                          model.loadUsers;
+                        });
+                      },
+                      onRowsPerPageChanged: (pageSize) {
+                        setState(
+                          () {
+                            model.params.pageSize = pageSize!;
+                            model.loadUsers;
+                          },
+                        );
+                      },
+                    )
+                  ],
                 ),
               );
             }
@@ -134,71 +154,5 @@ class UserPageState extends ConsumerState<UserPage> {
         return const Center();
       },
     );
-  }
-}
-
-class UserDataTableSource extends DataTableSource {
-  UserDataTableSource({
-    required this.context,
-    required this.ref,
-    required this.data,
-    required this.columns,
-  });
-
-  BuildContext context;
-  WidgetRef ref;
-  List<Map<String, dynamic>> data;
-  List<AppDataColumn> columns;
-
-  @override
-  bool get isRowCountApproximate => false;
-  @override
-  int get rowCount => data.length;
-  @override
-  int get selectedRowCount => 0;
-  @override
-  DataRow getRow(int index) {
-    return DataRow(
-        // color: MaterialStateColor.resolveWith((states) =>
-        //     index % 2 == 1 ? Colors.grey[200]! : Colors.transparent),
-        cells: [
-          // for (var i in columns) DataCell(Text(data[index][i.key].toString())),
-          DataCell(Text(data[index]['id'].toString())),
-          DataCell(Text(data[index]['userName'].toString())),
-          DataCell(Text(data[index]['email'].toString())),
-          DataCell(Text(data[index]['firstName'].toString())),
-          DataCell(Text(data[index]['lastName'].toString())),
-          DataCell(Text(data[index]['isActive'] ? '✅' : '❌')),
-          DataCell(Row(
-            children: [
-              IconButton(
-                  icon: const Icon(Icons.remove_red_eye),
-                  color: colorPrimary,
-                  onPressed: () {
-                    showDialog(
-                        barrierDismissible: false,
-                        context: context,
-                        builder: (BuildContext context) => UserForm(
-                            user: ref
-                                .read(userModel)
-                                .getUserById(data[index]['id'])));
-                  }),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                color: Colors.amber,
-                onPressed: () {
-                  // onEdit!(data[index]['id']);
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.delete),
-                color: Colors.red,
-                onPressed: () {
-                  // onDelete!(data[index]['id']);
-                },
-              )
-            ],
-          )),
-        ]);
   }
 }

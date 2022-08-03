@@ -33,3 +33,18 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'refreshTokenExpiryTime': instance.refreshTokenExpiryTime,
       'darkMode': instance.darkMode,
     };
+
+UserParams _$UserParamsFromJson(Map<String, dynamic> json) => UserParams(
+      pageNumber: json['pageNumber'] as int,
+      pageSize: json['pageSize'] as int,
+      searchTerm: json['searchTerm'] as String?,
+      orderBy: json['orderBy'] as String?,
+    );
+
+Map<String, dynamic> _$UserParamsToJson(UserParams instance) =>
+    <String, dynamic>{
+      'pageNumber': instance.pageNumber,
+      'pageSize': instance.pageSize,
+      'searchTerm': instance.searchTerm,
+      'orderBy': instance.orderBy,
+    };

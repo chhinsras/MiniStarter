@@ -60,6 +60,7 @@ class Agent {
   //     _dio.post('account/reset-password', data: {resetPassword});
 
   // User
-  Future<Response> getAllUsers() async =>
-      _dio.get('users/all', options: plainResponseOptions);
+  Future<Response> getAllUsers(Map<String, dynamic>? queryParameters) async =>
+      _dio.get('users',
+          queryParameters: queryParameters, options: plainResponseOptions);
 }

@@ -1,3 +1,4 @@
+import 'package:hybrid/entities/pagination.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
@@ -33,9 +34,19 @@ class User {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 
-class UserParams {
+@JsonSerializable()
+class UserParams extends PaginatedFilter {
   String? searchTerm;
-  int pageNumber = 1;
-  int pageSize = 20;
   String? orderBy;
+
+  UserParams(
+      {required int pageNumber,
+      required int pageSize,
+      this.searchTerm,
+      this.orderBy})
+      : super(pageNumber: pageNumber, pageSize: pageSize);
+
+  factory UserParams.fromJson(Map<String, dynamic> json) =>
+      _$UserParamsFromJson(json);
+  Map<String, dynamic> toJson() => _$UserParamsToJson(this);
 }
