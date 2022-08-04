@@ -8,7 +8,7 @@ class UserService extends BaseService {
     var response = await agent.getAllUsers(params.toJson());
     var pagination = PaginationHelper.getPaginatedResponse(response);
     List<User> items = [];
-    (jsonDecode(response.data.toString())).forEach((item) {
+    jsonDecode(response.data.toString()).forEach((item) {
       items.add(User.fromJson(item));
     });
     PaginatedResponse<User> paginatedResponse =

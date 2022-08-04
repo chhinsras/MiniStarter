@@ -31,24 +31,23 @@ class AppPagination extends StatefulWidget {
 
   static const int defaultRowsPerPage = 10;
 
-  int currentPage;
-  int totalPages;
-  int totalCount;
-  int pageSize;
+  final int currentPage;
+  final int totalPages;
+  final int totalCount;
+  final int pageSize;
 
-  Function(int) onPageChanged;
+  final ValueChanged<int> onPageChanged;
 
-  bool showFirstLastButtons;
-  int initialFirstRowIndex;
+  final bool showFirstLastButtons;
+  final int initialFirstRowIndex;
 
-  Color? arrowHeadColor;
+  final Color? arrowHeadColor;
 
-  int rowsPerPage;
+  final int rowsPerPage;
 
-  /// The callback that is called when the page is changed.
   final ValueChanged<int?>? onRowsPerPageChanged;
 
-  List<int>? availableRowsPerPage;
+  final List<int>? availableRowsPerPage;
 
   @override
   State<AppPagination> createState() => _AppPaginationState();
@@ -175,8 +174,6 @@ class _AppPaginationState extends State<AppPagination> {
               opacity: 0.54,
             ),
             child: SizedBox(
-              // TODO(bkonyi): this won't handle text zoom correctly,
-              //  https://github.com/flutter/flutter/issues/48522
               height: 56.0,
               child: SingleChildScrollView(
                 // dragStartBehavior: widget.dragStartBehavior,

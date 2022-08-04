@@ -106,41 +106,55 @@ class UserPageState extends ConsumerState<UserPage> {
                 ),
               );
             } else {
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: DataTable(
-                        rows: getRows(snapshot.data!),
-                        columnSpacing: 100,
-                        horizontalMargin: 10,
-                        showCheckboxColumn: true,
-                        columns: getColumns(),
+              return Card(
+                semanticContainer: false,
+                margin: const EdgeInsets.all(16.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: DataTable(
+                                rows: getRows(snapshot.data!),
+                                columnSpacing: 100,
+                                horizontalMargin: 10,
+                                showCheckboxColumn: true,
+                                columns: getColumns(),
+                                showBottomBorder: true,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    AppPagination(
-                      currentPage: snapshot.data!.pagination.currentPage,
-                      totalPages: snapshot.data!.pagination.totalPages,
-                      totalCount: snapshot.data!.pagination.totalCount,
-                      pageSize: snapshot.data!.pagination.pageSize,
-                      showFirstLastButtons: true,
-                      onPageChanged: (page) {
-                        setState(() {
-                          model.params.pageNumber = page;
-                          model.loadUsers;
-                        });
-                      },
-                      onRowsPerPageChanged: (pageSize) {
-                        setState(
-                          () {
-                            model.params.pageSize = pageSize!;
+                      AppPagination(
+                        currentPage: snapshot.data!.pagination.currentPage,
+                        totalPages: snapshot.data!.pagination.totalPages,
+                        totalCount: snapshot.data!.pagination.totalCount,
+                        pageSize: snapshot.data!.pagination.pageSize,
+                        showFirstLastButtons: true,
+                        onPageChanged: (page) {
+                          setState(() {
+                            model.params.pageNumber = page;
                             model.loadUsers;
-                          },
-                        );
-                      },
-                    )
-                  ],
+                          });
+                        },
+                        onRowsPerPageChanged: (pageSize) {
+                          setState(
+                            () {
+                              model.params.pageSize = pageSize!;
+                              model.loadUsers;
+                            },
+                          );
+                        },
+                      )
+                    ],
+                  ),
                 ),
               );
             }
