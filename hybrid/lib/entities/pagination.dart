@@ -29,7 +29,7 @@ class PaginatedResponse<T> {
 }
 
 class PaginatedFilter {
-  int pageNumber = 1;
-  int pageSize = 10;
+  int pageNumber;
+  int pageSize;
   PaginatedFilter({required this.pageNumber, required this.pageSize});
 }
