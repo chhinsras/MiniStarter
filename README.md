@@ -68,8 +68,8 @@
 - [x] UI Role Based Widget Rendering
 - [x] UI Permission Based Widget Rendering
 - [x] PDF and Printing
-- [ ] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
-- [ ] AsyncDatatable (pagination filter server side)
+- [x] Datatable with Export PDF, Printing, CSV, Excel, CopyClipboard
+- [x] AsyncDatatable (pagination filter server side)
 - [ ] SQLite with Moor
 - [x] PageTransition on Web (Fade Mode)
 - [ ] Logging
