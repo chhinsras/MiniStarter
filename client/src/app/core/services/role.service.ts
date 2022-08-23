@@ -6,33 +6,31 @@ import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
 import { getPaginatedResponse, getPaginationHeaders } from '../helpers/pagination-helper';
 import { Permission } from '../../shared/models/permission';
-import { Role, RoleParams } from '../../shared/models/role';
+import { Role } from '../../shared/models/role';
 
 @Injectable()
 export class RoleService {
   baseUrl = environment.apiUrl;
+  // roleParams: RoleParams;
 
-  constructor(private http: HttpClient, private agent: Agent) {}
+  constructor(private http: HttpClient, private agent: Agent) {
+  }
 
-  getRoles(roleParams: RoleParams){
-    let params = new HttpParams();
-    if (roleParams.searchString) params = params.append('searchString', roleParams.searchString);
-    if (roleParams.orderBy) params = params.append('orderBy', roleParams.orderBy.toString());
-    params = getPaginationHeaders(roleParams.pageNumber, roleParams.pageSize);
 
-    return getPaginatedResponse<Role[]>(this.baseUrl + 'roles', params, this.http)
+  getRoles(){
+    return this.agent.getRoles()
       .pipe(map(response => {
         return response;
-      }))
+      }));
   }
 
   getRoleById(id: string): Observable<Role> {
     return this.agent.getRole(id).pipe(map((response: Role) => response));
   }
 
-  createRole(Role: Role): Observable<Role> {
+  createRole(role: Role): Observable<Role> {
     return this.agent
-      .createRole(Role)
+      .createRole(role)
       .pipe(map((response: Role) => response));
   }
 
@@ -46,6 +44,10 @@ export class RoleService {
     return this.agent
       .deleteRole(id)
       .pipe(map((response: string) => response));
+  }
+
+  getAllPermissions() {
+    return this.agent.getAllPermissions().pipe(map((response: string[]) => response));
   }
 
   getRolePermissionsByRoleId(roleId: number) {

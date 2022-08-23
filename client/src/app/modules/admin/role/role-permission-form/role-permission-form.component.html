@@ -1,0 +1,35 @@
+<div *ngIf="!allPermissions" class="d-flex justify-center p-4">
+  <mat-icon>
+    <mat-spinner diameter="20">
+    </mat-spinner>
+  </mat-icon> Loading ...
+</div>
+<div [hidden]="!allPermissions">
+     <mat-card-header>
+        <mat-card-title class="khmer-moul">
+            {{ title | translate }}
+        </mat-card-title>
+        <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle>
+    </mat-card-header>
+  <section class="permission-section">
+    <span>
+      <ul>
+        <li *ngFor="let permission of allPermissions">
+          <mat-checkbox
+            [checked]="isPermissionInRole(permission)"
+          >
+            {{permission}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+  <mat-dialog-actions align="end" class="mb-2">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"
+      [disabled]="false" (click)="submitRolePermission()">
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>
+

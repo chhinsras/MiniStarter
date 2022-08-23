@@ -45,12 +45,14 @@ export class Agent {
   assignUserRoles = (id: string, request: UserRole[]) => this.http.post(this.baseUrl + `users/${id}/roles`, {userRoles: request});
 
   // Role
-  getRoles = (params: HttpParams) => this.http.get(this.baseUrl + 'roles', {params: params});
+  getRoles = () => this.http.get(this.baseUrl + 'roles/all');
+  // getRoles = (params: HttpParams) => getPaginatedResponse<Role[]>(this.baseUrl + 'roles',  params, this.http);
   getRole = (id: string) => this.http.get<Role>(this.baseUrl + `roles/${id}`);
   createRole = (role: Role) => this.http.post(this.baseUrl + 'roles', role);
   updateRole = (role: Role) => this.http.post(this.baseUrl + 'roles', role);
   deleteRole = (id: string) => this.http.delete(this.baseUrl + `roles/${id}`);
-  getRolePermissions = (roleId: number) => this.http.get(this.baseUrl + `roles/permissions/byrole/${roleId}`);
+  getAllPermissions = () => this.http.get(this.baseUrl + 'roles/permissions/all');
+  getRolePermissions = (roleId: number) => this.http.get(this.baseUrl + `roles/${roleId}/permissions`);
   updateRolePermissions = (request: Permission) => this.http.put(this.baseUrl + 'roles/permissions/update', request);
   getAllClaims = () => this.http.get(this.baseUrl + `roles/permissions`)
   getClaim = (id: number) => this.http.get(this.baseUrl + `roles/permissions/${id}`);

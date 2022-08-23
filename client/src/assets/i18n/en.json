@@ -34,6 +34,7 @@
     "ok": "Ok",
     "yes": "Yes",
     "no": "No",
+    "entityCreated": "{{entity}} Created.",
     "entityUpdated": "{{entity}} Updated."
   },
   "dashboard": {

@@ -5,10 +5,3 @@ export interface Role {
     name: string
     description: string
 }
-
-export class RoleParams implements PaginatedFilter {
-  searchString: string;
-  pageNumber: number;
-  pageSize: number;
-  orderBy: string;
-}

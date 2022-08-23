@@ -65,6 +65,18 @@ public class RolesController : BaseApiController
         return roleDto;
     }
 
+    [HttpGet("permissions/all")]
+    [MustHavePermission(Permissions.RoleClaims.View)]
+    public async Task<ActionResult<List<string>>> GetAllPermissions()
+    {
+        var permissions = await _context.RoleClaims
+            .Where(a => a.ClaimType == CustomClaimTypes.Permission)
+            .Select(c => c.ClaimValue)
+            .ToListAsync();
+
+        return permissions;
+    }
+
     [HttpPut("permissions")]
     [MustHavePermission(Permissions.RoleClaims.Update)]
     public async Task<ActionResult<string>> UpdatePermissionsAsync(UpdatePermissionsRequest request)
