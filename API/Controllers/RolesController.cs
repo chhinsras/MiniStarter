@@ -72,6 +72,7 @@ public class RolesController : BaseApiController
         var permissions = await _context.RoleClaims
             .Where(a => a.ClaimType == CustomClaimTypes.Permission)
             .Select(c => c.ClaimValue)
+            .Distinct()
             .ToListAsync();
 
         return permissions;
