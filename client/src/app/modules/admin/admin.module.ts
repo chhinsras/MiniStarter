@@ -1,3 +1,4 @@
+import { RoleComponent } from './role/role.component';
 import { TestErrorsComponent } from './test-errors/test-errors.component';
 import { AboutComponent } from './about/about.component';
 import { PieChartCardComponent } from './dashboard/pie-chart-card/pie-chart-card.component';
@@ -13,6 +14,8 @@ import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserRoleFormComponent } from './user/user-role-form/user-role-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RoleFormComponent } from './role/role-form/role-form.component';
+import { RolePermissionFormComponent } from './role/role-permission-form/role-permission-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     PieChartCardComponent,
     UserComponent,
     UserFormComponent,
-    UserRoleFormComponent
+    UserRoleFormComponent,
+    RoleComponent,
+    RoleFormComponent,
+    RolePermissionFormComponent
   ],
   imports: [
     CommonModule,

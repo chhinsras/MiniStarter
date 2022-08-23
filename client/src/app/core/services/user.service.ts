@@ -44,6 +44,12 @@ export class UserService {
     return this.agent.getUser(id).pipe(map((response: User) => response));
   }
 
+  createUser(user: User): Observable<User> {
+    return this.agent
+      .createUser(user)
+      .pipe(map((response: User) => response));
+  }
+
   updateUser(User: User): Observable<string> {
     return this.agent
       .updateUser(User)

@@ -1,0 +1,10 @@
+<div [hidden]="!roles">
+  <app-page-header [title]="'Roles'" [subtitle]="'Manage, Register, Update or Remove Roles here.'"></app-page-header>
+  <app-table
+    [data]="roles && roles" [columns]="roleColumns"
+    (onReload)="reload()" (onCreateForm)="openForm()" (onEditForm)="openForm($event)" (onDelete)="remove($event)"
+    [totalCount]="metaData && metaData.totalCount" [pageSize]="metaData && metaData.pageSize"
+    [customActionOneData]="permissionActionData" (onCustomActionOne)="openPermissionsForm($event)"
+    >
+  </app-table>
+</div>
