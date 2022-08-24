@@ -9,7 +9,7 @@ public class PermissionDto
 
 public class UpdatePermissionsRequest
 {
-    public string RoleId { get; set; } = default!;
+    public int RoleId { get; set; } = default!;
     public List<string> Permissions { get; set; } = default!;
 }
 

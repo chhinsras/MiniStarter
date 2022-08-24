@@ -12,17 +12,18 @@
         <!-- <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle> -->
     </mat-card-header>
   <section class="permission-section">
-    <span>
+    <form #permissionsForm="ngForm" id="permissionsForm">
       <ul>
         <li *ngFor="let permission of allPermissions">
           <mat-checkbox
-            [checked]="isPermissionInRole(permission)"
+            [checked]="permission.checked"
+            (change)="permission.checked = !permission.checked"
           >
-            {{permission}}
+            {{permission.value}}
           </mat-checkbox>
         </li>
       </ul>
-    </span>
+    </form>
   </section>
   <mat-dialog-actions align="end" class="mb-2">
     <button mat-raised-button mat-dialog-close>Cancel</button>
