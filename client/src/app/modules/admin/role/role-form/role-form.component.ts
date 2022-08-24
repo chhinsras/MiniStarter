@@ -38,6 +38,7 @@ export class RoleFormComponent implements OnInit {
   onSubmit() {
     if (this.roleForm.valid) {
       if (this.roleForm.get('id').value === "" || this.roleForm.get('id').value == null) {
+        this.roleForm.removeControl('id');
         this.roleService.createRole(this.roleForm.value).subscribe(response => {
           this.toastr.success(this.translate.instant('common.entityCreated', {entity: 'Role'}));
         })
