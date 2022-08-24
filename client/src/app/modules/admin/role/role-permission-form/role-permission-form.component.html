@@ -1,10 +1,10 @@
-<div *ngIf="!allPermissions" class="d-flex justify-center p-4">
+<div *ngIf="allPermissions.length === 0" class="d-flex justify-center p-4">
   <mat-icon>
     <mat-spinner diameter="20">
     </mat-spinner>
   </mat-icon> Loading ...
 </div>
-<div [hidden]="!allPermissions">
+<div [hidden]="allPermissions.length === 0">
      <mat-card-header>
         <mat-card-title class="khmer-moul">
             {{ title | translate }}
