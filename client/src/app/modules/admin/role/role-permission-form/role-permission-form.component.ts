@@ -3,8 +3,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { RoleService } from 'src/app/core/services/role.service';
-import { CustomAction } from 'src/app/shared/components/table/custom-action';
-import { TableColumn } from 'src/app/shared/components/table/table-column';
 import { Permission } from 'src/app/shared/models/permission';
 import { Role } from 'src/app/shared/models/role';
 
@@ -14,8 +12,7 @@ import { Role } from 'src/app/shared/models/role';
   styleUrls: ['./role-permission-form.component.scss']
 })
 export class RolePermissionFormComponent implements OnInit {
-  allPermissions: string[];
-  rolePermission: Permission;
+  allPermissions: any[] = [];
 
   title = 'Permission'
   subtitle = 'Update role permission here.'
@@ -34,24 +31,23 @@ export class RolePermissionFormComponent implements OnInit {
 
   getPermissions(): void {
     this.roleService.getAllPermissions().subscribe((permissions: string[]) => {
-      this.allPermissions = permissions;
+      permissions.forEach(element => {
+        this.allPermissions.push({value: element, checked: false});
+      });
     })
 
     this.roleService.getRolePermissionsByRoleId(this.data.id).subscribe((permission: Permission) => {
-      this.rolePermission = permission;
+     this.allPermissions.forEach((item, index) => {
+      permission.permissions.includes(item.value) ? item.checked = true : item.checked = false;
+     });
     });
   }
 
-  isPermissionInRole(permission: string) {
-    return this.rolePermission.permissions.includes(permission);
-  }
-
-
   submitRolePermission(): void{
-    // this.roleService.updateRolePermissions({roleId: this.data.id, permissions: this.groupRoleClaims['All Permissions']}).subscribe((permission) => {
-    //   // this.toastr.success(permission.messages[0]);
-    //   this.toastr.success(this.translate.instant('common.entityUpdated', {entity: 'Role'}));
-    //   this.dialogRef.closeAll();
-    // });
+    this.roleService.updateRolePermissions({roleId: this.data.id, permissions: this.allPermissions.filter(x => x.checked == true).map(x => x.value)}).subscribe((permission) => {
+      // this.toastr.success(permission.messages[0]);
+      this.toastr.success(this.translate.instant('common.entityUpdated', {entity: 'Role'}));
+      this.dialogRef.closeAll();
+    });
   }
 }

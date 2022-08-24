@@ -83,7 +83,7 @@ public class RolesController : BaseApiController
     public async Task<ActionResult<string>> UpdatePermissionsAsync(UpdatePermissionsRequest request)
     {
         var selectedPermissions = request.Permissions;
-        var role = await _roleManager.FindByIdAsync(request.RoleId);
+        var role = await _roleManager.FindByIdAsync(request.RoleId.ToString());
         if (role == null) return NotFound();
         if (role.Name == Roles.Admin)
         {

@@ -53,7 +53,7 @@ export class Agent {
   deleteRole = (id: string) => this.http.delete(this.baseUrl + `roles/${id}`);
   getAllPermissions = () => this.http.get(this.baseUrl + 'roles/permissions/all');
   getRolePermissions = (roleId: number) => this.http.get(this.baseUrl + `roles/${roleId}/permissions`);
-  updateRolePermissions = (request: Permission) => this.http.put(this.baseUrl + 'roles/permissions/update', request);
+  updateRolePermissions = (request: Permission) => this.http.put(this.baseUrl + 'roles/permissions', request);
   getAllClaims = () => this.http.get(this.baseUrl + `roles/permissions`)
   getClaim = (id: number) => this.http.get(this.baseUrl + `roles/permissions/${id}`);
   deleteClaim = (id: number) => this.http.delete(this.baseUrl + `roles/permissions/${id}`)
