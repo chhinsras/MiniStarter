@@ -1,10 +1,10 @@
-<div *ngIf="!allPermissions" class="d-flex justify-center p-4">
+<div *ngIf="isLoading" class="d-flex justify-center p-4">
   <mat-icon>
     <mat-spinner diameter="20">
     </mat-spinner>
   </mat-icon> Loading ...
 </div>
-<div [hidden]="!allPermissions">
+<div [hidden]="isLoading">
      <mat-card-header>
         <mat-card-title class="khmer-moul">
             {{ title | translate }}
@@ -13,16 +13,25 @@
     </mat-card-header>
   <section class="permission-section">
     <form #permissionsForm="ngForm" id="permissionsForm">
-      <ul>
-        <li *ngFor="let permission of allPermissions">
-          <mat-checkbox
-            [checked]="permission.checked"
-            (change)="permission.checked = !permission.checked"
-          >
-            {{permission.value}}
-          </mat-checkbox>
-        </li>
-      </ul>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+          <button mat-icon-button disabled></button>
+          <mat-checkbox class="checklist-leaf-node"
+                        [checked]="checklistSelection.isSelected(node)"
+                        (change)="permissionLeafSelectionToggle(node)">{{node.name}}</mat-checkbox>
+        </mat-tree-node>
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+          <mat-checkbox [checked]="descendantsAllSelected(node)"
+                        [indeterminate]="descendantsPartiallySelected(node)"
+                        (change)="permissionSelectionToggle(node)">{{node.name}}</mat-checkbox>
+        </mat-tree-node>
+      </mat-tree>
     </form>
   </section>
   <mat-dialog-actions align="end" class="mb-2">
