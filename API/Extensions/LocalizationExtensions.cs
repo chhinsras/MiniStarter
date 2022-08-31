@@ -13,10 +13,10 @@ public static class LocalizationExtensions
 
         var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-        if (hostWithHeroku && env == "Production") {
+        if (HostingConfiguration.IsHostWithHeroku && env == "Production") {
             // Use string provided at runtime by Heroku.
             var enableLocalization = Environment.GetEnvironmentVariable("MiddlewareSettings.EnableLocalization");
-            if (enableLocalization) services.AddSingleton<LocalizationMiddleware>();
+            if (enableLocalization == "true") services.AddSingleton<LocalizationMiddleware>();
         } else {
             var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
             if (middlewareSettings.EnableLocalization) services.AddSingleton<LocalizationMiddleware>();

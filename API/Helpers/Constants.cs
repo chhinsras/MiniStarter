@@ -1,6 +1,10 @@
 namespace API.Helpers;
 
 
+public static class HostingConfiguration {
+    public const bool IsHostWithHeroku = true;
+}
+
 public static class DatabaseProvider 
 {
     public const string MSSQL = "MSSQL";
