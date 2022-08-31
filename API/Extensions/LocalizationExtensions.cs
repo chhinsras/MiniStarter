@@ -11,18 +11,11 @@ public static class LocalizationExtensions
 
         services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
-        var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
-        if (HostingConfiguration.IsHostWithHeroku && env == "Production") {
-            // Use string provided at runtime by Heroku.
-            var enableLocalization = Environment.GetEnvironmentVariable("MiddlewareSettings.EnableLocalization");
-            if (enableLocalization == "true") services.AddSingleton<LocalizationMiddleware>();
-        } else {
-            var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
-            if (middlewareSettings.EnableLocalization) services.AddSingleton<LocalizationMiddleware>();
+        var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
+        if (middlewareSettings.EnableLocalization)
+        {
+            services.AddSingleton<LocalizationMiddleware>();
         }
-
-        
 
         return services;
     }

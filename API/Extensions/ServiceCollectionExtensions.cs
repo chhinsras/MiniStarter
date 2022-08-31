@@ -84,6 +84,7 @@ public static class ServiceCollectionExtensions
     }
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
+        var hostWithHerokuPosgresSql = false; // set to false if not hosting with HerokuPosgresSql
         var databaseProvider = DatabaseProvider.MSSQL; // MSSQL, POSGRESSQL
 
         services.AddDbContext<DataContext>(options => {
@@ -91,7 +92,7 @@ public static class ServiceCollectionExtensions
 
             string connectionString = "";
 
-            if (env == "Production" && HostingConfiguration.IsHostWithHeroku && HostingConfiguration.IsHostWithHerokuPosgresSQL){
+            if (env == "Production" && hostWithHerokuPosgresSql){
                 // Use connection string provided at runtime by Heroku.
                 var connectionUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
@@ -107,8 +108,6 @@ public static class ServiceCollectionExtensions
                 var pgPort = pgHostPort.Split(":")[1];
 
                 connectionString = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;TrustServerCertificate=True";
-            } else if (env == "Production" && HostingConfiguration.IsHostWithHeroku) {
-                connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
             } else
             {
                 // Use connection string from file.
