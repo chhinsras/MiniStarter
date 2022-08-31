@@ -74,7 +74,7 @@ export class RolePermissionFormComponent implements OnInit {
           this.allPermissions.push({name: permission, defaultChecked: rolePermissions.includes(permission) ? true : false });
         });
         var nodePermissionData: PermissionNode[] = [];
-        nodePermissionData.push({name: 'All Permission', children: this.allPermissions, defaultChecked: true});
+        nodePermissionData.push({name: 'All Permission', children: this.allPermissions, defaultChecked: this.allPermissions.every(permission => permission.defaultChecked === true)});
         this.dataSource.data = nodePermissionData;
 
         const nodes = this.treeControl.dataNodes;
