@@ -81,8 +81,8 @@ export class RolePermissionFormComponent implements OnInit {
         nodes.forEach(node => {
           if(node.defaultChecked) this.checklistSelection.toggle(node);
         });
+        this.isLoading = false;
       })
-      this.isLoading = false;
     });
   }
 
