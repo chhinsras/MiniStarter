@@ -1,5 +1,7 @@
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+var hostWithHeroku = true; // Set true if using heorku hosting
+
 var builder = WebApplication.CreateBuilder(args).UseSerilog();
 
 // Add services to the container.
