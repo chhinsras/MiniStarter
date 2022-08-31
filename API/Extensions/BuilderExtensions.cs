@@ -24,7 +24,7 @@ public static class BuilderExtensions
         app.UseStaticFiles();
         app.UseStaticFiles(new StaticFileOptions
         {
-            FileProvider = new PhysicalFileProvider(
+            FileProvider = new PhysicalFileProvider2(
                 Path.Combine(Directory.GetCurrentDirectory(), "Files")
             ), RequestPath = "/Files"
         });
