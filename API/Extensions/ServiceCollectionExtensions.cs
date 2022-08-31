@@ -84,15 +84,12 @@ public static class ServiceCollectionExtensions
     }
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        var hostWithHerokuPosgresSql = false; // set to false if not hosting with HerokuPosgresSql
-        var databaseProvider = DatabaseProvider.MSSQL; // MSSQL, POSGRESSQL
-
         services.AddDbContext<DataContext>(options => {
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             string connectionString = "";
 
-            if (env == "Production" && hostWithHerokuPosgresSql){
+            if (env == "Production" && HostingConfiguration.IsHostWithHeroku && HostingConfiguration.IsHostWithHerokuPosgresSQL){
                 // Use connection string provided at runtime by Heroku.
                 var connectionUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
@@ -108,6 +105,8 @@ public static class ServiceCollectionExtensions
                 var pgPort = pgHostPort.Split(":")[1];
 
                 connectionString = $"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};SSL Mode=Require;TrustServerCertificate=True";
+            } else if (env == "Production" && HostingConfiguration.IsHostWithHeroku) {
+                connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
             } else
             {
                 // Use connection string from file.
@@ -117,9 +116,9 @@ public static class ServiceCollectionExtensions
 
             // Whether the connection string came from the local development configuration file
             // or from the environment variable from Heroku, use it to set up your DbContext.
-            if(databaseProvider == DatabaseProvider.MSSQL) {
+            if(HostingConfiguration.DatabaseProvider == DatabaseProvider.MSSQL) {
                 options.UseSqlServer(connectionString);
-            } else if (databaseProvider == DatabaseProvider.POSGRESSQL)
+            } else if (HostingConfiguration.DatabaseProvider == DatabaseProvider.POSGRESSQL)
             {
                 options.UseNpgsql(connectionString);
             }

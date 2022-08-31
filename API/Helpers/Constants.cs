@@ -2,7 +2,9 @@ namespace API.Helpers;
 
 
 public static class HostingConfiguration {
+    public const string DatabaseProvider = DatabaseProvider.MSSQL;
     public const bool IsHostWithHeroku = true;
+    public const bool IsHostWithHerokuPosgresSQL = false;
 }
 
 public static class DatabaseProvider 
