@@ -29,8 +29,8 @@
           </button>
           <mat-checkbox [checked]="descendantsAllSelected(node)"
                         [indeterminate]="descendantsPartiallySelected(node)"
-                        (change)="permissionSelectionToggle(node)">{{node.name}}</mat-checkbox>
-        </mat-tree-node>
+                        (change)="permissionSelectionToggle(node)"><span matBadgeOverlap="false" matBadge="{{getBadgeValue()}}">{{node.name}}</span></mat-checkbox>
+          </mat-tree-node>
       </mat-tree>
     </form>
   </section>

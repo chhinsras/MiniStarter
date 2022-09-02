@@ -162,6 +162,9 @@ export class RolePermissionFormComponent implements OnInit {
     return null;
   }
 
+  getBadgeValue = () => this.checklistSelection.selected.filter(x => x.name !== 'All Permission').length + "/" + this.allPermissions.length;
+
+
   submitRolePermission(): void{
     // console.log(this.checklistSelection.selected.filter(x => x.name !== 'All Permission').map(x => x.name));
     this.roleService.updateRolePermissions({roleId: this.data.id, permissions: this.checklistSelection.selected.filter(x => x.name !== 'All Permission').map(x => x.name)}).subscribe((permission) => {
