@@ -5,3 +5,16 @@ export interface Permission {
     isDefault?: boolean
     permissions: string[]
 }
+
+export interface PermissionNode {
+  name: string;
+  children?: PermissionNode[];
+  defaultChecked: boolean;
+}
+
+export interface PermissionFlatNode {
+  expandable: boolean;
+  name: string;
+  level: number;
+  defaultChecked: boolean;
+}

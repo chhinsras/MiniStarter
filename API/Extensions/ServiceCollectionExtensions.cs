@@ -84,7 +84,7 @@ public static class ServiceCollectionExtensions
     }
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        var hostWithHeroku = true; // set to false if not hosting with heroku
+        var hostWithHerokuPosgresSql = false; // set to false if not hosting with HerokuPosgresSql
         var databaseProvider = DatabaseProvider.MSSQL; // MSSQL, POSGRESSQL
 
         services.AddDbContext<DataContext>(options => {
@@ -92,7 +92,7 @@ public static class ServiceCollectionExtensions
 
             string connectionString = "";
 
-            if (env == "Production" && hostWithHeroku){
+            if (env == "Production" && hostWithHerokuPosgresSql){
                 // Use connection string provided at runtime by Heroku.
                 var connectionUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
