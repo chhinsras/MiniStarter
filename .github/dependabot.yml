@@ -7,21 +7,22 @@ version: 2
 
 updates: 
   # .NET
-  — package-ecosystem: 'nuget'
-  directory: '/' 
-  interval: 'monthly'
-  
+  - package-ecosystem: 'nuget'
+    directory: '/' 
+    schedule:
+      interval: 'monthly'
+    
   # Angular
   - package-ecosystem: 'npm'
-  directory: '/'
-  schedule:
-    interval: 'monthly'
-  commit-message:
-    prefix: 'build'
-  labels:
-    - 'comp: build & ci'
-    - 'target: patch'
-    - 'action: merge'
-  # Disable version updates
-  # This does not affect security updates
-  open-pull-requests-limit: 0
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: 'build'
+    labels:
+      - 'comp: build & ci'
+      - 'target: patch'
+      - 'action: merge'
+    # Disable version updates
+    # This does not affect security updates
+    open-pull-requests-limit: 0
