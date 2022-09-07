@@ -8,12 +8,12 @@ version: 2
 updates: 
   # .NET
   — package-ecosystem: 'nuget'
-  directory: '/API' 
+  directory: '/' 
   interval: 'monthly'
   
   # Angular
   - package-ecosystem: 'npm'
-  directory: '/client'
+  directory: '/'
   schedule:
     interval: 'monthly'
   commit-message:
