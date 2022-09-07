@@ -7,9 +7,9 @@ version: 2
 
 updates: 
   # .NET
-  — package-ecosystem: “nuget”
-  directory: “/API” 
-  interval: “monthly"
+  — package-ecosystem: 'nuget'
+  directory: '/API' 
+  interval: 'monthly'
   
   # Angular
   - package-ecosystem: 'npm'
