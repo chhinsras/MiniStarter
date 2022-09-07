@@ -4,17 +4,24 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates:
+
+updates: 
+  # .NET
+  — package-ecosystem: “nuget”
+  directory: “/API” 
+  interval: “monthly"
+  
+  # Angular
   - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'monthly'
-    commit-message:
-      prefix: 'build'
-    labels:
-      - 'comp: build & ci'
-      - 'target: patch'
-      - 'action: merge'
-    # Disable version updates
-    # This does not affect security updates
-    open-pull-requests-limit: 0
+  directory: '/client'
+  schedule:
+    interval: 'monthly'
+  commit-message:
+    prefix: 'build'
+  labels:
+    - 'comp: build & ci'
+    - 'target: patch'
+    - 'action: merge'
+  # Disable version updates
+  # This does not affect security updates
+  open-pull-requests-limit: 0
