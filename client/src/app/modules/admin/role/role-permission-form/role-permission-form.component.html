@@ -11,29 +11,38 @@
         </mat-card-title>
         <!-- <mat-card-subtitle style="color: white;" >{{ subtitle | translate }}</mat-card-subtitle> -->
     </mat-card-header>
-  <section class="permission-section">
-    <form #permissionsForm="ngForm" id="permissionsForm">
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-          <button mat-icon-button disabled></button>
-          <mat-checkbox class="checklist-leaf-node"
-                        [checked]="checklistSelection.isSelected(node)"
-                        (change)="permissionLeafSelectionToggle(node)">{{node.name}}</mat-checkbox>
-        </mat-tree-node>
-        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
-          <button mat-icon-button matTreeNodeToggle
-                  [attr.aria-label]="'Toggle ' + node.name">
-            <mat-icon class="mat-icon-rtl-mirror">
-              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-            </mat-icon>
-          </button>
-          <mat-checkbox [checked]="descendantsAllSelected(node)"
-                        [indeterminate]="descendantsPartiallySelected(node)"
-                        (change)="permissionSelectionToggle(node)"><span matBadgeOverlap="false" matBadge="{{getBadgeValue()}}">{{node.name}}</span></mat-checkbox>
+  <mat-dialog-content class="mat-typography">
+    <section class="permission-section">
+      <form #permissionsForm="ngForm" id="permissionsForm">
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+            <button mat-icon-button disabled></button>
+            <mat-checkbox class="checklist-leaf-node"
+                          color = 'primary'
+                          [checked]="checklistSelection.isSelected(node)"
+                          (change)="permissionLeafSelectionToggle(node)">{{node.name}}</mat-checkbox>
           </mat-tree-node>
-      </mat-tree>
-    </form>
-  </section>
+          <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                          <button mat-icon-button matTreeNodeToggle
+                              [attr.aria-label]="'Toggle ' + node.name">
+                              <mat-icon class="mat-icon-rtl-mirror">
+                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                              </mat-icon>
+                          </button>
+                <mat-checkbox [checked]="descendantsAllSelected(node)"
+                          [indeterminate]="descendantsPartiallySelected(node)"
+                          color="primary"
+                          (change)="permissionSelectionToggle(node)">
+                          <span
+                              matBadgeOverlap="false"
+                              matBadgeSize="small"
+                              matBadge="{{getBadgeValue()}}">{{node.name}}</span>
+                </mat-checkbox>
+            </mat-tree-node>
+        </mat-tree>
+      </form>
+    </section>
+  </mat-dialog-content>
   <mat-dialog-actions align="end" class="mb-2">
     <button mat-raised-button mat-dialog-close>Cancel</button>
     <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"

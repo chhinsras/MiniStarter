@@ -10,3 +10,15 @@ ul {
 .permission-section {
   margin-top: 1rem;
 }
+.mat-badge-content {
+  width: inherit !important;
+  border-radius: 5px;
+  margin-right:-20px;
+  padding:0px 10px 0px 10px;
+  height: 20px;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  display:inline-table;
+}
+
