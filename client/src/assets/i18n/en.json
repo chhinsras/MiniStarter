@@ -50,7 +50,7 @@
     "subtitle": "Everything about childprotection.",
     "header": "Core Team"
   },
-  "settings": {
+  "setting": {
     "title": "Settings",
     "subtitle": "Manage Application Settings.",
     "generalSettings": "General Settings",
