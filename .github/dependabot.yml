@@ -20,6 +20,7 @@ updates:
     commit-message:
       prefix: 'build'
     labels:
+      - "Angular"
       - 'comp: build & ci'
       - 'target: patch'
       - 'action: merge'
