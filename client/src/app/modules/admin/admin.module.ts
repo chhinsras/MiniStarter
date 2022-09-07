@@ -16,6 +16,7 @@ import { UserRoleFormComponent } from './user/user-role-form/user-role-form.comp
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RoleFormComponent } from './role/role-form/role-form.component';
 import { RolePermissionFormComponent } from './role/role-permission-form/role-permission-form.component';
+import { SettingComponent } from './setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RolePermissionFormComponent } from './role/role-permission-form/role-pe
     UserRoleFormComponent,
     RoleComponent,
     RoleFormComponent,
-    RolePermissionFormComponent
+    RolePermissionFormComponent,
+    SettingComponent
   ],
   imports: [
     CommonModule,
