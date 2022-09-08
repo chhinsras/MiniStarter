@@ -2,7 +2,7 @@
   <div *ngIf="this.userForm.get('id').value === '' || this.userForm.get('id').value === null">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="panel-content">
       <mat-dialog-content class="mat-typography" style="width: auto;">
-        <div class="row">
+        <div class="row" [@myAnimationTrigger]>
             <input formControlName="id" type="hidden">
             <div class="col-xs-12 col-md-6">
               <mat-form-field appearance="outline">
@@ -95,45 +95,37 @@
                 <div class="col-xs-12 col-md-6">
                   <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input autocomplete="off" formControlName="email" matInput placeholder="Email" required type="email">
-                    <mat-error>Please provide a valid email</mat-error>
+                    <input autocomplete="off"
+                    formControlName="email"
+                     matInput placeholder="Email"
+                     [pattern]="'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'"
+                     required type="email">
+                    <mat-error>Please provide a valid email </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xs-12 col-md-6" hidden="formTitle='Edit User'">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input autocomplete="off" required="formTitle='!Edit User'" formControlName="password" matInput placeholder="Password" type="password">
+                    <mat-error>Please provide a valid password</mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xs-12 col-md-6" hidden="formTitle='Edit User'">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input autocomplete="off" required="formTitle ='!Edit User" formControlName="confirmPassword" matInput placeholder="ConfirmPassword" type="password">
+                    <mat-error>Please provide a valid confirm password</mat-error>
                   </mat-form-field>
                 </div>
                 <div class="col-xs-12 col-md-6">
                   <mat-form-field appearance="outline">
                     <mat-label>Phone Number</mat-label>
-                    <input autocomplete="off" formControlName="phoneNumber" matInput placeholder="PhoneNumber" required>
+                    <input autocomplete="off"
+                      formControlName="phoneNumber"
+                      [placeholder]="'0XXXXXXXXX'"
+                      matInput placeholder="PhoneNumber"
+                      pattern="^(0)(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{3}$" required>
                     <mat-error>Please provide a valid phone number</mat-error>
-                  </mat-form-field>
-                </div>
-            </div>
-          </mat-dialog-content>
-          <mat-dialog-actions align="end">
-            <button mat-raised-button mat-dialog-close>Cancel</button>
-            <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"
-              [disabled]="!userForm.dirty || !userForm.valid" type="submit">
-              Save
-            </button>
-          </mat-dialog-actions>
-        </form>
-      </mat-tab>
-      <mat-tab label="Password">
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="panel-content">
-          <mat-dialog-content class="mat-typography" style="width: auto;">
-            <div class="row">
-                <input formControlName="id" type="hidden">
-                <div class="col-xs-12 col-md-6">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input autocomplete="off" formControlName="password" matInput placeholder="Password" required type="password">
-                    <mat-error>Please provide a valid password</mat-error>
-                  </mat-form-field>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Confirm Password</mat-label>
-                    <input autocomplete="off" formControlName="confirmPassword" matInput placeholder="ConfirmPassword" required type="password">
-                    <mat-error>Please provide a valid confirm password</mat-error>
                   </mat-form-field>
                 </div>
             </div>

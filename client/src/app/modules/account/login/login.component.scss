@@ -21,6 +21,7 @@ padding: 0px!important;
   {
     margin: 40px;
   }
+  .hz{display: none;}
 }
 
 .mat-card-content-login
@@ -44,4 +45,15 @@ padding: 0px!important;
   border: inset 130px transparent;
   box-sizing: border-box;
 
+}
+.hz{
+  border-left: 6px dashed rgb(160, 158, 158);
+  height: 100%;
+  position:absolute;
+  left: 50%;
+  margin: 0px;
+  padding:0px;
+}
+.rows{
+  box-shadow: 0.05rem 0.05rem 0.5rem #b6b2b2;
 }

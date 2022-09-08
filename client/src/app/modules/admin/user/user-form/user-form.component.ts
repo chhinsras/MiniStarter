@@ -1,15 +1,27 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, Inject, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/models/user';
 import { AccountService } from 'src/app/core/services/account.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  styleUrls: ['./user-form.component.scss'],
+  animations:[
+    trigger('fade',[
+      transition('void=>*',[
+        style({opacity:0,}),
+        animate(3000,style({opacity:1}))
+      ]),
+      transition('*=>void',[
+        animate(2000,style({opacity:0}))
+      ])
+    ])
+   ]
 })
 export class UserFormComponent implements OnInit {
   userForm: UntypedFormGroup;
@@ -27,15 +39,16 @@ export class UserFormComponent implements OnInit {
       firstName: [this.data && this.data.firstName, Validators.required],
       lastName: [this.data && this.data.lastName, Validators.required],
       email: [this.data && this.data.email, Validators.required],
-      password: [this.data && this.data.password, Validators.required],
-      confirmPassword: [this.data && this.data.confirmPassword, Validators.required],
+      password: [this.data && this.data.password],
+      confirmPassword: [this.data && this.data.confirmPassword],
       phoneNumber: [this.data && this.data.phoneNumber, Validators.required]
-    })
+    });
     if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
       this.formTitle = "Add User";
     }
     else {
       this.formTitle = "Edit User";
+      console.log(this.userForm.get('password'));
     }
   }
 
@@ -49,6 +62,7 @@ export class UserFormComponent implements OnInit {
         this.userService.updateUser(this.userForm.value).subscribe(response => {
           this.toastr.success(response);
         })
+
       }
     }
   }

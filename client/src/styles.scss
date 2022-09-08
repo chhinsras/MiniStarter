@@ -5,12 +5,12 @@
 $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
 @import '~material-design-icons-iconfont/src/material-design-icons';
 
-.khmer-moul {
-  font-family: 'Moul', cursive;
+.khmer-moul{
+  font-family: 'Moul', cursive !important;
 }
 
 .khmer-content {
-  font-family: 'Noto Sans Khmer', sans-serif;
+  font-family: 'Noto Sans Khmer', sans-serif !important;
 }
 
 .container {
