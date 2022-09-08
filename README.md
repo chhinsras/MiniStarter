@@ -19,6 +19,7 @@
 - [ ] API Versioning
 - [x] Audit Logging
 - [ ] Data Annotation Validation
+- [ ] Fluent Validation
 - [ ] Advanced Search
 - [ ] Postman Collection
 - [ ] Email Verification with Template
