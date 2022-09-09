@@ -12,6 +12,7 @@
                     <mat-card-content>
                       <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                          <mat-spinner *ngIf="spin"></mat-spinner>
                           <img style="border-radius: 350px; max-width: 200px;min-width: 200px;"
                           [src]="url">
                         </div>

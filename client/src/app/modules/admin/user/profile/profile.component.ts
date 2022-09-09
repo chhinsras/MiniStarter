@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  spin:boolean = false;
   constructor() { }
   url: any = [];
   ngOnInit(): void {
@@ -17,8 +17,10 @@ export class ProfileComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
+      this.spin = !this.spin
       reader.onloadend = (event) => { // called once readAsDataURL is completed
         this.url = event.target.result;
+        this.spin = !this.spin
       }
     }
   }
