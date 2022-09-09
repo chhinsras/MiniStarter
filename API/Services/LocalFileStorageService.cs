@@ -111,7 +111,7 @@ public class LocalFileStorageService
         return string.Format(pattern, max);
     }
 
-    public void Remove(UploadType uploadType, string fileUrl)
+    public void Remove(string fileUrl, UploadType uploadType)
     {
         if (fileUrl != null)
         {

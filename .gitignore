@@ -456,3 +456,4 @@ $RECYCLE.BIN/
 server/API/wwwroot/**
 API/puppeteer
 
+API/Files/Images/

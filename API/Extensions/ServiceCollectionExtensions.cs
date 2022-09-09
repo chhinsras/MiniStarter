@@ -23,6 +23,7 @@ public static class ServiceCollectionExtensions
             .AddIdentity(configuration);
         services.AddScoped<TokenService>();
         services.AddScoped<ExportService>();
+        services.AddScoped<LocalFileStorageService>();
         
         return services;
     }
