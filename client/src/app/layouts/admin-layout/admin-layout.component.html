@@ -28,7 +28,7 @@
           (click)="sidenav.close()">
           <mat-icon style="padding-right: 10px;">badge</mat-icon> {{'layouts.admin.roles'|translate}}
         </a>
-        <a *appHasPermission='["Permissions.Audit.View"]' mat-list-item routerLink="audit"
+        <a *appHasPermission='["Permissions.Audit.View"]' mat-list-item routerLink="audits"
           (click)="sidenav.close()">
           <mat-icon style="padding-right: 10px;">access_time</mat-icon> {{'layouts.admin.eventLogs'|translate}}
         </a>

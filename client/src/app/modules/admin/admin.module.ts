@@ -17,6 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RoleFormComponent } from './role/role-form/role-form.component';
 import { RolePermissionFormComponent } from './role/role-permission-form/role-permission-form.component';
 import { SettingComponent } from './setting/setting.component';
+import { AuditComponent } from './audit/audit.component';
+import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { SettingComponent } from './setting/setting.component';
     RoleComponent,
     RoleFormComponent,
     RolePermissionFormComponent,
-    SettingComponent
+    SettingComponent,
+    AuditComponent,
+    AuditLogDetailsComponent
   ],
   imports: [
     CommonModule,
