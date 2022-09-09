@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { RoleComponent } from './role/role.component';
 import { SettingComponent } from './setting/setting.component';
+import { AuditComponent } from './audit/audit.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'users', component: UserComponent },
   { path: 'roles', component: RoleComponent },
-  { path: 'settings', component: SettingComponent}
+  { path: 'settings', component: SettingComponent},
+  { path: 'audits', component: AuditComponent}
 ];
 
 @NgModule({

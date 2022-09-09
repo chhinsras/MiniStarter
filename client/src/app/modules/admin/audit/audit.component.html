@@ -1,0 +1,10 @@
+<div [hidden]="!audits">
+  <app-page-header [title]="'Audits'" [subtitle]="'View audit logs here.'"></app-page-header>
+  <app-table
+    [data]="audits && audits" [columns]="auditColumns" (onFilter)="filter($event)"
+    (onView)="viewDetails($event)" (onReload)="reload()"
+    [totalCount]="metaData && metaData.totalCount" [pageSize]="metaData && metaData.pageSize"
+    (onPageChanged)="pageChanged($event)"
+    >
+  </app-table>
+</div>
