@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { RoleComponent } from './role/role.component';
 import { SettingComponent } from './setting/setting.component';
 import { AuditComponent } from './audit/audit.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'users', component: UserComponent },
+  { path: 'profile', component: ProfileComponent},
   { path: 'roles', component: RoleComponent },
   { path: 'settings', component: SettingComponent},
   { path: 'audits', component: AuditComponent}
