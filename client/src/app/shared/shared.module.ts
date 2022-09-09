@@ -17,6 +17,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DataPropertyGetterPipe } from './pipes/data-property-getter.pipe';
 import { HasPermissionDirective } from './directives/has-permission.directive';
 import { HasRoleDirective } from './directives/has-role.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HasRoleDirective } from './directives/has-role.directive';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     FormsModule,
     MaterialModule,
     TranslateModule,
