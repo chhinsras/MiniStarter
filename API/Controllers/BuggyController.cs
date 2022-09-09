@@ -10,7 +10,7 @@ public class BuggyController : BaseApiController
     [HttpGet("bad-request")]
     public ActionResult GetBadRequest()
     {
-        return BadRequest(new ProblemDetails{Title = "This is a bad request"});
+        return BadRequest(new ProblemDetails { Title = "This is a bad request" });
     }
 
     [HttpGet("unauthorised")]
@@ -24,7 +24,7 @@ public class BuggyController : BaseApiController
     {
         ModelState.AddModelError("Problem1", "This is the first error");
         ModelState.AddModelError("Problem2", "This is the second error");
-        return ValidationProblem();
+        return ValidationProblem("This is validation errors");
     }
 
     [HttpGet("server-error")]

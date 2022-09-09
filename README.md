@@ -16,7 +16,7 @@
 - [x] Supports MSSQL or PosgreSQL (support heroku deploy via github action)
 - [x] JSON Localization
 - [ ] Cambodia Gazetteer
-- [ ] API Versioning
+- [X] API Versioning
 - [x] Audit Logging
 - [ ] Data Annotation Validation
 - [ ] Fluent Validation
@@ -26,7 +26,7 @@
 - [x] Advanced User & Role Based Permission Management
 - [x] JWT Authentication and Refresh Token
 - [x] JSON Data Seeding
-- [x] Swagger Supports
+- [x] Swagger Documentation
 - [x] Pagination with Response Header
 - [ ] Hangfire Support
 - [x] File Storage Service
