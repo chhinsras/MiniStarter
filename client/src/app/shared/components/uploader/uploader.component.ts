@@ -14,7 +14,7 @@ export class UploaderComponent implements OnInit {
 
   upload = new Upload();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
