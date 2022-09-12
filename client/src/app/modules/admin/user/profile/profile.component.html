@@ -11,18 +11,20 @@
                   <mat-card class="module-card">
                     <mat-card-content>
                       <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                        <mat-spinner *ngIf="spin"></mat-spinner>
+                        <!-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
                           <mat-spinner *ngIf="spin"></mat-spinner>
                           <img style="border-radius: 350px; max-width: 200px;min-width: 200px;"
                           [src]="url">
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6" style="text-align: center;align-self: center;">
-                          <p>Chhin Sras</p>
-                          <p>chhinsras@gmail.com</p>
-                          <input #file type="file" accept="image/*" hidden (change)="onSelectFile($event)">
+                        </div> -->
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;align-self: center;">
+                          <!-- <p>Chhin Sras</p>
+                          <p>chhinsras@gmail.com</p> -->
+                          <!-- <input #file type="file" accept="image/*" hidden (change)="onSelectFile($event)">
                           <button (click)="file.click()" mat-raised-button color="accent">
                             <span><span style="margin-right: 10px;" class="fas fa-upload"></span>{{'profile.upload' | translate}}</span>
-                          </button>
+                          </button> -->
+                          <app-uploader (onUploadFile)="uploadFile($event)" [uploadType]="uploadType"></app-uploader>
                         </div>
                       </div>
 

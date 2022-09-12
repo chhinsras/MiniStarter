@@ -1,4 +1,7 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/core/services/user.service';
+import { UploadType } from 'src/app/shared/models/upload';
 
 @Component({
   selector: 'app-profile',
@@ -6,22 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+[x: string]: any;
   spin:boolean = false;
-  constructor() { }
+  constructor(private userService: UserService, private toastrService: ToastrService) { }
   url: any = [];
+
+  uploadType: number;
+
   ngOnInit(): void {
+    this.uploadType = UploadType.UserPhoto;
   }
-  onSelectFile(event) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-      this.spin = !this.spin
-      reader.onloadend = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-        this.spin = !this.spin
-      }
-    }
+  uploadFile(event) {
+    this.userService.updateUserPhoto(event).subscribe(response => {
+      this.toastrService.success('Updated Photo!');
+    });
   }
 }

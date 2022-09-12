@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
 import { getPaginationHeaders } from '../helpers/pagination-helper';
 import { User, UserParams, UserRole } from '../../shared/models/user';
+import { Upload } from 'src/app/shared/models/upload';
 
 @Injectable()
 export class UserService {
@@ -72,5 +73,12 @@ export class UserService {
     return this.agent
       .assignUserRoles(id, request)
       .pipe(map((response: string) => response));
+  }
+
+  updateUserPhoto(upload: Upload) {
+    var formData = new FormData();
+    formData.append('file', upload.file);
+    formData.append('uploadType', upload.uploadType.toString());
+    return this.agent.updateUserPhoto(formData);
   }
 }

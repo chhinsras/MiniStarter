@@ -196,7 +196,7 @@ public class UsersController : BaseApiController
             user.ImageUrl = path;
             await _userManager.UpdateAsync(user);
             
-            return Ok("Uploaded Image!");
+            return Ok();
         } else 
         {
             return BadRequest(new ProblemDetails {Title = "Failed uploading image!"});

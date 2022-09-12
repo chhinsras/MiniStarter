@@ -43,6 +43,7 @@ export class Agent {
   deleteUser = (id: string) => this.http.delete(this.baseUrl + 'users/' + id);
   getUserRoles = (id: string) => this.http.get(this.baseUrl + `users/${id}/roles`);
   assignUserRoles = (id: string, request: UserRole[]) => this.http.post(this.baseUrl + `users/${id}/roles`, {userRoles: request});
+  updateUserPhoto = (formData: FormData) => this.http.post(this.baseUrl + 'users/update-photo', formData);
 
   // Role
   getRoles = () => this.http.get(this.baseUrl + 'roles/all');
