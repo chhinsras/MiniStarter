@@ -26,7 +26,7 @@ public static class BuilderExtensions
         {
             FileProvider = new PhysicalFileProvider2(
                 Path.Combine(Directory.GetCurrentDirectory(), "Files")
-            ), RequestPath = "/Files"
+            ), RequestPath = "/files"
         });
 
         app.PreparePuppeteerAsync(app.Environment).GetAwaiter().GetResult();

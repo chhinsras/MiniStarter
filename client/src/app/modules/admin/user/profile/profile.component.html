@@ -12,8 +12,8 @@
                     <mat-card-content>
                       <div class="row">
                         <mat-spinner *ngIf="spin"></mat-spinner>
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;align-self: center;">
-                          <app-uploader [url]="url" (onUploadFile)="uploadFile($event)" [uploadType]="uploadType"></app-uploader>
+                        <div *ngIf="(accountService.currentUserToken$ | async) as user" class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;align-self: center;">
+                          <app-uploader [url]="user.imageUrl || './assets/images/user.png'" (onUploadFile)="uploadFile($event)" [uploadType]="uploadType"></app-uploader>
                         </div>
                       </div>
 

@@ -1,3 +1,4 @@
+import { AccountService } from 'src/app/core/services/account.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/core/services/user.service';
@@ -11,13 +12,14 @@ import { UploadType } from 'src/app/shared/models/upload';
 export class ProfileComponent implements OnInit {
 [x: string]: any;
   spin:boolean = false;
-  constructor(private userService: UserService, private toastrService: ToastrService) { }
+  constructor(private userService: UserService, private toastrService: ToastrService, public accountService: AccountService) { }
   url: any = [];
 
   uploadType: number;
 
   ngOnInit(): void {
     this.uploadType = UploadType.UserPhoto;
+
   }
 
   uploadFile(event) {
