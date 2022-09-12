@@ -27,12 +27,20 @@ export class UploaderComponent implements OnInit {
       this.upload.file = event.target.files[0];
       this.upload.uploadType = this.uploadType;
 
-      reader.onloadend = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-      }
+      // reader.onloadend = (event) => { // called once readAsDataURL is completed
+      //   this.url = event.target.result;
+
+      // }
+      reader.onloadend = function(){
+        var output = document.getElementById('output') as HTMLImageElement;
+        output.src = reader.result.toString();
+      };
+      reader.readAsDataURL(event.target.files[0]);
 
       // this.onLoadFile.emit(this.upload);
     }
+
+
   }
 
   handleUploadFile(){
