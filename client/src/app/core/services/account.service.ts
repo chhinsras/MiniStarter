@@ -4,7 +4,7 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
 import { environment } from 'src/environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, ReplaySubject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../../shared/models/user';
@@ -14,6 +14,9 @@ import { Agent } from '../api/agent';
 export class AccountService {
   private currentUserTokenSource = new BehaviorSubject<string>(this.getStorageToken);
   public currentUserToken$ = this.currentUserTokenSource.asObservable();
+
+  private currentUserSource = new ReplaySubject<User>(1);
+  public currentUser = this.currentUserSource.asObservable();
 
   constructor(public agent: Agent, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
   }
@@ -91,12 +94,20 @@ export class AccountService {
             this.toastr.info('User Logged In');
           }
         }),
-        map((result: User) => result ?? undefined)
+        map((user: User) => {
+          if(user) {
+            this.currentUserSource.next(user);
+            this.currentUserTokenSource.next(user.token);
+          }
+          return user ?? undefined
+        })
       );
   }
 
   public logout(): void {
     this.setStorageToken(null);
+    this.currentUserSource.next(null);
+    this.currentUserTokenSource.next(null);
     this.toastr.clear();
     this.toastr.info('User Logged Out');
     this.router.navigateByUrl('/login');

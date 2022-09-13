@@ -4,14 +4,17 @@ public class AccountController : BaseApiController
     private readonly UserManager<User> _userManager;
     private readonly TokenService _tokenService;
     private readonly JwtSettings _jwtSettings;
+    private readonly ServerSettings _serverSettings;
     private readonly IStringLocalizer _localizer;
 
     public AccountController(UserManager<User> userManager, TokenService tokenService,
-        IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
+        IOptions<JwtSettings> jwtSettings, IOptions<ServerSettings> serverSettings,
+        IStringLocalizer<AccountController> localizer)
     {
         _tokenService = tokenService;
         _userManager = userManager;
         _jwtSettings = jwtSettings.Value;
+        _serverSettings = serverSettings.Value;
         _localizer = localizer;
     }
 
@@ -95,7 +98,7 @@ public class AccountController : BaseApiController
             Email = user.Email,
             FirstName = user.FirstName,
             LastName = user.LastName,
-            ImageUrl = user.ImageUrl,
+            ImageUrl = _serverSettings.ApiUrl + user.ImageUrl,
             IsActive = user.IsActive,
             Token = tokenResponse.Token,
             RefreshToken = tokenResponse.RefreshToken,

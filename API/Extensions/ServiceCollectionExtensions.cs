@@ -33,6 +33,7 @@ public static class ServiceCollectionExtensions
         services
             .Configure<MiddlewareSettings>(configuration.GetSection(nameof(MiddlewareSettings)))
             .Configure<JwtSettings>(configuration.GetSection(nameof(JwtSettings)))
+            .Configure<ServerSettings>(configuration.GetSection(nameof(ServerSettings)))
             .Configure<CorsSettings>(configuration.GetSection(nameof(CorsSettings)));
         return services;
     } 
