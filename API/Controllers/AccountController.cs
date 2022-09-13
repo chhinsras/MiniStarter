@@ -66,18 +66,39 @@ public class AccountController : BaseApiController
     [Authorize]
     public async Task<ActionResult<UserDto>> GetCurrentUser()
     {
-        var currentUserId = User.GetUserId();
-        var user = await _userManager.Users
-            .AsNoTracking()
-            .Where(u => u.Id == currentUserId)
-            .FirstOrDefaultAsync();
-
+        User? user = await GetCurrentLogedInUser();
         if (user == null) return NotFound();
+
         user.ImageUrl = _serverSettings.ApiUrl + user.ImageUrl;
 
         return user.Adapt<UserDto>();
+    }
+
+    [HttpPut("update-profile")]
+    [Authorize]
+    public async Task<ActionResult> UpdateProfile(UpdateProfileDto updateProfileDto)
+    {
+        User? user = await GetCurrentLogedInUser();
+        if (user == null) return NotFound();
+        updateProfileDto.Adapt(user);
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to update profile"});
+        return Ok();
 
     }
+
+    [HttpPost("change-password")]
+    [Authorize]
+    public async Task<ActionResult> ChangePasasword(ChangePasswordRequest changePasswordRequest)
+    {
+        if(changePasswordRequest.Password != changePasswordRequest.ConfirmNewPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
+        User? user = await GetCurrentLogedInUser();
+        if (user == null) return NotFound();
+        var result = await _userManager.ChangePasswordAsync(user, changePasswordRequest.Password, changePasswordRequest.NewPassword);
+        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to change password"});
+        return Ok();
+    }
+
 
     [HttpGet("confirm-email")]
     [AllowAnonymous]
@@ -121,5 +142,11 @@ public class AccountController : BaseApiController
             RefreshToken = tokenResponse.RefreshToken,
             RefreshTokenExpiryTime = tokenResponse.RefreshTokenExpiryTime
         };
+    }
+    private async Task<User?> GetCurrentLogedInUser()
+    {
+        var currentUserId = User.GetUserId();
+        return await _userManager.Users.AsNoTracking()
+            .Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
     }
 }
