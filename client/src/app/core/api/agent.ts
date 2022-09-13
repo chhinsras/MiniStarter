@@ -30,6 +30,7 @@ export class Agent {
   loginUser = (login: Login) => this.http.post(this.baseUrl + 'account/login', login);
   refreshToken = (request: RefreshTokenRequest) => this.http.post(this.baseUrl + 'account/refresh-token', request);
   registerUser = (user: User) => this.http.post(this.baseUrl + 'account/register', user);
+  currentUser = () => this.http.get(this.baseUrl + 'account/current-user');
   // confirmEmail = (params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-email', {params: params});
   // confirmPhoneNumber =(params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-phone-number', {params: params});
   // forgotPassword = (email: string) => this.http.post(this.baseUrl + 'account/forgot-password', email);

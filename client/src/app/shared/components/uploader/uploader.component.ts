@@ -34,7 +34,6 @@ export class UploaderComponent implements OnInit {
         var output = document.getElementById('output') as HTMLImageElement;
         output.src = reader.result.toString();
       };
-      reader.readAsDataURL(event.target.files[0]);
 
       // this.onLoadFile.emit(this.upload);
     }

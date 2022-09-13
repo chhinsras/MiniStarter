@@ -62,6 +62,23 @@ public class AccountController : BaseApiController
         return StatusCode(201);
     }
 
+    [HttpGet("current-user")]
+    [Authorize]
+    public async Task<ActionResult<UserDto>> GetCurrentUser()
+    {
+        var currentUserId = User.GetUserId();
+        var user = await _userManager.Users
+            .AsNoTracking()
+            .Where(u => u.Id == currentUserId)
+            .FirstOrDefaultAsync();
+
+        if (user == null) return NotFound();
+        user.ImageUrl = _serverSettings.ApiUrl + user.ImageUrl;
+
+        return user.Adapt<UserDto>();
+
+    }
+
     [HttpGet("confirm-email")]
     [AllowAnonymous]
     public Task<string> ConfirmEmailAsync([FromQuery] string userId, [FromQuery] string code)

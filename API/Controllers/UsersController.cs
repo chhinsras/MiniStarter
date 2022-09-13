@@ -187,7 +187,7 @@ public class UsersController : BaseApiController
 
         var user = await _userManager.Users.SingleOrDefaultAsync(x => x.Id == currentUserId);
         
-        if (user == null) return BadRequest();
+        if (user == null) return NotFound();
 
         var path = await _fileStorageService.UploadAsync(fileUploadDto);
         if (!string.IsNullOrEmpty(path))

@@ -83,6 +83,12 @@ export class AccountService {
     return of(currentUserToken);
   }
 
+  public getCurrentLoggedInUser(): Observable<User>{
+    return this.agent
+      .currentUser()
+      .pipe(map((response: User) => response));
+  }
+
   public login(login: Login): Observable<User> {
     console.log(login);
     return this.agent.loginUser(login)
