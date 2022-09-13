@@ -1,6 +1,6 @@
 namespace API.Helpers;
 
-public class UserUrlResolver : IValueResolver<User, UserDto, string>
+public class UserUrlResolver : IValueResolver<User, UserDto, string?>
 {
     private readonly IConfiguration _configuration;
     public UserUrlResolver(IConfiguration configuration)
@@ -8,7 +8,7 @@ public class UserUrlResolver : IValueResolver<User, UserDto, string>
         _configuration = configuration;
     }
 
-    public string Resolve(User source, UserDto destination, string destMember, ResolutionContext context)
+    public string Resolve(User source, UserDto destination, string? destMember, ResolutionContext context)
     {
         if(!String.IsNullOrEmpty(source.ImageUrl))
         {
