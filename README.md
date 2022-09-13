@@ -29,7 +29,7 @@
 - [x] Swagger Supports
 - [x] Pagination with Response Header
 - [ ] Hangfire Support
-- [ ] File Storage Service
+- [x] File Storage Service
 - [ ] SignalR
 - [x] Puppeteer (PDF Download via html)
 - [x] Dynamic Mapping
