@@ -29,7 +29,6 @@ export class UploaderComponent implements OnInit {
 
       // reader.onloadend = (event) => { // called once readAsDataURL is completed
       //   this.url = event.target.result;
-
       // }
       reader.onloadend = function(){
         var output = document.getElementById('output') as HTMLImageElement;
