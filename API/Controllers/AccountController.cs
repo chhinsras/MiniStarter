@@ -87,7 +87,7 @@ public class AccountController : BaseApiController
 
     }
 
-    [HttpPost("change-password")]
+    [HttpPut("change-password")]
     [Authorize]
     public async Task<ActionResult> ChangePasasword(ChangePasswordRequest changePasswordRequest)
     {
