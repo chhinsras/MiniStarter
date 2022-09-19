@@ -93,7 +93,8 @@ public class AccountController : BaseApiController
     public async Task<ActionResult> ChangePasasword(ChangePasswordRequest changePasswordRequest)
     {
         if(changePasswordRequest.Password != changePasswordRequest.ConfirmNewPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
-        User? user = await GetCurrentLogedInUser();
+        var currentUserId = User.GetUserId();
+        var user = await _userManager.Users.Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
         if (user == null) return NotFound();
         var result = await _userManager.ChangePasswordAsync(user, changePasswordRequest.Password, changePasswordRequest.NewPassword);
         if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to change password"});
