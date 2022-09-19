@@ -78,7 +78,8 @@ public class AccountController : BaseApiController
     [Authorize]
     public async Task<ActionResult> UpdateProfile(UpdateProfileDto updateProfileDto)
     {
-        User? user = await GetCurrentLogedInUser();
+        var currentUserId = User.GetUserId();
+        var user = await _userManager.Users.Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
         if (user == null) return NotFound();
         updateProfileDto.Adapt(user);
         var result = await _userManager.UpdateAsync(user);
