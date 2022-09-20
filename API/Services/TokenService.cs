@@ -6,11 +6,14 @@ public class TokenService
     private readonly UserManager<User> _userManager;
     private readonly RoleManager<Role> _roleManager;
     private readonly JwtSettings _jwtSettings;
-    public TokenService(UserManager<User> userManager, RoleManager<Role> roleManager, IOptions<JwtSettings> jwtSettings)
+    private readonly ServerSettings _serverSettings;
+    public TokenService(UserManager<User> userManager, RoleManager<Role> roleManager, 
+        IOptions<JwtSettings> jwtSettings, IOptions<ServerSettings> serverSettings)
     {
         _userManager = userManager;
         _roleManager = roleManager;
         _jwtSettings = jwtSettings.Value;
+        _serverSettings = serverSettings.Value;
     }
 
     public async Task<TokenResponse> GenerateTokensAndUpdateUser(User user, string ipAddress)
@@ -78,7 +81,7 @@ public class TokenService
             new(ClaimTypes.Name, user.FirstName ?? string.Empty),
             new(ClaimTypes.Surname, user.LastName ?? string.Empty),
             new(CustomClaimTypes.IpAddress, ipAddress),
-            new(CustomClaimTypes.ImageUrl, user.ImageUrl ?? string.Empty),
+            new(CustomClaimTypes.ImageUrl, _serverSettings.ApiUrl + user.ImageUrl ?? string.Empty),
             new(ClaimTypes.MobilePhone, user.PhoneNumber ?? string.Empty)
         }
         .Union(userClaims)

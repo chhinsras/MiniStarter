@@ -19,6 +19,7 @@ import { RolePermissionFormComponent } from './role/role-permission-form/role-pe
 import { SettingComponent } from './setting/setting.component';
 import { AuditComponent } from './audit/audit.component';
 import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-details.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-de
     UserComponent,
     UserFormComponent,
     UserRoleFormComponent,
+    ProfileComponent,
     RoleComponent,
     RoleFormComponent,
     RolePermissionFormComponent,

@@ -16,6 +16,8 @@ public class MappingProfiles : Profile
 
         CreateMap<RoleDto, Role>().ReverseMap();
         CreateMap<UserDto, User>().ReverseMap();
+        CreateMap<User, UserDto>()
+            .ForMember(d => d.ImageUrl, o => o.MapFrom<UserUrlResolver>());
         
         // Gazetteers
         CreateMap<Province, ProvinceDto>().ReverseMap();

@@ -9,31 +9,40 @@ import { Upload, UploadType } from 'src/app/shared/models/upload';;
 export class UploaderComponent implements OnInit {
   @Input() url: any;
   @Input() uploadType: UploadType;
-  @Output() onLoadFile = new EventEmitter<Upload>();
+  // @Output() onLoadFile = new EventEmitter<Upload>();
+  @Output() onUploadFile = new EventEmitter<Upload>();
 
   upload = new Upload();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-  onSelectFile(event) {
+  handleSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      this.upload.fileName = event.target.files[0].name.split('.').shift()
-      this.upload.extension = event.target.files[0].name.split('.').pop();
+      this.upload.file = event.target.files[0];
       this.upload.uploadType = this.uploadType;
 
-      reader.onloadend = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-        this.upload.data = event.target.result;
-      }
+      // reader.onloadend = (event) => { // called once readAsDataURL is completed
+      //   this.url = event.target.result;
+      // }
+      reader.onloadend = function(){
+        var output = document.getElementById('output') as HTMLImageElement;
+        output.src = reader.result.toString();
+      };
 
-      this.onLoadFile.emit(this.upload);
+      // this.onLoadFile.emit(this.upload);
     }
+
+
+  }
+
+  handleUploadFile(){
+    this.onUploadFile.emit(this.upload);
   }
 
 }

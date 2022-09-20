@@ -4,14 +4,17 @@ public class AccountController : BaseApiController
     private readonly UserManager<User> _userManager;
     private readonly TokenService _tokenService;
     private readonly JwtSettings _jwtSettings;
+    private readonly ServerSettings _serverSettings;
     private readonly IStringLocalizer _localizer;
 
     public AccountController(UserManager<User> userManager, TokenService tokenService,
-        IOptions<JwtSettings> jwtSettings, IStringLocalizer<AccountController> localizer)
+        IOptions<JwtSettings> jwtSettings, IOptions<ServerSettings> serverSettings,
+        IStringLocalizer<AccountController> localizer)
     {
         _tokenService = tokenService;
         _userManager = userManager;
         _jwtSettings = jwtSettings.Value;
+        _serverSettings = serverSettings.Value;
         _localizer = localizer;
     }
 
@@ -59,6 +62,46 @@ public class AccountController : BaseApiController
         return StatusCode(201);
     }
 
+    [HttpGet("current-user")]
+    [Authorize]
+    public async Task<ActionResult<UserDto>> GetCurrentUser()
+    {
+        User? user = await GetCurrentLogedInUser();
+        if (user == null) return NotFound();
+
+        user.ImageUrl = _serverSettings.ApiUrl + user.ImageUrl;
+
+        return user.Adapt<UserDto>();
+    }
+
+    [HttpPut("update-profile")]
+    [Authorize]
+    public async Task<ActionResult> UpdateProfile(UpdateProfileDto updateProfileDto)
+    {
+        var currentUserId = User.GetUserId();
+        var user = await _userManager.Users.Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
+        if (user == null) return NotFound();
+        updateProfileDto.Adapt(user);
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to update profile"});
+        return Ok();
+
+    }
+
+    [HttpPut("change-password")]
+    [Authorize]
+    public async Task<ActionResult> ChangePasasword(ChangePasswordRequest changePasswordRequest)
+    {
+        if(changePasswordRequest.Password != changePasswordRequest.ConfirmNewPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
+        var currentUserId = User.GetUserId();
+        var user = await _userManager.Users.Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
+        if (user == null) return NotFound();
+        var result = await _userManager.ChangePasswordAsync(user, changePasswordRequest.Password, changePasswordRequest.NewPassword);
+        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to change password"});
+        return Ok();
+    }
+
+
     [HttpGet("confirm-email")]
     [AllowAnonymous]
     public Task<string> ConfirmEmailAsync([FromQuery] string userId, [FromQuery] string code)
@@ -95,11 +138,17 @@ public class AccountController : BaseApiController
             Email = user.Email,
             FirstName = user.FirstName,
             LastName = user.LastName,
-            ImageUrl = user.ImageUrl,
+            ImageUrl = _serverSettings.ApiUrl + user.ImageUrl,
             IsActive = user.IsActive,
             Token = tokenResponse.Token,
             RefreshToken = tokenResponse.RefreshToken,
             RefreshTokenExpiryTime = tokenResponse.RefreshTokenExpiryTime
         };
+    }
+    private async Task<User?> GetCurrentLogedInUser()
+    {
+        var currentUserId = User.GetUserId();
+        return await _userManager.Users.AsNoTracking()
+            .Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
     }
 }

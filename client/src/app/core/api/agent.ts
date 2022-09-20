@@ -30,6 +30,7 @@ export class Agent {
   loginUser = (login: Login) => this.http.post(this.baseUrl + 'account/login', login);
   refreshToken = (request: RefreshTokenRequest) => this.http.post(this.baseUrl + 'account/refresh-token', request);
   registerUser = (user: User) => this.http.post(this.baseUrl + 'account/register', user);
+  currentUser = () => this.http.get(this.baseUrl + 'account/current-user');
   // confirmEmail = (params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-email', {params: params});
   // confirmPhoneNumber =(params: HttpParams) => this.http.get(this.baseUrl + 'account/confirm-phone-number', {params: params});
   // forgotPassword = (email: string) => this.http.post(this.baseUrl + 'account/forgot-password', email);
@@ -43,6 +44,7 @@ export class Agent {
   deleteUser = (id: string) => this.http.delete(this.baseUrl + 'users/' + id);
   getUserRoles = (id: string) => this.http.get(this.baseUrl + `users/${id}/roles`);
   assignUserRoles = (id: string, request: UserRole[]) => this.http.post(this.baseUrl + `users/${id}/roles`, {userRoles: request});
+  updateUserPhoto = (formData: FormData) => this.http.post(this.baseUrl + 'users/update-photo', formData);
 
   // Role
   getRoles = () => this.http.get(this.baseUrl + 'roles/all');

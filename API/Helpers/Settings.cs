@@ -18,3 +18,8 @@ public class CorsSettings
     public string? Angular { get; set; }
     public string? Flutter { get; set; }
 }
+
+public class ServerSettings
+{
+    public string? ApiUrl { get; set;}
+}

@@ -1,11 +1,10 @@
 export class Upload {
-  fileName: string;
-  extension: string;
+  file: File;
   uploadType: UploadType;
-  data: string | ArrayBuffer;
 }
 
 export enum UploadType {
-  Product,
-  Brand,
+  UserPhoto = 0,
+  Product = 1,
+  Brand = 2,
 }

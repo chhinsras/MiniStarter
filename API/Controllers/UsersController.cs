@@ -5,17 +5,21 @@ public class UsersController : BaseApiController
     private readonly RoleManager<Role> _roleManager;
     private readonly IStringLocalizer _localizer;
     private readonly DataContext _context;
+    private readonly LocalFileStorageService _fileStorageService;
 
     public UsersController(
         UserManager<User> userManager,
         RoleManager<Role> roleManager,
         IStringLocalizer<UsersController> localizer,
-        DataContext context)
+        DataContext context,
+        LocalFileStorageService fileStorageService
+        )
     {
         _userManager = userManager;
         _roleManager = roleManager;
         _localizer = localizer;
         _context = context;
+        _fileStorageService = fileStorageService;
     }
 
     [HttpGet("all")]
@@ -173,6 +177,30 @@ public class UsersController : BaseApiController
         var identityResult = await _userManager.UpdateAsync(user);
         
         return Ok(identityResult);
+    }
+
+    [HttpPost("update-photo")]
+    [Authorize]
+    public async Task<ActionResult<string>> UpdatePhoto([FromForm]FileUploadDto fileUploadDto)
+    {
+        var currentUserId = User.GetUserId();
+
+        var user = await _userManager.Users.SingleOrDefaultAsync(x => x.Id == currentUserId);
+        
+        if (user == null) return NotFound();
+
+        var path = await _fileStorageService.UploadAsync(fileUploadDto);
+        if (!string.IsNullOrEmpty(path))
+        {   
+            if (user.ImageUrl != null) _fileStorageService.Remove(user.ImageUrl, UploadType.UserPhoto);
+            user.ImageUrl = path;
+            await _userManager.UpdateAsync(user);
+            
+            return Ok();
+        } else 
+        {
+            return BadRequest(new ProblemDetails {Title = "Failed uploading image!"});
+        }
     }
 
     [HttpGet("logs")]
