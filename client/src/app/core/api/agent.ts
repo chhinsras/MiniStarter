@@ -24,7 +24,7 @@ export class Agent {
   }
 
   // Auditing
-  getAudits = () => this.http.get<Audit[]>(this.baseUrl + 'auditlogs');
+  getAudits = (params: HttpParams) => getPaginatedResponse<Audit[]>(this.baseUrl + 'auditlogs', params, this.http);
 
   // Account
   loginUser = (login: Login) => this.http.post(this.baseUrl + 'account/login', login);

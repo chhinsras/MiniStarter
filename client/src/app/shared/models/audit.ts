@@ -14,7 +14,7 @@ export class Audit {
 
 export class AuditParams implements PaginatedFilter {
   searchString: string;
-  pageNumber: number;
-  pageSize: number;
+  pageNumber: number = 1;
+  pageSize: number = 5;
   orderBy: string;
 }

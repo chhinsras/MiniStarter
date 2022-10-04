@@ -23,7 +23,9 @@ export class AuditComponent implements OnInit {
   searchString: string;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private auditService: AuditService, private datePipe: DatePipe, public dialog: MatDialog) { }
+  constructor(private auditService: AuditService, private datePipe: DatePipe, public dialog: MatDialog) {
+    this.auditParams = this.auditService.getAuditParams();
+  }
 
   ngOnInit(): void {
     this.getAudits();
@@ -47,7 +49,8 @@ export class AuditComponent implements OnInit {
 
   getAudits(): void {
     this.auditService.getAudits().subscribe((result) => {
-      this.audits = result;
+      this.audits = result.items;
+      this.metaData = result.metaData;
       this.dataSource.data = this.audits.filter(data => (data.timestamp = this.datePipe.transform(data.timestamp, 'MM/dd/yyyy hh:mm:ss a')));
     });
   }
@@ -55,6 +58,7 @@ export class AuditComponent implements OnInit {
   pageChanged(event: PaginatedFilter): void {
     this.auditParams.pageNumber = event.pageNumber;
     this.auditParams.pageSize = event.pageSize;
+    this.auditService.setAuditParams(this.auditParams);
     this.getAudits();
   }
 
