@@ -17,10 +17,10 @@ import { UserRoleFormComponent } from './user-role-form/user-role-form.component
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  users: User[];
+  items: User[];
   metaData: MetaData;
-  userColumns: TableColumn[];
-  userParams = new UserParams();
+  columns: TableColumn[];
+  params = new UserParams();
   searchString: string;
   userRoleActionData: CustomAction = new CustomAction('Manage User Roles');
 
@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
     public dialog: MatDialog,
     public toastr: ToastrService
   ) {
-    this.userParams = this.userService.getUserParams();
+    this.params = this.userService.getParams();
   }
 
   ngOnInit(): void {
@@ -38,15 +38,15 @@ export class UserComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.userService.setUserParams(this.userParams);
-    this.userService.getUsers(this.userParams).subscribe((response) => {
-      this.users = response.items;
+    this.userService.setUserParams(this.params);
+    this.userService.getPaged().subscribe((response) => {
+      this.items = response.items;
       this.metaData = response.metaData;
     });
   }
 
   initColumns(): void {
-    this.userColumns = [
+    this.columns = [
       { name: 'Id', dataKey: 'id', isSortable: true, isShowable: true },
       { name: 'UserName', dataKey: 'userName', isSortable: true, isShowable: true },
       { name: 'FirstName', dataKey: 'firstName', isSortable: true, isShowable: true },
@@ -60,31 +60,31 @@ export class UserComponent implements OnInit {
   }
 
   pageChanged(event: PaginatedFilter): void {
-    this.userParams.pageNumber = event.pageNumber;
-    this.userParams.pageSize = event.pageSize;
-    this.userService.setUserParams(this.userParams);
+    this.params.pageNumber = event.pageNumber;
+    this.params.pageSize = event.pageSize;
+    this.userService.setUserParams(this.params);
     this.getUsers();
   }
 
   remove($event: string): void {
-    this.userService.deleteUser($event).subscribe(() => {
+    this.userService.delete($event).subscribe(() => {
       this.getUsers();
       this.toastr.info('User Removed');
     });
   }
 
   sort($event: Sort): void {
-    this.userParams.orderBy = $event.active + ' ' + $event.direction;
+    this.params.orderBy = $event.active + ' ' + $event.direction;
     this.getUsers();
   }
 
   filter($event: string): void {
-    this.userParams.searchTerm = $event.trim().toLocaleLowerCase();
+    this.params.searchTerm = $event.trim().toLocaleLowerCase();
     this.getUsers();
   }
 
   reload(): void {
-    this.userParams = this.userService.resetUserParams();
+    this.params = this.userService.resetUserParams();
     this.getUsers();
   }
 

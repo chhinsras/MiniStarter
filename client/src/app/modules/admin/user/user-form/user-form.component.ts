@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -59,7 +59,7 @@ export class UserFormComponent implements OnInit {
           this.toastr.success(response);
         })
       } else {
-        this.userService.updateUser(this.userForm.value).subscribe(response => {
+        this.userService.update(this.userForm.value).subscribe(response => {
           this.toastr.success(response);
         })
 

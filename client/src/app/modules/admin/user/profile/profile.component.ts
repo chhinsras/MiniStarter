@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
   }
 
   uploadFile(event) {
-    this.userService.updateUserPhoto(event).subscribe(response => {
+    this.userService.updatePhoto(event).subscribe(response => {
       this.toastrService.success('Updated Photo!');
     });
   }

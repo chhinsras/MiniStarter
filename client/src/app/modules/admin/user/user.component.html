@@ -1,7 +1,7 @@
-<div [hidden]="!users">
+<div [hidden]="!items">
   <app-page-header [title]="'Users'" [subtitle]="'Manage, Register, Update or Remove Users here.'"></app-page-header>
   <app-table
-    [data]="users && users" [columns]="userColumns" (onFilter)="filter($event)"
+    [data]="items && items" [columns]="columns" (onFilter)="filter($event)"
     (onReload)="reload()" (onCreateForm)="openForm()" (onEditForm)="openForm($event)" (onSort)="sort($event)"
     (onDelete)="remove($event)"
     [totalCount]="metaData && metaData.totalCount" [pageSize]="metaData && metaData.pageSize"

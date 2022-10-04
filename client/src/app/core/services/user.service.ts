@@ -11,71 +11,36 @@ import { Upload } from 'src/app/shared/models/upload';
 @Injectable()
 export class UserService {
   baseUrl = environment.apiUrl;
-  userParams: UserParams;
+  params: UserParams;
 
   constructor(private agent: Agent) {
-    this.userParams = new UserParams();
+    this.params = new UserParams();
   }
 
-  getUserParams() {
-    return this.userParams;
-  }
+  getParams = () => this.params;
+  setUserParams = (params: UserParams) => this.params = params;
+  resetUserParams = () => this.params = new UserParams();
 
-  setUserParams(params: UserParams) {
-    this.userParams = params;
-  }
-
-  resetUserParams() {
-    this.userParams = new UserParams();
-    return this.userParams;
-  }
-
-  getUsers(userParams: UserParams){
+  getPaged(){
     let params = new HttpParams();
-    params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
-    if (userParams.searchTerm) params = params.append('searchTerm', userParams.searchTerm);
-    if (userParams.orderBy) params = params.append('orderBy', userParams.orderBy.toString());
-    return this.agent.getUsers(params)
-      .pipe(map(response => {
-        return response;
-      }));
+    params = getPaginationHeaders(this.params.pageNumber, this.params.pageSize);
+    if (this.params.searchTerm) params = params.append('searchTerm', this.params.searchTerm);
+    if (this.params.orderBy) params = params.append('orderBy', this.params.orderBy.toString());
+    return this.agent.getUsers(params).pipe(map(response => response));
   }
 
-  getUserById(id: string): Observable<User> {
-    return this.agent.getUser(id).pipe(map((response: User) => response));
-  }
+  getById = (id: string): Observable<User> => this.agent.getUser(id).pipe(map((response: User) => response));
+  create = (user: User): Observable<User> => this.agent.createUser(user).pipe(map((response: User) => response));
+  update = (User: User): Observable<string> => this.agent.updateUser(User).pipe(map((response: string) => response));
+  delete = (id: string): Observable<string> => this.agent.deleteUser(id).pipe(map((response: string) => response));
 
-  createUser(user: User): Observable<User> {
-    return this.agent
-      .createUser(user)
-      .pipe(map((response: User) => response));
-  }
+  getUserRoles = (id: string): Observable<UserRole[]> => this.agent.getUserRoles(id)
+    .pipe(map((response: UserRole[]) => response));
 
-  updateUser(User: User): Observable<string> {
-    return this.agent
-      .updateUser(User)
-      .pipe(map((response: string) => response));
-  }
+  assignUserRoles = (id: string, request: UserRole[]): Observable<string> => this.agent.assignUserRoles(id, request)
+    .pipe(map((response: string) => response));
 
-  deleteUser(id: string): Observable<string> {
-    return this.agent
-      .deleteUser(id)
-      .pipe(map((response: string) => response));
-  }
-
-  getUserRoles(id: string): Observable<UserRole[]> {
-    return this.agent
-      .getUserRoles(id)
-      .pipe(map((response: UserRole[]) => response));
-  }
-
-  assignUserRoles(id: string, request: UserRole[]): Observable<string> {
-    return this.agent
-      .assignUserRoles(id, request)
-      .pipe(map((response: string) => response));
-  }
-
-  updateUserPhoto(upload: Upload) {
+  updatePhoto(upload: Upload) {
     var formData = new FormData();
     formData.append('file', upload.file);
     formData.append('uploadType', upload.uploadType.toString());
