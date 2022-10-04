@@ -44,6 +44,7 @@ export class AuditComponent implements OnInit {
   }
 
   getAudits(): void {
+    this.auditService.setParams(this.params);
     this.auditService.getPaged().subscribe((result) => {
       this.items = result.items;
       this.metaData = result.metaData;
@@ -54,7 +55,6 @@ export class AuditComponent implements OnInit {
   pageChanged(event: PaginatedFilter): void {
     this.params.pageNumber = event.pageNumber;
     this.params.pageSize = event.pageSize;
-    this.auditService.setParams(this.params);
     this.getAudits();
   }
 
@@ -70,7 +70,6 @@ export class AuditComponent implements OnInit {
     this.params.searchString = $event.trim().toLocaleLowerCase();
     this.params.pageNumber = 0;
     this.params.pageSize = 0;
-    this.auditService.setParams(this.params);
     this.getAudits();
   }
 
