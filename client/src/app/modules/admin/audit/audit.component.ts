@@ -15,16 +15,16 @@ import { AuditLogDetailsComponent } from './audit-log-details/audit-log-details.
   styleUrls: ['./audit.component.scss']
 })
 export class AuditComponent implements OnInit {
-  audits: Audit[];
+  items: Audit[];
   metaData: MetaData;
-  auditColumns: TableColumn[];
-  auditParams = new AuditParams();
+  columns: TableColumn[];
+  params = new AuditParams();
   dataSource = new MatTableDataSource<Audit>([]);
   searchString: string;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private auditService: AuditService, private datePipe: DatePipe, public dialog: MatDialog) {
-    this.auditParams = this.auditService.getAuditParams();
+    this.params = this.auditService.getParams();
   }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class AuditComponent implements OnInit {
   }
 
   initColumns(): void {
-    this.auditColumns = [
+    this.columns = [
       { name: 'Id', dataKey: 'id', isSortable: true, isShowable: true },
       { name: 'User Id', dataKey: 'userId', isSortable: true, isShowable: true },
       { name: 'Table', dataKey: 'tableName', isSortable: true, isShowable: true },
@@ -43,35 +43,34 @@ export class AuditComponent implements OnInit {
     ];
   }
 
-  public reload(): void {
-      this.getAudits();
-  }
-
   getAudits(): void {
-    this.auditService.getAudits().subscribe((result) => {
-      this.audits = result.items;
+    this.auditService.getPaged().subscribe((result) => {
+      this.items = result.items;
       this.metaData = result.metaData;
-      this.dataSource.data = this.audits.filter(data => (data.timestamp = this.datePipe.transform(data.timestamp, 'MM/dd/yyyy hh:mm:ss a')));
+      this.dataSource.data = this.items.filter(data => (data.timestamp = this.datePipe.transform(data.timestamp, 'MM/dd/yyyy hh:mm:ss a')));
     });
   }
 
   pageChanged(event: PaginatedFilter): void {
-    this.auditParams.pageNumber = event.pageNumber;
-    this.auditParams.pageSize = event.pageSize;
-    this.auditService.setAuditParams(this.auditParams);
+    this.params.pageNumber = event.pageNumber;
+    this.params.pageSize = event.pageSize;
+    this.auditService.setParams(this.params);
     this.getAudits();
   }
 
+
+  reload = (): void => this.getAudits();
+
   doSort(sort: Sort): void {
-    this.auditParams.orderBy = sort.active + ' ' + sort.direction;
+    this.params.orderBy = sort.active + ' ' + sort.direction;
     this.getAudits();
   }
 
   public filter($event: string): void {
-
-    this.auditParams.searchString = $event.trim().toLocaleLowerCase();
-    this.auditParams.pageNumber = 0;
-    this.auditParams.pageSize = 0;
+    this.params.searchString = $event.trim().toLocaleLowerCase();
+    this.params.pageNumber = 0;
+    this.params.pageSize = 0;
+    this.auditService.setParams(this.params);
     this.getAudits();
   }
 
