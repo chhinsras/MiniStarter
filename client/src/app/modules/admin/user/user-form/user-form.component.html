@@ -54,10 +54,17 @@
               </mat-form-field>
             </div>
         </div>
+        <div class="row validation-message" *ngIf="validationErrors.length > 0">
+          <ul class="text-danger">
+              <li *ngFor="let error of validationErrors">
+                <mat-error>{{error}}</mat-error>
+              </li>
+          </ul>
+      </div>
       </mat-dialog-content>
       <mat-dialog-actions align="end">
         <button mat-raised-button mat-dialog-close>Cancel</button>
-        <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"
+        <button mat-raised-button cdkFocusInitial color="primary"
           [disabled]="!userForm.dirty || !userForm.valid" type="submit">
           Save
         </button>

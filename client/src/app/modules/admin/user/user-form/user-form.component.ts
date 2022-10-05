@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/models/user';
@@ -23,9 +23,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ])
    ]
 })
+
 export class UserFormComponent implements OnInit {
-  userForm: UntypedFormGroup;
+
+  userForm: FormGroup;
   formTitle: string;
+
+  validationErrors: string[] = [];
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: User, private accountService: AccountService, private userService: UserService, private toastr: ToastrService, private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
@@ -57,14 +62,12 @@ export class UserFormComponent implements OnInit {
       if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
         this.accountService.registerUser(this.userForm.value).subscribe(response => {
           this.toastr.success(response);
-        })
+        }, error => this.validationErrors = error)
       } else {
         this.userService.update(this.userForm.value).subscribe(response => {
           this.toastr.success(response);
-        })
-
+        }, error => this.validationErrors = error)
       }
     }
   }
-
 }
