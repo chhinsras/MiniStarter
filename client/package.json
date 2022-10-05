@@ -27,7 +27,7 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@swimlane/ngx-charts": "^20.1.0",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.2.1",
     "file-saver": "^2.0.5",
     "jspdf": "^2.4.0",
     "jspdf-autotable": "^3.5.23",
