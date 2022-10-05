@@ -32,7 +32,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               break;
           case 401:
             this.toastr.error('Authentication Failure', response.error.title);
-            this.accountService.logout();
+            // this.accountService.logout();
             break;
           case 403:
             this.toastr.error(response.error.title);
