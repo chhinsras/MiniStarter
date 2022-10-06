@@ -3,7 +3,7 @@ public class UsersController : BaseApiController
 {
     private readonly UserManager<User> _userManager;
     private readonly RoleManager<Role> _roleManager;
-    private readonly IStringLocalizer _localizer;
+    private readonly IStringLocalizer<UsersController> _localizer;
     private readonly DataContext _context;
     private readonly LocalFileStorageService _fileStorageService;
 

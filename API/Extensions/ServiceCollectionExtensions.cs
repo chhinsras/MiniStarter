@@ -144,6 +144,7 @@ public static class ServiceCollectionExtensions
         {
             opt.User.RequireUniqueEmail = true;
         })
+            .AddErrorDescriber<MultilanguagesIdentityErrorDescriber>()
             .AddRoles<Role>()
             .AddEntityFrameworkStores<DataContext>();
         var jwtSettings = services.GetOptions<JwtSettings>(nameof(JwtSettings));

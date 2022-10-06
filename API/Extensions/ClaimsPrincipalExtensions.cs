@@ -33,6 +33,11 @@ public static class ClaimsPrincipalExtensions
         DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(
             principal.FindFirstValue(CustomClaimTypes.Expiration)));
 
+    public static bool GetIsAdmin(this ClaimsPrincipal principal)=>
+        throw new NotImplementedException();
+    public static bool GetIsUser(this ClaimsPrincipal principal)=>
+        throw new NotImplementedException();
+
     private static string? FindFirstValue(this ClaimsPrincipal principal, string claimType) =>
         principal is null
             ? throw new ArgumentNullException(nameof(principal))

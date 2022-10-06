@@ -96,3 +96,35 @@ public class JsonStringLocalizerFactory : IStringLocalizerFactory
         new JsonStringLocalizer(_cache);
 }
 
+
+public class MultilanguagesIdentityErrorDescriber : IdentityErrorDescriber
+{
+    private readonly IStringLocalizer<MultilanguagesIdentityErrorDescriber> _localizer;
+
+    public MultilanguagesIdentityErrorDescriber(IStringLocalizer<MultilanguagesIdentityErrorDescriber> localizer)
+    {
+        _localizer = localizer;
+    }
+
+    public override IdentityError DefaultError() => new() { Code = nameof(DefaultError), Description = _localizer["Idenity.DefaultError"] };
+    public override IdentityError ConcurrencyFailure() => new() { Code = nameof(ConcurrencyFailure), Description = _localizer["Idenity.ConcurrencyFailure"] };
+    public override IdentityError PasswordMismatch() => new() { Code = nameof(PasswordMismatch), Description = _localizer["Idenity.PasswordMismatch"] };
+    public override IdentityError InvalidToken() => new() { Code = nameof(InvalidToken), Description = _localizer["Idenity.InvalidToken"] };
+    public override IdentityError LoginAlreadyAssociated() => new() { Code = nameof(LoginAlreadyAssociated), Description = _localizer["Idenity.LoginAlreadyAssociated"] };
+    public override IdentityError InvalidUserName(string userName) => new() { Code = nameof(InvalidUserName), Description =string.Format(_localizer["Identity.InvalidUserName"], userName) };
+    public override IdentityError InvalidEmail(string email) => new() { Code = nameof(InvalidEmail), Description = string.Format(_localizer["Identity.InvalidEmail"], email) };
+    public override IdentityError DuplicateUserName(string userName) => new() { Code = nameof(DuplicateUserName), Description = string.Format(_localizer["Identity.DuplicateUserName"], userName) };
+    public override IdentityError DuplicateEmail(string email) => new() { Code = nameof(DuplicateEmail), Description = string.Format(_localizer["Identity.DuplicateEmail"], email) };
+    public override IdentityError InvalidRoleName(string role) => new() { Code = nameof(InvalidRoleName), Description = string.Format(_localizer["Identity.InvalidRoleName"], role) };
+    public override IdentityError DuplicateRoleName(string role) => new() { Code = nameof(DuplicateRoleName), Description = string.Format(_localizer["Identity.DuplicateRoleName"], role) };
+    public override IdentityError UserAlreadyHasPassword() => new() { Code = nameof(UserAlreadyHasPassword), Description = _localizer["Idenity.UserAlreadyHasPassword"] };
+    public override IdentityError UserLockoutNotEnabled() => new() { Code = nameof(UserLockoutNotEnabled), Description = _localizer["Idenity.UserLockoutNotEnabled"] };
+    public override IdentityError UserAlreadyInRole(string role) => new() { Code = nameof(UserAlreadyInRole), Description = string.Format(_localizer["Identity.UserAlreadyInRole"], role) };
+    public override IdentityError UserNotInRole(string role) => new() { Code = nameof(UserNotInRole), Description = string.Format(_localizer["Identity.UserNotInRole"], role) };
+    public override IdentityError PasswordTooShort(int length) => new() { Code = nameof(PasswordTooShort), Description = string.Format(_localizer["Identity.PasswordTooShort"], length) };
+    public override IdentityError PasswordRequiresNonAlphanumeric() => new() { Code = nameof(PasswordRequiresNonAlphanumeric), Description = _localizer["Idenity.PasswordRequiresNonAlphanumeric"] };
+    public override IdentityError PasswordRequiresDigit() => new() { Code = nameof(PasswordRequiresDigit), Description = _localizer["Idenity.PasswordRequiresDigit"] };
+    public override IdentityError PasswordRequiresLower() => new() { Code = nameof(PasswordRequiresLower), Description = _localizer["Idenity.PasswordRequiresLower"] };
+    public override IdentityError PasswordRequiresUpper() => new() { Code = nameof(PasswordRequiresUpper), Description = _localizer["Idenity.PasswordRequiresUpper"] };
+}
+
