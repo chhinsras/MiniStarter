@@ -41,12 +41,12 @@
       </div>
     </mat-nav-list>
   </mat-sidenav>
-  <div class="page-wrap">
-    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+  <div class="page-wrap" fxLayout="column">
+    <app-toolbar [inputSideNav]="sidenav" ></app-toolbar>
     <div style="height: 1px;">
       <mat-progress-bar *ngIf="busyService.isLoading | async" mode="indeterminate" color="accent"></mat-progress-bar>
     </div>
-    <main class="content">
+    <main class="content" fxFlex>
       <div class="container">
         <mat-card *ngIf="alertIsVisible" class="module-card">
           <mat-card-content>
@@ -59,7 +59,7 @@
         <router-outlet></router-outlet>
       </div>
     </main>
-    <app-footer></app-footer>
+    <app-footer fxFlexOffset="auto"></app-footer>
   </div>
 </mat-sidenav-container>
 

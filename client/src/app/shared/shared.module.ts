@@ -18,6 +18,7 @@ import { DataPropertyGetterPipe } from './pipes/data-property-getter.pipe';
 import { HasPermissionDirective } from './directives/has-permission.directive';
 import { HasRoleDirective } from './directives/has-role.directive';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     FormsModule,
     MaterialModule,
+    FlexLayoutModule,
     TranslateModule,
     GoogleMapsModule,
     NgxChartsModule
@@ -49,6 +51,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
+    FlexLayoutModule,
     HasPermissionDirective,
     HasRoleDirective,
     UploaderComponent,
