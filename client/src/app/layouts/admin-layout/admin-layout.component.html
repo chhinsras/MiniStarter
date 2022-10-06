@@ -1,4 +1,4 @@
-<mat-sidenav-container class='sidenav-container'>
+<mat-sidenav-container class='all-wrap'>
   <mat-sidenav #sidenav class="sidenav" disableClose="false" mode="push">
     <mat-nav-list style="padding-top: 0;">
       <mat-card style="margin-bottom: 0px!important;">
@@ -41,23 +41,25 @@
       </div>
     </mat-nav-list>
   </mat-sidenav>
-  <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
-  <div style="height: 1px;">
-    <mat-progress-bar *ngIf="busyService.isLoading | async" mode="indeterminate" color="accent"></mat-progress-bar>
-  </div>
-  <div class="content">
-    <div class="container">
-      <mat-card *ngIf="alertIsVisible" class="module-card">
-        <mat-card-content>
-          <div class="row" style="align-items: center;">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"><a mat-button color="accent" style="background: rgba(0,0,0,.03)!important;" href="https://opencollective.com/childprotection#category-CONTRIBUTE" target="_blank"> Support childprotection.</a></div>
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="text-align: right;"> <button mat-button color="accent" (click)="hideAlert()">Hide Alert</button></div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-      <router-outlet></router-outlet>
+  <div class="page-wrap">
+    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+    <div style="height: 1px;">
+      <mat-progress-bar *ngIf="busyService.isLoading | async" mode="indeterminate" color="accent"></mat-progress-bar>
     </div>
+    <main class="content">
+      <div class="container">
+        <mat-card *ngIf="alertIsVisible" class="module-card">
+          <mat-card-content>
+            <div class="row" style="align-items: center;">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"><a mat-button color="accent" style="background: rgba(0,0,0,.03)!important;" href="https://opencollective.com/childprotection#category-CONTRIBUTE" target="_blank"> Support childprotection.</a></div>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="text-align: right;"> <button mat-button color="accent" (click)="hideAlert()">Hide Alert</button></div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </mat-sidenav-container>
 
