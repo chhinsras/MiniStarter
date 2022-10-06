@@ -43,7 +43,7 @@
   </mat-sidenav>
   <div class="page-wrap" fxLayout="column">
     <app-toolbar [inputSideNav]="sidenav" ></app-toolbar>
-    <div style="height: 1px;">
+    <div style="height: 1px; z-index: 3;">
       <mat-progress-bar *ngIf="busyService.isLoading | async" mode="indeterminate" color="accent"></mat-progress-bar>
     </div>
     <main class="content" fxFlex>
