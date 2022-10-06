@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Agent } from '../api/agent';
-import { Province } from '../../shared/models/province';
+import { Province } from '../../shared/models/gazetteer';
 
 @Injectable()
 export class GazetteerService {

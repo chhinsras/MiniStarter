@@ -5,13 +5,10 @@ import { environment } from 'src/environments/environment';
 import { getPaginatedResponse } from '../helpers/pagination-helper';
 import { Login } from '../../shared/models/account';
 import { Audit } from '../../shared/models/audit';
-import { Commune } from '../../shared/models/commune';
-import { District } from '../../shared/models/district';
+import { Province, District, Commune, Village } from '../../shared/models/gazetteer';
 import { Permission } from '../../shared/models/permission';
-import { Province } from '../../shared/models/province';
 import { Role } from '../../shared/models/role';
 import { User, UserRole } from '../../shared/models/user';
-import { Village } from '../../shared/models/village';
 
 @Injectable({
   providedIn: 'root'
