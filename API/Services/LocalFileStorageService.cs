@@ -34,7 +34,7 @@ public class LocalFileStorageService
                 {
                     var resizeOptions = new ResizeOptions
                     {
-                        Size = new Size(100, 150),
+                        Size = new Size(200, 300),
                         Mode = ResizeMode.Crop
                     };
                     var img = Image.Load(fileUploadDto.File.OpenReadStream());
