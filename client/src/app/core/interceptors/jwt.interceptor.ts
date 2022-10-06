@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AccountService} from '../services/account.service';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private localStorageService: LocalStorageService) {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -19,7 +20,11 @@ export class JwtInterceptor implements HttpInterceptor {
   private addToken(request: HttpRequest<any>) {
     if (this.accountService.isAuthenticated) {
       const localToken = this.accountService.getToken;
-      request = request.clone({setHeaders: {'Authorization': `Bearer ${localToken}`}});
+      request = request.clone({headers: new HttpHeaders({
+        'Authorization': `Bearer ${localToken}`,
+        'Accept-Language': this.getLanguageForServer()
+      })
+    });
     }
     return request;
   }
@@ -40,5 +45,19 @@ export class JwtInterceptor implements HttpInterceptor {
         this.accountService.tryRefreshingToken();
       }
     }
+  }
+
+  private getLanguageForServer(): string {
+    var locale = this.localStorageService.getItem('locale') ?? 'en';
+    var localeForServer = 'en-EN';
+    switch (locale) {
+      case 'km':
+        localeForServer = 'km-KH'
+        break;
+      default:
+        localeForServer = 'en-EN'
+        break;
+    }
+    return localeForServer;
   }
 }
