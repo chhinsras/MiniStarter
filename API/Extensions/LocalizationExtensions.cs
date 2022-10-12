@@ -7,7 +7,7 @@ public static class LocalizationExtensions
 {
     public static IServiceCollection AddLocalization(this IServiceCollection services, IConfiguration config)
     {
-        services.AddLocalization(options => options.ResourcesPath = $"Localization/");
+        services.AddLocalization(options => options.ResourcesPath = $"Documents/Resources/");
 
         services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 

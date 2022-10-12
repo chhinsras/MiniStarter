@@ -31,7 +31,7 @@ public class JsonStringLocalizer : IStringLocalizer
     }
     public IEnumerable<LocalizedString> GetAllStrings(bool includeParentCultures)
     {
-        string filePath = $"Localization/{Thread.CurrentThread.CurrentCulture.Name}.json";
+        string filePath = $"Documents/Resources/{Thread.CurrentThread.CurrentCulture.Name}.json";
         using (var str = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
         using (var sReader = new StreamReader(str))
         using (var reader = new JsonTextReader(sReader))
@@ -49,7 +49,7 @@ public class JsonStringLocalizer : IStringLocalizer
     }
     private string GetString(string key)
     {
-        string relativeFilePath = $"Localization/{Thread.CurrentThread.CurrentCulture.Name}.json";
+        string relativeFilePath = $"Documents/Resources/{Thread.CurrentThread.CurrentCulture.Name}.json";
         string fullFilePath = Path.GetFullPath(relativeFilePath);
         if (File.Exists(fullFilePath))
         {
