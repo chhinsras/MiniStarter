@@ -22,18 +22,18 @@ public sealed class GazetteersController : BaseApiController
 
     [HttpGet("provinces/{code}")]
     [MustHavePermission(Permissions.Provinces.View)]
-    public async Task<IActionResult> GetProvinceByCode(int code)
+    public async Task<ActionResult<ProvinceDto>> GetProvinceByCode(int code)
     { 
         var model = await _context.Provinces.Where(x => x.Code == code).SingleOrDefaultAsync();
         if (model == null) return NotFound();
-        return Ok(model.Adapt<List<AuditDto>>());
+        return Ok(model.Adapt<ProvinceDto>());
     }
 
     [HttpPost("provinces")]
     [MustHavePermission(Permissions.Provinces.Create)]
     public async Task<ActionResult> CreateProvince([FromBody] ProvinceDto provinceDto)
     {
-        var model = await _context.Provinces.SingleOrDefaultAsync(x => x.Code == provinceDto.Code);
+        var model = await _context.Provinces.AsNoTracking().SingleOrDefaultAsync(x => x.Code == provinceDto.Code);
         if (model != null) return BadRequest(new ProblemDetails { Title = _localizer["Entity.AlreadyExisted"]});
         model = provinceDto.Adapt<Province>();
         await _context.AddAsync(model);
@@ -45,7 +45,7 @@ public sealed class GazetteersController : BaseApiController
     [MustHavePermission(Permissions.Provinces.Edit)]
     public async Task<ActionResult> UpdateProvince([FromBody] ProvinceDto provinceDto)
     {
-        var model = await _context.Provinces.SingleOrDefaultAsync(x => x.Code == provinceDto.Code);
+        var model = await _context.Provinces.AsNoTracking().SingleOrDefaultAsync(x => x.Code == provinceDto.Code);
         if (model == null) return NotFound();
         model = provinceDto.Adapt<Province>();
         _context.Update(model);
