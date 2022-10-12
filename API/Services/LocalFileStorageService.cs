@@ -12,7 +12,7 @@ public class LocalFileStorageService
             {
                 string folder = fileUploadDto.UploadType.ToDescriptionString();
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) folder = folder.Replace(@"\", "/");
-                string folderName = Path.Combine("Files", folder);
+                string folderName = Path.Combine("Documents", folder);
                 string pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 bool exists = Directory.Exists(pathToSave);
                 if (!exists)
