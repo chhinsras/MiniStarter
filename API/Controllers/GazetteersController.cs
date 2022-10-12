@@ -2,9 +2,12 @@ namespace API.Controllers;
 public sealed class GazetteersController : BaseApiController
 {
     private readonly DataContext _context;
-    public GazetteersController(DataContext context)
+    private readonly IStringLocalizer<GazetteersController> _localizer;
+
+    public GazetteersController(DataContext context, IStringLocalizer<GazetteersController> localizer)
     {
         _context = context;
+        _localizer = localizer;
     }
 
     #region Province Endpoints
@@ -31,10 +34,10 @@ public sealed class GazetteersController : BaseApiController
     public async Task<ActionResult> CreateProvince([FromBody] ProvinceDto provinceDto)
     {
         var model = await _context.Provinces.SingleOrDefaultAsync(x => x.Code == provinceDto.Code);
-        if (model != null) return BadRequest(new ProblemDetails { Title = "Province code is already existed"});
+        if (model != null) return BadRequest(new ProblemDetails { Title = _localizer["Entity.AlreadyExisted"]});
         model = provinceDto.Adapt<Province>();
         await _context.AddAsync(model);
-        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails {Title = "Problem saving item" });
+        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails {Title = _localizer["Entity.FailedCreate"] });
         return Ok();
     }
 
@@ -46,7 +49,7 @@ public sealed class GazetteersController : BaseApiController
         if (model == null) return NotFound();
         model = provinceDto.Adapt<Province>();
         _context.Update(model);
-        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails { Title = "Problem updating item"});
+        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails { Title = _localizer["Entity.FailedUpdate"]});
         return Ok();
     }
 
@@ -57,7 +60,7 @@ public sealed class GazetteersController : BaseApiController
         var model = await _context.Provinces.SingleOrDefaultAsync(x => x.Code == code);
         if (model == null) return NotFound();
         _context.Remove(model);
-        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails { Title = "Problem deleting item"});
+        if (await _context.SaveChangesAsync() == 0) return BadRequest(new ProblemDetails { Title = _localizer["Entity.FailedDelete"]});
         return Ok();
     }
     #endregion
