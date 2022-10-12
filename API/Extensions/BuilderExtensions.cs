@@ -25,8 +25,8 @@ public static class BuilderExtensions
         app.UseStaticFiles(new StaticFileOptions
         {
             FileProvider = new PhysicalFileProvider2(
-                Path.Combine(Directory.GetCurrentDirectory(), "Files")
-            ), RequestPath = "/files"
+                Path.Combine(Directory.GetCurrentDirectory(), "Documents")
+            ), RequestPath = "/documents"
         });
 
         app.PreparePuppeteerAsync(app.Environment).GetAwaiter().GetResult();
