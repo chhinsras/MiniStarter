@@ -28,6 +28,7 @@ export class UserFormComponent implements OnInit {
 
   userForm: FormGroup;
   formTitle: string;
+  editMode = false;
 
   validationErrors: string[] = [];
 
@@ -46,12 +47,15 @@ export class UserFormComponent implements OnInit {
       email: [this.data && this.data.email, Validators.required],
       password: [this.data && this.data.password],
       confirmPassword: [this.data && this.data.confirmPassword],
-      phoneNumber: [this.data && this.data.phoneNumber, Validators.required]
+      phoneNumber: [this.data && this.data.phoneNumber, Validators.required],
+      isActive: [this.data && this.data.isActive]
     });
     if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
+      this.editMode = false;
       this.formTitle = "Add User";
     }
     else {
+      this.editMode = true;
       this.formTitle = "Edit User";
       console.log(this.userForm.get('password'));
     }
@@ -60,12 +64,13 @@ export class UserFormComponent implements OnInit {
   onSubmit() {
     if (this.userForm.valid) {
       if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
-        this.accountService.registerUser(this.userForm.value).subscribe(response => {
-          this.toastr.success(response);
+        this.userService.create(this.userForm.value).subscribe(response => {
+          this.toastr.success("Succesfully");
         }, error => this.validationErrors = error)
       } else {
         this.userService.update(this.userForm.value).subscribe(response => {
           this.toastr.success(response);
+          this.toastr.success("Succesfully");
         }, error => this.validationErrors = error)
       }
     }

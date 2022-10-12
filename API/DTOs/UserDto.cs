@@ -33,6 +33,8 @@ namespace API.DTOs
         public bool IsActive { get; set; } 
     }
 
+    public record CreateUserDto([Required]string UserName, [Required]string FirstName, [Required]string LastName,
+                [Required]string Password, [Required]string ConfirmPassword, [Required][EmailAddress]string Email, [Required]string PhoneNumber);
     public record ForceChangePassword([Required] int Id, [Required] string Password, [Required] string ConfirmPassword);
     public record ToggleUserStatusRequest([Required] bool ActivateUser, [Required] int UserId);
 

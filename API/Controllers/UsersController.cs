@@ -103,6 +103,31 @@ public class UsersController : BaseApiController
         return permissions.Distinct().ToList();
     }
 
+    [HttpPost]
+    [MustHavePermission(Permissions.Users.Create)]
+    public async Task<ActionResult> Create(CreateUserDto createUserDto)
+    {
+        if (createUserDto.UserName.Length < 4 || createUserDto.UserName.Length > 10) {
+            ModelState.AddModelError("Validation", "UserName must be between 4 and 10 characters"); return ValidationProblem();
+        }
+        if (createUserDto.Password != createUserDto.ConfirmPassword){ 
+            ModelState.AddModelError("Validation", "Password mismatch"); return ValidationProblem();
+        }    
+        var user = createUserDto.Adapt<User>();
+        user.IsActive = true;
+        var result = await _userManager.CreateAsync(user);
+
+        if (!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.Code, error.Description);
+            }
+            return ValidationProblem();
+        }
+        return Ok();
+    }
+
     [HttpPut]
     [MustHavePermission(Permissions.Users.Update)]
     public async Task<ActionResult> UpdateUser(UserDetailDto userToUpdateDto)
@@ -111,7 +136,14 @@ public class UsersController : BaseApiController
         if (user == null) return NotFound();
         userToUpdateDto.Adapt(user);
         var result = await _userManager.UpdateAsync(user);
-        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to update user"});
+         if (!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.Code, error.Description);
+            }
+            return ValidationProblem();
+        }
         return Ok();
     }
 
