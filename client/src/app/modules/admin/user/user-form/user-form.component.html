@@ -61,6 +61,10 @@
               </li>
           </ul>
       </div>
+      <!-- <div>
+        <p>Form value: {{ userForm.value | json }}</p>
+        <p>Form status: {{ userForm.status | json }}</p>
+      </div> -->
       </mat-dialog-content>
       <mat-dialog-actions align="end">
         <button mat-raised-button mat-dialog-close>Cancel</button>
@@ -110,20 +114,6 @@
                     <mat-error>Please provide a valid email </mat-error>
                   </mat-form-field>
                 </div>
-                <div class="col-xs-12 col-md-6" hidden="formTitle='Edit User'">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input autocomplete="off" required="formTitle='!Edit User'" formControlName="password" matInput placeholder="Password" type="password">
-                    <mat-error>Please provide a valid password</mat-error>
-                  </mat-form-field>
-                </div>
-                <div class="col-xs-12 col-md-6" hidden="formTitle='Edit User'">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Confirm Password</mat-label>
-                    <input autocomplete="off" required="formTitle ='!Edit User" formControlName="confirmPassword" matInput placeholder="ConfirmPassword" type="password">
-                    <mat-error>Please provide a valid confirm password</mat-error>
-                  </mat-form-field>
-                </div>
                 <div class="col-xs-12 col-md-6">
                   <mat-form-field appearance="outline">
                     <mat-label>Phone Number</mat-label>
@@ -135,12 +125,28 @@
                     <mat-error>Please provide a valid phone number</mat-error>
                   </mat-form-field>
                 </div>
+                <div class="col-12">
+                  <mat-slide-toggle
+                    formControlName="isActive" color="primary"> Is Active
+                </mat-slide-toggle>
+                </div>
+                <div class="row validation-message" *ngIf="validationErrors.length > 0">
+                  <ul class="text-danger">
+                      <li *ngFor="let error of validationErrors">
+                        <mat-error>{{error}}</mat-error>
+                      </li>
+                  </ul>
+              </div>
+              <!-- <div>
+                <p>Form value: {{ userForm.value | json }}</p>
+                <p>Form status: {{ userForm.status | json }}</p>
+              </div> -->
             </div>
           </mat-dialog-content>
           <mat-dialog-actions align="end">
             <button mat-raised-button mat-dialog-close>Cancel</button>
-            <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary"
-              [disabled]="!userForm.dirty || !userForm.valid" type="submit">
+            <button mat-raised-button cdkFocusInitial color="primary"
+            [disabled]="!userForm.dirty || !userForm.valid" type="submit">
               Save
             </button>
           </mat-dialog-actions>
