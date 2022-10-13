@@ -208,7 +208,7 @@ public sealed class GazetteersController : BaseApiController
     public async Task<ActionResult<List<VillageDto>>> GetAllVillagesByCommune(int communeCode)
     {
         var modelList = await _context.Villages.Where(x => x.CommuneCode == communeCode).ToListAsync();
-        return Ok(modelList.Adapt<List<DistrictDto>>());
+        return Ok(modelList.Adapt<List<VillageDto>>());
     }
 
     [HttpGet("villages/{code}")]
