@@ -20,6 +20,7 @@ import { SettingComponent } from './setting/setting.component';
 import { AuditComponent } from './audit/audit.component';
 import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-details.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { GazetteerComponent } from './gazetteer/gazetteer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProfileComponent } from './user/profile/profile.component';
     RolePermissionFormComponent,
     SettingComponent,
     AuditComponent,
-    AuditLogDetailsComponent
+    AuditLogDetailsComponent,
+    GazetteerComponent
   ],
   imports: [
     CommonModule,
