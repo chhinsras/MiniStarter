@@ -2,9 +2,9 @@ namespace API.Controllers;
 public sealed class GazetteersController : BaseApiController
 {
     private readonly DataContext _context;
-    private readonly StringLocalizer<GazetteersController> _localizer;
+    private readonly IStringLocalizer<GazetteersController> _localizer;
 
-    public GazetteersController(DataContext context, StringLocalizer<GazetteersController> localizer)
+    public GazetteersController(DataContext context, IStringLocalizer<GazetteersController> localizer)
     {
         _context = context;
         _localizer = localizer;

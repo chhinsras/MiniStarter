@@ -125,6 +125,7 @@ public static class ServiceCollectionExtensions
             {
                 options.UseNpgsql(connectionString);
             }
+            // options.UseLazyLoadingProxies();
         });
 
         using var scope = services.BuildServiceProvider().CreateScope();
