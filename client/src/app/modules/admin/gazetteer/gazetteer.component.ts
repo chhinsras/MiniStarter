@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -16,6 +17,7 @@ import { MetaData } from 'src/app/shared/models/pagination';
 export class GazetteerComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild('provinceFilterMenuTrigger') provinceFilterMenuTrigger: MatMenuTrigger;
 
   items = new MatTableDataSource<Province>();
   metaData: MetaData;
@@ -48,7 +50,10 @@ export class GazetteerComponent implements OnInit {
   onEdit($event) {}
   onDelete($event) {}
   onReload() {}
-  onFilter() {}
+  onFilter() {
+
+  }
+  onSearch() {}
   onSort($event) {}
 
 

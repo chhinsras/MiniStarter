@@ -10,13 +10,38 @@
             <a class="mr-6" mat-raised-button color="accent" (click)="onReload()">
                 <mat-icon>refresh</mat-icon>{{'components.table.reload'|translate}}
             </a>
+            <a class="mr-6" mat-button mat-stroked-button #menuTrigger [matMenuTriggerFor]="provinceMenu" (click)="onFilter()">
+              <mat-icon>filter_list</mat-icon>{{'components.table.filter'|translate}}
+            </a>
+            <div (click)="$event.stopPropagation()">
+              <mat-menu [hasBackdrop]="false" #provinceMenu="matMenu" style="width: 200px; height:200px">
+                <div  class="filter-wrapper">
+                  <div>
+                    <h4>Filter</h4>
+                    <div >
+                      <mat-form-field appearance="outline">
+                        <mat-label>Type me</mat-label>
+                        <mat-select>
+                          <mat-option value="province">Province</mat-option>
+                          <mat-option value="capital">Capital</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div fxLayoutAlign="end">
+                    <button mat-raised-button> Cancel</button>
+                    <button mat-raised-button color="primary">Apply</button>
+                  </div>
+                </div>
+              </mat-menu>
+            </div>
           </span>
       </div>
 
       <div class="right">
           <mat-form-field appearance="outline">
               <input matInput [(ngModel)]="searchString" name="searchString" type="text" autocomplete="off"
-                  (keyup)="onFilter()" placeholder="{{'components.table.filter'|translate}} {{ 'Address' | translate}}" />
+                  (keyup)="onSearch()" placeholder="{{'components.table.search'|translate}} {{ 'Address' | translate}}" />
               <mat-icon matSuffix>search</mat-icon>
           </mat-form-field>
       </div>
@@ -70,3 +95,5 @@
 
   </mat-card>
 <!-- </div> -->
+
+
