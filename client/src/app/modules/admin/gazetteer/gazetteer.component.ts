@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatMenuTrigger } from '@angular/material/menu';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,16 +13,16 @@ import { MetaData } from 'src/app/shared/models/pagination';
   styleUrls: ['./gazetteer.component.scss']
 })
 
-export class GazetteerComponent implements OnInit {
+export class GazetteerComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild('provinceFilterMenuTrigger') provinceFilterMenuTrigger: MatMenuTrigger;
 
   items = new MatTableDataSource<Province>();
   metaData: MetaData;
   columns: string[] = ['type', 'code', 'nameKH', 'nameEN', 'action'];
 
   searchString: string;
+  isOpen = false;
 
   ngAfterViewInit() {
     this.items.paginator = this.paginator;
@@ -55,6 +54,5 @@ export class GazetteerComponent implements OnInit {
   }
   onSearch() {}
   onSort($event) {}
-
 
 }

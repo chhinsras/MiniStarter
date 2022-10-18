@@ -327,3 +327,19 @@ tr.mat-footer-row {
 .validation-message ul {
   list-style-type: none;
 }
+
+.filter-wrapper {
+  padding: 12px;
+  background-color: white;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dark-theme .filter-wrapper {
+  padding: 12px;
+  background-color: #424242;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
