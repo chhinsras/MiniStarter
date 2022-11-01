@@ -27,10 +27,9 @@ export class AppComponent {
   }
 
   loadCurrentUser() {
-    this.accountService.loadCurrentUser()
-      .subscribe(() => {
-      }, error => {
-        console.log(error);
-      });
+    this.accountService.loadCurrentUser().subscribe({
+      next:() => {},
+      error:(err) => console.log(err)
+    });
   }
 }

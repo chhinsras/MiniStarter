@@ -64,14 +64,18 @@ export class UserFormComponent implements OnInit {
   onSubmit() {
     if (this.userForm.valid) {
       if (this.userForm.get('id').value === "" || this.userForm.get('id').value == null) {
-        this.userService.create(this.userForm.value).subscribe(response => {
-          this.toastr.success("Succesfully");
-        }, error => this.validationErrors = error)
+        this.userService.create(this.userForm.value).subscribe({
+          next: (response) => this.toastr.success("Succesfully"),
+          error: (error) => this.validationErrors = error
+        })
       } else {
-        this.userService.update(this.userForm.value).subscribe(response => {
-          this.toastr.success(response);
-          this.toastr.success("Succesfully");
-        }, error => this.validationErrors = error)
+        this.userService.update(this.userForm.value).subscribe({
+          next: (response) => {
+            this.toastr.success(response)
+            this.toastr.success("Succesfully")
+          },
+          error: (error) => this.validationErrors = error
+        })
       }
     }
   }

@@ -46,8 +46,10 @@ export class LoginComponent implements OnInit {
     this.loginForm.disable()
     this.accountService.login(this.loginForm.value)
       .pipe(filter(result => result !== null))
-      .subscribe(() => this.router.navigateByUrl(this.returnUrl),
-        error => { console.log(error); this.loginForm.enable();  }).add(()=>this.isBeingLoggedIn = false);
+      .subscribe({
+        next: () => this.router.navigateByUrl(this.returnUrl),
+        error: (error) => {console.log(error); this.loginForm.enable();}
+      }).add(()=>this.isBeingLoggedIn = false);
   }
 
   fillSuperAdminCredentials() {
