@@ -24,6 +24,8 @@ export class UserComponent implements OnInit {
   searchString: string;
   userRoleActionData: CustomAction = new CustomAction('Manage User Roles');
 
+  onlineUserCount: number;
+
   constructor(
     public userService: UserService,
     public dialog: MatDialog,
@@ -58,6 +60,7 @@ export class UserComponent implements OnInit {
       { name: 'Action', dataKey: 'action', position: 'right' },
     ];
   }
+
 
   pageChanged(event: PaginatedFilter): void {
     this.params.pageNumber = event.pageNumber;

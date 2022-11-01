@@ -1,25 +1,60 @@
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
 import { getPaginationHeaders } from '../helpers/pagination-helper';
 import { User, UserParams, UserRole } from '../../shared/models/user';
 import { Upload } from 'src/app/shared/models/upload';
+import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 
 @Injectable()
 export class UserService {
   baseUrl = environment.apiUrl;
+  hubUrl = environment.hubUrl;
+
+  private hubConnection: HubConnection
+
   params: UserParams;
 
-  constructor(private agent: Agent) {
+  private userOnlineCountSource = new BehaviorSubject<number>(0);
+  public userOnlineCount$ = this.userOnlineCountSource.asObservable();
+
+  constructor(private agent: Agent, private localStorageService: LocalStorageService) {
     this.params = new UserParams();
   }
 
   getParams = () => this.params;
   setUserParams = (params: UserParams) => this.params = params;
   resetUserParams = () => this.params = new UserParams();
+
+
+  createHubConnection() {
+    var accessToken = this.localStorageService.getItem('token') ?? null;
+    this.hubConnection = new HubConnectionBuilder()
+      .withUrl(this.hubUrl + 'onlineusercount', {
+        accessTokenFactory: () => accessToken
+      })
+      .withAutomaticReconnect()
+      .build();
+
+    this.hubConnection
+      .start()
+      .catch(error => console.log(error));
+
+    this.hubConnection.on('UpdateOnlineCount', userOnlineCount => {
+      this.userOnlineCount$ = userOnlineCount;
+      console.log(userOnlineCount);
+    });
+  }
+
+  stopHubConnection() {
+    this.hubConnection
+      .start()
+      .catch(error => console.log(error));
+  }
 
   getPaged(){
     let params = new HttpParams();
