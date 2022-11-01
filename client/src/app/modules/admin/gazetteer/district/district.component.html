@@ -1,32 +1,5 @@
 <!-- <div [hidden]="!items"> -->
   <app-page-header [title]="'Gazetteer'" [subtitle]="'Manage address here.'"></app-page-header>
-  <div *ngIf="this.gazetteerStats" fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="flex-start">
-    <mat-card class="stat-card" fxFlex="1 0 auto">
-    <mat-card-content>
-        <h1 class="stat-number">{{this.gazetteerStats.provinceStat}}</h1>
-      <mat-card-footer>Province</mat-card-footer>
-      </mat-card-content>
-    </mat-card>
-     <mat-card class="stat-card" fxFlex="1 0 auto">
-      <mat-card-content>
-       <h1 class="stat-number">{{this.gazetteerStats.districtStat}}</h1>
-       <mat-card-footer>District</mat-card-footer>
-     </mat-card-content>
-   </mat-card>
-   <mat-card class="stat-card" fxFlex="1 0 auto">
-    <mat-card-content>
-      <h1 class="stat-number">{{this.gazetteerStats.communeStat}}</h1>
-    <mat-card-footer>Commune</mat-card-footer>
-    </mat-card-content>
-  </mat-card>
-   <mat-card class="stat-card" fxFlex="1 0 auto">
-    <mat-card-content>
-     <h1 class="stat-number">{{this.gazetteerStats.villageStat}}</h1>
-     <mat-card-footer>Village</mat-card-footer>
-   </mat-card-content>
- </mat-card>
-  </div>
-
   <mat-card class="module-card">
     <div class="panel-content">
       <div class="left">
@@ -37,32 +10,6 @@
             <a class="mr-6" mat-raised-button color="accent" (click)="onReload()">
                 <mat-icon>refresh</mat-icon>{{'components.table.reload'|translate}}
             </a>
-            <a class="mr-6" mat-button mat-stroked-button
-            (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
-            >
-              <mat-icon>filter_list</mat-icon>{{'components.table.filter'|translate}}
-            </a>
-
-            <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
-              <div class="filter-wrapper mat-elevation-z2" >
-                <div>
-                  <h4>Filter</h4>
-                  <div >
-                    <mat-form-field appearance="outline">
-                      <mat-label>Type me</mat-label>
-                      <mat-select>
-                        <mat-option value="province">Province</mat-option>
-                        <mat-option value="capital">Capital</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div fxLayoutAlign="end">
-                  <button mat-raised-button (click)="isOpen = !isOpen"> Cancel</button>
-                  <button mat-raised-button color="primary">Apply</button>
-                </div>
-              </div>
-            </ng-template>
           </span>
       </div>
 
@@ -99,7 +46,7 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef class="text-right"> Action </th>
       <td mat-cell *matCellDef="let element"  class="text-right">
-        <a matTooltip="{{'components.table.view' | translate}}" mat-raised-button color="primary" routerLink="district/{{element.code}}">
+        <a matTooltip="{{'components.table.view' | translate}}" mat-raised-button color="primary">
           <mat-icon>remove_red_eye</mat-icon>
         </a>
         <button matTooltip="{{'components.table.edit' | translate}}" mat-raised-button color="accent" (click)="onEdit(element)">

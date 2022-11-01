@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Agent } from '../api/agent';
-import { Province } from '../../shared/models/gazetteer';
+import { District, Province } from '../../shared/models/gazetteer';
 
 @Injectable()
 export class GazetteerService {
@@ -39,4 +39,8 @@ export class GazetteerService {
       .deleteProvince(code)
       .pipe(map((response: string) => response));
   }
+
+  getDistrictByProvince = (provinceCode: number): Observable<District[]>  =>
+    this.agent.getDistrictsByProvince(provinceCode).pipe(map((response: District[]) => response));
+
 }

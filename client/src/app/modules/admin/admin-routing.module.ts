@@ -1,3 +1,4 @@
+import { DistrictComponent } from './gazetteer/district/district.component';
 import { TestErrorsComponent } from './test-errors/test-errors.component';
 import { UserComponent } from './user/user.component';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'roles', component: RoleComponent },
   { path: 'settings', component: SettingComponent},
   { path: 'audits', component: AuditComponent},
-  { path: 'gazetteer', component: GazetteerComponent}
+  { path: 'gazetteer', component: GazetteerComponent},
+  { path: 'gazetteer/district/:provinceCode', component: DistrictComponent}
 ];
 
 @NgModule({

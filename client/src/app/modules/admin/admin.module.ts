@@ -21,6 +21,7 @@ import { AuditComponent } from './audit/audit.component';
 import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-details.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { GazetteerComponent } from './gazetteer/gazetteer.component';
+import { DistrictComponent } from './gazetteer/district/district.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { GazetteerComponent } from './gazetteer/gazetteer.component';
     SettingComponent,
     AuditComponent,
     AuditLogDetailsComponent,
-    GazetteerComponent
+    GazetteerComponent,
+    DistrictComponent
   ],
   imports: [
     CommonModule,
