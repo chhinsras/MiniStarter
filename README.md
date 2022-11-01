@@ -30,7 +30,7 @@
 - [x] Pagination with Response Header
 - [ ] Hangfire Support
 - [x] File Storage Service
-- [ ] SignalR
+- [x] SignalR
 - [x] Puppeteer (PDF Download via html)
 - [x] Dynamic Mapping
   - [x] Mapster (quick mapping) 
@@ -51,6 +51,7 @@
 - [x] JSON Localization
 - [x] Http Interceptor
 - [x] Dynamic Spinner
+- [x] SignalR Client
 
 
 ## Flutter 
