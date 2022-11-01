@@ -22,6 +22,8 @@ import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-de
 import { ProfileComponent } from './user/profile/profile.component';
 import { GazetteerComponent } from './gazetteer/gazetteer.component';
 import { DistrictComponent } from './gazetteer/district/district.component';
+import { CommuneComponent } from './gazetteer/commune/commune.component';
+import { VillageComponent } from './gazetteer/village/village.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { DistrictComponent } from './gazetteer/district/district.component';
     AuditComponent,
     AuditLogDetailsComponent,
     GazetteerComponent,
-    DistrictComponent
+    DistrictComponent,
+    CommuneComponent,
+    VillageComponent
   ],
   imports: [
     CommonModule,

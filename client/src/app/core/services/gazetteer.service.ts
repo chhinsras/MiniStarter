@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Agent } from '../api/agent';
-import { District, Province } from '../../shared/models/gazetteer';
+import { Commune, District, Province, Village } from '../../shared/models/gazetteer';
 
 @Injectable()
 export class GazetteerService {
@@ -40,7 +40,13 @@ export class GazetteerService {
       .pipe(map((response: string) => response));
   }
 
-  getDistrictByProvince = (provinceCode: number): Observable<District[]>  =>
+  getDistrictsByProvince = (provinceCode: number): Observable<District[]>  =>
     this.agent.getDistrictsByProvince(provinceCode).pipe(map((response: District[]) => response));
+
+  getCommunesByDistrict = (districtCode: number): Observable<Commune[]> =>
+    this.agent.getCommunesByDistrict(districtCode).pipe(map((response: Commune[]) => response));
+
+  getVillagesByDistrict = (communeCode: number): Observable<Village[]> =>
+  this.agent.getVillagesByCommune(communeCode).pipe(map((response: Village[]) => response));
 
 }

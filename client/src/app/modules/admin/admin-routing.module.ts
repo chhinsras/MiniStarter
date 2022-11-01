@@ -1,3 +1,5 @@
+import { VillageComponent } from './gazetteer/village/village.component';
+import { CommuneComponent } from './gazetteer/commune/commune.component';
 import { DistrictComponent } from './gazetteer/district/district.component';
 import { TestErrorsComponent } from './test-errors/test-errors.component';
 import { UserComponent } from './user/user.component';
@@ -22,7 +24,9 @@ const routes: Routes = [
   { path: 'settings', component: SettingComponent},
   { path: 'audits', component: AuditComponent},
   { path: 'gazetteer', component: GazetteerComponent},
-  { path: 'gazetteer/district/:provinceCode', component: DistrictComponent}
+  { path: 'gazetteer/district/:provinceCode', component: DistrictComponent},
+  { path: 'gazetteer/district/:provinceCode/commune/:districtCode', component: CommuneComponent},
+  { path: 'gazetteer/district/:provinceCode/commune/:districtCode/village/:communeCode', component: VillageComponent}
 ];
 
 @NgModule({

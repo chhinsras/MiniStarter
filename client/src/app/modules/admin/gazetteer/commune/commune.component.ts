@@ -1,4 +1,4 @@
-import { District } from './../../../../shared/models/gazetteer';
+import { District, Commune } from './../../../../shared/models/gazetteer';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -9,17 +9,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-district',
-  templateUrl: './district.component.html',
-  styleUrls: ['./district.component.scss']
+  selector: 'app-commune',
+  templateUrl: './commune.component.html',
+  styleUrls: ['./commune.component.scss']
 })
-export class DistrictComponent implements OnInit {
+export class CommuneComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  provinceCode: number;
+  districtCode: number;
 
-  items = new MatTableDataSource<District>();
+  items = new MatTableDataSource<Commune>();
   metaData: MetaData;
   columns: string[] = ['type', 'code', 'nameKH', 'nameEN', 'action'];
 
@@ -35,15 +35,15 @@ export class DistrictComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.provinceCode = Number(this.route.snapshot.paramMap.get('provinceCode'));
-    if (this.provinceCode) this.getItems();
+    this.districtCode = Number(this.route.snapshot.paramMap.get('districtCode'));
+    if (this.districtCode) this.getItems();
     // this.gazetteerService.getStats().subscribe(response => this.gazetteerStats = response);
 
   }
 
   getItems() {
-    this.gazetteerService.getDistrictsByProvince(this.provinceCode).subscribe((result) => {
-      this.items = new MatTableDataSource<District>(result);
+    this.gazetteerService.getCommunesByDistrict(this.districtCode).subscribe((result) => {
+      this.items = new MatTableDataSource<Commune>(result);
       this.items.paginator = this.paginator;
       this.items.sort = this.sort;
     });

@@ -1,4 +1,4 @@
-import { District } from './../../../../shared/models/gazetteer';
+import { Village } from './../../../../shared/models/gazetteer';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -9,17 +9,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-district',
-  templateUrl: './district.component.html',
-  styleUrls: ['./district.component.scss']
+  selector: 'app-village',
+  templateUrl: './village.component.html',
+  styleUrls: ['./village.component.scss']
 })
-export class DistrictComponent implements OnInit {
+export class VillageComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  provinceCode: number;
+  communeCode: number;
 
-  items = new MatTableDataSource<District>();
+  items = new MatTableDataSource<Village>();
   metaData: MetaData;
   columns: string[] = ['type', 'code', 'nameKH', 'nameEN', 'action'];
 
@@ -35,15 +35,15 @@ export class DistrictComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.provinceCode = Number(this.route.snapshot.paramMap.get('provinceCode'));
-    if (this.provinceCode) this.getItems();
+    this.communeCode = Number(this.route.snapshot.paramMap.get('communeCode'));
+    if (this.communeCode) this.getItems();
     // this.gazetteerService.getStats().subscribe(response => this.gazetteerStats = response);
 
   }
 
   getItems() {
-    this.gazetteerService.getDistrictsByProvince(this.provinceCode).subscribe((result) => {
-      this.items = new MatTableDataSource<District>(result);
+    this.gazetteerService.getVillagesByDistrict(this.communeCode).subscribe((result) => {
+      this.items = new MatTableDataSource<Village>(result);
       this.items.paginator = this.paginator;
       this.items.sort = this.sort;
     });
@@ -58,5 +58,4 @@ export class DistrictComponent implements OnInit {
   onReload() {}
   onSearch() {}
   onSort($event) {}
-
 }
