@@ -1,25 +1,25 @@
 <!-- <div [hidden]="!items"> -->
   <app-page-header [title]="'Gazetteer'" [subtitle]="'Manage address here.'"></app-page-header>
-  <div *ngIf="this.gazetteerStats" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap>
-    <mat-card class="stat-card">
-      <mat-card-content>
+  <div *ngIf="this.gazetteerStats" fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="flex-start">
+    <mat-card class="stat-card" fxFlex="1 0 auto">
+    <mat-card-content>
         <h1 class="stat-number">{{this.gazetteerStats.provinceStat}}</h1>
       <mat-card-footer>Province</mat-card-footer>
       </mat-card-content>
     </mat-card>
-     <mat-card class="stat-card">
+     <mat-card class="stat-card" fxFlex="1 0 auto">
       <mat-card-content>
        <h1 class="stat-number">{{this.gazetteerStats.districtStat}}</h1>
        <mat-card-footer>District</mat-card-footer>
      </mat-card-content>
    </mat-card>
-   <mat-card class="stat-card">
+   <mat-card class="stat-card" fxFlex="1 0 auto">
     <mat-card-content>
       <h1 class="stat-number">{{this.gazetteerStats.communeStat}}</h1>
     <mat-card-footer>Commune</mat-card-footer>
     </mat-card-content>
   </mat-card>
-   <mat-card class="stat-card">
+   <mat-card class="stat-card" fxFlex="1 0 auto">
     <mat-card-content>
      <h1 class="stat-number">{{this.gazetteerStats.villageStat}}</h1>
      <mat-card-footer>Village</mat-card-footer>
