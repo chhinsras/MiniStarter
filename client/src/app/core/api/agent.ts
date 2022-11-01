@@ -58,6 +58,7 @@ export class Agent {
   deleteClaim = (id: number) => this.http.delete(this.baseUrl + `roles/permissions/${id}`)
 
   // Gazetteer
+  getGazetteerStats = () => this.http.get(this.baseUrl + 'gazetteers/stats');
   getAllProvinces = () => this.http.get(this.baseUrl + 'gazetteers/provinces');
   getProvince = (code: number) => this.http.get(this.baseUrl + `gazetteers/provinces/${code}`);
   createProvince = (province: Province) => this.http.post(this.baseUrl + 'gazetteers/provinces', province);

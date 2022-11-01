@@ -24,6 +24,8 @@ export class GazetteerComponent implements OnInit, AfterViewInit {
   searchString: string;
   isOpen = false;
 
+  gazetteerStats: any;
+
   ngAfterViewInit() {
     this.items.paginator = this.paginator;
     this.items.sort = this.sort;
@@ -34,6 +36,8 @@ export class GazetteerComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getItems();
+    this.gazetteerService.getStats().subscribe(response => this.gazetteerStats = response);
+
   }
 
   getItems() {

@@ -10,6 +10,18 @@ public sealed class GazetteersController : BaseApiController
         _localizer = localizer;
     }
 
+    [HttpGet("stats")]
+    [MustHavePermission(Permissions.Provinces.View)]
+    public async Task<ActionResult> GetStats()
+    {
+        var provinceStat = await _context.Provinces.CountAsync();
+        var districtStat = await _context.Districts.CountAsync();
+        var communeStat = await _context.Communes.CountAsync();
+        var villageStat = await _context.Villages.CountAsync();
+
+        return Ok(new {provinceStat, districtStat, communeStat, villageStat});
+    }
+
     #region Province Endpoints
 
     [HttpGet("provinces")]
