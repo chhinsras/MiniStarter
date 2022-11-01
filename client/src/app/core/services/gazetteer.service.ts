@@ -10,9 +10,7 @@ export class GazetteerService {
 
   constructor(private agent: Agent) {}
 
-  getStats(): Observable<any> {
-    return this.agent.getGazetteerStats().pipe(map((response => response)));
-  }
+  getStats = (): Observable<any>  => this.agent.getGazetteerStats().pipe(map((response => response)));
 
   getAllProvinces(): Observable<Province[]> {
     return this.agent
