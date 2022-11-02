@@ -5,7 +5,7 @@ export class Audit {
   userId: string;
   type: string;
   tableName: string;
-  timestamp: string;
+  timeStamp: string;
   oldValues: string;
   newValues: string;
   affectedColumns: string;

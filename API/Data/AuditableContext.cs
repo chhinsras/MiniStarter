@@ -73,6 +73,13 @@ public abstract class AuditableContext : IdentityDbContext<User, Role, int, Iden
                             auditEntry.OldValues[propertyName] = property.OriginalValue;
                             auditEntry.NewValues[propertyName] = property.CurrentValue;
                         }
+                        else if (property.IsModified)
+                        {
+                            auditEntry.ChangedColumns.Add(propertyName);
+                            auditEntry.TrailType = TrailType.Update;
+                            auditEntry.OldValues[propertyName] = property.OriginalValue;
+                            auditEntry.NewValues[propertyName] = property.CurrentValue;
+                        }
                         break;
                 }
             }

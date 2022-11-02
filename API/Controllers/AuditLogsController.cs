@@ -34,7 +34,7 @@ public class AuditLogsController : BaseApiController
     {
          var trails = await _context.AuditTrails
             .Where(a => a.UserId == userId)
-            .OrderByDescending(a => a.DateTime)
+            .OrderByDescending(a => a.TimeStamp)
             .Take(250)
             .ToListAsync();
 
