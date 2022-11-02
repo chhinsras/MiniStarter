@@ -22,6 +22,7 @@ public static class ServiceCollectionExtensions
             .AddDatabase(configuration)
             .AddPermissions(configuration)
             .AddIdentity(configuration);
+        services.AddSingleton<PresenceTracker>();
         services.AddScoped<TokenService>();
         services.AddScoped<ExportService>();
         services.AddScoped<LocalFileStorageService>();

@@ -32,7 +32,7 @@ public static class BuilderExtensions
         app.PreparePuppeteerAsync(app.Environment).GetAwaiter().GetResult();
 
         app.MapControllers();
-        app.MapHub<OnlineCountHub>("hubs/onlineusercount");
+        app.MapHub<PresenceHub>("hubs/presence");
         app.MapFallbackToFile("index.html");
         
         app.Initialize();

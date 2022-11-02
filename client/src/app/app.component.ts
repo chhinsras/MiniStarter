@@ -21,7 +21,6 @@ export class AppComponent {
   ngOnInit(): void {
     this.loadCurrentUser();
     this.loadDefaults();
-    this.userService.createHubConnection();
   }
 
   loadDefaults() {
@@ -31,7 +30,7 @@ export class AppComponent {
 
   loadCurrentUser() {
     this.accountService.loadCurrentUser().subscribe({
-      next:() => {},
+      next:(user) => this.userService.createHubConnection(),
       error:(err) => console.log(err)
     });
   }

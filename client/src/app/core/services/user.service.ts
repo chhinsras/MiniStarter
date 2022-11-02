@@ -19,8 +19,8 @@ export class UserService {
 
   params: UserParams;
 
-  private userOnlineCountSource = new BehaviorSubject<number>(0);
-  public userOnlineCount$ = this.userOnlineCountSource.asObservable();
+  private onlineUsersSource = new BehaviorSubject<string[]>([]);
+  public onlineUsers$ = this.onlineUsersSource.asObservable();
 
   constructor(private agent: Agent, private localStorageService: LocalStorageService) {
     this.params = new UserParams();
@@ -34,7 +34,7 @@ export class UserService {
   createHubConnection() {
     var accessToken = this.localStorageService.getItem('token') ?? null;
     this.hubConnection = new HubConnectionBuilder()
-      .withUrl(this.hubUrl + 'onlineusercount', {
+      .withUrl(this.hubUrl + 'presence', {
         accessTokenFactory: () => accessToken
       })
       .withAutomaticReconnect()
@@ -44,9 +44,17 @@ export class UserService {
       .start()
       .catch(error => console.log(error));
 
-      this.hubConnection.on('UpdateOnlineCount', userOnlineCount => {
-        this.userOnlineCountSource.next(userOnlineCount);
-        console.log(userOnlineCount);
+      this.hubConnection.on('UserIsOnline', username => {
+        console.log(username + ' has connected.')
+      })
+
+      this.hubConnection.on('UserIsOffline', username => {
+        console.log(username + ' has disconnected.')
+      })
+
+      this.hubConnection.on('GetOnlineUsers', (onlineUsers: string[]) => {
+        this.onlineUsersSource.next(onlineUsers);
+        console.log(onlineUsers);
       });
   }
 
