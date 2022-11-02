@@ -14,7 +14,7 @@ import { AccountService } from './core/services/account.service';
 export class AppComponent {
   themeVariant: string = '';
   darkModeIcon: string = '';
-  constructor(private accountService: AccountService
+  constructor(private accountService: AccountService,
     private translationService: MultilingualService, private themeService: ThemeService, private overlay: OverlayContainer) {
   }
 
