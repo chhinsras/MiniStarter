@@ -65,7 +65,7 @@ public class DataContext : AuditableContext
         builder.ApplyIdentityConfiguration();
         builder.ApplyGazetteersConfiguration();
         builder.ApplyApplicationConfiguration();
-        //builder.ApplyUtcDateTimeConverter();
         builder.ApplyGlobalFilters<ISoftDelete>(s => s.DeletedOn == null);
+        builder.ApplyUtcDateTimeConverter();
     }
 }

@@ -13,6 +13,8 @@ public class AuditLogsController : BaseApiController
     {
         var query = _context.AuditTrails.AsQueryable();
 
+        query = query.OrderByDescending(x => x.TimeStamp);
+
         var trails = await PagedList<AuditTrail>.ToPagedList(query, auditParams.PageNumber, auditParams.PageSize);
         Response.AddPaginationHeader(trails.MetaData);
 
