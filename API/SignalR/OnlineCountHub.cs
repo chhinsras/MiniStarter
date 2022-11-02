@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace API.SignalR;
 
+[Authorize]
 public class OnlineCountHub : Hub
 {
     private static int Count = 0;

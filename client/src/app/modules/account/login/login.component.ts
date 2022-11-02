@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/core/services/user.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
   isBeingLoggedIn: boolean = false;
-  constructor(private accountService: AccountService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private accountService: AccountService, private userService: UserService,
+    private router: Router, private activatedRoute: ActivatedRoute) {
     this.initializeForm();
   }
 
@@ -47,7 +49,10 @@ export class LoginComponent implements OnInit {
     this.accountService.login(this.loginForm.value)
       .pipe(filter(result => result !== null))
       .subscribe({
-        next: () => this.router.navigateByUrl(this.returnUrl),
+        next: () => {
+          this.userService.createHubConnection();
+          this.router.navigateByUrl(this.returnUrl)
+        },
         error: (error) => {console.log(error); this.loginForm.enable();}
       }).add(()=>this.isBeingLoggedIn = false);
   }
