@@ -3,7 +3,7 @@
   <div>
     <mat-card class="stat-card" fxFlex="1 0 auto">
     <mat-card-content>
-        <h1 class="stat-number">{{this.userService.userOnlineCount$ }}</h1>
+        <h1 class="stat-number">{{this.userService.userOnlineCount$ | async}}</h1>
       <mat-card-footer>Online Users</mat-card-footer>
       </mat-card-content>
     </mat-card>

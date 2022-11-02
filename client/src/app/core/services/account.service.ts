@@ -100,11 +100,11 @@ export class AccountService {
             this.setStorageToken(result);
             this.toastr.clear();
             this.toastr.info('User Logged In');
-            this.userService.createHubConnection();
           }
         }),
         map((user: User) => {
           if(user) {
+            this.userService.createHubConnection();
             this.currentUserSource.next(user);
             this.currentUserTokenSource.next(user.token);
           }

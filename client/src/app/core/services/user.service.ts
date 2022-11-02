@@ -44,10 +44,10 @@ export class UserService {
       .start()
       .catch(error => console.log(error));
 
-    this.hubConnection.on('UpdateOnlineCount', userOnlineCount => {
-      this.userOnlineCount$ = userOnlineCount;
-      console.log(userOnlineCount);
-    });
+      this.hubConnection.on('UpdateOnlineCount', userOnlineCount => {
+        this.userOnlineCountSource.next(userOnlineCount);
+        console.log(userOnlineCount);
+      });
   }
 
   stopHubConnection() {
