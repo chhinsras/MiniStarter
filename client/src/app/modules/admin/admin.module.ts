@@ -24,6 +24,7 @@ import { GazetteerComponent } from './gazetteer/gazetteer.component';
 import { DistrictComponent } from './gazetteer/district/district.component';
 import { CommuneComponent } from './gazetteer/commune/commune.component';
 import { VillageComponent } from './gazetteer/village/village.component';
+import { ProvinceFormComponent } from './gazetteer/province-form/province-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { VillageComponent } from './gazetteer/village/village.component';
     GazetteerComponent,
     DistrictComponent,
     CommuneComponent,
-    VillageComponent
+    VillageComponent,
+    ProvinceFormComponent
   ],
   imports: [
     CommonModule,

@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { DeleteDialogComponent } from './../../../shared/components/delete-dialog/delete-dialog.component';
 import { AfterViewInit, Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GazetteerService } from 'src/app/core/services/gazetteer.service';
 import { Province } from 'src/app/shared/models/gazetteer';
 import { MetaData } from 'src/app/shared/models/pagination';
+import { ProvinceFormComponent } from './province-form/province-form.component';
 
 @Component({
   selector: 'app-gazetteer',
@@ -32,7 +35,7 @@ export class GazetteerComponent implements OnInit, AfterViewInit {
     this.items.sort = this.sort;
   }
 
-  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog,
+  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog, private toastr: ToastrService,
     private route: ActivatedRoute, private router: Router) {
   }
 
@@ -50,13 +53,33 @@ export class GazetteerComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onAdd() {}
-  onView($event) {
-
+  openForm(province?: Province): void {
+    const dialogRef = this.dialog.open(ProvinceFormComponent, {
+      data: province,
+      width: '50vw',
+      panelClass: 'mat-dialog-container-no-padding'
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getItems();
+      }
+    });
   }
-  onEdit($event) {}
-  onDelete($event) {}
-  onReload() {}
+
+  onDelete(code: number) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      data: 'Do you confirm the removal of this province?',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.gazetteerService.deleteProvince(code).subscribe(response => {
+          this.getItems();
+          this.toastr.success("Sucessfully")
+        }, error => console.log(error));
+      }
+    });
+  }
+  onReload = () => this.getItems();
   onFilter() {
 
   }
