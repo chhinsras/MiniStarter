@@ -14,13 +14,14 @@ import { AccountService } from './core/services/account.service';
 export class AppComponent {
   themeVariant: string = '';
   darkModeIcon: string = '';
-  constructor(private accountService: AccountService,
+  constructor(private accountService: AccountService, private userService: UserService,
     private translationService: MultilingualService, private themeService: ThemeService, private overlay: OverlayContainer) {
   }
 
   ngOnInit(): void {
     this.loadCurrentUser();
     this.loadDefaults();
+    this.userService.createHubConnection();
   }
 
   loadDefaults() {

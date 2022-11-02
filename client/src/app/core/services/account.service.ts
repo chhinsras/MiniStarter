@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/core/services/user.service';
 import { Login } from '../../shared/models/account';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
@@ -18,7 +19,8 @@ export class AccountService {
   private currentUserSource = new ReplaySubject<User>(1);
   public currentUser = this.currentUserSource.asObservable();
 
-  constructor(public agent: Agent, private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
+  constructor(public agent: Agent,  private userService: UserService,
+    private localStorage: LocalStorageService, private router: Router, private toastr: ToastrService) {
   }
 
   public get getToken(): string {
@@ -98,6 +100,7 @@ export class AccountService {
             this.setStorageToken(result);
             this.toastr.clear();
             this.toastr.info('User Logged In');
+            this.userService.createHubConnection();
           }
         }),
         map((user: User) => {
@@ -116,6 +119,7 @@ export class AccountService {
     this.currentUserTokenSource.next(null);
     this.toastr.clear();
     this.toastr.info('User Logged Out');
+    this.userService.stopHubConnection();
     this.router.navigateByUrl('/login');
   }
 

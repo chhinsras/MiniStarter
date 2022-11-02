@@ -52,7 +52,7 @@ export class UserService {
 
   stopHubConnection() {
     this.hubConnection
-      .start()
+      .stop()
       .catch(error => console.log(error));
   }
 
