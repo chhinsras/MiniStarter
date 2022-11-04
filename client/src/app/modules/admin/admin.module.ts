@@ -20,6 +20,14 @@ import { SettingComponent } from './setting/setting.component';
 import { AuditComponent } from './audit/audit.component';
 import { AuditLogDetailsComponent } from './audit/audit-log-details/audit-log-details.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { GazetteerComponent } from './gazetteer/gazetteer.component';
+import { DistrictComponent } from './gazetteer/district/district.component';
+import { CommuneComponent } from './gazetteer/commune/commune.component';
+import { VillageComponent } from './gazetteer/village/village.component';
+import { ProvinceFormComponent } from './gazetteer/province-form/province-form.component';
+import { DistrictFormComponent } from './gazetteer/district-form/district-form.component';
+import { CommuneFormComponent } from './gazetteer/commune-form/commune-form.component';
+import { VillageFormComponent } from './gazetteer/village-form/village-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +45,15 @@ import { ProfileComponent } from './user/profile/profile.component';
     RolePermissionFormComponent,
     SettingComponent,
     AuditComponent,
-    AuditLogDetailsComponent
+    AuditLogDetailsComponent,
+    GazetteerComponent,
+    DistrictComponent,
+    CommuneComponent,
+    VillageComponent,
+    ProvinceFormComponent,
+    DistrictFormComponent,
+    CommuneFormComponent,
+    VillageFormComponent
   ],
   imports: [
     CommonModule,

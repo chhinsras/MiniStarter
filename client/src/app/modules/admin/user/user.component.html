@@ -1,5 +1,13 @@
 <div [hidden]="!items">
   <app-page-header [title]="'Users'" [subtitle]="'Manage, Register, Update or Remove Users here.'"></app-page-header>
+  <div>
+    <mat-card class="stat-card" fxFlex="1 0 auto">
+    <mat-card-content>
+        <h1 class="stat-number">{{(this.userService.onlineUsers$ | async).length}}</h1>
+      <mat-card-footer>Online Users</mat-card-footer>
+      </mat-card-content>
+    </mat-card>
+  </div>
   <app-table
     [data]="items && items" [columns]="columns" (onFilter)="filter($event)"
     (onReload)="reload()" (onCreateForm)="openForm()" (onEditForm)="openForm($event)" (onSort)="sort($event)"

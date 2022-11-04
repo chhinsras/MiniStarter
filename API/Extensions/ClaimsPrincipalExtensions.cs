@@ -16,6 +16,9 @@ public static class ClaimsPrincipalExtensions
     public static string? GetPhoneNumber(this ClaimsPrincipal principal)
         => principal.FindFirstValue(ClaimTypes.MobilePhone);
 
+    public static string GetUserName(this ClaimsPrincipal user) =>
+        user.FindFirst(ClaimTypes.Name)?.Value ?? "";
+        
     public static int GetUserId(this ClaimsPrincipal principal)
     {
         if (principal == null)

@@ -1,5 +1,5 @@
 import { PaginatedFilter, MetaData } from '../../../shared/models/pagination';
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { User, UserParams } from 'src/app/shared/models/user';
 import { TableColumn } from 'src/app/shared/components/table/table-column';
 import { CustomAction } from 'src/app/shared/components/table/custom-action';
@@ -14,7 +14,7 @@ import { UserRoleFormComponent } from './user-role-form/user-role-form.component
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss'],
+  styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
   items: User[];
@@ -23,6 +23,8 @@ export class UserComponent implements OnInit {
   params = new UserParams();
   searchString: string;
   userRoleActionData: CustomAction = new CustomAction('Manage User Roles');
+
+  onlineUserCount: number;
 
   constructor(
     public userService: UserService,
@@ -58,6 +60,7 @@ export class UserComponent implements OnInit {
       { name: 'Action', dataKey: 'action', position: 'right' },
     ];
   }
+
 
   pageChanged(event: PaginatedFilter): void {
     this.params.pageNumber = event.pageNumber;

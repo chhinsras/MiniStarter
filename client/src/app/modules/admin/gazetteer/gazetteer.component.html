@@ -1,0 +1,127 @@
+<!-- <div [hidden]="!items"> -->
+  <app-page-header [title]="'Gazetteer'" [subtitle]="'Manage address here.'"></app-page-header>
+  <div *ngIf="this.gazetteerStats" fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="flex-start">
+    <mat-card class="stat-card" fxFlex="1 0 auto">
+    <mat-card-content>
+        <h1 class="stat-number">{{this.gazetteerStats.provinceStat}}</h1>
+      <mat-card-footer>Province</mat-card-footer>
+      </mat-card-content>
+    </mat-card>
+     <mat-card class="stat-card" fxFlex="1 0 auto">
+      <mat-card-content>
+       <h1 class="stat-number">{{this.gazetteerStats.districtStat}}</h1>
+       <mat-card-footer>District</mat-card-footer>
+     </mat-card-content>
+   </mat-card>
+   <mat-card class="stat-card" fxFlex="1 0 auto">
+    <mat-card-content>
+      <h1 class="stat-number">{{this.gazetteerStats.communeStat}}</h1>
+    <mat-card-footer>Commune</mat-card-footer>
+    </mat-card-content>
+  </mat-card>
+   <mat-card class="stat-card" fxFlex="1 0 auto">
+    <mat-card-content>
+     <h1 class="stat-number">{{this.gazetteerStats.villageStat}}</h1>
+     <mat-card-footer>Village</mat-card-footer>
+   </mat-card-content>
+ </mat-card>
+  </div>
+
+  <mat-card class="module-card">
+    <div class="panel-content">
+      <div class="left">
+          <span class="mr-2">
+            <a mat-raised-button color="primary" (click)="openForm()">
+              <mat-icon>add</mat-icon> {{'components.table.register'|translate}}
+            </a>
+            <a class="mr-6" mat-raised-button color="accent" (click)="onReload()">
+                <mat-icon>refresh</mat-icon>{{'components.table.reload'|translate}}
+            </a>
+            <a class="mr-6" mat-button mat-stroked-button
+            (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+            >
+              <mat-icon>filter_list</mat-icon>{{'components.table.filter'|translate}}
+            </a>
+
+            <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+              <div class="filter-wrapper mat-elevation-z2" >
+                <div>
+                  <h4>Filter</h4>
+                  <div >
+                    <mat-form-field appearance="outline">
+                      <mat-label>Type me</mat-label>
+                      <mat-select>
+                        <mat-option value="province">Province</mat-option>
+                        <mat-option value="capital">Capital</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayoutAlign="end">
+                  <button mat-raised-button (click)="isOpen = !isOpen"> Cancel</button>
+                  <button mat-raised-button color="primary">Apply</button>
+                </div>
+              </div>
+            </ng-template>
+          </span>
+      </div>
+
+      <div class="right">
+          <mat-form-field appearance="outline">
+              <input matInput [(ngModel)]="searchString" name="searchString" type="text" autocomplete="off"
+                  (keyup)="onSearch()" placeholder="{{'components.table.search'|translate}} {{ 'Address' | translate}}" />
+              <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+      </div>
+  </div>
+
+  <table mat-table mat-table-stripped matSort (matSortChange)="onSort($event)" [dataSource]="items">
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by type"> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameKH">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Khmer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.nameKH}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameEN">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> English Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.nameEN}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="text-right"> Action </th>
+      <td mat-cell *matCellDef="let element"  class="text-right">
+        <a matTooltip="{{'components.table.view' | translate}}" mat-raised-button color="primary" routerLink="district/{{element.code}}">
+          <mat-icon>remove_red_eye</mat-icon>
+        </a>
+        <button matTooltip="{{'components.table.edit' | translate}}" mat-raised-button color="accent" (click)="openForm(element)">
+            <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button matTooltip="{{'components.table.delete' | translate}}" mat-raised-button color="danger" (click)="onDelete(element.code)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">No data</td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+
+  </mat-card>
+<!-- </div> -->
+
+

@@ -1,3 +1,6 @@
+import { VillageComponent } from './gazetteer/village/village.component';
+import { CommuneComponent } from './gazetteer/commune/commune.component';
+import { DistrictComponent } from './gazetteer/district/district.component';
 import { TestErrorsComponent } from './test-errors/test-errors.component';
 import { UserComponent } from './user/user.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +11,7 @@ import { RoleComponent } from './role/role.component';
 import { SettingComponent } from './setting/setting.component';
 import { AuditComponent } from './audit/audit.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { GazetteerComponent } from './gazetteer/gazetteer.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -18,7 +22,11 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'roles', component: RoleComponent },
   { path: 'settings', component: SettingComponent},
-  { path: 'audits', component: AuditComponent}
+  { path: 'audits', component: AuditComponent},
+  { path: 'gazetteer', component: GazetteerComponent},
+  { path: 'gazetteer/district/:provinceCode', component: DistrictComponent},
+  { path: 'gazetteer/district/:provinceCode/commune/:districtCode', component: CommuneComponent},
+  { path: 'gazetteer/district/:provinceCode/commune/:districtCode/village/:communeCode', component: VillageComponent}
 ];
 
 @NgModule({

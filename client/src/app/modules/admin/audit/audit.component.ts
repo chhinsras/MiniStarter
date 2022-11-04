@@ -37,7 +37,7 @@ export class AuditComponent implements OnInit {
       { name: 'Id', dataKey: 'id', isSortable: true, isShowable: true },
       { name: 'User Id', dataKey: 'userId', isSortable: true, isShowable: true },
       { name: 'Table', dataKey: 'tableName', isSortable: true, isShowable: true },
-      { name: 'Timestamp', dataKey: 'timestamp', isSortable: true, isShowable: true },
+      { name: 'Timestamp', dataKey: 'timeStamp', isSortable: true, isShowable: true },
       { name: 'Primary Key', dataKey: 'primaryKey', isSortable: true, isShowable: true },
       { name: 'Action', dataKey: 'action', position: 'right' },
     ];
@@ -48,7 +48,7 @@ export class AuditComponent implements OnInit {
     this.auditService.getPaged().subscribe((result) => {
       this.items = result.items;
       this.metaData = result.metaData;
-      this.dataSource.data = this.items.filter(data => (data.timestamp = this.datePipe.transform(data.timestamp, 'MM/dd/yyyy hh:mm:ss a')));
+      this.dataSource.data = this.items.filter(data => (data.timeStamp = this.datePipe.transform(data.timeStamp, 'MM/dd/yyyy hh:mm:ss a')));
     });
   }
 

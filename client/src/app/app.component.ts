@@ -1,3 +1,4 @@
+import { UserService } from './core/services/user.service';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { LocalStorageService } from './core/services/local-storage.service';
@@ -13,7 +14,8 @@ import { AccountService } from './core/services/account.service';
 export class AppComponent {
   themeVariant: string = '';
   darkModeIcon: string = '';
-  constructor(private accountService: AccountService, private translationService: MultilingualService, private themeService: ThemeService, private overlay: OverlayContainer) {
+  constructor(private accountService: AccountService, private userService: UserService,
+    private translationService: MultilingualService, private themeService: ThemeService, private overlay: OverlayContainer) {
   }
 
   ngOnInit(): void {
@@ -27,10 +29,9 @@ export class AppComponent {
   }
 
   loadCurrentUser() {
-    this.accountService.loadCurrentUser()
-      .subscribe(() => {
-      }, error => {
-        console.log(error);
-      });
+    this.accountService.loadCurrentUser().subscribe({
+      next:(user) => this.userService.createHubConnection(),
+      error:(err) => console.log(err)
+    });
   }
 }

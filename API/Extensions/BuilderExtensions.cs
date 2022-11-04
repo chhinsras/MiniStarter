@@ -32,6 +32,7 @@ public static class BuilderExtensions
         app.PreparePuppeteerAsync(app.Environment).GetAwaiter().GetResult();
 
         app.MapControllers();
+        app.MapHub<PresenceHub>("hubs/presence");
         app.MapFallbackToFile("index.html");
         
         app.Initialize();

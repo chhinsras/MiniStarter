@@ -5,7 +5,7 @@ public class AuditTrail
     public int UserId { get; set; }
     public string? Type { get; set; }
     public string? TableName { get; set; }
-    public DateTime DateTime { get; set; }
+    public DateTime TimeStamp { get; set; }
     public string? OldValues { get; set; }
     public string? NewValues { get; set; }
     public string? AffectedColumns { get; set; }
@@ -36,7 +36,7 @@ public class AuditEntry
         UserId = UserId,
         Type = TrailType.ToString(),
         TableName = TableName,
-        DateTime = DateTime.UtcNow,
+        TimeStamp = DateTime.UtcNow,
         PrimaryKey = JsonSerializer.Serialize(KeyValues),
         OldValues = OldValues.Count == 0 ? null : JsonSerializer.Serialize(OldValues),
         NewValues = NewValues.Count == 0 ? null : JsonSerializer.Serialize(NewValues),

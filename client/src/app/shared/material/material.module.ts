@@ -42,7 +42,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 // CDK
+import { A11yModule } from '@angular/cdk/a11y';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PortalModule } from '@angular/cdk/portal';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
   declarations: [],
@@ -84,7 +95,18 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    ClipboardModule
+    A11yModule,
+    CdkAccordionModule,
+    ClipboardModule,
+    CdkMenuModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    OverlayModule,
+    PortalModule,
+    ScrollingModule,
+    DialogModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -122,7 +144,18 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    ClipboardModule
+    A11yModule,
+    CdkAccordionModule,
+    ClipboardModule,
+    CdkMenuModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    OverlayModule,
+    PortalModule,
+    ScrollingModule,
+    DialogModule,
   ]
 })
 export class MaterialModule { }

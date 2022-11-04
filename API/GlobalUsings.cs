@@ -35,4 +35,5 @@ global using API.Helpers;
 global using API.Interfaces;
 global using API.Middleware;
 global using API.Services;
+global using API.SignalR;
 global using API.ViewModels;

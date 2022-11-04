@@ -58,6 +58,7 @@ export class Agent {
   deleteClaim = (id: number) => this.http.delete(this.baseUrl + `roles/permissions/${id}`)
 
   // Gazetteer
+  getGazetteerStats = () => this.http.get(this.baseUrl + 'gazetteers/stats');
   getAllProvinces = () => this.http.get(this.baseUrl + 'gazetteers/provinces');
   getProvince = (code: number) => this.http.get(this.baseUrl + `gazetteers/provinces/${code}`);
   createProvince = (province: Province) => this.http.post(this.baseUrl + 'gazetteers/provinces', province);
@@ -70,13 +71,13 @@ export class Agent {
   updateDistrict = (district: District) => this.http.put(this.baseUrl + 'gazetteers/districts', district);
   deleteDistrict = (code: number) => this.http.delete(this.baseUrl + `gazetteers/districts/${code}`);
   getAllCommunes = () => this.http.get(this.baseUrl + 'gazetteers/communes');
-  getCommunesByDistrict = (provinceCode: number) => this.http.get(this.baseUrl + `gazetteers/communes/byDistrict/${provinceCode}`);
+  getCommunesByDistrict = (districtCode: number) => this.http.get(this.baseUrl + `gazetteers/communes/byDistrict/${districtCode}`);
   getCommune = (code: number) => this.http.get(this.baseUrl + `gazetteers/communes/${code}`);
   createCommune = (commune: Commune) => this.http.post(this.baseUrl + 'gazetteers/communes', commune);
   updateCommune = (commune: Commune) => this.http.put(this.baseUrl + 'gazetteers/communes', commune);
   deleteCommune = (code: number) => this.http.delete(this.baseUrl + `gazetteers/communes/${code}`);
   getAllVillages = () => this.http.get(this.baseUrl + 'gazetteers/villages');
-  getVillagesByCommune = (provinceCode: number) => this.http.get(this.baseUrl + `gazetteers/villages/byCommune/${provinceCode}`);
+  getVillagesByCommune = (communeCode: number) => this.http.get(this.baseUrl + `gazetteers/villages/byCommune/${communeCode}`);
   getVillage = (code: number) => this.http.get(this.baseUrl + `gazetteers/villages/${code}`);
   createVillage = (village: Village) => this.http.post(this.baseUrl + 'gazetteers/villages', village);
   updateVillage = (village: Village) => this.http.put(this.baseUrl + 'gazetteers/villages', village);

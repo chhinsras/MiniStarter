@@ -242,7 +242,7 @@ public class UsersController : BaseApiController
         var loggedInUser = HttpContext.User;
         var trails = await _context.AuditTrails
         .Where(a => a.UserId == loggedInUser.GetUserId())
-        .OrderByDescending(a => a.DateTime)
+        .OrderByDescending(a => a.TimeStamp)
         .Take(250)
         .ToListAsync();
 

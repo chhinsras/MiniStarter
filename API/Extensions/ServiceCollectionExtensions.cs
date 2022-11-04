@@ -10,6 +10,7 @@ public static class ServiceCollectionExtensions
     {
         MapsterSettings.Configure();
         services.AddControllersWithViews();
+        services.AddSignalR();
         services.AddRazorPages();
         services
             .AddCorsPolicy()
@@ -21,6 +22,7 @@ public static class ServiceCollectionExtensions
             .AddDatabase(configuration)
             .AddPermissions(configuration)
             .AddIdentity(configuration);
+        services.AddSingleton<PresenceTracker>();
         services.AddScoped<TokenService>();
         services.AddScoped<ExportService>();
         services.AddScoped<LocalFileStorageService>();
@@ -45,9 +47,9 @@ public static class ServiceCollectionExtensions
         {
             opt.AddPolicy("CorsPolicy", policy =>
             {
-                // policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(corsSettings.Angular);
+                policy.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins(corsSettings.Angular);
                 // policy.AllowAnyHeader().AllowAnyMethod().WithOrigins(corsSettings.Flutter);
-                policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                // policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); // add AllowCredentials() for signalR
             });
         });
     }
@@ -125,6 +127,7 @@ public static class ServiceCollectionExtensions
             {
                 options.UseNpgsql(connectionString);
             }
+            // options.UseLazyLoadingProxies();
         });
 
         using var scope = services.BuildServiceProvider().CreateScope();
@@ -159,6 +162,20 @@ public static class ServiceCollectionExtensions
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
+
+                opt.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context => 
+                    {
+                        var accessToken = context.Request.Query["access_token"];
+                        var path = context.HttpContext.Request.Path;
+                        if(!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hubs"))
+                        {
+                            context.Token = accessToken;
+                        }
+                        return Task.CompletedTask;
+                    }
                 };
             });
         services.AddAuthorization();

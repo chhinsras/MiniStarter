@@ -1,25 +1,68 @@
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Agent } from '../api/agent';
 import { getPaginationHeaders } from '../helpers/pagination-helper';
 import { User, UserParams, UserRole } from '../../shared/models/user';
 import { Upload } from 'src/app/shared/models/upload';
+import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 
 @Injectable()
 export class UserService {
   baseUrl = environment.apiUrl;
+  hubUrl = environment.hubUrl;
+
+  private hubConnection: HubConnection
+
   params: UserParams;
 
-  constructor(private agent: Agent) {
+  private onlineUsersSource = new BehaviorSubject<string[]>([]);
+  public onlineUsers$ = this.onlineUsersSource.asObservable();
+
+  constructor(private agent: Agent, private localStorageService: LocalStorageService) {
     this.params = new UserParams();
   }
 
   getParams = () => this.params;
   setUserParams = (params: UserParams) => this.params = params;
   resetUserParams = () => this.params = new UserParams();
+
+
+  createHubConnection() {
+    var accessToken = this.localStorageService.getItem('token') ?? null;
+    this.hubConnection = new HubConnectionBuilder()
+      .withUrl(this.hubUrl + 'presence', {
+        accessTokenFactory: () => accessToken
+      })
+      .withAutomaticReconnect()
+      .build();
+
+    this.hubConnection
+      .start()
+      .catch(error => console.log(error));
+
+      this.hubConnection.on('UserIsOnline', username => {
+        console.log(username + ' has connected.')
+      })
+
+      this.hubConnection.on('UserIsOffline', username => {
+        console.log(username + ' has disconnected.')
+      })
+
+      this.hubConnection.on('GetOnlineUsers', (onlineUsers: string[]) => {
+        this.onlineUsersSource.next(onlineUsers);
+        console.log(onlineUsers);
+      });
+  }
+
+  stopHubConnection() {
+    this.hubConnection
+      .stop()
+      .catch(error => console.log(error));
+  }
 
   getPaged(){
     let params = new HttpParams();

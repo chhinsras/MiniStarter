@@ -11,6 +11,6 @@ public class User : IdentityUser<int>
      public DateTime Created { get; set; } = DateTime.Now;
      public DateTime LastActive { get; set; } = DateTime.Now;
 
-     public ICollection<UserRole>? UserRoles { get; set; }
+     public virtual ICollection<UserRole>? UserRoles { get; set; }
 
 }

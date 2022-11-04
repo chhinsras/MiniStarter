@@ -27,9 +27,12 @@
     "account.invalidtoken": "Invalid Token.",
     "account.invalidrefreshtoken": "Invalid Refresh Token.",
     "account.invalidemail": "Email is invalid",
-    "entity.notfound": "{0} Not Found.",
-    "entity.notfoundofvalue": "{0} {1} Not Found.",
-    "entity.required": "{0} Is Required",
-    "entity.alreadyexisted": "{0} Already Existed.",
-    "entity.created": "{0} {1} Created."
+    "Entity.NotFound": "{0} Not Found.",
+    "Entity.NotFoundOfValue": "{0} {1} Not Found.",
+    "Entity.Required": "{0} Is Required",
+    "Entity.AlreadyExisted": "Item Already Existed.",
+    "Entity.Created": "Item Created.",
+    "Entity.FailedCreate": "Failed To Create",
+    "Entity.FailedUpdate": "Failed To Update",
+    "Entity.FailedDelete": "Failed To Delete"
 }

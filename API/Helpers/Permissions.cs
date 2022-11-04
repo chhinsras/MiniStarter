@@ -48,16 +48,45 @@ public static class Permissions
     #endregion
 
     #region Gazetteer Permissions
-    [DisplayName("Gazetteer")]
-    [Description("Gazetteer Permissions")]
-    public static class Gazetteer
+    [DisplayName("Provinces")]
+    [Description("Provinces Permissions")]
+    public static class Provinces
     {
-        public const string Province = "Permissions.Gazetteer.Province";
-        public const string District = "Permissions.Gazetteer.District";
-        public const string Commune = "Permissions.Gazetteer.Commune";
-        public const string Village = "Permissions.Gazetteer.Village";
+        public const string View = "Permissions.Provinces.View";
+        public const string Create = "Permissions.Provinces.Create";
+        public const string Edit = "Permissions.Provinces.Edit";
+        public const string Delete = "Permissions.Provinces.Delete";
     }
 
+    [DisplayName("Districts")]
+    [Description("Districts Permissions")]
+    public static class Districts
+    {
+        public const string View = "Permissions.Districts.View";
+        public const string Create = "Permissions.Districts.Create";
+        public const string Edit = "Permissions.Districts.Edit";
+        public const string Delete = "Permissions.Districts.Delete";
+    }
+
+    [DisplayName("Communes")]
+    [Description("Communes Permissions")]
+    public static class Communes
+    {
+        public const string View = "Permissions.Communes.View";
+        public const string Create = "Permissions.Communes.Create";
+        public const string Edit = "Permissions.Communes.Edit";
+        public const string Delete = "Permissions.Communes.Delete";
+    }
+
+    [DisplayName("Villages")]
+    [Description("Villages Permissions")]
+    public static class Villages
+    {
+        public const string View = "Permissions.Villages.View";
+        public const string Create = "Permissions.Villages.Create";
+        public const string Edit = "Permissions.Villages.Edit";
+        public const string Delete = "Permissions.Villages.Delete";
+    }
     #endregion
 
     #region Features
