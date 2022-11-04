@@ -4,7 +4,7 @@
     <div class="panel-content">
       <div class="left">
           <span class="mr-2">
-            <a mat-raised-button color="primary" (click)="onAdd()">
+            <a mat-raised-button color="primary" (click)="openForm()">
               <mat-icon>add</mat-icon> {{'components.table.register'|translate}}
             </a>
             <a class="mr-6" mat-raised-button color="accent" (click)="onReload()">
@@ -49,10 +49,10 @@
         <a matTooltip="{{'components.table.view' | translate}}" mat-raised-button color="primary" routerLink="commune/{{element.code}}">
           <mat-icon>remove_red_eye</mat-icon>
         </a>
-        <button matTooltip="{{'components.table.edit' | translate}}" mat-raised-button color="accent" (click)="onEdit(element)">
+        <button matTooltip="{{'components.table.edit' | translate}}" mat-raised-button color="accent" (click)="openForm(element)">
             <mat-icon>mode_edit</mat-icon>
         </button>
-        <button matTooltip="{{'components.table.delete' | translate}}" mat-raised-button color="danger" (click)="onDelete(element.id)">
+        <button matTooltip="{{'components.table.delete' | translate}}" mat-raised-button color="danger" (click)="onDelete(element.code)">
             <mat-icon>delete</mat-icon>
         </button>
       </td>

@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { DeleteDialogComponent } from './../../../../shared/components/delete-dialog/delete-dialog.component';
 import { Village } from './../../../../shared/models/gazetteer';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { GazetteerService } from 'src/app/core/services/gazetteer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { VillageFormComponent } from '../village-form/village-form.component';
 
 @Component({
   selector: 'app-village',
@@ -30,7 +33,7 @@ export class VillageComponent implements OnInit {
     this.items.sort = this.sort;
   }
 
-  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog,
+  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog, private toastr: ToastrService,
     private route:ActivatedRoute, private router: Router) {
   }
 
@@ -49,13 +52,35 @@ export class VillageComponent implements OnInit {
     });
   }
 
-  onAdd() {}
-  onView($event) {
-
+  openForm(village?: Village): void {
+   if (village == undefined) village = { type: null, nameKH: null, nameEN: null, code: null,  communeCode: this.communeCode}
+    const dialogRef = this.dialog.open(VillageFormComponent, {
+      data: village,
+      width: '50vw',
+      panelClass: 'mat-dialog-container-no-padding'
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result)
+      if (result) {
+        this.getItems();
+      }
+    });
   }
-  onEdit($event) {}
-  onDelete($event) {}
-  onReload() {}
+
+  onDelete(code: number) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      data: 'Do you confirm the removal of this village?',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.gazetteerService.deleteVillage(code).subscribe(response => {
+          this.getItems();
+          this.toastr.success("Sucessfully")
+        }, error => console.log(error));
+      }
+    });
+  }
+  onReload = () => this.getItems();
   onSearch() {}
   onSort($event) {}
 }

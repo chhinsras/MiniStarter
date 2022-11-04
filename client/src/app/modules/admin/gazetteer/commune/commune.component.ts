@@ -1,3 +1,5 @@
+import { DeleteDialogComponent } from './../../../../shared/components/delete-dialog/delete-dialog.component';
+import { ToastrService } from 'ngx-toastr';
 import { District, Commune } from './../../../../shared/models/gazetteer';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { GazetteerService } from 'src/app/core/services/gazetteer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommuneFormComponent } from '../commune-form/commune-form.component';
 
 @Component({
   selector: 'app-commune',
@@ -30,7 +33,7 @@ export class CommuneComponent implements OnInit {
     this.items.sort = this.sort;
   }
 
-  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog,
+  constructor(private gazetteerService: GazetteerService, public dialog: MatDialog, private toastr: ToastrService,
     private route:ActivatedRoute, private router: Router) {
   }
 
@@ -49,13 +52,34 @@ export class CommuneComponent implements OnInit {
     });
   }
 
-  onAdd() {}
-  onView($event) {
-
+  openForm(commune?: Commune): void {
+    if (commune == undefined) commune = { type: null, nameKH: null, nameEN: null, code: null,  districtCode: this.districtCode}
+    const dialogRef = this.dialog.open(CommuneFormComponent, {
+      data: commune,
+      width: '50vw',
+      panelClass: 'mat-dialog-container-no-padding'
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getItems();
+      }
+    });
   }
-  onEdit($event) {}
-  onDelete($event) {}
-  onReload() {}
+
+  onDelete(code: number) {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      data: 'Do you confirm the removal of this commune?',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.gazetteerService.deleteCommune(code).subscribe(response => {
+          this.getItems();
+          this.toastr.success("Sucessfully")
+        }, error => console.log(error));
+      }
+    });
+  }
+  onReload = () => this.getItems();
   onSearch() {}
   onSort($event) {}
 
