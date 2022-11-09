@@ -9,13 +9,13 @@
 
 ## Features
 
-- [x] Built on .NET 6.0
+- [x] Built on .NET 7.0
 - [x] API and Client Project Seperation
 - [x] Entitiy Framework Core
 - [x] Simplified Project and Folder Structure based on MVC architecture
 - [x] Supports MSSQL or PosgreSQL (support heroku deploy via github action)
 - [x] JSON Localization
-- [ ] Cambodia Gazetteer
+- [x] Cambodia Gazetteer
 - [X] API Versioning
 - [x] Audit Logging
 - [x] Data Annotation Validation
