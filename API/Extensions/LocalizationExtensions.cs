@@ -27,7 +27,7 @@ public static class LocalizationExtensions
             DefaultRequestCulture = new RequestCulture(new CultureInfo("en-US"))
         });
 
-        var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
+        MiddlewareSettings middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
         if (middlewareSettings.EnableLocalization)
         {
             app.UseMiddleware<LocalizationMiddleware>();
