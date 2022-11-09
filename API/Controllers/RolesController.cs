@@ -149,7 +149,7 @@ public class RolesController : BaseApiController
         }
         else
         {
-            var role = await _roleManager.FindByIdAsync(request.Id.ToString());
+            Role role = await _roleManager.FindByIdAsync(request.Id.ToString());
 
             if (role == null) return NotFound();
 
@@ -181,7 +181,7 @@ public class RolesController : BaseApiController
     [MustHavePermission(Permissions.Roles.Delete)]
     public async Task<ActionResult<string>> DeleteAsync(int roleId)
     {
-        var role = await _roleManager.FindByIdAsync(roleId.ToString());
+        Role role = await _roleManager.FindByIdAsync(roleId.ToString());
 
         if (role == null) return NotFound();
 

@@ -11,7 +11,7 @@ public static class LocalizationExtensions
 
         services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
-        var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
+        MiddlewareSettings middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
         if (middlewareSettings.EnableLocalization)
         {
             services.AddSingleton<LocalizationMiddleware>();
@@ -27,7 +27,7 @@ public static class LocalizationExtensions
             DefaultRequestCulture = new RequestCulture(new CultureInfo("en-US"))
         });
 
-        var middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
+        MiddlewareSettings middlewareSettings = config.GetSection(nameof(MiddlewareSettings)).Get<MiddlewareSettings>();
         if (middlewareSettings.EnableLocalization)
         {
             app.UseMiddleware<LocalizationMiddleware>();
