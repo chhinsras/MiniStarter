@@ -8,9 +8,9 @@ public class LocalizationMiddleware : IMiddleware
         var cultureKey = context.Request.Headers["Accept-Language"];
         if (!string.IsNullOrEmpty(cultureKey))
         {
-            if (DoesCultureExist(cultureKey))
+            if (DoesCultureExist(cultureKey!))
             {
-                CultureInfo culture = new System.Globalization.CultureInfo(cultureKey);
+                CultureInfo culture = new System.Globalization.CultureInfo(cultureKey!);
                 Thread.CurrentThread.CurrentCulture = culture;
                 Thread.CurrentThread.CurrentUICulture = culture;
             }

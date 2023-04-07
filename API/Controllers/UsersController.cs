@@ -32,7 +32,8 @@ public class UsersController : BaseApiController
 
     [HttpGet]
     [MustHavePermission(Permissions.Users.View)]
-    public async Task<ActionResult<List<UserDto>>> GetPagedAsync([FromQuery] UserParams userParams) {
+    public async Task<ActionResult<List<UserDto>>> GetPagedAsync([FromQuery] UserParams userParams)
+    {
         var query = _userManager.Users
             .Sort(userParams.OrderBy!)
             .Search(userParams.SearchTerm!)
@@ -43,7 +44,7 @@ public class UsersController : BaseApiController
 
         return users.Adapt<List<UserDto>>();
     }
-        
+
     [HttpGet("{userId}")]
     [MustHavePermission(Permissions.Users.View)]
     public async Task<ActionResult<UserDto>> GetByIdAsync(int userId)
@@ -65,6 +66,7 @@ public class UsersController : BaseApiController
         var userRoles = new List<UserRoleDto>();
 
         var user = await _userManager.FindByIdAsync(userId);
+        if (user == null) return NotFound();
         var roles = await _roleManager.Roles.AsNoTracking().ToListAsync();
         foreach (var role in roles)
         {
@@ -73,7 +75,7 @@ public class UsersController : BaseApiController
                 RoleId = role.Id,
                 RoleName = role.Name,
                 Description = role.Description,
-                Enabled = await _userManager.IsInRoleAsync(user, role.Name)
+                Enabled = await _userManager.IsInRoleAsync(user, role.Name!)
             });
         }
 
@@ -107,12 +109,14 @@ public class UsersController : BaseApiController
     [MustHavePermission(Permissions.Users.Create)]
     public async Task<ActionResult> Create(CreateUserDto createUserDto)
     {
-        if (createUserDto.UserName.Length < 4 || createUserDto.UserName.Length > 10) {
+        if (createUserDto.UserName.Length < 4 || createUserDto.UserName.Length > 10)
+        {
             ModelState.AddModelError("Validation", "UserName must be between 4 and 10 characters"); return ValidationProblem();
         }
-        if (createUserDto.Password != createUserDto.ConfirmPassword){ 
+        if (createUserDto.Password != createUserDto.ConfirmPassword)
+        {
             ModelState.AddModelError("Validation", "Password mismatch"); return ValidationProblem();
-        }    
+        }
         var user = createUserDto.Adapt<User>();
         user.IsActive = true;
         var result = await _userManager.CreateAsync(user);
@@ -136,7 +140,7 @@ public class UsersController : BaseApiController
         if (user == null) return NotFound();
         userToUpdateDto.Adapt(user);
         var result = await _userManager.UpdateAsync(user);
-         if (!result.Succeeded)
+        if (!result.Succeeded)
         {
             foreach (var error in result.Errors)
             {
@@ -151,7 +155,7 @@ public class UsersController : BaseApiController
     [MustHavePermission(Permissions.Users.Update)]
     public async Task<ActionResult> ForceChangePasasword(ForceChangePassword forceResetPassword)
     {
-        if(forceResetPassword.Password != forceResetPassword.ConfirmPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
+        if (forceResetPassword.Password != forceResetPassword.ConfirmPassword) return BadRequest(new ProblemDetails { Title = "Password are not match" });
         var user = await _userManager.FindByIdAsync(forceResetPassword.Id.ToString());
         if (user == null) return NotFound();
         // this can't be undone
@@ -163,7 +167,7 @@ public class UsersController : BaseApiController
     [HttpPost("{userId}/roles")]
     public async Task<ActionResult<string>> AssignRolesAsync(int userId, UserRolesRequest request)
     {
-         ArgumentNullException.ThrowIfNull(request, nameof(request));
+        ArgumentNullException.ThrowIfNull(request, nameof(request));
 
         var user = await _userManager.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
 
@@ -172,18 +176,21 @@ public class UsersController : BaseApiController
         foreach (var userRole in request.UserRoles)
         {
             // Check if Role Exists
-            if (await _roleManager.FindByNameAsync(userRole.RoleName) is not null)
+            if (userRole.RoleName != null)
             {
-                if (userRole.Enabled)
+                if (await _roleManager.FindByNameAsync(userRole.RoleName) is not null)
                 {
-                    if (!await _userManager.IsInRoleAsync(user, userRole.RoleName))
+                    if (userRole.Enabled)
                     {
-                        await _userManager.AddToRoleAsync(user, userRole.RoleName);
+                        if (!await _userManager.IsInRoleAsync(user, userRole.RoleName))
+                        {
+                            await _userManager.AddToRoleAsync(user, userRole.RoleName);
+                        }
                     }
-                }
-                else
-                {
-                    await _userManager.RemoveFromRoleAsync(user, userRole.RoleName);
+                    else
+                    {
+                        await _userManager.RemoveFromRoleAsync(user, userRole.RoleName);
+                    }
                 }
             }
         }
@@ -202,36 +209,37 @@ public class UsersController : BaseApiController
         bool isAdmin = await _userManager.IsInRoleAsync(user, Roles.Admin);
         if (isAdmin)
         {
-            return BadRequest(new ProblemDetails { Title = _localizer["Administrators Profile's Status cannot be toggled"]});
+            return BadRequest(new ProblemDetails { Title = _localizer["Administrators Profile's Status cannot be toggled"] });
         }
 
         user.IsActive = request.ActivateUser;
         var identityResult = await _userManager.UpdateAsync(user);
-        
+
         return Ok(identityResult);
     }
 
     [HttpPost("update-photo")]
     [Authorize]
-    public async Task<ActionResult<string>> UpdatePhoto([FromForm]FileUploadDto fileUploadDto)
+    public async Task<ActionResult<string>> UpdatePhoto([FromForm] FileUploadDto fileUploadDto)
     {
         var currentUserId = User.GetUserId();
 
         var user = await _userManager.Users.SingleOrDefaultAsync(x => x.Id == currentUserId);
-        
+
         if (user == null) return NotFound();
 
         var path = await _fileStorageService.UploadAsync(fileUploadDto);
         if (!string.IsNullOrEmpty(path))
-        {   
+        {
             if (user.ImageUrl != null) _fileStorageService.Remove(user.ImageUrl, UploadType.UserPhoto);
             user.ImageUrl = path;
             await _userManager.UpdateAsync(user);
-            
+
             return Ok();
-        } else 
+        }
+        else
         {
-            return BadRequest(new ProblemDetails {Title = "Failed uploading image!"});
+            return BadRequest(new ProblemDetails { Title = "Failed uploading image!" });
         }
     }
 

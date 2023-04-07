@@ -21,7 +21,7 @@ public class DbInitializer : IDatabaseSeeder
         _localizer = localizer;
     }
 
-     public void Initialize()
+    public void Initialize()
     {
         try
         {
@@ -42,7 +42,7 @@ public class DbInitializer : IDatabaseSeeder
     {
         Task.Run(async () =>
         {
-            var roleList = new List<string> { Roles.SuperAdmin, Roles.Admin, Roles.BasicUser};
+            var roleList = new List<string> { Roles.SuperAdmin, Roles.Admin, Roles.BasicUser };
             foreach (var roleName in roleList)
             {
                 var role = new Role(roleName);
@@ -143,25 +143,25 @@ public class DbInitializer : IDatabaseSeeder
         {
             string? path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             if (!_context.Users.Any())
+            {
+                var userData = File.ReadAllText(path + @"/Data/SeedData/users.json");
+                var users = JsonSerializer.Deserialize<List<User>>(userData);
+                if (users == null) return;
+
+                foreach (var user in users)
                 {
-                    var userData = File.ReadAllText(path + @"/Data/SeedData/users.json");
-                    var users = JsonSerializer.Deserialize<List<User>>(userData);
-                    if (users == null) return;
+                    if (!string.IsNullOrEmpty(user.UserName)) user.UserName = user.UserName.ToLower();
+                    user.EmailConfirmed = true;
+                    user.PhoneNumberConfirmed = true;
+                    user.IsActive = true;
 
-                    foreach (var user in users)
-                    {
-                        user.UserName = user.UserName.ToLower();
-                        user.EmailConfirmed = true;
-                        user.PhoneNumberConfirmed = true;
-                        user.IsActive = true;
-            
-                        await _userManager.CreateAsync(user, Users.DefaultPassword);
-                        await _userManager.AddToRoleAsync(user, Roles.BasicUser);
-                    }
-                  
-                    _logger.LogInformation(_localizer["Seeded Users."]);
-
+                    await _userManager.CreateAsync(user, Users.DefaultPassword);
+                    await _userManager.AddToRoleAsync(user, Roles.BasicUser);
                 }
+
+                _logger.LogInformation(_localizer["Seeded Users."]);
+
+            }
         }).GetAwaiter().GetResult();
     }
     private void AddCambodiaGazetteers()

@@ -25,7 +25,7 @@ public class RolesController : BaseApiController
         var roles = await _roleManager.Roles.ToListAsync();
 
         var roleDtos = roles.Adapt<List<RoleDto>>();
-        roleDtos.ForEach((role) =>  
+        roleDtos.ForEach((role) =>
         {
             role.IsDefault = DefaultRoles.Contains(role.Name);
             role.Permissions = _context.RoleClaims
@@ -33,19 +33,21 @@ public class RolesController : BaseApiController
                 .Select(c => c.ClaimValue)
                 .ToList();
         });
-        
+
         return roleDtos;
     }
 
     [HttpGet("{roleId}")]
     [MustHavePermission(Permissions.Roles.View)]
-    public async Task<ActionResult<RoleDto>> GetByIdAsync(int roleId)
+    public async Task<ActionResult<RoleDto>> GetByIdAsync(string roleId)
     {
-        var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
+        var role = await _roleManager.FindByIdAsync(roleId);
         if (role == null) return NotFound();
         var roleDto = role.Adapt<RoleDto>();
-        roleDto.IsDefault = DefaultRoles.Contains(role.Name);
+        if (role.Name != null)
+            roleDto.IsDefault = DefaultRoles.Contains(role.Name);
         return roleDto;
+
     }
 
     [HttpGet("{roleId}/permissions")]
@@ -55,8 +57,9 @@ public class RolesController : BaseApiController
         var role = await _context.Roles.SingleOrDefaultAsync(x => x.Id == roleId);
         if (role == null) return NotFound();
         var roleDto = role.Adapt<RoleDto>();
-        roleDto.IsDefault = DefaultRoles.Contains(role.Name);
-  
+        if (role.Name != null)
+            roleDto.IsDefault = DefaultRoles.Contains(role.Name);
+
         roleDto.Permissions = (await _context.RoleClaims
             .Where(a => a.RoleId == roleId && a.ClaimType == CustomClaimTypes.Permission)
             .Select(c => c.ClaimValue)
@@ -67,7 +70,7 @@ public class RolesController : BaseApiController
 
     [HttpGet("permissions/all")]
     [MustHavePermission(Permissions.RoleClaims.View)]
-    public async Task<ActionResult<List<string>>> GetAllPermissions()
+    public async Task<ActionResult<List<string?>>> GetAllPermissions()
     {
         var permissions = await _context.RoleClaims
             .Where(a => a.ClaimType == CustomClaimTypes.Permission)
@@ -75,7 +78,7 @@ public class RolesController : BaseApiController
             .Distinct()
             .ToListAsync();
 
-        return permissions;
+        return permissions ?? new List<string?>();
     }
 
     [HttpPut("permissions")]
@@ -87,7 +90,7 @@ public class RolesController : BaseApiController
         if (role == null) return NotFound();
         if (role.Name == Roles.Admin)
         {
-            return BadRequest(new ProblemDetails { Title = _localizer["Not allowed to modify Permissions for this Role."]});
+            return BadRequest(new ProblemDetails { Title = _localizer["Not allowed to modify Permissions for this Role."] });
         }
 
         var currentPermissions = await _roleManager.GetClaimsAsync(role);
@@ -115,11 +118,11 @@ public class RolesController : BaseApiController
                 var addResult = await _roleManager.AddClaimAsync(role, new Claim(CustomClaimTypes.Permission, permission));
                 if (!addResult.Succeeded)
                 {
-                     foreach (var error in addResult.Errors)
+                    foreach (var error in addResult.Errors)
                     {
                         ModelState.AddModelError(error.Code, _localizer[error.Description].ToString());
                     }
-                    
+
                     return ValidationProblem();
                 }
             }
@@ -149,13 +152,13 @@ public class RolesController : BaseApiController
         }
         else
         {
-            Role role = await _roleManager.FindByIdAsync(request.Id.ToString());
+            Role? role = await _roleManager.FindByIdAsync(request.Id.ToString());
 
             if (role == null) return NotFound();
 
-            if (DefaultRoles.Contains(role.Name))
+            if (role.Name != null && DefaultRoles.Contains(role.Name))
             {
-                return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to modify {0} Role."], role.Name)});
+                return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to modify {0} Role."], role.Name) });
             }
 
             role.Name = request.Name;
@@ -181,20 +184,20 @@ public class RolesController : BaseApiController
     [MustHavePermission(Permissions.Roles.Delete)]
     public async Task<ActionResult<string>> DeleteAsync(int roleId)
     {
-        Role role = await _roleManager.FindByIdAsync(roleId.ToString());
+        Role? role = await _roleManager.FindByIdAsync(roleId.ToString());
 
         if (role == null) return NotFound();
 
-        if (DefaultRoles.Contains(role.Name))
+        if (role.Name != null && DefaultRoles.Contains(role.Name))
         {
-            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role."], role.Name)});
+            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role."], role.Name) });
         }
 
         bool roleIsNotUsed = true;
         var allUsers = await _userManager.Users.ToListAsync();
         foreach (var user in allUsers)
         {
-            if (await _userManager.IsInRoleAsync(user, role.Name))
+            if (await _userManager.IsInRoleAsync(user, role.Name!))
             {
                 roleIsNotUsed = false;
             }
@@ -207,7 +210,7 @@ public class RolesController : BaseApiController
         }
         else
         {
-            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role as it is being used."], role.Name)});
+            return BadRequest(new ProblemDetails { Title = string.Format(_localizer["Not allowed to delete {0} Role as it is being used."], role.Name) });
         }
     }
 

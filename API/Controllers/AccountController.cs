@@ -24,10 +24,10 @@ public class AccountController : BaseApiController
     {
         var user = await _userManager.FindByNameAsync(loginDto.Username);
         if (user == null) return NotFound();
-        if(!user.IsActive) return Unauthorized();
+        if (!user.IsActive) return Unauthorized();
         if (!await _userManager.CheckPasswordAsync(user, loginDto.Password)) return Unauthorized();
 
-        return Ok(await CreateUserObject(user, GenerateIPAddress()));
+        return Ok(await CreateUserObject(user, GenerateIPAddress()!));
     }
 
     [HttpPost("refresh-token")]
@@ -35,12 +35,12 @@ public class AccountController : BaseApiController
     public async Task<ActionResult<UserDto>> RefreshAsync(RefreshTokenRequest request)
     {
         var userPrincipal = _tokenService.GetPrincipalFromExpiredToken(request.Token);
-        string? userEmail = userPrincipal.GetEmail();
+        string userEmail = userPrincipal.GetEmail() ?? String.Empty;
         var user = await _userManager.FindByEmailAsync(userEmail);
         if (user is null) return Unauthorized();
         if (user.RefreshToken != request.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow) return Unauthorized();
-        
-        return Ok(await CreateUserObject(user, GenerateIPAddress()));
+
+        return Ok(await CreateUserObject(user, GenerateIPAddress()!));
     }
 
     [HttpPost("register")]
@@ -83,7 +83,7 @@ public class AccountController : BaseApiController
         if (user == null) return NotFound();
         updateProfileDto.Adapt(user);
         var result = await _userManager.UpdateAsync(user);
-        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to update profile"});
+        if (!result.Succeeded) return BadRequest(new ProblemDetails { Title = "Failed to update profile" });
         return Ok();
 
     }
@@ -92,12 +92,12 @@ public class AccountController : BaseApiController
     [Authorize]
     public async Task<ActionResult> ChangePasasword(ChangePasswordRequest changePasswordRequest)
     {
-        if(changePasswordRequest.NewPassword != changePasswordRequest.ConfirmNewPassword) return BadRequest(new ProblemDetails { Title = "Password are not match"});
+        if (changePasswordRequest.NewPassword != changePasswordRequest.ConfirmNewPassword) return BadRequest(new ProblemDetails { Title = "Password are not match" });
         var currentUserId = User.GetUserId();
         var user = await _userManager.Users.Where(u => u.Id == currentUserId).FirstOrDefaultAsync();
         if (user == null) return NotFound();
         var result = await _userManager.ChangePasswordAsync(user, changePasswordRequest.Password, changePasswordRequest.NewPassword);
-        if (!result.Succeeded) return BadRequest(new ProblemDetails {Title = "Failed to change password"});
+        if (!result.Succeeded) return BadRequest(new ProblemDetails { Title = "Failed to change password" });
         return Ok();
     }
 
@@ -123,11 +123,11 @@ public class AccountController : BaseApiController
         throw new NotImplementedException();
     }
 
-    private string GenerateIPAddress()=>
+    private string? GenerateIPAddress() =>
         Request.Headers.ContainsKey("X-Forwarded-For")
             ? Request.Headers["X-Forwarded-For"]
-            : HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString() ?? "N/A";
-    
+            : HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString() ?? String.Empty;
+
     private async Task<UserDto> CreateUserObject(User user, string ipAddress)
     {
         var tokenResponse = await _tokenService.GenerateTokensAndUpdateUser(user, ipAddress);

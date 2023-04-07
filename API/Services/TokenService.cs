@@ -7,7 +7,7 @@ public class TokenService
     private readonly RoleManager<Role> _roleManager;
     private readonly JwtSettings _jwtSettings;
     private readonly ServerSettings _serverSettings;
-    public TokenService(UserManager<User> userManager, RoleManager<Role> roleManager, 
+    public TokenService(UserManager<User> userManager, RoleManager<Role> roleManager,
         IOptions<JwtSettings> jwtSettings, IOptions<ServerSettings> serverSettings)
     {
         _userManager = userManager;
@@ -60,7 +60,7 @@ public class TokenService
     private async Task<string> GenerateJwt(User user, string ipAddress) =>
         GenerateEncryptedToken(GetSigningCredentials(), await GetClaims(user, ipAddress));
 
-    private async Task<IEnumerable<Claim>> GetClaims(User user, string ipAddress) 
+    private async Task<IEnumerable<Claim>> GetClaims(User user, string ipAddress)
     {
         var userClaims = await _userManager.GetClaimsAsync(user);
         var roles = await _userManager.GetRolesAsync(user);
@@ -70,13 +70,13 @@ public class TokenService
         {
             roleClaims.Add(new Claim(ClaimTypes.Role, role));
             var thisRole = await _roleManager.FindByNameAsync(role);
-            var allPermissionsForThisRoles = await _roleManager.GetClaimsAsync(thisRole);
+            var allPermissionsForThisRoles = await _roleManager.GetClaimsAsync(thisRole!);
             permissionClaims.AddRange(allPermissionsForThisRoles);
         }
         var claims = new List<Claim>
         {
             new(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.Email, user.Email ?? String.Empty),
             new(CustomClaimTypes.Fullname, $"{user.FirstName} {user.LastName}"),
             new(ClaimTypes.Name, user.FirstName ?? string.Empty),
             new(ClaimTypes.Surname, user.LastName ?? string.Empty),
