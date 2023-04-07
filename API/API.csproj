@@ -10,7 +10,7 @@
     <PackageReference Include="Mapster" Version="7.3.0" />  
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.4" />
     <PackageReference Include="PuppeteerSharp" Version="8.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
